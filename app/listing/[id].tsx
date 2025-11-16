@@ -1,0 +1,230 @@
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, Pressable, Share, Linking, Modal, Alert } from 'react-native';
+import { useLocalSearchParams, router } from 'expo-router';
+import { getListing } from '@/lib/api';
+import type { Listing } from '@/types/domain';
+import { ListingCarousel } from '@/components/ListingCarousel';
+import { ListingMap } from '@/components/ListingMap';
+import { useSavedStore } from '@/state/savedStore';
+import { capture } from '@/lib/analytics';
+import { trackBusinessAnalytics } from '@/lib/businessAuth';
+
+const LIST_OPTIONS = [
+  { key: 'default', label: 'General' },
+  { key: 'date-ideas', label: 'Date Ideas' },
+  { key: 'weekend-plans', label: 'Weekend Plans' },
+  { key: 'favorites', label: 'Favorites' },
+];
+
+export default function ListingDetails() {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const [item, setItem] = useState<Listing | undefined>();
+  const { isSaved, save, unsave } = useSavedStore();
+  const [showListPicker, setShowListPicker] = useState(false);
+
+  useEffect(() => {
+    (async () => setItem(id ? await getListing(id) : undefined))();
+  }, [id]);
+
+  useEffect(() => {
+    if (id) capture('open_details', { id });
+  }, [id]);
+
+  if (!item) return <View style={styles.center}><Text>Loading…</Text></View>;
+
+  const saved = isSaved(item.id);
+
+  return (
+    <ScrollView style={styles.container} contentInsetAdjustmentBehavior="automatic">
+      <ListingCarousel images={item.images ?? []} />
+      <View style={styles.content}>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' }}>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.title}>{item.title}</Text>
+            {!!item.subtitle && <Text style={styles.subtitle}>{item.subtitle}</Text>}
+            <Text style={styles.meta}>{item.category} · {item.city}</Text>
+          </View>
+          {item.is_featured && (
+            <View style={styles.featuredBadge}>
+              <Text style={styles.featuredText}>Featured</Text>
+            </View>
+          )}
+        </View>
+
+        {item.price_tier && (
+          <View style={styles.priceRow}>
+            <Text style={styles.priceLabel}>Price: </Text>
+            <Text style={styles.priceValue}>{'$'.repeat(item.price_tier)}</Text>
+          </View>
+        )}
+
+        <View style={{ flexDirection: 'row', gap: 8, marginTop: 12 }}>
+          <Pressable
+            style={[styles.saveBtn, saved ? styles.saveBtnSaved : null]}
+            onPress={() => {
+              if (saved) {
+                unsave(item.id);
+              } else {
+                setShowListPicker(true);
+              }
+            }}
+          >
+            <Text style={[styles.saveText, saved ? { color: '#fff' } : null]}>{saved ? 'Saved' : 'Save to list'}</Text>
+          </Pressable>
+        </View>
+
+        {!!item.tags?.length && (
+          <View style={styles.tagsRow}>
+            {item.tags.map((t) => (
+              <View key={t} style={styles.tagChip}><Text style={styles.tagText}>{t}</Text></View>
+            ))}
+          </View>
+        )}
+
+        <Text style={styles.sectionTitle}>About</Text>
+        <Text style={styles.description}>{item.description || 'No description available.'}</Text>
+
+        {(item.hours || item.phone || item.website) && (
+          <>
+            <Text style={styles.sectionTitle}>Details</Text>
+            {item.hours && (
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Hours:</Text>
+                <Text style={styles.detailValue}>{item.hours}</Text>
+              </View>
+            )}
+            {item.phone && (
+              <Pressable 
+                onPress={() => {
+                  trackBusinessAnalytics(item.id, 'call');
+                  Linking.openURL(`tel:${item.phone}`);
+                }} 
+                style={styles.detailRow}
+              >
+                <Text style={styles.detailLabel}>Phone:</Text>
+                <Text style={[styles.detailValue, styles.link]}>{item.phone}</Text>
+              </Pressable>
+            )}
+            {item.website && (
+              <Pressable 
+                onPress={() => {
+                  trackBusinessAnalytics(item.id, 'website_click');
+                  Linking.openURL(item.website!);
+                }} 
+                style={styles.detailRow}
+              >
+                <Text style={styles.detailLabel}>Website:</Text>
+                <Text style={[styles.detailValue, styles.link]}>Visit site</Text>
+              </Pressable>
+            )}
+          </>
+        )}
+
+        <Text style={styles.sectionTitle}>Location</Text>
+        <ListingMap latitude={item.latitude} longitude={item.longitude} />
+
+        <Text style={styles.sectionTitle}>Get There</Text>
+        <View style={styles.actionsRow}>
+          <Pressable
+            style={[styles.actionBtn, { backgroundColor: '#111', flex: 1 }]}
+            onPress={() => {
+              trackBusinessAnalytics(item.id, 'directions');
+              Linking.openURL(`http://maps.apple.com/?daddr=${item.latitude},${item.longitude}`);
+            }}
+          >
+            <Text style={[styles.actionText, { color: '#fff' }]}>Directions</Text>
+          </Pressable>
+        </View>
+        <View style={[styles.actionsRow, { marginTop: 8 }]}>
+          <Pressable
+            style={[styles.actionBtn, { backgroundColor: '#000', flex: 1 }]}
+            onPress={() => {
+              trackBusinessAnalytics(item.id, 'directions');
+              Linking.openURL(`uber://?action=setPickup&dropoff[latitude]=${item.latitude}&dropoff[longitude]=${item.longitude}`);
+            }}
+          >
+            <Text style={[styles.actionText, { color: '#fff' }]}>Uber</Text>
+          </Pressable>
+          <Pressable
+            style={[styles.actionBtn, { backgroundColor: '#FF00BF', flex: 1 }]}
+            onPress={() => {
+              trackBusinessAnalytics(item.id, 'directions');
+              Linking.openURL(`lyft://ridetype?id=lyft&destination[latitude]=${item.latitude}&destination[longitude]=${item.longitude}`);
+            }}
+          >
+            <Text style={[styles.actionText, { color: '#fff' }]}>Lyft</Text>
+          </Pressable>
+          <Pressable
+            style={[styles.actionBtn, { backgroundColor: '#f1f1f1', flex: 1 }]}
+            onPress={() => {
+              trackBusinessAnalytics(item.id, 'share');
+              Share.share({ message: `${item.title} — ${item.subtitle ?? ''}`.trim() });
+            }}
+          >
+            <Text style={[styles.actionText]}>Share</Text>
+          </Pressable>
+        </View>
+      </View>
+
+      {/* List picker modal */}
+      <Modal visible={showListPicker} transparent animationType="fade" onRequestClose={() => setShowListPicker(false)}>
+        <Pressable style={styles.modalBackdrop} onPress={() => setShowListPicker(false)}>
+          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+            <Text style={styles.modalTitle}>Save to list</Text>
+            {LIST_OPTIONS.map((list) => (
+              <Pressable
+                key={list.key}
+                style={styles.modalOption}
+                onPress={() => {
+                  save(item, list.key);
+                  setShowListPicker(false);
+                }}
+              >
+                <Text style={styles.modalOptionText}>{list.label}</Text>
+              </Pressable>
+            ))}
+            <Pressable style={[styles.modalOption, { marginTop: 8 }]} onPress={() => setShowListPicker(false)}>
+              <Text style={[styles.modalOptionText, { color: '#999' }]}>Cancel</Text>
+            </Pressable>
+          </Pressable>
+        </Pressable>
+      </Modal>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#fff' },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  content: { padding: 16 },
+  title: { fontSize: 22, fontWeight: '800' },
+  subtitle: { color: '#666', marginTop: 4 },
+  meta: { color: '#666', marginTop: 8 },
+  featuredBadge: { backgroundColor: '#ffc107', paddingVertical: 4, paddingHorizontal: 10, borderRadius: 6 },
+  featuredText: { fontSize: 11, fontWeight: '800', color: '#000' },
+  priceRow: { flexDirection: 'row', alignItems: 'center', marginTop: 8 },
+  priceLabel: { fontSize: 14, color: '#666' },
+  priceValue: { fontSize: 16, fontWeight: '700', color: '#111' },
+  sectionTitle: { fontSize: 16, fontWeight: '800', marginTop: 16 },
+  description: { marginTop: 6, lineHeight: 20 },
+  saveBtn: { marginTop: 12, alignSelf: 'flex-start', paddingVertical: 10, paddingHorizontal: 16, borderRadius: 999, borderWidth: 1, borderColor: '#111' },
+  saveBtnSaved: { backgroundColor: '#111', borderColor: '#111' },
+  saveText: { fontWeight: '700', color: '#111' },
+  tagsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 12 },
+  tagChip: { backgroundColor: '#f2f2f2', borderRadius: 999, paddingVertical: 6, paddingHorizontal: 10 },
+  tagText: { fontWeight: '600', color: '#333' },
+  detailRow: { flexDirection: 'row', alignItems: 'center', marginTop: 8 },
+  detailLabel: { fontSize: 14, fontWeight: '600', color: '#333', width: 80 },
+  detailValue: { fontSize: 14, color: '#111', flex: 1 },
+  link: { color: '#007AFF', textDecorationLine: 'underline' },
+  actionsRow: { flexDirection: 'row', gap: 12, marginTop: 12, marginBottom: 24 },
+  actionBtn: { flex: 1, paddingVertical: 12, paddingHorizontal: 16, borderRadius: 12, alignItems: 'center' },
+  actionText: { fontWeight: '700' },
+  modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center', padding: 20 },
+  modalContent: { backgroundColor: '#fff', borderRadius: 16, padding: 20, width: '100%', maxWidth: 320 },
+  modalTitle: { fontSize: 18, fontWeight: '800', marginBottom: 16, textAlign: 'center' },
+  modalOption: { paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#eee' },
+  modalOptionText: { fontSize: 16, fontWeight: '600', textAlign: 'center' },
+});
+
+

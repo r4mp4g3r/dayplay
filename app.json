@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "swipely-app",
+    "name": "Swipely",
     "slug": "swipely-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "swipelyapp",
+    "scheme": "swipely",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {

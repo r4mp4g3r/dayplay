@@ -3,10 +3,15 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { initAnalytics } from '@/lib/analytics';
+import { useAuthStore } from '@/state/authStore';
+import { useSavedStore } from '@/state/savedStore';
+import { DataSyncPrompt } from '@/components/DataSyncPrompt';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -15,7 +20,7 @@ export {
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: 'index',
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -38,6 +43,10 @@ export default function RootLayout() {
     }
   }, [loaded]);
 
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+
   if (!loaded) {
     return null;
   }
@@ -47,13 +56,45 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const { user, isGuest } = useAuthStore();
+  const { savedItems, syncToCloud } = useSavedStore();
+  const [showSyncPrompt, setShowSyncPrompt] = useState(false);
+  const [hasShownPrompt, setHasShownPrompt] = useState(false);
+
+  // Show sync prompt when user signs in and has local data
+  useEffect(() => {
+    if (!isGuest && !hasShownPrompt && savedItems.length > 0) {
+      setShowSyncPrompt(true);
+      setHasShownPrompt(true);
+    }
+  }, [isGuest, savedItems.length, hasShownPrompt]);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-      </Stack>
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="onboarding/index" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="listing/[id]" options={{ title: 'Details', headerBackTitle: 'Back' }} />
+          <Stack.Screen name="submit-gem" options={{ title: 'Submit a Gem', presentation: 'modal' }} />
+          <Stack.Screen name="auth/sign-in" options={{ title: 'Sign In', presentation: 'modal' }} />
+          <Stack.Screen name="auth/sign-up" options={{ title: 'Sign Up', presentation: 'modal' }} />
+          <Stack.Screen name="business/index" options={{ title: 'Business Portal', headerShown: false }} />
+          <Stack.Screen name="business/sign-in" options={{ title: 'Business Sign In' }} />
+          <Stack.Screen name="business/sign-up" options={{ title: 'Business Sign Up' }} />
+          <Stack.Screen name="business/dashboard" options={{ title: 'Dashboard', headerShown: false }} />
+          <Stack.Screen name="business/create-listing" options={{ title: 'New Listing' }} />
+        </Stack>
+
+        <DataSyncPrompt
+          visible={showSyncPrompt}
+          itemCount={savedItems.length}
+          onSync={syncToCloud}
+          onSkip={() => setShowSyncPrompt(false)}
+          onClose={() => setShowSyncPrompt(false)}
+        />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

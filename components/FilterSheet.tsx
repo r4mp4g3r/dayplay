@@ -1,0 +1,110 @@
+import React from 'react';
+import { Modal, View, Text, StyleSheet, Pressable, ScrollView } from 'react-native';
+import Slider from '@react-native-community/slider';
+import { useFilterStore } from '@/state/filterStore';
+
+const CATEGORY_CHIPS = ['food', 'outdoors', 'nightlife', 'events', 'coffee', 'museum', 'activities', 'shopping'];
+
+export function FilterSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const { categories, setCategories, distanceKm, setDistanceKm, priceTiers, setPriceTiers, showOpenNow, setShowOpenNow, showNewThisWeek, setShowNewThisWeek } = useFilterStore();
+
+  const toggleCategory = (c: string) => {
+    const next = categories.includes(c) ? categories.filter((x) => x !== c) : [...categories, c];
+    setCategories(next);
+  };
+
+  const togglePrice = (p: number) => {
+    const next = priceTiers.includes(p) ? priceTiers.filter((x) => x !== p) : [...priceTiers, p];
+    setPriceTiers(next.sort());
+  };
+
+  return (
+    <Modal
+      visible={open}
+      transparent
+      animationType="slide"
+      onRequestClose={onClose}
+    >
+      <Pressable style={styles.backdrop} onPress={onClose}>
+        <Pressable style={styles.sheet} onPress={(e) => e.stopPropagation()}>
+          <ScrollView>
+            <View style={styles.content}>
+              <View style={styles.header}>
+                <Text style={styles.title}>Filters</Text>
+                <Pressable onPress={onClose} style={styles.closeBtn}>
+                  <Text style={styles.closeText}>×</Text>
+                </Pressable>
+              </View>
+
+              <Text style={styles.label}>Distance: {distanceKm} km</Text>
+              <Slider
+                minimumValue={1}
+                maximumValue={50}
+                step={1}
+                value={distanceKm}
+                onValueChange={(v) => setDistanceKm(Array.isArray(v) ? v[0] : v)}
+                style={{ height: 40 }}
+              />
+
+              <Text style={styles.label}>Categories</Text>
+              <View style={styles.rowWrap}>
+                {CATEGORY_CHIPS.map((c) => (
+                  <Pressable key={c} style={[styles.chip, categories.includes(c) && styles.chipSelected]} onPress={() => toggleCategory(c)}>
+                    <Text style={[styles.chipText, categories.includes(c) && styles.chipTextSelected]}>{c}</Text>
+                  </Pressable>
+                ))}
+              </View>
+
+              <Text style={styles.label}>Price</Text>
+              <View style={styles.rowWrap}>
+                {[1, 2, 3, 4].map((p) => (
+                  <Pressable key={p} style={[styles.chip, priceTiers.includes(p) && styles.chipSelected]} onPress={() => togglePrice(p)}>
+              <Text style={[styles.chipText, priceTiers.includes(p) && styles.chipTextSelected]}> {'$'.repeat(p)} </Text>
+            </Pressable>
+          ))}
+        </View>
+
+        <Text style={styles.label}>Special Filters</Text>
+        <View style={styles.rowWrap}>
+          <Pressable 
+            style={[styles.chip, showNewThisWeek && styles.chipSelected]} 
+            onPress={() => setShowNewThisWeek(!showNewThisWeek)}
+          >
+            <Text style={[styles.chipText, showNewThisWeek && styles.chipTextSelected]}>✨ New This Week</Text>
+          </Pressable>
+          <Pressable 
+            style={[styles.chip, showOpenNow && styles.chipSelected]} 
+            onPress={() => setShowOpenNow(!showOpenNow)}
+          >
+            <Text style={[styles.chipText, showOpenNow && styles.chipTextSelected]}>⏰ Open Now</Text>
+          </Pressable>
+        </View>
+
+        <Pressable style={styles.doneBtn} onPress={onClose}>
+          <Text style={styles.doneText}>Done</Text>
+        </Pressable>
+      </View>
+          </ScrollView>
+        </Pressable>
+      </Pressable>
+    </Modal>
+  );
+}
+
+const styles = StyleSheet.create({
+  backdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'flex-end' },
+  sheet: { backgroundColor: '#fff', borderTopLeftRadius: 20, borderTopRightRadius: 20, maxHeight: '80%' },
+  content: { padding: 16, gap: 8 },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
+  title: { fontSize: 18, fontWeight: '800' },
+  closeBtn: { padding: 8 },
+  closeText: { fontSize: 28, color: '#666', lineHeight: 28 },
+  label: { fontWeight: '700', marginTop: 8 },
+  rowWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 4 },
+  chip: { paddingVertical: 8, paddingHorizontal: 12, borderRadius: 999, backgroundColor: '#f0f0f0' },
+  chipSelected: { backgroundColor: '#111' },
+  chipText: { color: '#111', fontWeight: '600' },
+  chipTextSelected: { color: '#fff' },
+  doneBtn: { marginTop: 16, backgroundColor: '#111', paddingVertical: 14, borderRadius: 12, alignItems: 'center' },
+  doneText: { color: '#fff', fontWeight: '800', fontSize: 16 },
+});

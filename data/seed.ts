@@ -1,0 +1,771 @@
+export const seedData = [
+  {
+    "id": "seed-001",
+    "title": "Barton Springs Pool",
+    "subtitle": "Spring-fed swimming",
+    "description": "Iconic spring-fed pool in Zilker Park with year-round cool water.",
+    "category": "outdoors",
+    "price_tier": 2,
+    "latitude": 30.2646,
+    "longitude": -97.7713,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["nature", "swimming", "date"],
+    "hours": "5:00 AM - 10:00 PM",
+    "phone": "(512) 974-6300",
+    "website": "https://www.austintexas.gov/department/barton-springs-pool",
+    "is_featured": true,
+    "created_at": "2025-11-02T10:00:00Z"
+  },
+  {
+    "id": "seed-002",
+    "title": "Mount Bonnell",
+    "subtitle": "Sunset viewpoint",
+    "description": "Short hike to panoramic views of Austin and the Colorado River.",
+    "category": "outdoors",
+    "price_tier": 1,
+    "latitude": 30.3213,
+    "longitude": -97.7731,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["hike", "scenic", "sunset"]
+  },
+  {
+    "id": "seed-003",
+    "title": "Zilker Botanical Garden",
+    "subtitle": "Themed gardens",
+    "description": "Japanese garden, rose garden, and more in the heart of Zilker Park.",
+    "category": "outdoors",
+    "price_tier": 2,
+    "latitude": 30.2694,
+    "longitude": -97.7726,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["garden", "quiet", "date"]
+  },
+  {
+    "id": "seed-004",
+    "title": "Lady Bird Lake Hike & Bike Trail",
+    "subtitle": "Waterfront path",
+    "description": "Scenic trail loop perfect for walking, running, and biking with skyline views.",
+    "category": "outdoors",
+    "price_tier": 1,
+    "latitude": 30.2635,
+    "longitude": -97.7431,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1520975922284-6c0a5b1d1c5d?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["running", "biking", "waterfront"]
+  },
+  {
+    "id": "seed-005",
+    "title": "South Congress Avenue",
+    "subtitle": "Shops & eats",
+    "description": "Trendy street with boutiques, murals, and Austin-famous eateries.",
+    "category": "neighborhood",
+    "price_tier": 3,
+    "latitude": 30.2499,
+    "longitude": -97.7490,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1520975693416-44a29d34b5fe?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["shopping", "murals", "date"]
+  },
+  {
+    "id": "seed-006",
+    "title": "Franklin Barbecue",
+    "subtitle": "Legendary brisket",
+    "description": "Austin's most famous barbecue spot. Expect a line — worth it.",
+    "category": "food",
+    "price_tier": 3,
+    "latitude": 30.2701,
+    "longitude": -97.7312,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["bbq", "famous", "lunch"],
+    "hours": "11:00 AM - 3:00 PM (or sold out)",
+    "phone": "(512) 653-1187",
+    "website": "https://franklinbbq.com",
+    "is_featured": true
+  },
+  {
+    "id": "seed-007",
+    "title": "Uchi",
+    "subtitle": "Creative sushi",
+    "description": "Upscale Japanese fare with inventive sushi and small plates.",
+    "category": "food",
+    "price_tier": 4,
+    "latitude": 30.2570,
+    "longitude": -97.7636,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["sushi", "date", "dinner"],
+    "hours": "5:00 PM - 10:00 PM",
+    "phone": "(512) 916-4808",
+    "website": "https://uchiaustin.com",
+    "is_featured": false
+  },
+  {
+    "id": "seed-008",
+    "title": "Home Slice Pizza",
+    "subtitle": "NY-style pies",
+    "description": "Beloved spot for slices and pies on South Congress.",
+    "category": "food",
+    "price_tier": 2,
+    "latitude": 30.2492,
+    "longitude": -97.7487,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1548365328-9f547fb09530?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["pizza", "casual", "late-night"]
+  },
+  {
+    "id": "seed-009",
+    "title": "Mozart's Coffee Roasters",
+    "subtitle": "Lakefront coffee",
+    "description": "Coffee, pastries, and live music with views over Lake Austin.",
+    "category": "coffee",
+    "price_tier": 2,
+    "latitude": 30.2886,
+    "longitude": -97.7863,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["coffee", "live music", "study"],
+    "hours": "7:00 AM - 12:00 AM",
+    "phone": "(512) 477-2900",
+    "website": "https://mozartscoffee.com",
+    "is_featured": true
+  },
+  {
+    "id": "seed-010",
+    "title": "Texas State Capitol",
+    "subtitle": "Historic tours",
+    "description": "Impressive pink-granite capitol building with free guided tours.",
+    "category": "museum",
+    "price_tier": 1,
+    "latitude": 30.2747,
+    "longitude": -97.7404,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["history", "architecture", "free"]
+  },
+  {
+    "id": "seed-011",
+    "title": "Blanton Museum of Art",
+    "subtitle": "Modern & classical",
+    "description": "University art museum with diverse collections and installations.",
+    "category": "museum",
+    "price_tier": 2,
+    "latitude": 30.2802,
+    "longitude": -97.7378,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["art", "indoor", "date"]
+  },
+  {
+    "id": "seed-012",
+    "title": "The Roosevelt Room",
+    "subtitle": "Craft cocktails",
+    "description": "Sophisticated cocktail bar with an extensive menu and seasonal creations.",
+    "category": "nightlife",
+    "price_tier": 3,
+    "latitude": 30.2683,
+    "longitude": -97.7462,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1532634896-26909d0d4b6a?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["cocktails", "date", "speakeasy"]
+  },
+  {
+    "id": "seed-013",
+    "title": "The White Horse",
+    "subtitle": "Honky-tonk",
+    "description": "East side dance hall with live country music and two-stepping.",
+    "category": "nightlife",
+    "price_tier": 2,
+    "latitude": 30.2615,
+    "longitude": -97.7239,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["live music", "dance", "casual"]
+  },
+  {
+    "id": "seed-014",
+    "title": "Moody Theater (ACL Live)",
+    "subtitle": "Concert venue",
+    "description": "State-of-the-art venue hosting major touring acts and ACL tapings.",
+    "category": "events",
+    "price_tier": 3,
+    "latitude": 30.2652,
+    "longitude": -97.7479,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["concert", "night", "downtown"]
+  },
+  {
+    "id": "seed-015",
+    "title": "Jo's Coffee (SoCo)",
+    "subtitle": "'I love you so much' mural",
+    "description": "Casual coffee stand famous for its mural and iced turbo.",
+    "category": "coffee",
+    "price_tier": 2,
+    "latitude": 30.2499,
+    "longitude": -97.7487,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["mural", "casual", "outdoor seating"]
+  },
+  {
+    "id": "seed-016",
+    "title": "Barton Creek Greenbelt",
+    "subtitle": "Trails & swimming holes",
+    "description": "Miles of trails, rock climbing, and seasonal swimming spots.",
+    "category": "outdoors",
+    "price_tier": 1,
+    "latitude": 30.2576,
+    "longitude": -97.8060,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1493810329807-41f2d63a1fb0?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["hike", "swim", "nature"]
+  },
+  {
+    "id": "seed-017",
+    "title": "Allen's Boots",
+    "subtitle": "Boot shopping",
+    "description": "Iconic Western wear store on South Congress.",
+    "category": "shopping",
+    "price_tier": 3,
+    "latitude": 30.2491,
+    "longitude": -97.7481,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1520974540759-7d4ad7a2c295?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["western", "boots", "souvenirs"]
+  },
+  {
+    "id": "seed-018",
+    "title": "Bouldin Creek Cafe",
+    "subtitle": "Veggie-friendly",
+    "description": "Creative vegetarian comfort food and coffee in a funky space.",
+    "category": "food",
+    "price_tier": 2,
+    "latitude": 30.2490,
+    "longitude": -97.7551,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["vegetarian", "brunch", "casual"]
+  },
+  {
+    "id": "seed-019",
+    "title": "ZACH Theatre",
+    "subtitle": "Local productions",
+    "description": "Austin's longest-running professional theatre company.",
+    "category": "events",
+    "price_tier": 3,
+    "latitude": 30.2653,
+    "longitude": -97.7601,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1515165562835-c3b8c8c1a52b?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["theatre", "date", "arts"]
+  },
+  {
+    "id": "seed-020",
+    "title": "The Oasis on Lake Travis",
+    "subtitle": "Sunset dining",
+    "description": "Multi-level restaurant known for spectacular lake sunsets.",
+    "category": "food",
+    "price_tier": 3,
+    "latitude": 30.4057,
+    "longitude": -97.8760,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["sunset", "views", "date"]
+  },
+  {
+    "id": "seed-021",
+    "title": "Alamo Drafthouse (South Lamar)",
+    "subtitle": "Dinner & a movie",
+    "description": "Austin-born dine-in cinema with curated screenings.",
+    "category": "events",
+    "price_tier": 2,
+    "latitude": 30.2551,
+    "longitude": -97.7669,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["cinema", "dine-in", "date"]
+  },
+  {
+    "id": "seed-022",
+    "title": "Veracruz All Natural",
+    "subtitle": "Breakfast tacos",
+    "description": "Beloved taco truck with fresh salsas and migas tacos.",
+    "category": "food",
+    "price_tier": 1,
+    "latitude": 30.2435,
+    "longitude": -97.7270,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["tacos", "breakfast", "food truck"]
+  },
+  {
+    "id": "seed-023",
+    "title": "Perla’s",
+    "subtitle": "Seafood & oysters",
+    "description": "Seafood-focused restaurant with a breezy patio under oak trees.",
+    "category": "food",
+    "price_tier": 4,
+    "latitude": 30.2490,
+    "longitude": -97.7481,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["seafood", "patio", "date"]
+  },
+  {
+    "id": "seed-024",
+    "title": "Pennybacker Bridge Overlook",
+    "subtitle": "Austin postcard view",
+    "description": "Short scramble to overlook the 360 Bridge and river.",
+    "category": "outdoors",
+    "price_tier": 1,
+    "latitude": 30.3510,
+    "longitude": -97.7972,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1491555103944-7c647fd857e6?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["scenic", "photo", "hike"]
+  },
+  {
+    "id": "seed-025",
+    "title": "LBJ Presidential Library",
+    "subtitle": "American history",
+    "description": "Museum and archives documenting LBJ’s presidency and era.",
+    "category": "museum",
+    "price_tier": 2,
+    "latitude": 30.2858,
+    "longitude": -97.7295,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1490300630420-3e5f21bfd5a4?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["history", "education", "indoor"]
+  },
+  {
+    "id": "seed-026",
+    "title": "Odd Duck",
+    "subtitle": "Farm-to-table",
+    "description": "Inventive small plates highlighting local Texas ingredients.",
+    "category": "food",
+    "price_tier": 4,
+    "latitude": 30.2552,
+    "longitude": -97.7635,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1541542684-4a9c5d2b05e3?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["texas", "local", "dinner"]
+  },
+  {
+    "id": "seed-027",
+    "title": "Radio Coffee & Beer",
+    "subtitle": "Patio + trucks",
+    "description": "Coffee shop with craft beer, food trucks, and live music nights.",
+    "category": "coffee",
+    "price_tier": 2,
+    "latitude": 30.2245,
+    "longitude": -97.7883,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["coffee", "patio", "live music"]
+  },
+  {
+    "id": "seed-028",
+    "title": "Peter Pan Mini-Golf",
+    "subtitle": "Kitschy classic",
+    "description": "Quirky mini-golf course near Zilker with BYOB policy.",
+    "category": "activities",
+    "price_tier": 1,
+    "latitude": 30.2662,
+    "longitude": -97.7566,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1620051757133-8d68fd37e540?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["mini golf", "date", "fun"]
+  },
+  {
+    "id": "seed-029",
+    "title": "Hamilton Pool Preserve",
+    "subtitle": "Natural grotto",
+    "description": "Stunning collapsed grotto with a waterfall (reservations required).",
+    "category": "outdoors",
+    "price_tier": 2,
+    "latitude": 30.3424,
+    "longitude": -98.1267,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["swimming", "nature", "day trip"]
+  },
+  {
+    "id": "seed-030",
+    "title": "Mozart’s Holiday Lights",
+    "subtitle": "Seasonal show",
+    "description": "Dazzling annual light show with hot cocoa and treats.",
+    "category": "events",
+    "price_tier": 2,
+    "latitude": 30.2886,
+    "longitude": -97.7863,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1511735643442-503bb3bd3487?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["holiday", "lights", "family"]
+  },
+  {
+    "id": "seed-031",
+    "title": "Torchy’s Tacos (South Congress)",
+    "subtitle": "Creative tacos",
+    "description": "Austin staple known for inventive taco combinations.",
+    "category": "food",
+    "price_tier": 2,
+    "latitude": 30.2469,
+    "longitude": -97.7472,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["tacos", "casual", "lunch"]
+  },
+  {
+    "id": "seed-032",
+    "title": "Thinkery",
+    "subtitle": "Children’s museum",
+    "description": "Hands-on science museum for kids in Mueller district.",
+    "category": "museum",
+    "price_tier": 2,
+    "latitude": 30.2974,
+    "longitude": -97.7042,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["kids", "science", "family"]
+  },
+  {
+    "id": "seed-033",
+    "title": "Paperboy",
+    "subtitle": "Brunch spot",
+    "description": "Stylish brunch with seasonal dishes and rooftop seating.",
+    "category": "food",
+    "price_tier": 3,
+    "latitude": 30.2690,
+    "longitude": -97.7267,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["brunch", "rooftop", "date"]
+  },
+  {
+    "id": "seed-034",
+    "title": "Blue Starlite Mini Urban Drive-in",
+    "subtitle": "Retro drive-in",
+    "description": "Boutique drive-in theater showing cult classics and new releases.",
+    "category": "events",
+    "price_tier": 2,
+    "latitude": 30.2700,
+    "longitude": -97.7200,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["drive-in", "movie", "date"]
+  },
+  {
+    "id": "seed-035",
+    "title": "Kayak on Lady Bird Lake",
+    "subtitle": "Paddle downtown",
+    "description": "Rent kayaks or SUPs and paddle past the skyline.",
+    "category": "activities",
+    "price_tier": 2,
+    "latitude": 30.2635,
+    "longitude": -97.7431,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1501724388610-72e53202b7f1?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["kayak", "sup", "outdoors"]
+  },
+  {
+    "id": "seed-036",
+    "title": "Austin Bouldering Project",
+    "subtitle": "Indoor climbing",
+    "description": "Massive indoor bouldering gym with cafe and yoga.",
+    "category": "activities",
+    "price_tier": 2,
+    "latitude": 30.2600,
+    "longitude": -97.7070,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1520975730548-56f6dfc43f29?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["climbing", "fitness", "indoor"]
+  },
+  {
+    "id": "seed-037",
+    "title": "SFC Farmers' Market",
+    "subtitle": "Local produce",
+    "description": "Saturday market with local farmers, artisans, and live music.",
+    "category": "events",
+    "price_tier": 1,
+    "latitude": 30.2704,
+    "longitude": -97.7516,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1498601761256-5f25f5b3c519?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["market", "local", "fresh"]
+  },
+  {
+    "id": "seed-038",
+    "title": "Antone’s Nightclub",
+    "subtitle": "Blues legend",
+    "description": "Historic blues club with legacy performances.",
+    "category": "nightlife",
+    "price_tier": 3,
+    "latitude": 30.2679,
+    "longitude": -97.7425,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["blues", "live music", "downtown"]
+  },
+  {
+    "id": "seed-039",
+    "title": "Museum of the Weird",
+    "subtitle": "Keep Austin Weird",
+    "description": "Oddities museum and quirky gift shop on 6th Street.",
+    "category": "museum",
+    "price_tier": 2,
+    "latitude": 30.2666,
+    "longitude": -97.7395,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1510846606679-43bc3c2b4c44?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["oddities", "weird", "tourist"]
+  },
+  {
+    "id": "seed-040",
+    "title": "Easy Tiger (LINC)",
+    "subtitle": "Beer garden & bakery",
+    "description": "Pretzels, beer, and a lively outdoor patio with games.",
+    "category": "food",
+    "price_tier": 2,
+    "latitude": 30.3354,
+    "longitude": -97.7207,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["beer garden", "pretzels", "group"]
+  },
+  {
+    "id": "seed-041",
+    "title": "Pease Park",
+    "subtitle": "Shady trails",
+    "description": "Greenbelt park with playgrounds, trails, and picnic areas.",
+    "category": "outdoors",
+    "price_tier": 1,
+    "latitude": 30.2870,
+    "longitude": -97.7500,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["park", "picnic", "family"]
+  },
+  {
+    "id": "seed-042",
+    "title": "Holey Moley Golf Club",
+    "subtitle": "Indoor mini-golf",
+    "description": "Themed indoor mini-golf with cocktails and snacks.",
+    "category": "activities",
+    "price_tier": 3,
+    "latitude": 30.2705,
+    "longitude": -97.7420,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1620051793318-1a6fa3cb4985?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["mini golf", "indoor", "date"]
+  },
+  {
+    "id": "seed-043",
+    "title": "Meanwhile Brewing Co.",
+    "subtitle": "Brewery + food trucks",
+    "description": "Expansive brewery with soccer fields, playground, and rotating trucks.",
+    "category": "nightlife",
+    "price_tier": 2,
+    "latitude": 30.2125,
+    "longitude": -97.8055,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["brewery", "outdoor", "group"]
+  },
+  {
+    "id": "seed-044",
+    "title": "Umlauf Sculpture Garden",
+    "subtitle": "Art in nature",
+    "description": "Outdoor sculpture museum nestled in a tranquil garden setting.",
+    "category": "museum",
+    "price_tier": 2,
+    "latitude": 30.2651,
+    "longitude": -97.7667,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["sculpture", "garden", "quiet"]
+  },
+  {
+    "id": "seed-045",
+    "title": "Austin Beerworks",
+    "subtitle": "Local brews",
+    "description": "Popular brewery with a modern taproom and seasonal releases.",
+    "category": "nightlife",
+    "price_tier": 2,
+    "latitude": 30.3830,
+    "longitude": -97.7191,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["beer", "taproom", "casual"]
+  },
+  {
+    "id": "seed-046",
+    "title": "The Contemporary Austin – Laguna Gloria",
+    "subtitle": "Lakeside art",
+    "description": "Museum and sculpture park on a peninsula in Lake Austin.",
+    "category": "museum",
+    "price_tier": 3,
+    "latitude": 30.3128,
+    "longitude": -97.7813,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1532635215-6c9e6a93b9a8?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["art", "lakeside", "date"]
+  },
+  {
+    "id": "seed-047",
+    "title": "Typhoon Texas Waterpark",
+    "subtitle": "Summer splash",
+    "description": "Water slides, lazy river, and wave pool for hot Texas days.",
+    "category": "activities",
+    "price_tier": 3,
+    "latitude": 30.5120,
+    "longitude": -97.6920,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["waterpark", "family", "summer"]
+  },
+  {
+    "id": "seed-048",
+    "title": "Banger’s Sausage House & Beer Garden",
+    "subtitle": "200+ beers",
+    "description": "Huge beer selection, house-made sausages, and weekend brunch.",
+    "category": "food",
+    "price_tier": 2,
+    "latitude": 30.2610,
+    "longitude": -97.7336,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1527168027773-0cc890c4f42e?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["beer", "sausage", "group"]
+  },
+  {
+    "id": "seed-049",
+    "title": "Zeds Real Fruit Ice Cream",
+    "subtitle": "NZ-style treats",
+    "description": "Creamy New Zealand-style ice cream blended with fresh fruit.",
+    "category": "food",
+    "price_tier": 1,
+    "latitude": 30.2280,
+    "longitude": -97.7600,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["dessert", "ice cream", "family"]
+  },
+  {
+    "id": "seed-050",
+    "title": "Paramount Theatre",
+    "subtitle": "Classic stage",
+    "description": "Historic theatre hosting films, comedy, and live performances.",
+    "category": "events",
+    "price_tier": 3,
+    "latitude": 30.2686,
+    "longitude": -97.7419,
+    "city": "Austin",
+    "images": [
+      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=60"
+    ],
+    "tags": ["theatre", "comedy", "classic"]
+  }
+]
+
+;
