@@ -8,6 +8,7 @@ import { ListingMap } from '@/components/ListingMap';
 import { useSavedStore } from '@/state/savedStore';
 import { capture } from '@/lib/analytics';
 import { trackBusinessAnalytics } from '@/lib/businessAuth';
+import { formatEventDateRange, isEventInProgress, getTimeUntilEvent } from '@/lib/dateUtils';
 
 const LIST_OPTIONS = [
   { key: 'default', label: 'General' },
@@ -33,6 +34,10 @@ export default function ListingDetails() {
   if (!item) return <View style={styles.center}><Text>Loading…</Text></View>;
 
   const saved = isSaved(item.id);
+  const isEvent = !!item.event_start_date;
+  const eventInProgress = isEvent && item.event_start_date && item.event_end_date 
+    ? isEventInProgress(item.event_start_date, item.event_end_date) 
+    : false;
 
   return (
     <ScrollView style={styles.container} contentInsetAdjustmentBehavior="automatic">
@@ -50,6 +55,28 @@ export default function ListingDetails() {
             </View>
           )}
         </View>
+
+        {/* Event Date/Time Section */}
+        {isEvent && item.event_start_date && item.event_end_date && (
+          <View style={styles.eventDateSection}>
+            <View style={styles.eventDateRow}>
+              <Text style={styles.eventDateIcon}>📅</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.eventDateText}>
+                  {formatEventDateRange(item.event_start_date, item.event_end_date)}
+                </Text>
+                {eventInProgress && (
+                  <Text style={styles.eventStatusText}>🎉 Happening now!</Text>
+                )}
+                {!eventInProgress && (
+                  <Text style={styles.eventTimeUntil}>
+                    {getTimeUntilEvent(item.event_start_date)}
+                  </Text>
+                )}
+              </View>
+            </View>
+          </View>
+        )}
 
         {item.price_tier && (
           <View style={styles.priceRow}>
@@ -225,6 +252,19 @@ const styles = StyleSheet.create({
   modalTitle: { fontSize: 18, fontWeight: '800', marginBottom: 16, textAlign: 'center' },
   modalOption: { paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#eee' },
   modalOptionText: { fontSize: 16, fontWeight: '600', textAlign: 'center' },
+  eventDateSection: { 
+    marginTop: 16, 
+    padding: 16, 
+    backgroundColor: '#f8f8f8', 
+    borderRadius: 12,
+    borderLeftWidth: 4,
+    borderLeftColor: '#007AFF',
+  },
+  eventDateRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  eventDateIcon: { fontSize: 24 },
+  eventDateText: { fontSize: 16, fontWeight: '700', color: '#111' },
+  eventStatusText: { fontSize: 14, fontWeight: '600', color: '#ff4458', marginTop: 4 },
+  eventTimeUntil: { fontSize: 14, color: '#666', marginTop: 4 },
 });
 
 

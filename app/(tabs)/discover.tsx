@@ -29,21 +29,24 @@ export default function DiscoverScreen() {
         page,
         showNewThisWeek,
         showOpenNow,
-        city,
       }),
-    [categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow, city]
+    [categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow]
   );
 
   return (
-    <View style={[styles.container, { paddingTop: insets.top + 8 }]}>
-      <View style={styles.topBar}>
-        <Text style={styles.cityLabel}>{city}</Text>
-        <View style={{ flexDirection: 'row', gap: 12 }}>
+    <View style={[styles.container, { paddingTop: insets.top }]}>
+      {/* Modern Header */}
+      <View style={styles.header}>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.headerTitle}>Discover</Text>
+          <Text style={styles.headerSubtitle}>📍 {city}</Text>
+        </View>
+        <View style={{ flexDirection: 'row', gap: 8 }}>
           <Pressable onPress={() => setRefreshKey(k => k + 1)} style={styles.iconBtn} accessibilityLabel="Refresh">
-            <FontAwesome name="refresh" size={18} color="#111" />
+            <FontAwesome name="refresh" size={18} color="#007AFF" />
           </Pressable>
           <Pressable onPress={() => setFilterOpen(true)} style={styles.iconBtn} accessibilityLabel="Open filters">
-            <FontAwesome name="sliders" size={18} color="#111" />
+            <FontAwesome name="sliders" size={18} color="#007AFF" />
           </Pressable>
         </View>
       </View>
@@ -57,9 +60,29 @@ export default function DiscoverScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
-  topBar: { paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  cityLabel: { fontSize: 18, fontWeight: '600' },
-  iconBtn: { padding: 10, borderRadius: 999, backgroundColor: '#f2f2f2' },
+  header: {
+    padding: 20,
+    paddingTop: 10,
+    paddingBottom: 16,
+    backgroundColor: '#f8f8f8',
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  headerTitle: { fontSize: 28, fontWeight: '800', marginBottom: 4 },
+  headerSubtitle: { fontSize: 14, color: '#666' },
+  iconBtn: { 
+    padding: 12,
+    borderRadius: 999,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
+  },
 });
 
 

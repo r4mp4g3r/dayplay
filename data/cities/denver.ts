@@ -3,9 +3,7 @@ export const denverListings = [
     id: 'denver-001',
     title: 'Red Rocks Amphitheatre',
     subtitle: 'Iconic outdoor venue',
-    description: 'World-famous natural amphithe
-
-atre carved into red sandstone.',
+    description: 'World-famous natural amphitheatre carved into red sandstone.',
     category: 'events',
     price_tier: 3,
     latitude: 39.6654,

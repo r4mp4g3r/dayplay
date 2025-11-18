@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 import Colors from '@/constants/Colors';
@@ -23,6 +24,7 @@ export default function TabLayout() {
         options={{
           title: 'Discover',
           tabBarIcon: ({ color }) => <TabBarIcon name="compass" color={color} />,
+          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -30,6 +32,7 @@ export default function TabLayout() {
         options={{
           title: 'Saved',
           tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />,
+          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -37,6 +40,15 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
           tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} />,
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="locals"
+        options={{
+          title: 'Locals',
+          tabBarIcon: () => <Text>💎</Text>,
+          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -44,6 +56,7 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          headerShown: false,
         }}
       />
     </Tabs>

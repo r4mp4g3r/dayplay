@@ -19,6 +19,14 @@ create table if not exists public.listings (
   longitude double precision not null,
   city text not null,
   source text default 'seed',
+  external_id text,
+  event_start_date timestamp with time zone,
+  event_end_date timestamp with time zone,
+  source_metadata jsonb default '{}'::jsonb,
+  last_synced_at timestamp with time zone,
+  hours text,
+  phone text,
+  website text,
   is_published boolean default true,
   is_featured boolean default false,
   created_at timestamp with time zone default now()
@@ -64,6 +72,10 @@ create index if not exists idx_listings_city_category on public.listings(city, c
 create index if not exists idx_listings_featured on public.listings(is_featured);
 create index if not exists idx_swipes_user_created on public.swipes(user_id, created_at desc);
 create index if not exists idx_saves_user_created on public.saves(user_id, created_at desc);
+create unique index if not exists idx_listings_external_id_source on public.listings(external_id, source) where external_id is not null;
+create index if not exists idx_listings_event_dates on public.listings(event_start_date, event_end_date) where event_start_date is not null;
+create index if not exists idx_listings_source on public.listings(source);
+create index if not exists idx_listings_last_synced on public.listings(last_synced_at) where last_synced_at is not null;
 
 -- RLS
 alter table public.listings enable row level security;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet, Pressable, Share, Text, Alert, Modal, TextInput, ScrollView } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSavedStore } from '@/state/savedStore';
 import { SwipeCard } from '@/components/SwipeCard';
 import { router } from 'expo-router';
@@ -14,6 +15,7 @@ const LIST_DISPLAY_NAMES: Record<string, string> = {
 };
 
 export default function SavedScreen() {
+  const insets = useSafeAreaInsets();
   const { savedItems, unsave, moveToList, getListItems, getAllLists } = useSavedStore();
   const [selectedList, setSelectedList] = useState<string>('default');
   const [showListPicker, setShowListPicker] = useState(false);
@@ -39,19 +41,22 @@ export default function SavedScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { paddingTop: insets.top }]}>
+      {/* Modern Header */}
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Saved ❤️</Text>
+        <Text style={styles.headerSubtitle}>
+          {savedItems.length} {savedItems.length === 1 ? 'place' : 'places'} saved
+        </Text>
+      </View>
+
       {/* List filter chips - always show when there are saved items */}
       {savedItems.length > 0 && (
-        <View style={{ backgroundColor: '#fff', paddingBottom: 8, borderBottomWidth: 1, borderBottomColor: '#eee' }}>
-          <View style={{ paddingHorizontal: 16, paddingTop: 16, paddingBottom: 8 }}>
-            <Text style={{ fontSize: 20, fontWeight: '800' }}>
-              Saved ({savedItems.length})
-            </Text>
-          </View>
+        <View style={styles.sortRow}>
           <ScrollView 
             horizontal 
             showsHorizontalScrollIndicator={false} 
-            contentContainerStyle={styles.listChips}
+            contentContainerStyle={{ gap: 8 }}
           >
             {PRESET_LISTS.map((list) => {
               const count = list === 'default' ? savedItems.length : getListItems(list).length;
@@ -62,9 +67,9 @@ export default function SavedScreen() {
                     console.log('Switching to list:', list);
                     setSelectedList(list);
                   }}
-                  style={[styles.listChip, selectedList === list && styles.listChipSelected]}
+                  style={[styles.sortBtn, selectedList === list && styles.sortBtnActive]}
                 >
-                  <Text style={[styles.listChipText, selectedList === list && styles.listChipTextSelected]}>
+                  <Text style={[styles.sortBtnText, selectedList === list && styles.sortBtnTextActive]}>
                     {LIST_DISPLAY_NAMES[list]} ({count})
                   </Text>
                 </Pressable>
@@ -98,9 +103,12 @@ export default function SavedScreen() {
         )}
         contentContainerStyle={{ padding: 8, paddingBottom: 80 }}
         ListEmptyComponent={
-          <View style={{ padding: 40, alignItems: 'center' }}>
-            <Text style={{ fontSize: 16, color: '#999' }}>No saved items yet</Text>
-            <Text style={{ fontSize: 14, color: '#ccc', marginTop: 4 }}>Swipe right to save</Text>
+          <View style={styles.emptyState}>
+            <Text style={styles.emptyStateIcon}>❤️</Text>
+            <Text style={styles.emptyStateTitle}>No saved items yet</Text>
+            <Text style={styles.emptyStateText}>
+              Swipe right on places you love to save them here
+            </Text>
           </View>
         }
       />
@@ -108,7 +116,7 @@ export default function SavedScreen() {
       {savedItems.length > 0 && (
         <Pressable
           style={styles.fab}
-          onPress={() => Share.share({ message: savedItems.map((s) => `• ${s.title}`).join('\n') })}
+          onPress={() => Share.share({ message: savedItems.map((s: any) => `• ${s.title}`).join('\n') })}
           accessibilityLabel="Share saved list"
         >
           <FontAwesome name="share" size={20} color="#fff" />
@@ -140,14 +148,64 @@ export default function SavedScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f9f9f9' },
-  listChips: { paddingHorizontal: 16, paddingBottom: 8, gap: 8, flexDirection: 'row' },
-  listChip: { paddingVertical: 10, paddingHorizontal: 16, borderRadius: 999, backgroundColor: '#e9e9e9', borderWidth: 2, borderColor: 'transparent' },
-  listChipSelected: { backgroundColor: '#111', borderColor: '#111' },
-  listChipText: { fontWeight: '700', color: '#111', fontSize: 13 },
-  listChipTextSelected: { color: '#fff' },
+  container: { flex: 1, backgroundColor: '#fff' },
+  header: {
+    padding: 20,
+    paddingTop: 10,
+    paddingBottom: 16,
+    backgroundColor: '#f8f8f8',
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  headerTitle: { fontSize: 28, fontWeight: '800', marginBottom: 4 },
+  headerSubtitle: { fontSize: 14, color: '#666' },
+  sortRow: {
+    padding: 16,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  sortBtn: {
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 999,
+    backgroundColor: '#f5f5f5',
+  },
+  sortBtnActive: { backgroundColor: '#007AFF' },
+  sortBtnText: { fontSize: 13, fontWeight: '600', color: '#666' },
+  sortBtnTextActive: { color: '#fff' },
   listTag: { fontSize: 11, color: '#666', marginTop: 4, marginLeft: 12, fontWeight: '600' },
-  fab: { position: 'absolute', right: 16, bottom: 24, backgroundColor: '#111', width: 56, height: 56, borderRadius: 999, alignItems: 'center', justifyContent: 'center', shadowColor: '#000', shadowOpacity: 0.2, shadowRadius: 8, shadowOffset: { width: 0, height: 2 } },
+  emptyState: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 40,
+    marginTop: 80,
+  },
+  emptyStateIcon: { fontSize: 64, marginBottom: 16 },
+  emptyStateTitle: { fontSize: 22, fontWeight: '800', marginBottom: 8 },
+  emptyStateText: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+    lineHeight: 22,
+  },
+  fab: {
+    position: 'absolute',
+    right: 24,
+    bottom: 24,
+    backgroundColor: '#007AFF',
+    width: 56,
+    height: 56,
+    borderRadius: 999,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 6,
+  },
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center', padding: 20 },
   modalContent: { backgroundColor: '#fff', borderRadius: 16, padding: 20, width: '100%', maxWidth: 320 },
   modalTitle: { fontSize: 18, fontWeight: '800', marginBottom: 16, textAlign: 'center' },

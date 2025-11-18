@@ -31,6 +31,12 @@ export async function businessSignUp(
     throw new Error('Failed to create user account');
   }
 
+  // Wait a moment for auth session to establish
+  await new Promise(resolve => setTimeout(resolve, 500));
+
+  // Refresh the session to ensure auth.uid() is available
+  await supabase!.auth.refreshSession();
+
   // Then create business profile
   const { data, error } = await supabase!
     .from('business_profiles')
@@ -44,7 +50,14 @@ export async function businessSignUp(
     .select()
     .single();
 
-  if (error) throw error;
+  if (error) {
+    console.error('Business profile creation error:', error);
+    // If RLS error, provide helpful message
+    if (error.code === '42501') {
+      throw new Error('Session not ready. Please try signing in instead, then create your business profile from the Business Portal.');
+    }
+    throw error;
+  }
   
   return { user: authResult.user, businessProfile: data as BusinessProfile };
 }

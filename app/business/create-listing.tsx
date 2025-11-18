@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Pressable, Alert, ActivityIndicator, ScrollView, Platform } from 'react-native';
 import { router } from 'expo-router';
 import { submitListingForApproval } from '@/lib/businessAuth';
+import { geocodeAddress, geocodeAddressFallback } from '@/lib/geocoding';
 import { AVAILABLE_CITIES } from '@/data/multi-city-seed';
 
 const CATEGORIES = ['food', 'outdoors', 'nightlife', 'events', 'coffee', 'museum', 'activities', 'shopping'];
@@ -16,8 +17,52 @@ export default function CreateListingScreen() {
   const [hours, setHours] = useState('');
   const [phone, setPhone] = useState('');
   const [website, setWebsite] = useState('');
+  const [postalCode, setPostalCode] = useState('');
+  const [latitude, setLatitude] = useState<number | null>(null);
+  const [longitude, setLongitude] = useState<number | null>(null);
   const [priceTier, setPriceTier] = useState(2);
   const [loading, setLoading] = useState(false);
+  const [geocoding, setGeocoding] = useState(false);
+
+  const handleGeocodeAddress = async () => {
+    if (!address.trim() && !postalCode.trim()) {
+      Alert.alert('Missing Info', 'Please enter an address or postal code');
+      return;
+    }
+
+    const searchQuery = `${address.trim()}, ${postalCode.trim()}, ${city}`.trim();
+    
+    setGeocoding(true);
+
+    try {
+      let result = await geocodeAddress(searchQuery);
+      
+      if (!result) {
+        result = await geocodeAddressFallback(searchQuery);
+      }
+
+      if (result) {
+        setLatitude(result.latitude);
+        setLongitude(result.longitude);
+        if (result.formattedAddress) {
+          setAddress(result.formattedAddress);
+        }
+        Alert.alert(
+          'Location Found! ✅',
+          `${result.formattedAddress}\n\nCoordinates: ${result.latitude.toFixed(6)}, ${result.longitude.toFixed(6)}`
+        );
+      } else {
+        Alert.alert(
+          'Location Not Found',
+          'Could not find coordinates for this address. Please verify the address and try again.'
+        );
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to look up location. Please try again.');
+    } finally {
+      setGeocoding(false);
+    }
+  };
 
   const handleSubmit = async () => {
     if (!title.trim()) {
@@ -28,18 +73,24 @@ export default function CreateListingScreen() {
       Alert.alert('Error', 'Please enter a description');
       return;
     }
+    if (latitude === null || longitude === null) {
+      Alert.alert(
+        'Location Not Verified',
+        'Please tap "Find Location" to verify the address and get coordinates.'
+      );
+      return;
+    }
 
     setLoading(true);
     try {
-      // For MVP, use dummy coordinates (in production, geocode the address)
       await submitListingForApproval({
         title,
         subtitle,
         description,
         category,
         city,
-        latitude: 30.2672, // Would geocode address in production
-        longitude: -97.7431,
+        latitude,
+        longitude,
         hours,
         phone,
         website,
@@ -105,8 +156,42 @@ export default function CreateListingScreen() {
         ))}
       </View>
 
-      <Text style={styles.label}>Address</Text>
+      <Text style={styles.label}>Street Address *</Text>
       <TextInput style={styles.input} placeholder="123 Main St" value={address} onChangeText={setAddress} />
+
+      <Text style={styles.label}>Postal/ZIP Code</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="e.g., 78701 or 10001"
+        value={postalCode}
+        onChangeText={setPostalCode}
+        keyboardType="default"
+        autoCapitalize="characters"
+      />
+
+      <Pressable
+        style={[styles.findLocationBtn, geocoding && styles.findLocationBtnDisabled]}
+        onPress={handleGeocodeAddress}
+        disabled={geocoding}
+      >
+        {geocoding ? (
+          <ActivityIndicator color="#fff" />
+        ) : (
+          <>
+            <Text style={styles.findLocationIcon}>📍</Text>
+            <Text style={styles.findLocationText}>Find Location</Text>
+          </>
+        )}
+      </Pressable>
+
+      {latitude !== null && longitude !== null && (
+        <View style={styles.coordinatesDisplay}>
+          <Text style={styles.coordinatesLabel}>✅ Location verified</Text>
+          <Text style={styles.coordinatesText}>
+            {latitude.toFixed(6)}, {longitude.toFixed(6)}
+          </Text>
+        </View>
+      )}
 
       <Text style={styles.label}>Hours</Text>
       <TextInput style={styles.input} placeholder="9:00 AM - 10:00 PM" value={hours} onChangeText={setHours} />
@@ -190,5 +275,45 @@ const styles = StyleSheet.create({
     alignItems: 'center' 
   },
   submitBtnText: { color: '#fff', fontWeight: '800', fontSize: 16 },
+  findLocationBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: '#4CAF50',
+    padding: 14,
+    borderRadius: 12,
+    marginTop: 12,
+  },
+  findLocationBtnDisabled: {
+    backgroundColor: '#ccc',
+  },
+  findLocationIcon: {
+    fontSize: 18,
+  },
+  findLocationText: {
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: '700',
+  },
+  coordinatesDisplay: {
+    marginTop: 12,
+    padding: 12,
+    backgroundColor: '#E8F5E9',
+    borderRadius: 8,
+    borderLeftWidth: 3,
+    borderLeftColor: '#4CAF50',
+  },
+  coordinatesLabel: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#2E7D32',
+    marginBottom: 4,
+  },
+  coordinatesText: {
+    fontSize: 11,
+    color: '#666',
+    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace',
+  },
 });
 
