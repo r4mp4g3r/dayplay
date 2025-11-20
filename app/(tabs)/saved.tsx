@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { View, FlatList, StyleSheet, Pressable, Share, Text, Alert, Modal, TextInput, ScrollView } from 'react-native';
+import { View, FlatList, StyleSheet, Pressable, Share, Text, Alert, Modal, TextInput, ScrollView, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useSavedStore } from '@/state/savedStore';
 import { SwipeCard } from '@/components/SwipeCard';
 import { router } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import DateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
+import { openGoogleCalendar } from '@/lib/googleCalendar';
 
 const PRESET_LISTS = ['default', 'date-ideas', 'weekend-plans', 'favorites'];
 const LIST_DISPLAY_NAMES: Record<string, string> = {
@@ -20,12 +22,83 @@ export default function SavedScreen() {
   const [selectedList, setSelectedList] = useState<string>('default');
   const [showListPicker, setShowListPicker] = useState(false);
   const [itemToMove, setItemToMove] = useState<string | null>(null);
+  // Calendar picker state
+  const [calendarItemId, setCalendarItemId] = useState<string | null>(null);
+  const [showIOSDateTime, setShowIOSDateTime] = useState(false);
+  const [iosDate, setIOSDate] = useState<Date>(new Date());
+  const [showAndroidDate, setShowAndroidDate] = useState(false);
+  const [showAndroidTime, setShowAndroidTime] = useState(false);
+  const [androidTempDate, setAndroidTempDate] = useState<Date>(new Date());
 
   console.log('SavedScreen: savedItems count =', savedItems.length);
   console.log('SavedScreen: savedItems =', savedItems);
 
   const allLists = getAllLists();
   const displayItems = selectedList === 'default' ? savedItems : getListItems(selectedList);
+
+  const getItemById = (id: string) => savedItems.find((s: any) => s.id === id);
+  const ensureUrlHasProtocol = (url: string) => {
+    if (!url) return url;
+    if (/^https?:\/\//i.test(url)) return url;
+    return `https://${url}`;
+  };
+  const buildDetailsNote = (l: any) => {
+    const websiteLine = l.website ? `More info: ${ensureUrlHasProtocol(l.website)}` : '';
+    return [l.description || '', websiteLine].filter(Boolean).join('\n\n');
+  };
+  const openCalendarForItem = async (l: any, start: Date, end: Date) => {
+    const location = (l as any).address || l.city || 'Online';
+    await openGoogleCalendar({
+      title: l.title,
+      start,
+      end,
+      location,
+      details: buildDetailsNote(l),
+    });
+  };
+  const startCalendarFlow = (l: any) => {
+    if (l.event_start_date && l.event_end_date) {
+      openCalendarForItem(l, new Date(l.event_start_date), new Date(l.event_end_date));
+      return;
+    }
+    // Non-event: pick date/time
+    setCalendarItemId(l.id);
+    if (Platform.OS === 'ios') {
+      setIOSDate(new Date());
+      setShowIOSDateTime(true);
+    } else {
+      setAndroidTempDate(new Date());
+      setShowAndroidDate(true);
+    }
+  };
+  const onAndroidDateChange = (e: DateTimePickerEvent, date?: Date) => {
+    if (e.type === 'dismissed') {
+      setShowAndroidDate(false);
+      setCalendarItemId(null);
+      return;
+    }
+    if (date) {
+      setAndroidTempDate(date);
+      setShowAndroidDate(false);
+      setShowAndroidTime(true);
+    }
+  };
+  const onAndroidTimeChange = (e: DateTimePickerEvent, date?: Date) => {
+    if (e.type === 'dismissed') {
+      setShowAndroidTime(false);
+      setCalendarItemId(null);
+      return;
+    }
+    if (date && calendarItemId) {
+      const base = new Date(androidTempDate);
+      base.setHours(date.getHours(), date.getMinutes(), 0, 0);
+      const end = new Date(base.getTime() + 60 * 60 * 1000);
+      const l = getItemById(calendarItemId);
+      setShowAndroidTime(false);
+      setCalendarItemId(null);
+      if (l) openCalendarForItem(l, base, end);
+    }
+  };
 
   const handleMoveToList = (itemId: string) => {
     setItemToMove(itemId);
@@ -88,6 +161,7 @@ export default function SavedScreen() {
             onLongPress={() => {
               Alert.alert('Options', `Manage "${item.title}"`, [
                 { text: 'Remove from saved', style: 'destructive', onPress: () => unsave(item.id) },
+                { text: 'Add to Google Calendar', onPress: () => startCalendarFlow(item) },
                 { text: 'Move to list...', onPress: () => handleMoveToList(item.id) },
                 { text: 'Cancel', style: 'cancel' },
               ]);
@@ -143,6 +217,77 @@ export default function SavedScreen() {
           </Pressable>
         </Pressable>
       </Modal>
+      {/* iOS datetime picker modal */}
+      <Modal
+        visible={showIOSDateTime}
+        transparent
+        animationType="fade"
+        onRequestClose={() => {
+          setShowIOSDateTime(false);
+          setCalendarItemId(null);
+        }}
+      >
+        <Pressable
+          style={styles.modalBackdrop}
+          onPress={() => {
+            setShowIOSDateTime(false);
+            setCalendarItemId(null);
+          }}
+        >
+          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+            <Text style={styles.modalTitle}>Pick date & time</Text>
+            <DateTimePicker
+              value={iosDate}
+              mode="datetime"
+              display="inline"
+              onChange={(_, date) => {
+                if (date) setIOSDate(date);
+              }}
+            />
+            <View style={{ flexDirection: 'row', gap: 12, marginTop: 12 }}>
+              <Pressable
+                style={[styles.sortBtn, { backgroundColor: '#f2f2f2', flex: 1 }]}
+                onPress={() => {
+                  setShowIOSDateTime(false);
+                  setCalendarItemId(null);
+                }}
+              >
+                <Text style={[styles.sortBtnText, { textAlign: 'center' }]}>Cancel</Text>
+              </Pressable>
+              <Pressable
+                style={[styles.sortBtn, { backgroundColor: '#111', flex: 1 }]}
+                onPress={() => {
+                  const start = iosDate;
+                  const end = new Date(start.getTime() + 60 * 60 * 1000);
+                  const l = calendarItemId ? getItemById(calendarItemId) : null;
+                  setShowIOSDateTime(false);
+                  setCalendarItemId(null);
+                  if (l) openCalendarForItem(l, start, end);
+                }}
+              >
+                <Text style={[styles.sortBtnText, { color: '#fff', textAlign: 'center' }]}>Add</Text>
+              </Pressable>
+            </View>
+          </Pressable>
+        </Pressable>
+      </Modal>
+      {/* Android pickers */}
+      {showAndroidDate && (
+        <DateTimePicker
+          value={androidTempDate}
+          mode="date"
+          display="calendar"
+          onChange={onAndroidDateChange}
+        />
+      )}
+      {showAndroidTime && (
+        <DateTimePicker
+          value={androidTempDate}
+          mode="time"
+          display="clock"
+          onChange={onAndroidTimeChange}
+        />
+      )}
     </View>
   );
 }

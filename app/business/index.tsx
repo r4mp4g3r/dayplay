@@ -22,6 +22,13 @@ export default function BusinessPortalIndex() {
     });
   }, [isGuest, user]);
 
+  // Has business profile - redirect to dashboard (must not be conditional to avoid hook order issues)
+  useEffect(() => {
+    if (businessProfile) {
+      router.replace('/business/dashboard');
+    }
+  }, [businessProfile]);
+
   if (loading) {
     return (
       <View style={styles.center}>
@@ -97,13 +104,6 @@ export default function BusinessPortalIndex() {
       </View>
     );
   }
-
-  // Has business profile - redirect to dashboard
-  useEffect(() => {
-    if (businessProfile) {
-      router.replace('/business/dashboard');
-    }
-  }, [businessProfile]);
 
   return (
     <View style={styles.center}>

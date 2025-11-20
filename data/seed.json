@@ -12,7 +12,10 @@
     "images": [
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60"
     ],
-    "tags": ["nature", "swimming", "date"]
+    "tags": ["nature", "swimming", "date"],
+    "website": "https://www.austintexas.gov/department/barton-springs-pool",
+    "hours": "5:00 AM - 10:00 PM",
+    "phone": "(512) 974-6300"
   },
   {
     "id": "seed-002",
@@ -27,7 +30,9 @@
     "images": [
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60"
     ],
-    "tags": ["hike", "scenic", "sunset"]
+    "tags": ["hike", "scenic", "sunset"],
+    "website": "https://www.austintexas.gov/department/mount-bonnell",
+    "hours": "5:00 AM - 10:00 PM"
   },
   {
     "id": "seed-003",

@@ -9,19 +9,28 @@ import {
   ScrollView,
   ActivityIndicator,
 } from 'react-native';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { createBusinessProfile } from '@/lib/businessProfile';
 import { useAuthStore } from '@/state/authStore';
+import { useBusinessStore } from '@/state/businessStore';
 
 export default function CreateBusinessProfile() {
   const { user } = useAuthStore();
+  const { setHasBusinessProfile } = useBusinessStore();
+  const params = useLocalSearchParams<{
+    businessName?: string;
+    email?: string;
+    phone?: string;
+    website?: string;
+  }>();
+  
   const [loading, setLoading] = useState(false);
   
-  // Form state
-  const [businessName, setBusinessName] = useState('');
-  const [contactEmail, setContactEmail] = useState(user?.email || '');
-  const [contactPhone, setContactPhone] = useState('');
-  const [website, setWebsite] = useState('');
+  // Form state - pre-fill from params if available
+  const [businessName, setBusinessName] = useState(params.businessName || '');
+  const [contactEmail, setContactEmail] = useState(params.email || user?.email || '');
+  const [contactPhone, setContactPhone] = useState(params.phone || '');
+  const [website, setWebsite] = useState(params.website || '');
 
   const handleSubmit = async () => {
     // Validation
@@ -47,13 +56,16 @@ export default function CreateBusinessProfile() {
 
       setLoading(false);
 
+      // Mark business profile present and navigate to Business tab
+      setHasBusinessProfile(true);
+
       Alert.alert(
         '✅ Business Profile Created!',
         'Your business profile has been created. You can now create and manage listings.',
         [
           {
-            text: 'Go to Dashboard',
-            onPress: () => router.replace('/business/dashboard'),
+            text: 'Open Business Tab',
+            onPress: () => router.replace('/(tabs)/business'),
           },
         ]
       );

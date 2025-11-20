@@ -13,6 +13,18 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
   const trending = getTrendingListings();
   const isTrending = trending.has(item.id);
   
+  const getWebsiteDomain = (url?: string) => {
+    if (!url) return undefined;
+    try {
+      const withProto = /^https?:\/\//i.test(url) ? url : `https://${url}`;
+      const u = new URL(withProto);
+      return u.host.replace(/^www\./, '');
+    } catch {
+      return undefined;
+    }
+  };
+  const websiteDomain = getWebsiteDomain(item.website);
+  
   // Check if new this week (within last 7 days)
   const isNew = item.created_at 
     ? (Date.now() - new Date(item.created_at).getTime()) < 7 * 24 * 60 * 60 * 1000
@@ -77,6 +89,11 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
             </>
           )}
         </View>
+        
+        {/* Website domain if available */}
+        {websiteDomain && (
+          <Text style={styles.website}>🔗 {websiteDomain}</Text>
+        )}
         
         {/* Tags/Vibes (if available) */}
         {item.tags && item.tags.length > 0 && (
@@ -177,6 +194,12 @@ const styles = StyleSheet.create({
     color: '#fff', 
     fontSize: 13, 
     fontWeight: '600',
+  },
+  website: {
+    color: 'rgba(255,255,255,0.85)',
+    fontSize: 12,
+    fontWeight: '700',
+    marginBottom: 6,
   },
   tagsRow: { 
     flexDirection: 'row', 

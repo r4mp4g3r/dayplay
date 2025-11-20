@@ -27,11 +27,40 @@ export default function BusinessSignUpScreen() {
 
     setLoading(true);
     try {
-      await businessSignUp(email, password, businessName, phone, website);
+      // Two-step approach: Create user account first, then profile
+      const { signUp } = await import('@/lib/auth');
+      const result = await signUp(email, password);
+      
+      if (!result.user) {
+        throw new Error('Failed to create account');
+      }
+
+      // Store business info temporarily
+      const businessInfo = {
+        businessName: businessName.trim(),
+        phone: phone.trim(),
+        website: website.trim(),
+      };
+
+      // Auto sign-in happened, now redirect to create profile
       Alert.alert(
-        'Business Account Created!',
-        'Check your email to verify. You can now access the business dashboard.',
-        [{ text: 'OK', onPress: () => router.replace('/business/dashboard') }]
+        '✅ Account Created!',
+        'Now let\'s set up your business profile',
+        [{
+          text: 'Continue',
+          onPress: () => {
+            // Navigate to create-profile with pre-filled data
+            router.replace({
+              pathname: '/business/create-profile',
+              params: {
+                businessName: businessInfo.businessName,
+                email: email.trim(),
+                phone: businessInfo.phone,
+                website: businessInfo.website,
+              }
+            });
+          }
+        }]
       );
     } catch (error: any) {
       Alert.alert('Sign Up Failed', error.message || 'Could not create business account');
