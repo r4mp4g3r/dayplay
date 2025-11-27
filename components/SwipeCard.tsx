@@ -4,9 +4,11 @@ import type { Listing } from '@/types/domain';
 import { getTrendingListings } from '@/state/swipeHistoryStore';
 import { formatEventDate, isEventSoon, isEventInProgress } from '@/lib/dateUtils';
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 const CARD_WIDTH = width - 32;
-const CARD_HEIGHT = 480;
+// Make the card significantly taller to reduce empty space above the tab bar and buttons
+const RESERVED_VERTICAL_SPACE = 320; // header + actions + safe areas
+const CARD_HEIGHT = Math.max(520, Math.min(720, height - RESERVED_VERTICAL_SPACE));
 
 export function SwipeCard({ item, compact = false }: { item: Listing; compact?: boolean }) {
   const img = item.images?.[0];
@@ -112,7 +114,7 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
             <Text style={styles.aboutLabel}>About</Text>
             <Text style={styles.aboutText} numberOfLines={3}>
               {item.description}
-            </Text>
+        </Text>
           </View>
         )}
       </View>

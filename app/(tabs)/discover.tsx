@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState, useCallback } from 'react';
+import React, { useMemo, useRef, useState, useCallback, useEffect } from 'react';
 import { View, StyleSheet, Pressable, Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -8,6 +8,7 @@ import { FilterSheet } from '@/components/FilterSheet';
 import { useFilterStore } from '@/state/filterStore';
 import { useLocationStore } from '@/state/locationStore';
 import { getFeed } from '@/lib/api';
+import { ExploreMap } from '@/components/ExploreMap';
 
 export default function DiscoverScreen() {
   const insets = useSafeAreaInsets();
@@ -16,6 +17,8 @@ export default function DiscoverScreen() {
   const [isFilterOpen, setFilterOpen] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
   const toggleRef = useRef(() => setFilterOpen((v) => !v));
+  const [viewMode, setViewMode] = useState<'deck' | 'map'>('deck');
+  const [mapItems, setMapItems] = useState<any[]>([]);
 
   const fetchFn = useMemo(
     () => ({ page, excludeIds }: { page: number; excludeIds: string[] }) => 
@@ -33,6 +36,28 @@ export default function DiscoverScreen() {
     [categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow]
   );
 
+  // Load items for map view when needed
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      if (viewMode !== 'map') return;
+      const res = await getFeed({
+        lat: latitude ?? 30.2672,
+        lng: longitude ?? -97.7431,
+        radiusKm: distanceKm,
+        categories: categories.length > 0 ? categories : [],
+        priceTiers,
+        excludeIds: [],
+        page: 0,
+        showNewThisWeek,
+        showOpenNow,
+      });
+      if (!cancelled) setMapItems(res.items ?? []);
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [viewMode, categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow]);
+
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       {/* Modern Header */}
@@ -42,6 +67,20 @@ export default function DiscoverScreen() {
           <Text style={styles.headerSubtitle}>📍 {city}</Text>
         </View>
         <View style={{ flexDirection: 'row', gap: 8 }}>
+          <Pressable
+            onPress={() => setViewMode(v => (v === 'map' ? 'deck' : 'map'))}
+            style={styles.iconBtn}
+            accessibilityLabel={viewMode === 'map' ? 'Show cards' : 'Open map view'}
+          >
+            <FontAwesome name={viewMode === 'map' ? 'list' : 'map'} size={18} color="#007AFF" />
+          </Pressable>
+          <Pressable
+            onPress={() => router.push('/(tabs)/submit-gem')}
+            style={styles.iconBtn}
+            accessibilityLabel="Submit a hidden gem"
+          >
+            <FontAwesome name="plus" size={18} color="#007AFF" />
+          </Pressable>
           <Pressable onPress={() => setRefreshKey(k => k + 1)} style={styles.iconBtn} accessibilityLabel="Refresh">
             <FontAwesome name="refresh" size={18} color="#007AFF" />
           </Pressable>
@@ -51,7 +90,15 @@ export default function DiscoverScreen() {
         </View>
       </View>
 
-      <SwipeDeck key={refreshKey} fetchFn={fetchFn} />
+      {viewMode === 'map' ? (
+        <ExploreMap
+          items={mapItems}
+          latitude={latitude ?? 30.2672}
+          longitude={longitude ?? -97.7431}
+        />
+      ) : (
+        <SwipeDeck key={refreshKey} fetchFn={fetchFn} />
+      )}
 
       <FilterSheet open={isFilterOpen} onClose={() => setFilterOpen(false)} />
     </View>

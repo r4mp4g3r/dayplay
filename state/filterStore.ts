@@ -11,9 +11,9 @@ type FilterState = {
 };
 
 const DEFAULT_STATE: FilterState = {
-  categories: ['food', 'outdoors', 'events'],
+  categories: [],
   priceTiers: [1, 2, 3, 4],
-  distanceKm: 15,
+  distanceKm: 25,
   vibes: [],
   showNewThisWeek: false,
   showOpenNow: false,

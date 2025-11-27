@@ -5,7 +5,6 @@ import { Tabs } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-import { useBusinessStore } from '@/state/businessStore';
 import { useAuthStore } from '@/state/authStore';
 
 function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
@@ -14,12 +13,10 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['nam
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-  const { hasBusinessProfile, refreshHasBusinessProfile } = useBusinessStore();
   const { user } = useAuthStore();
 
   useEffect(() => {
-    // Refresh business profile presence whenever auth user changes
-    refreshHasBusinessProfile();
+    // No-op for business profile (temporarily disabled)
   }, [user?.id]);
 
   return (
@@ -46,14 +43,6 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} />,
-          headerShown: false,
-        }}
-      />
-      <Tabs.Screen
         name="locals"
         options={{
           title: 'Locals',
@@ -69,16 +58,15 @@ export default function TabLayout() {
           headerShown: false,
         }}
       />
-      {hasBusinessProfile && (
-        <Tabs.Screen
-          name="business"
-          options={{
-            title: 'Business',
-            tabBarIcon: ({ color }) => <TabBarIcon name="briefcase" color={color} />,
-            headerShown: false,
-          }}
-        />
-      )}
+      {/* Hidden route for Submit a Hidden Gem within tabs to keep bottom nav visible */}
+      <Tabs.Screen
+        name="submit-gem"
+        options={{
+          href: null,
+          headerShown: false,
+          title: 'Share a Hidden Gem',
+        }}
+      />
     </Tabs>
   );
 }

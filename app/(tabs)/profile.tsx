@@ -8,6 +8,7 @@ import { useLocationStore, selectCity } from '@/state/locationStore';
 import { signOut } from '@/lib/auth';
 import { isDeveloper, registerAsDeveloper } from '@/lib/developerAuth';
 import { router } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function ProfileScreen() {
   const { categories, distanceKm, priceTiers, setCategories, setPriceTiers, setDistanceKm, showNewThisWeek, showOpenNow, setShowNewThisWeek, setShowOpenNow } = useFilterStore();
@@ -15,6 +16,7 @@ export default function ProfileScreen() {
   const { setCompleted } = useOnboardingStore();
   const { user, isGuest, loading: authLoading } = useAuthStore();
   const { city, availableCities } = useLocationStore();
+  const insets = useSafeAreaInsets();
   const savedCount = savedItems.length;
   const [showCityPicker, setShowCityPicker] = useState(false);
   const [developerStatus, setDeveloperStatus] = useState<boolean | null>(null);
@@ -27,9 +29,9 @@ export default function ProfileScreen() {
   }, [isGuest, user]);
   
   const resetFilters = () => {
-    setCategories(['food', 'outdoors', 'events']);
+    setCategories([]);
     setPriceTiers([1, 2, 3, 4]);
-    setDistanceKm(15);
+    setDistanceKm(25);
     setShowNewThisWeek(false);
     setShowOpenNow(false);
     Alert.alert('Filters Reset', 'All filters have been reset to defaults', [
@@ -67,7 +69,7 @@ export default function ProfileScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 40 }}>
+    <ScrollView style={[styles.container, { paddingTop: insets.top }]} contentContainerStyle={{ paddingBottom: 40 }}>
       {/* Modern Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Profile</Text>
@@ -148,16 +150,7 @@ export default function ProfileScreen() {
         </Pressable>
       </View>
 
-      {/* Business Section */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>For Businesses</Text>
-        <Pressable style={[styles.actionBtn, { backgroundColor: '#6366F1' }]} onPress={() => router.push('/business')}>
-          <Text style={styles.actionBtnText}>🏢 Business Portal</Text>
-        </Pressable>
-        <Text style={styles.helper}>
-          Promote your business and track analytics
-        </Text>
-      </View>
+      {/* Business Section temporarily hidden */}
 
       {/* Legal Section */}
       <View style={styles.section}>
@@ -248,9 +241,9 @@ export default function ProfileScreen() {
                   style: 'destructive',
                   onPress: () => {
                     clear();
-                    setCategories(['food', 'outdoors', 'events']);
+                    setCategories([]);
                     setPriceTiers([1, 2, 3, 4]);
-                    setDistanceKm(15);
+                    setDistanceKm(25);
                     setCompleted(false);
                     router.replace('/onboarding');
                   }
@@ -296,17 +289,17 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f8f8f8' },
+  container: { flex: 1, backgroundColor: '#fff' },
   header: {
     padding: 20,
-    paddingTop: 60,
-    paddingBottom: 24,
-    backgroundColor: '#fff',
+    paddingTop: 10,
+    paddingBottom: 16,
+    backgroundColor: '#f8f8f8',
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
   },
-  headerTitle: { fontSize: 32, fontWeight: '800', marginBottom: 4 },
-  headerSubtitle: { fontSize: 15, color: '#666' },
+  headerTitle: { fontSize: 28, fontWeight: '800', marginBottom: 4 },
+  headerSubtitle: { fontSize: 14, color: '#666' },
   section: {
     backgroundColor: '#fff',
     padding: 20,

@@ -10,6 +10,8 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { router } from 'expo-router';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { createLocalFavorite } from '@/lib/localsFavoritesApi';
 import { geocodeAddress, geocodeAddressFallback } from '@/lib/geocoding';
 import type { Category, Vibe } from '@/types/domain';
@@ -45,6 +47,7 @@ const VIBES: { value: Vibe; label: string }[] = [
 
 export default function AddLocalFavorite() {
   const [loading, setLoading] = useState(false);
+  const insets = useSafeAreaInsets();
   
   // Form state
   const [name, setName] = useState('');
@@ -185,9 +188,17 @@ export default function AddLocalFavorite() {
   };
 
   return (
-    <ScrollView style={styles.container} contentInsetAdjustmentBehavior="automatic">
+    <ScrollView style={[styles.container, { paddingTop: insets.top }]} contentInsetAdjustmentBehavior="automatic">
+      {/* Unified header to match other tabs */}
+      <View style={styles.topHeader}>
+        <View style={styles.titleRow}>
+          <Pressable style={styles.titleBack} onPress={() => router.back()} accessibilityLabel="Go back">
+            <FontAwesome name="chevron-left" size={20} color="#007AFF" />
+          </Pressable>
+          <Text style={styles.title}>Share a Hidden Gem 💎</Text>
+        </View>
+      </View>
       <View style={styles.content}>
-        <Text style={styles.title}>Share a Hidden Gem 💎</Text>
         <Text style={styles.subtitle}>
           Help others discover your favorite local spots that might not be well-known!
         </Text>
@@ -403,8 +414,31 @@ export default function AddLocalFavorite() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
+  topHeader: {
+    padding: 20,
+    paddingTop: 10,
+    paddingBottom: 16,
+    backgroundColor: '#f8f8f8',
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+    backgroundColor: '#fff',
+  },
+  headerBack: { flexDirection: 'row', alignItems: 'center', gap: 6, width: 60 },
+  headerBackText: { color: '#007AFF', fontSize: 16, fontWeight: '600' },
+  headerTitle: { fontSize: 16, fontWeight: '800', color: '#111' },
   content: { padding: 20, paddingBottom: 40 },
-  title: { fontSize: 28, fontWeight: '800', marginBottom: 8 },
+  title: { fontSize: 28, lineHeight: 32, fontWeight: '800', marginBottom: 8 },
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 4 },
+  titleBack: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center', marginRight: 2 },
   subtitle: { fontSize: 16, color: '#666', marginBottom: 24, lineHeight: 22 },
   section: { marginBottom: 32 },
   sectionTitle: { fontSize: 18, fontWeight: '700', marginBottom: 16 },

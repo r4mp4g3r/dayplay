@@ -1,6 +1,7 @@
 import { supabase, isSupabaseConfigured } from './supabase';
 import { getFeed as getMockFeed, getListing as getMockListing } from './mockApi';
 import type { Listing } from '@/types/domain';
+import { haversineKm } from './location';
 
 type FeedParams = {
   lat?: number;
@@ -34,7 +35,8 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
         *,
         listing_photos(url, sort_order)
       `)
-      .eq('is_published', true);
+      .eq('is_published', true)
+      .neq('source', 'seed');
 
     // Filter by categories
     if (params.categories && params.categories.length > 0) {
@@ -46,27 +48,75 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
       query = query.in('price_tier', params.priceTiers);
     }
 
-    // Filter by city (if specified)
-    if (params.lat && params.lng) {
-      // For MVP, just get all and filter by distance client-side
-      // In production, use PostGIS for server-side distance filtering
-    }
-
-    const { data, error } = await query.limit(100);
+    const { data, error } = await query.limit(300);
 
     if (error) throw error;
 
     // Transform and add images
-    const listings: Listing[] = (data || []).map((item: any) => ({
+    let items: (Listing & { recommendationScore?: number })[] = (data || []).map((item: any) => ({
       ...item,
-      images: item.listing_photos
-        ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
-        .map((p: any) => p.url) || [],
+      images:
+        item.listing_photos?.sort((a: any, b: any) => a.sort_order - b.sort_order).map((p: any) => p.url) || [],
     }));
 
-    // Use mock feed logic for distance sorting and filtering
-    // This keeps the recommendation engine and other features
-    return getMockFeed({ ...params, /* Pass listings if we want to override */ });
+    const {
+      lat = 30.2672,
+      lng = -97.7431,
+      radiusKm = 15,
+      categories = [],
+      priceTiers = [1, 2, 3, 4],
+      excludeIds = [],
+      page = 0,
+      pageSize = 20,
+      showNewThisWeek = false,
+      showOpenNow = false,
+    } = params;
+
+    // Optional client-side filters to mimic mock logic
+    if (categories.length > 0) {
+      items = items.filter((l) => categories.includes(l.category));
+    }
+    if (priceTiers.length) {
+      items = items.filter((l) => !l.price_tier || priceTiers.includes(l.price_tier));
+    }
+    if (excludeIds.length) {
+      const set = new Set(excludeIds);
+      items = items.filter((l) => !set.has(l.id));
+    }
+    if (showNewThisWeek) {
+      const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+      items = items.filter((l) => l.created_at && new Date(l.created_at).getTime() > oneWeekAgo);
+    }
+    if (showOpenNow) {
+      items = items.filter((l) => l.hours);
+    }
+
+    const withDistance = items.map((l) => ({
+      ...l,
+      distanceKm:
+        l.latitude && l.longitude ? haversineKm(lat, lng, Number(l.latitude), Number(l.longitude)) : null,
+      // Keep placeholder for recommendation score if we hook up real engine
+      recommendationScore: 0,
+    }));
+
+    let filtered = withDistance.filter((l) => l.distanceKm == null || (radiusKm != null && (l.distanceKm as number) <= radiusKm));
+
+    // Sort featured first, then by distance
+    filtered.sort((a, b) => {
+      const aPromoted = a.is_featured || false;
+      const bPromoted = b.is_featured || false;
+      if (aPromoted && !bPromoted) return -1;
+      if (!aPromoted && bPromoted) return 1;
+      if (a.distanceKm != null && b.distanceKm != null) return (a.distanceKm as number) - (b.distanceKm as number);
+      return a.title.localeCompare(b.title);
+    });
+
+    const total = filtered.length;
+    const start = page * pageSize;
+    const end = start + pageSize;
+    const pageItems = filtered.slice(start, end);
+
+    return { items: pageItems, total };
     
   } catch (error) {
     console.error('Supabase feed error, falling back to mock:', error);

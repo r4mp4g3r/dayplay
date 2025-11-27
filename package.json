@@ -6,7 +6,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "seed:locals:places": "tsx scripts/seed-locals-from-places.ts",
+    "sync:listings:places": "tsx scripts/sync-listings-from-places.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

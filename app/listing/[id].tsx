@@ -184,7 +184,7 @@ export default function ListingDetails() {
           </View>
         )}
 
-        <View style={{ flexDirection: 'row', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
           <Pressable
             style={[styles.saveBtn, saved ? styles.saveBtnSaved : null]}
             onPress={() => {
@@ -208,6 +208,18 @@ export default function ListingDetails() {
           >
             <FontAwesome name="calendar-plus-o" size={16} color="#fff" />
             <Text style={styles.calendarBtnText}>Add to Google Calendar</Text>
+          </Pressable>
+          
+          {/* Share button moved to top beside calendar */}
+          <Pressable
+            style={styles.shareBtn}
+            onPress={() => {
+              trackBusinessAnalytics(item.id, 'share');
+              Share.share({ message: `${item.title} — ${item.subtitle ?? ''}`.trim() });
+            }}
+          >
+            <FontAwesome name="share" size={16} color="#111" />
+            <Text style={styles.shareBtnText}>Share</Text>
           </Pressable>
         </View>
 
@@ -280,35 +292,7 @@ export default function ListingDetails() {
             <Text style={[styles.actionText, { color: '#fff' }]}>Directions</Text>
           </Pressable>
         </View>
-        <View style={[styles.actionsRow, { marginTop: 8 }]}>
-          <Pressable
-            style={[styles.actionBtn, { backgroundColor: '#000', flex: 1 }]}
-            onPress={() => {
-              trackBusinessAnalytics(item.id, 'directions');
-              Linking.openURL(`uber://?action=setPickup&dropoff[latitude]=${item.latitude}&dropoff[longitude]=${item.longitude}`);
-            }}
-          >
-            <Text style={[styles.actionText, { color: '#fff' }]}>Uber</Text>
-          </Pressable>
-          <Pressable
-            style={[styles.actionBtn, { backgroundColor: '#FF00BF', flex: 1 }]}
-            onPress={() => {
-              trackBusinessAnalytics(item.id, 'directions');
-              Linking.openURL(`lyft://ridetype?id=lyft&destination[latitude]=${item.latitude}&destination[longitude]=${item.longitude}`);
-            }}
-          >
-            <Text style={[styles.actionText, { color: '#fff' }]}>Lyft</Text>
-          </Pressable>
-          <Pressable
-            style={[styles.actionBtn, { backgroundColor: '#f1f1f1', flex: 1 }]}
-            onPress={() => {
-              trackBusinessAnalytics(item.id, 'share');
-              Share.share({ message: `${item.title} — ${item.subtitle ?? ''}`.trim() });
-            }}
-          >
-            <Text style={[styles.actionText]}>Share</Text>
-          </Pressable>
-        </View>
+        
       </View>
 
       {/* List picker modal */}
@@ -407,11 +391,10 @@ const styles = StyleSheet.create({
   priceValue: { fontSize: 16, fontWeight: '700', color: '#111' },
   sectionTitle: { fontSize: 16, fontWeight: '800', marginTop: 16 },
   description: { marginTop: 6, lineHeight: 20 },
-  saveBtn: { marginTop: 12, alignSelf: 'flex-start', paddingVertical: 10, paddingHorizontal: 16, borderRadius: 999, borderWidth: 1, borderColor: '#111' },
+  saveBtn: { paddingVertical: 10, paddingHorizontal: 16, borderRadius: 999, borderWidth: 1, borderColor: '#111' },
   saveBtnSaved: { backgroundColor: '#111', borderColor: '#111' },
   saveText: { fontWeight: '700', color: '#111' },
   calendarBtn: {
-    marginTop: 12,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
@@ -421,6 +404,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#4CAF50',
   },
   calendarBtnText: { fontWeight: '700', color: '#fff' },
+  shareBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 999,
+    backgroundColor: '#f2f2f2',
+    borderWidth: 1,
+    borderColor: '#e5e5e5',
+  },
+  shareBtnText: { fontWeight: '700', color: '#111' },
   tagsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 12 },
   tagChip: { backgroundColor: '#f2f2f2', borderRadius: 999, paddingVertical: 6, paddingHorizontal: 10 },
   tagText: { fontWeight: '600', color: '#333' },
