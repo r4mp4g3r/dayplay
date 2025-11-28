@@ -70,12 +70,41 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 function categoryFromTypes(types: string[] = []): string {
   const set = new Set(types);
+  
+  // New categories first (more specific)
+  if (set.has('art_gallery') || set.has('museum') || set.has('cultural_center')) return 'arts-culture';
+  if (set.has('night_club') || set.has('bar') || set.has('liquor_store') || set.has('brewery') || set.has('wine_bar')) return 'drinks-bars';
+  if (set.has('gym') || set.has('stadium') || set.has('sports_complex') || set.has('basketball_court') || set.has('soccer_field')) return 'sports-recreation';
+  if (set.has('spa') || set.has('beauty_salon') || set.has('hair_care')) return 'relax-recharge';
+  if (set.has('amusement_center') || set.has('bowling_alley') || set.has('arcade') || set.has('movie_theater')) return 'games-entertainment';
+  if (set.has('yoga_studio') || set.has('fitness_center') || set.has('pilates_studio')) return 'fitness-classes';
+  
+  // Festivals & Pop-ups: markets, fairs, event venues that host temporary events
+  if (set.has('festival') || set.has('fair') || set.has('market') || set.has('farmer_market') || 
+      set.has('flea_market') || set.has('event_venue') || set.has('convention_center')) return 'festivals-pop-ups';
+  
+  // Pet-friendly: zoos, dog parks, pet stores, and places that commonly allow pets
+  // Note: Google Places doesn't have a direct "pet-friendly" flag, so we use heuristics
+  if (set.has('zoo') || set.has('pet_store') || set.has('dog_park') || 
+      (set.has('park') && (set.has('dog_park') || types.some(t => t.includes('dog') || t.includes('pet'))))) {
+    return 'pet-friendly';
+  }
+  
+  // Live music (specific venues)
+  if (set.has('music_venue') || set.has('concert_hall') || set.has('performing_arts_theater')) return 'live-music';
+  
+  // Original categories
   if (set.has('cafe') || set.has('coffee_shop')) return 'coffee';
-  if (set.has('restaurant') || set.has('bakery')) return 'food';
+  if (set.has('restaurant') || set.has('bakery') || set.has('food')) return 'food';
   if (set.has('bar') || set.has('night_club')) return 'nightlife';
-  if (set.has('park') || set.has('tourist_attraction') || set.has('hiking_area') || set.has('beach')) return 'outdoors';
+  if (set.has('park') || set.has('tourist_attraction') || set.has('hiking_area') || set.has('beach') || set.has('campground')) return 'outdoors';
   if (set.has('museum') || set.has('art_gallery')) return 'museum';
-  if (set.has('shopping_mall') || set.has('clothing_store') || set.has('store')) return 'shopping';
+  if (set.has('shopping_mall') || set.has('clothing_store') || set.has('store') || set.has('shopping_center')) return 'shopping';
+  if (set.has('event') || set.has('stadium') || set.has('amusement_park')) return 'events';
+  
+  // Road trip getaways (parks, scenic areas far from city)
+  if (set.has('natural_feature') || set.has('rv_park') || set.has('campground')) return 'road-trip-getaways';
+  
   return 'activities';
 }
 
@@ -219,8 +248,12 @@ async function upsertListingFromDetails(cityName: string, d: any, placeId: strin
     return false;
   }
 
-  // Refresh photos
-  const photoRefs: string[] = (d.photos || []).map((p: any) => p.photo_reference).filter(Boolean).slice(0, 5);
+  // Refresh photos - for events, fetch at least 4-5 photos
+  const isEvent = !!d.event_start_date || (d.types || []).some((t: string) => 
+    t.includes('event') || t.includes('festival') || t.includes('concert')
+  );
+  const photoLimit = isEvent ? 5 : 5; // Always fetch up to 5, but prioritize for events
+  const photoRefs: string[] = (d.photos || []).map((p: any) => p.photo_reference).filter(Boolean).slice(0, photoLimit);
   const photos = photoRefs.map((ref, idx) => ({
     listing_id: id,
     url: photoUrl(ref)!,

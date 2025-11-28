@@ -4,11 +4,15 @@ import { router } from 'expo-router';
 import { useFilterStore } from '@/state/filterStore';
 import { requestLocation, useLocationStore } from '@/state/locationStore';
 import { useOnboardingStore } from '@/state/onboardingStore';
-import { signUp, signInWithApple, signInWithGoogle, isAppleAuthAvailable } from '@/lib/auth';
+import { signUp } from '@/lib/auth';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
-const CATEGORY_CHIPS = ['food', 'outdoors', 'nightlife', 'events', 'coffee', 'museum', 'activities', 'shopping'];
+const CATEGORY_CHIPS = [
+  'food', 'outdoors', 'nightlife', 'events', 'coffee', 'museum', 'activities', 'shopping',
+  'arts-culture', 'live-music', 'games-entertainment', 'relax-recharge', 'sports-recreation',
+  'drinks-bars', 'pet-friendly', 'road-trip-getaways', 'festivals-pop-ups', 'fitness-classes'
+];
 
 export default function OnboardingScreen() {
   const [step, setStep] = useState<'welcome' | 'interests' | 'location' | 'account'>('welcome');
@@ -16,14 +20,9 @@ export default function OnboardingScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [creatingAccount, setCreatingAccount] = useState(false);
-  const [appleAvailable, setAppleAvailable] = useState(false);
   const { setInitialFromOnboarding } = useFilterStore();
   const { loading: locationLoading, granted, city } = useLocationStore();
   const { setCompleted } = useOnboardingStore();
-
-  useEffect(() => {
-    isAppleAuthAvailable().then(setAppleAvailable);
-  }, []);
 
   const toggle = (c: string) => {
     setSelected((prev) => (prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]));
@@ -52,6 +51,7 @@ export default function OnboardingScreen() {
   const finishOnboarding = () => {
     setInitialFromOnboarding({ categories: selected });
     setCompleted(true);
+    // If user is signed in, go to discover. Otherwise they'll see welcome screen
     router.replace('/(tabs)/discover');
   };
 
@@ -68,14 +68,11 @@ export default function OnboardingScreen() {
     setCreatingAccount(true);
     try {
       await signUp(email, password);
-      Alert.alert(
-        'Account Created!',
-        'Check your email to verify. You can start swiping now!',
-        [{ text: 'OK', onPress: finishOnboarding }]
-      );
+      // Account created - finish onboarding and go to discover
+      // User is now signed in, so they'll stay signed in
+      finishOnboarding();
     } catch (error: any) {
       Alert.alert('Error', error.message || 'Could not create account');
-    } finally {
       setCreatingAccount(false);
     }
   };
@@ -152,61 +149,6 @@ export default function OnboardingScreen() {
           </Text>
         </Pressable>
 
-        <View style={{ marginTop: 24, marginBottom: 16 }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 16 }}>
-            <View style={{ flex: 1, height: 1, backgroundColor: '#eee' }} />
-            <Text style={{ marginHorizontal: 12, color: '#999', fontSize: 13, fontWeight: '600' }}>OR</Text>
-            <View style={{ flex: 1, height: 1, backgroundColor: '#eee' }} />
-          </View>
-
-          {appleAvailable && (
-            <Pressable
-              style={[styles.socialBtn, { backgroundColor: '#000' }]}
-              onPress={async () => {
-                setCreatingAccount(true);
-                try {
-                  await signInWithApple();
-                  finishOnboarding();
-                } catch (error: any) {
-                  if (!error.message.includes('canceled')) {
-                    Alert.alert('Error', error.message);
-                  }
-                } finally {
-                  setCreatingAccount(false);
-                }
-              }}
-              disabled={creatingAccount}
-            >
-              <FontAwesome name="apple" size={20} color="#fff" style={{ marginRight: 8 }} />
-              <Text style={{ color: '#fff', fontWeight: '700' }}>Continue with Apple</Text>
-            </Pressable>
-          )}
-
-          <Pressable
-            style={[styles.socialBtn, { backgroundColor: '#fff', borderWidth: 1, borderColor: '#ddd', marginTop: 8 }]}
-            onPress={async () => {
-              setCreatingAccount(true);
-              try {
-                await signInWithGoogle();
-                if (Platform.OS !== 'web') {
-                  finishOnboarding();
-                }
-              } catch (error: any) {
-                if (Platform.OS !== 'web') {
-                  Alert.alert('Error', error.message);
-                }
-              } finally {
-                if (Platform.OS !== 'web') {
-                  setCreatingAccount(false);
-                }
-              }
-            }}
-            disabled={creatingAccount}
-          >
-            <FontAwesome name="google" size={20} color="#DB4437" style={{ marginRight: 8 }} />
-            <Text style={{ color: '#333', fontWeight: '700' }}>Continue with Google</Text>
-          </Pressable>
-        </View>
 
         <Pressable onPress={() => router.push('/auth/sign-in')} style={{ marginTop: 'auto' }}>
           <Text style={{ textAlign: 'center', color: '#007AFF', fontSize: 14 }}>
@@ -259,6 +201,7 @@ export default function OnboardingScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Find something to do in seconds</Text>
       <Text style={styles.subtitle}>Choose a few interests to get started</Text>
+      <Text style={styles.finePrint}>Please select at least 3 categories to continue</Text>
       <ScrollView contentContainerStyle={styles.chips} showsVerticalScrollIndicator={false}>
         {CATEGORY_CHIPS.map((c) => (
           <Pressable
@@ -289,7 +232,8 @@ export default function OnboardingScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff', padding: 24, paddingTop: 80 },
   title: { fontSize: 28, fontWeight: '800', marginBottom: 8 },
-  subtitle: { fontSize: 16, color: '#666', marginBottom: 24 },
+  subtitle: { fontSize: 16, color: '#666', marginBottom: 8 },
+  finePrint: { fontSize: 12, color: '#999', marginBottom: 24, fontStyle: 'italic' },
   label: { fontSize: 14, fontWeight: '700', marginTop: 16, marginBottom: 6 },
   input: { 
     borderWidth: 1, 

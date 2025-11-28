@@ -2,7 +2,7 @@
   "expo": {
     "name": "Swipely",
     "slug": "swipely-app",
-    "version": "1.0.0",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "swipely",
@@ -18,7 +18,9 @@
       "bundleIdentifier": "com.dayplay.app",
       "buildNumber": "1",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to show nearby places and events.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app uses your location to show nearby places and events."
       }
     },
     "android": {
@@ -29,7 +31,16 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "${GOOGLE_MAPS_API_KEY}"
+        }
+      }
     },
     "web": {
       "bundler": "metro",
@@ -37,7 +48,13 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "react-native-maps",
+        {
+          "googleMapsApiKey": "${GOOGLE_MAPS_API_KEY}"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

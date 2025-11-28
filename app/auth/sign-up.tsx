@@ -50,15 +50,14 @@ export default function SignUpScreen() {
         return;
       }
       
+      // New user - send them to onboarding (they're now signed in)
       Alert.alert(
         'Account Created!',
-        'Check your email to verify your account. You can start using the app now.',
-        [
-          { 
-            text: 'OK', 
-            onPress: () => router.replace('/(tabs)/discover') 
-          }
-        ]
+        'Check your email to verify. Complete your profile to get started!',
+        [{ 
+          text: 'Continue', 
+          onPress: () => router.replace('/onboarding')
+        }]
       );
     } catch (error: any) {
       const message = error.message || 'Could not create account';

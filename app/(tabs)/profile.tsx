@@ -145,8 +145,8 @@ export default function ProfileScreen() {
       {/* Contribute Section */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Contribute</Text>
-        <Pressable style={[styles.actionBtn, { backgroundColor: '#FF9500' }]} onPress={() => router.push('/submit-gem')}>
-          <Text style={styles.actionBtnText}>💎 Submit a Hidden Gem</Text>
+        <Pressable style={[styles.actionBtn, { backgroundColor: '#FF9500' }]} onPress={() => router.push('/(tabs)/submit-gem')}>
+          <Text style={styles.actionBtnText}>💎 Submit a Local Suggestion</Text>
         </Pressable>
       </View>
 
@@ -182,7 +182,7 @@ export default function ProfileScreen() {
               <View style={[styles.infoBox, { marginBottom: 12 }]}>
                 <Text style={styles.emailText}>🔧 Become a Developer</Text>
                 <Text style={[styles.infoText, { marginTop: 8 }]}>
-                  Get access to moderate user-submitted hidden gems and help maintain content quality
+                  Get access to moderate user-submitted local suggestions and help maintain content quality
                 </Text>
               </View>
             )}
@@ -206,7 +206,7 @@ export default function ProfileScreen() {
                     setDeveloperStatus(true);
                     Alert.alert(
                       '✅ Developer Account Created!',
-                      'You now have access to the moderation panel. You can approve/reject user-submitted hidden gems.',
+                      'You now have access to the moderation panel. You can approve/reject user-submitted local suggestions.',
                       [
                         { text: 'OK' },
                         { text: 'Open Moderation', onPress: () => router.push('/moderation') }

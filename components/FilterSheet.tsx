@@ -3,7 +3,26 @@ import { Modal, View, Text, StyleSheet, Pressable, ScrollView } from 'react-nati
 import Slider from '@react-native-community/slider';
 import { useFilterStore } from '@/state/filterStore';
 
-const CATEGORY_CHIPS = ['food', 'outdoors', 'nightlife', 'events', 'coffee', 'museum', 'activities', 'shopping'];
+const CATEGORY_CHIPS = [
+  { id: 'food', label: 'Food', description: 'Restaurants, cafes, and dining' },
+  { id: 'outdoors', label: 'Outdoors', description: 'Parks, trails, and nature' },
+  { id: 'nightlife', label: 'Nightlife', description: 'Bars, clubs, and evening spots' },
+  { id: 'events', label: 'Events', description: 'Concerts, festivals, and happenings' },
+  { id: 'coffee', label: 'Coffee', description: 'Coffee shops and cafes' },
+  { id: 'museum', label: 'Museum', description: 'Museums and galleries' },
+  { id: 'activities', label: 'Activities', description: 'Things to do and experiences' },
+  { id: 'shopping', label: 'Shopping', description: 'Stores, markets, and boutiques' },
+  { id: 'arts-culture', label: 'Arts & Culture', description: 'Galleries, exhibits, creative shows' },
+  { id: 'live-music', label: 'Live Music', description: 'Concerts, open mics, performance venues' },
+  { id: 'games-entertainment', label: 'Games & Entertainment', description: 'Arcades, bowling, VR lounges, fun centers' },
+  { id: 'relax-recharge', label: 'Relax & Recharge', description: 'Spas, saunas, wellness spots' },
+  { id: 'sports-recreation', label: 'Sports & Recreation', description: 'Gyms, outdoor courts, pickup sports' },
+  { id: 'drinks-bars', label: 'Drinks & Bars', description: 'Cocktail lounges, breweries, wine bars' },
+  { id: 'pet-friendly', label: 'Pet-Friendly', description: 'Spots that allow pets' },
+  { id: 'road-trip-getaways', label: 'Road Trip Getaways', description: '30–90 minute destinations' },
+  { id: 'festivals-pop-ups', label: 'Festivals & Pop-Ups', description: 'Markets, fairs, temporary events' },
+  { id: 'fitness-classes', label: 'Fitness & Classes', description: 'Yoga, pilates, group workouts' },
+];
 
 export function FilterSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { categories, setCategories, distanceKm, setDistanceKm, priceTiers, setPriceTiers, showOpenNow, setShowOpenNow, showNewThisWeek, setShowNewThisWeek } = useFilterStore();
@@ -47,12 +66,24 @@ export function FilterSheet({ open, onClose }: { open: boolean; onClose: () => v
               />
 
               <Text style={styles.label}>Categories</Text>
-              <View style={styles.rowWrap}>
-                {CATEGORY_CHIPS.map((c) => (
-                  <Pressable key={c} style={[styles.chip, categories.includes(c) && styles.chipSelected]} onPress={() => toggleCategory(c)}>
-                    <Text style={[styles.chipText, categories.includes(c) && styles.chipTextSelected]}>{c}</Text>
-                  </Pressable>
-                ))}
+              <View style={styles.categoriesContainer}>
+                {CATEGORY_CHIPS.map((cat) => {
+                  const isSelected = categories.includes(cat.id);
+                  return (
+                    <Pressable 
+                      key={cat.id} 
+                      style={[styles.categoryCard, isSelected && styles.categoryCardSelected]} 
+                      onPress={() => toggleCategory(cat.id)}
+                    >
+                      <Text style={[styles.categoryLabel, isSelected && styles.categoryLabelSelected]}>
+                        {cat.label}
+                      </Text>
+                      <Text style={[styles.categoryDescription, isSelected && styles.categoryDescriptionSelected]}>
+                        {cat.description}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
               </View>
 
               <Text style={styles.label}>Price</Text>
@@ -105,6 +136,41 @@ const styles = StyleSheet.create({
   chipSelected: { backgroundColor: '#111' },
   chipText: { color: '#111', fontWeight: '600' },
   chipTextSelected: { color: '#fff' },
+  categoriesContainer: { 
+    flexDirection: 'row', 
+    flexWrap: 'wrap', 
+    gap: 10, 
+    marginTop: 4 
+  },
+  categoryCard: {
+    width: '48%',
+    padding: 12,
+    borderRadius: 12,
+    backgroundColor: '#f8f8f8',
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  categoryCardSelected: {
+    backgroundColor: '#111',
+    borderColor: '#111',
+  },
+  categoryLabel: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#111',
+    marginBottom: 4,
+  },
+  categoryLabelSelected: {
+    color: '#fff',
+  },
+  categoryDescription: {
+    fontSize: 11,
+    color: '#666',
+    lineHeight: 14,
+  },
+  categoryDescriptionSelected: {
+    color: 'rgba(255,255,255,0.8)',
+  },
   doneBtn: { marginTop: 16, backgroundColor: '#111', paddingVertical: 14, borderRadius: 12, alignItems: 'center' },
   doneText: { color: '#fff', fontWeight: '800', fontSize: 16 },
 });

@@ -17,7 +17,9 @@ const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
   'Denver': { lat: 39.7392, lng: -104.9903 },
   'Nashville': { lat: 36.1627, lng: -86.7816 },
   'San Francisco': { lat: 37.7749, lng: -122.4194 },
+  'San Francisco Bay Area': { lat: 37.7749, lng: -122.4194 },
   'New York': { lat: 40.7128, lng: -74.0060 },
+  'Linköping': { lat: 58.4108, lng: 15.6214 },
 };
 
 const DEFAULT_STATE: LocationState = {

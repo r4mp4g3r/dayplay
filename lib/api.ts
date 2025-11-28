@@ -31,10 +31,12 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
     // Query Supabase directly (simpler than edge function for MVP)
     let query = supabase!
       .from('listings')
-      .select(`
-        *,
-        listing_photos(url, sort_order)
-      `)
+      .select(
+        `
+        id,title,subtitle,description,category,price_tier,latitude,longitude,city,is_published,is_featured,created_at,phone,website,source,source_metadata,
+        listing_photos(url,sort_order)
+        `
+      )
       .eq('is_published', true)
       .neq('source', 'seed');
 
@@ -48,7 +50,8 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
       query = query.in('price_tier', params.priceTiers);
     }
 
-    const { data, error } = await query.limit(300);
+    // Lower limit to reduce timeout risk
+    const { data, error } = await query.limit(250);
 
     if (error) throw error;
 

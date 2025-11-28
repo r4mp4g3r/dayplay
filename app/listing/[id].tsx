@@ -140,7 +140,7 @@ export default function ListingDetails() {
 
   return (
     <ScrollView style={styles.container} contentInsetAdjustmentBehavior="automatic">
-      <ListingCarousel images={item.images ?? []} />
+      <ListingCarousel images={item.images ?? []} isEvent={isEvent} />
       <View style={styles.content}>
         <View style={{ flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' }}>
           <View style={{ flex: 1 }}>
@@ -232,7 +232,9 @@ export default function ListingDetails() {
         )}
 
         <Text style={styles.sectionTitle}>About</Text>
-        <Text style={styles.description}>{item.description || 'No description available.'}</Text>
+        <Text style={styles.description}>
+          {item.description || 'No description available for this location.'}
+        </Text>
 
         {/* Details Section - Always show if ANY detail exists */}
         <Text style={styles.sectionTitle}>Details</Text>

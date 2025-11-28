@@ -53,10 +53,91 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
     badge = { text: '✨ New', color: '#4CAF50', textColor: '#fff' };
   }
   
+  // For compact mode (saved cards), use a cleaner layout with image on top
+  if (compact) {
+    return (
+      <View style={styles.compactCard}>
+        {/* Image Section */}
+        <View style={styles.compactImageContainer}>
+          {img ? (
+            <Image source={{ uri: img }} style={styles.compactImage} resizeMode="cover" />
+          ) : (
+            <View style={[styles.compactImage, { backgroundColor: '#e9e9e9' }]} />
+          )}
+          {badge && (
+            <View style={[styles.compactBadge, { backgroundColor: badge.color }]}>
+              <Text style={[styles.compactBadgeText, { color: badge.textColor }]}>{badge.text}</Text>
+            </View>
+          )}
+        </View>
+        
+        {/* Content Section */}
+        <View style={styles.compactContent}>
+          <Text style={styles.compactTitle} numberOfLines={2}>{item.title}</Text>
+          
+          {/* Event Date */}
+          {isEvent && item.event_start_date && (
+            <Text style={styles.compactEventDate}>
+              📅 {formatEventDate(item.event_start_date)}
+            </Text>
+          )}
+          
+          {/* Category, Price, Distance Row */}
+          <View style={styles.compactInfoRow}>
+            <Text style={styles.compactCategory}>{item.category}</Text>
+            {item.price_tier && (
+              <>
+                <Text style={styles.compactSeparator}>•</Text>
+                <Text style={styles.compactPrice}>{'$'.repeat(item.price_tier)}</Text>
+              </>
+            )}
+            {item.distanceKm != null && (
+              <>
+                <Text style={styles.compactSeparator}>•</Text>
+                <Text style={styles.compactDistance}>📍 {item.distanceKm.toFixed(1)} km</Text>
+              </>
+            )}
+          </View>
+          
+          {/* Location */}
+          {(item.subtitle || (item as any).address || item.city) && (
+            <Text style={styles.compactLocation} numberOfLines={1}>
+              📍 {item.subtitle || (item as any).address || item.city}
+            </Text>
+          )}
+          
+          {/* Website */}
+          {websiteDomain && (
+            <Text style={styles.compactWebsite} numberOfLines={1}>
+              🔗 {websiteDomain}
+            </Text>
+          )}
+          
+          {/* Tags */}
+          {item.tags && item.tags.length > 0 && (
+            <View style={styles.compactTagsRow}>
+              {item.tags.slice(0, 3).map((tag, index) => (
+                <View key={index} style={styles.compactTagChip}>
+                  <Text style={styles.compactTagText}>{tag}</Text>
+                </View>
+              ))}
+            </View>
+          )}
+          
+          {/* Description */}
+          <Text style={styles.compactDescription} numberOfLines={2}>
+            {item.description || 'No description available.'}
+          </Text>
+        </View>
+      </View>
+    );
+  }
+  
+  // Full card layout (for Discover page)
   return (
-    <View style={[styles.card, compact && { height: 200 }]}>
+    <View style={styles.card}>
       {img ? (
-        <Image source={{ uri: img }} style={[styles.image, compact && { height: 200 }]} resizeMode="cover" />
+        <Image source={{ uri: img }} style={styles.image} resizeMode="cover" />
       ) : (
         <View style={[styles.image, { backgroundColor: '#e9e9e9' }]} />
       )}
@@ -92,9 +173,16 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
           )}
         </View>
         
+        {/* Location - Show address or city */}
+        {(item.subtitle || (item as any).address || item.city) && (
+          <Text style={styles.location} numberOfLines={1}>
+            📍 {item.subtitle || (item as any).address || item.city}
+          </Text>
+        )}
+        
         {/* Website domain if available */}
         {websiteDomain && (
-          <Text style={styles.website}>🔗 {websiteDomain}</Text>
+          <Text style={styles.website} numberOfLines={1}>🔗 {websiteDomain}</Text>
         )}
         
         {/* Tags/Vibes (if available) */}
@@ -108,15 +196,13 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
           </View>
         )}
         
-        {/* About/Description */}
-        {item.description && (
-          <View style={styles.aboutSection}>
-            <Text style={styles.aboutLabel}>About</Text>
-            <Text style={styles.aboutText} numberOfLines={3}>
-              {item.description}
-        </Text>
-          </View>
-        )}
+        {/* About/Description - Always show */}
+        <View style={styles.aboutSection}>
+          <Text style={styles.aboutLabel}>About</Text>
+          <Text style={styles.aboutText} numberOfLines={3}>
+            {item.description || 'No description available.'}
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -156,10 +242,11 @@ const styles = StyleSheet.create({
     bottom: 0, 
     left: 0, 
     right: 0, 
-    padding: 20, 
-    paddingTop: 24,
-    backgroundColor: 'rgba(0,0,0,0.7)',
+    padding: 16, 
+    paddingTop: 20,
+    backgroundColor: 'rgba(0,0,0,0.75)',
     backdropFilter: 'blur(10px)',
+    minHeight: 180, // Ensure enough space for all content
   },
   title: { color: '#fff', fontSize: 22, fontWeight: '800', marginBottom: 8 },
   eventDate: { 
@@ -196,6 +283,13 @@ const styles = StyleSheet.create({
     color: '#fff', 
     fontSize: 13, 
     fontWeight: '600',
+  },
+  location: {
+    color: 'rgba(255,255,255,0.9)',
+    fontSize: 12,
+    fontWeight: '600',
+    marginTop: 4,
+    marginBottom: 6,
   },
   website: {
     color: 'rgba(255,255,255,0.85)',
@@ -242,6 +336,126 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 18,
     fontWeight: '500',
+  },
+  // Compact card styles (for Saved page)
+  compactCard: {
+    width: CARD_WIDTH,
+    borderRadius: 16,
+    overflow: 'hidden',
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
+  },
+  compactImageContainer: {
+    width: '100%',
+    height: 180,
+    position: 'relative',
+  },
+  compactImage: {
+    width: '100%',
+    height: '100%',
+  },
+  compactBadge: {
+    position: 'absolute',
+    top: 12,
+    left: 12,
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
+  },
+  compactBadgeText: {
+    fontSize: 11,
+    fontWeight: '700',
+  },
+  compactContent: {
+    padding: 16,
+  },
+  compactTitle: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: '#111',
+    marginBottom: 8,
+    lineHeight: 24,
+  },
+  compactEventDate: {
+    color: '#FF6B35',
+    fontSize: 13,
+    fontWeight: '700',
+    marginBottom: 10,
+  },
+  compactInfoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    marginBottom: 10,
+  },
+  compactCategory: {
+    color: '#666',
+    fontSize: 13,
+    fontWeight: '700',
+    textTransform: 'capitalize',
+  },
+  compactSeparator: {
+    color: '#ccc',
+    marginHorizontal: 6,
+    fontSize: 12,
+  },
+  compactPrice: {
+    color: '#4CAF50',
+    fontSize: 13,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+  },
+  compactDistance: {
+    color: '#666',
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  compactLocation: {
+    color: '#666',
+    fontSize: 12,
+    fontWeight: '500',
+    marginBottom: 6,
+  },
+  compactWebsite: {
+    color: '#007AFF',
+    fontSize: 12,
+    fontWeight: '600',
+    marginBottom: 8,
+  },
+  compactTagsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginBottom: 10,
+  },
+  compactTagChip: {
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 8,
+    backgroundColor: '#f0f0f0',
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  compactTagText: {
+    color: '#666',
+    fontSize: 11,
+    fontWeight: '600',
+    textTransform: 'lowercase',
+  },
+  compactDescription: {
+    color: '#444',
+    fontSize: 13,
+    lineHeight: 18,
+    fontWeight: '400',
   },
 });
 

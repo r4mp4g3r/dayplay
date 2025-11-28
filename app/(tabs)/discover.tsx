@@ -49,6 +49,7 @@ export default function DiscoverScreen() {
         priceTiers,
         excludeIds: [],
         page: 0,
+        pageSize: 300,
         showNewThisWeek,
         showOpenNow,
       });
@@ -77,7 +78,7 @@ export default function DiscoverScreen() {
           <Pressable
             onPress={() => router.push('/(tabs)/submit-gem')}
             style={styles.iconBtn}
-            accessibilityLabel="Submit a hidden gem"
+            accessibilityLabel="Submit a local suggestion"
           >
             <FontAwesome name="plus" size={18} color="#007AFF" />
           </Pressable>

@@ -63,10 +63,10 @@ function RootLayoutNav() {
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="welcome" options={{ headerShown: false }} />
           <Stack.Screen name="onboarding/index" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="listing/[id]" options={{ title: 'Details', headerBackTitle: 'Back' }} />
-          <Stack.Screen name="submit-gem" options={{ title: 'Submit a Hidden Gem', presentation: 'modal', headerShown: false }} />
           <Stack.Screen name="auth/sign-in" options={{ title: 'Sign In', presentation: 'modal' }} />
           <Stack.Screen name="auth/sign-up" options={{ title: 'Sign Up', presentation: 'modal' }} />
           {/* Business routes temporarily disabled from app navigation */}

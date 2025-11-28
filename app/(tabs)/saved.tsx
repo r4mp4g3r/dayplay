@@ -156,24 +156,38 @@ export default function SavedScreen() {
         data={displayItems}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <Pressable
-            onPress={() => router.push(`/listing/${item.id}`)}
-            onLongPress={() => {
-              Alert.alert('Options', `Manage "${item.title}"`, [
-                { text: 'Remove from saved', style: 'destructive', onPress: () => unsave(item.id) },
-                { text: 'Add to Google Calendar', onPress: () => startCalendarFlow(item) },
-                { text: 'Move to list...', onPress: () => handleMoveToList(item.id) },
-                { text: 'Cancel', style: 'cancel' },
-              ]);
-            }}
-          >
-            <View style={{ padding: 12 }}>
+          <View style={{ padding: 12, position: 'relative' }}>
+            <Pressable
+              onPress={() => router.push(`/listing/${item.id}`)}
+              style={{ flex: 1 }}
+            >
               <SwipeCard item={item} compact />
               {item.listName && item.listName !== 'default' && (
                 <Text style={styles.listTag}>{LIST_DISPLAY_NAMES[item.listName] || item.listName}</Text>
               )}
-            </View>
-          </Pressable>
+            </Pressable>
+            {/* Remove button - top right */}
+            <Pressable
+              style={styles.removeBtn}
+              onPress={() => {
+                Alert.alert(
+                  'Remove from saved?',
+                  `Remove "${item.title}" from your saved items?`,
+                  [
+                    { text: 'Cancel', style: 'cancel' },
+                    { 
+                      text: 'Remove', 
+                      style: 'destructive', 
+                      onPress: () => unsave(item.id) 
+                    },
+                  ]
+                );
+              }}
+              accessibilityLabel="Remove from saved"
+            >
+              <FontAwesome name="times-circle" size={24} color="#FF3B30" />
+            </Pressable>
+          </View>
         )}
         contentContainerStyle={{ padding: 8, paddingBottom: 80 }}
         ListEmptyComponent={
@@ -320,6 +334,23 @@ const styles = StyleSheet.create({
   sortBtnText: { fontSize: 13, fontWeight: '600', color: '#666' },
   sortBtnTextActive: { color: '#fff' },
   listTag: { fontSize: 11, color: '#666', marginTop: 4, marginLeft: 12, fontWeight: '600' },
+  removeBtn: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    borderRadius: 999,
+    width: 32,
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 4,
+    zIndex: 10,
+  },
   emptyState: {
     flex: 1,
     alignItems: 'center',

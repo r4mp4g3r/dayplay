@@ -3,11 +3,18 @@ import { View, Text, Image, ScrollView, Dimensions, StyleSheet } from 'react-nat
 
 const { width } = Dimensions.get('window');
 
-export function ListingCarousel({ images }: { images: string[] }) {
+export function ListingCarousel({ images, isEvent = false }: { images: string[]; isEvent?: boolean }) {
   if (!images?.length) return null;
   
-  // Show up to 5 photos
-  const displayImages = images.slice(0, 5);
+  // For events, show minimum 4-5 photos; for others, show up to 5
+  const minPhotos = isEvent ? 4 : 1;
+  const maxPhotos = 5;
+  const displayImages = images.slice(0, maxPhotos);
+  
+  // Warn if event has fewer than minimum photos
+  if (isEvent && displayImages.length < minPhotos) {
+    console.warn(`Event has only ${displayImages.length} photos, recommended minimum is ${minPhotos}`);
+  }
   
   return (
     <View style={styles.container}>

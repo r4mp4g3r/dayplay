@@ -15,13 +15,16 @@ export async function signUp(email: string, password: string) {
     throw new Error('Supabase not configured');
   }
 
+  // FIX: Check window.location exists before accessing origin
+  const redirectUrl = Platform.OS === 'web' && typeof window !== 'undefined' && window.location?.origin
+    ? `${window.location.origin}/`
+    : (process.env.EXPO_PUBLIC_SITE_URL || 'swipely://');
+
   const { data, error } = await supabase!.auth.signUp({
     email,
     password,
     options: {
-      emailRedirectTo: typeof window !== 'undefined' && window.location.origin
-        ? `${window.location.origin}/`
-        : process.env.EXPO_PUBLIC_SITE_URL || 'swipely://',
+      emailRedirectTo: redirectUrl,
     },
   });
 
@@ -229,12 +232,15 @@ export async function signInWithGoogle() {
 
   // For web, use Supabase's OAuth flow
   if (Platform.OS === 'web') {
+    // FIX: Check window.location exists before accessing origin
+    const redirectUrl = typeof window !== 'undefined' && window.location?.origin
+      ? `${window.location.origin}/`
+      : 'swipely://';
+    
     const { data, error } = await supabase!.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: typeof window !== 'undefined' && window.location.origin
-          ? `${window.location.origin}/`
-          : 'swipely://',
+        redirectTo: redirectUrl,
       },
     });
 

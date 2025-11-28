@@ -60,7 +60,7 @@ async function loadFromSupabase() {
         id,
         list_name,
         created_at,
-        listing:listings(*)
+        listing:listings(*, listing_photos(url, sort_order))
       `)
       .eq('user_id', user.id)
       .order('created_at', { ascending: false });
@@ -69,6 +69,10 @@ async function loadFromSupabase() {
 
     const items: SavedItem[] = (data || []).map((save: any) => ({
       ...save.listing,
+      // Transform listing_photos into images array
+      images: save.listing?.listing_photos
+        ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
+        .map((p: any) => p.url) || [],
       listName: save.list_name || 'default',
       savedAt: new Date(save.created_at).getTime(),
     }));

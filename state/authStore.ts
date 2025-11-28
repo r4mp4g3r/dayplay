@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { User, Session } from '@supabase/supabase-js';
-import { getCurrentUser, getSession, onAuthStateChange } from '@/lib/auth';
+import { getCurrentUser, getSession, onAuthStateChange, signOut as supaSignOut } from '@/lib/auth';
 
 type AuthState = {
   user: User | null;
@@ -19,10 +19,30 @@ const DEFAULT_STATE: AuthState = {
 let listeners: Array<() => void> = [];
 let state: AuthState = { ...DEFAULT_STATE };
 
-// Initialize auth state
+// Initialize auth state with timeout
 async function initializeAuth() {
+  // Set a timeout to ensure loading is always set to false
+  const timeout = setTimeout(() => {
+    if (state.loading) {
+      console.warn('Auth initialization timeout, defaulting to no user');
+      state = { ...DEFAULT_STATE, loading: false };
+      listeners.forEach((l) => l());
+    }
+  }, 3000); // 3 second timeout
+
   try {
-    const [user, session] = await Promise.all([getCurrentUser(), getSession()]);
+    const [user, session] = await Promise.all([
+      getCurrentUser().catch((err) => {
+        console.error('Error getting current user:', err);
+        return null;
+      }),
+      getSession().catch((err) => {
+        console.error('Error getting session:', err);
+        return null;
+      }),
+    ]);
+    
+    clearTimeout(timeout);
     state = {
       user,
       session,
@@ -31,6 +51,7 @@ async function initializeAuth() {
     };
     listeners.forEach((l) => l());
   } catch (error) {
+    clearTimeout(timeout);
     console.error('Auth initialization error:', error);
     state = { ...DEFAULT_STATE, loading: false };
     listeners.forEach((l) => l());
@@ -38,10 +59,19 @@ async function initializeAuth() {
 }
 
 // Listen for auth changes
-onAuthStateChange((event, session) => {
+onAuthStateChange(async (event, session) => {
   console.log('Auth state changed:', event, session?.user?.email);
   
-  const wasGuest = state.isGuest;
+  // If the refresh token failed (expired/revoked), sign out and reset state gracefully
+  if (event === 'TOKEN_REFRESH_FAILED') {
+    try {
+      await supaSignOut();
+    } catch {}
+    state = { ...DEFAULT_STATE, loading: false };
+    listeners.forEach((l) => l());
+    return;
+  }
+  
   const nowAuthenticated = session?.user !== undefined && session?.user !== null;
   
   state = {
@@ -50,12 +80,6 @@ onAuthStateChange((event, session) => {
     loading: false,
     isGuest: !nowAuthenticated,
   };
-  
-  // Trigger sync prompt if user just signed in/up from guest
-  if (wasGuest && nowAuthenticated && event === 'SIGNED_IN') {
-    // Trigger will be handled by components listening to auth state
-    console.log('User signed in - components should show sync prompt if needed');
-  }
   
   listeners.forEach((l) => l());
 });

@@ -58,13 +58,13 @@ export default function TabLayout() {
           headerShown: false,
         }}
       />
-      {/* Hidden route for Submit a Hidden Gem within tabs to keep bottom nav visible */}
+      {/* Hidden route for Submit a Local Suggestion within tabs to keep bottom nav visible */}
       <Tabs.Screen
         name="submit-gem"
         options={{
           href: null,
           headerShown: false,
-          title: 'Share a Hidden Gem',
+          title: 'Submit a Local Suggestion',
         }}
       />
     </Tabs>

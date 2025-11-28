@@ -6,7 +6,7 @@ import { View, ActivityIndicator, Text } from 'react-native';
 
 export default function Index() {
   const { completed } = useOnboardingStore();
-  const { loading: authLoading } = useAuthStore();
+  const { user, loading: authLoading } = useAuthStore();
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -14,15 +14,23 @@ export default function Index() {
     if (!authLoading) {
       const timer = setTimeout(() => {
         setReady(true);
-        if (completed) {
+        
+        // Priority 1: Authenticated user → Discover
+        if (user) {
           router.replace('/(tabs)/discover');
-        } else {
-          router.replace('/onboarding');
+        }
+        // Priority 2: Guest who completed onboarding → Discover
+        else if (completed) {
+          router.replace('/(tabs)/discover');
+        }
+        // Priority 3: New user → Welcome screen
+        else {
+          router.replace('/welcome');
         }
       }, 200);
       return () => clearTimeout(timer);
     }
-  }, [completed, authLoading]);
+  }, [user, completed, authLoading]);
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
@@ -32,4 +40,5 @@ export default function Index() {
     </View>
   );
 }
+
 

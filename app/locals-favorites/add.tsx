@@ -8,12 +8,17 @@ import {
   Pressable,
   Alert,
   ActivityIndicator,
+  Image,
+  Platform,
 } from 'react-native';
 import { router } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+// Removed static import to avoid native init at route load
+// import * as ImagePicker from 'expo-image-picker';
 import { createLocalFavorite } from '@/lib/localsFavoritesApi';
 import { geocodeAddress, geocodeAddressFallback } from '@/lib/geocoding';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import type { Category, Vibe } from '@/types/domain';
 
 const CATEGORIES: { value: Category; label: string }[] = [
@@ -46,8 +51,45 @@ const VIBES: { value: Vibe; label: string }[] = [
 ];
 
 export default function AddLocalFavorite() {
-  const [loading, setLoading] = useState(false);
   const insets = useSafeAreaInsets();
+  const [loading, setLoading] = useState(false);
+
+  // Check if supabase is configured
+  React.useEffect(() => {
+    if (!isSupabaseConfigured() || !supabase) {
+      Alert.alert(
+        'Configuration Error',
+        'Supabase is not configured. Please contact support.',
+        [{ text: 'OK', onPress: () => router.back() }]
+      );
+    }
+  }, []);
+
+  // If supabase is not configured, show error instead of crashing
+  if (!isSupabaseConfigured() || !supabase) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+        <Text style={{ fontSize: 48, marginBottom: 20 }}>⚠️</Text>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 10 }}>
+          Configuration Error
+        </Text>
+        <Text style={{ color: '#666', textAlign: 'center', marginBottom: 20 }}>
+          The app is not properly configured. Please contact support.
+        </Text>
+        <Pressable
+          style={{
+            backgroundColor: '#007AFF',
+            paddingHorizontal: 20,
+            paddingVertical: 12,
+            borderRadius: 8,
+          }}
+          onPress={() => router.back()}
+        >
+          <Text style={{ color: '#fff', fontWeight: '600' }}>Go Back</Text>
+        </Pressable>
+      </View>
+    );
+  }
   
   // Form state
   const [name, setName] = useState('');
@@ -58,7 +100,9 @@ export default function AddLocalFavorite() {
   const [city, setCity] = useState('');
   const [latitude, setLatitude] = useState<number | null>(null);
   const [longitude, setLongitude] = useState<number | null>(null);
+  const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [photoUrl, setPhotoUrl] = useState('');
+  const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [hours, setHours] = useState('');
   const [priceTier, setPriceTier] = useState<number | undefined>(undefined);
   const [website, setWebsite] = useState('');
@@ -68,6 +112,145 @@ export default function AddLocalFavorite() {
   const toggleVibe = (vibe: Vibe) => {
     setSelectedVibes((prev) =>
       prev.includes(vibe) ? prev.filter((v) => v !== vibe) : [...prev, vibe]
+    );
+  };
+
+  const pickImage = async () => {
+    const ImagePicker = await import('expo-image-picker');
+    // Request permissions
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (status !== 'granted') {
+      Alert.alert('Permission needed', 'We need camera roll permissions to upload photos.');
+      return;
+    }
+
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 0.8,
+    });
+
+    if (!result.canceled && result.assets[0]) {
+      setPhotoUri(result.assets[0].uri);
+    }
+  };
+
+  const takePhoto = async () => {
+    const ImagePicker = await import('expo-image-picker');
+    // Request permissions
+    const { status } = await ImagePicker.requestCameraPermissionsAsync();
+    if (status !== 'granted') {
+      Alert.alert('Permission needed', 'We need camera permissions to take photos.');
+      return;
+    }
+
+    const result = await ImagePicker.launchCameraAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 0.8,
+    });
+
+    if (!result.canceled && result.assets[0]) {
+      setPhotoUri(result.assets[0].uri);
+    }
+  };
+
+  const uploadPhoto = async (): Promise<string | null> => {
+    if (!photoUri) return null;
+    
+    if (!isSupabaseConfigured() || !supabase) {
+      Alert.alert('Error', 'Storage is not configured. You can still submit without a photo.');
+      return null;
+    }
+
+    setUploadingPhoto(true);
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        Alert.alert('Error', 'You must be signed in to upload photos.');
+        setUploadingPhoto(false);
+        return null;
+      }
+
+      // Read the file
+      const response = await fetch(photoUri);
+      const blob = await response.blob();
+      const fileExt = photoUri.split('.').pop();
+      const fileName = `${user.id}/${Date.now()}.${fileExt}`;
+      const filePath = `public/${fileName}`;
+
+      // Check if bucket exists first
+      const { data: buckets, error: bucketsError } = await supabase.storage.listBuckets();
+      
+      if (bucketsError) {
+        console.error('Error checking buckets:', bucketsError);
+        Alert.alert(
+          'Storage Error',
+          'Unable to access storage. Please contact support.'
+        );
+        setUploadingPhoto(false);
+        return null;
+      }
+
+      const bucketExists = buckets?.some(b => b.id === 'local-suggestions');
+      
+      if (!bucketExists) {
+        console.error('Storage bucket "local-suggestions" does not exist');
+        Alert.alert(
+          'Storage Not Configured',
+          'Photo storage is not set up yet. You can still submit without a photo.'
+        );
+        setUploadingPhoto(false);
+        return null;
+      }
+
+      // Upload to Supabase Storage
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('local-suggestions')
+        .upload(filePath, blob, {
+          contentType: `image/${fileExt}`,
+          upsert: false,
+        });
+
+      if (uploadError) {
+        console.error('Upload error:', uploadError);
+        Alert.alert(
+          'Upload Failed',
+          `Could not upload photo: ${uploadError.message}. You can still submit without a photo.`
+        );
+        setUploadingPhoto(false);
+        return null;
+      }
+
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('local-suggestions')
+        .getPublicUrl(filePath);
+
+      setUploadingPhoto(false);
+      return publicUrl;
+    } catch (error: any) {
+      console.error('Upload error:', error);
+      setUploadingPhoto(false);
+      Alert.alert(
+        'Upload Failed',
+        `Could not upload photo: ${error.message || 'Unknown error'}. You can still submit without a photo.`
+      );
+      return null;
+    }
+  };
+
+  const showImagePickerOptions = () => {
+    Alert.alert(
+      'Add Photo',
+      'Choose how you want to add a photo',
+      [
+        { text: 'Take Photo', onPress: takePhoto },
+        { text: 'Choose from Library', onPress: pickImage },
+        { text: 'Cancel', style: 'cancel' },
+      ],
+      { cancelable: true }
     );
   };
 
@@ -150,6 +333,15 @@ export default function AddLocalFavorite() {
     setLoading(true);
 
     try {
+      // Upload photo if one was selected
+      let finalPhotoUrl = photoUrl.trim();
+      if (photoUri && !finalPhotoUrl) {
+        const uploadedUrl = await uploadPhoto();
+        if (uploadedUrl) {
+          finalPhotoUrl = uploadedUrl;
+        }
+      }
+
       const result = await createLocalFavorite({
         name: name.trim(),
         category,
@@ -158,7 +350,7 @@ export default function AddLocalFavorite() {
         longitude,
         address: address.trim(),
         city: city.trim() || undefined,
-        photo_url: photoUrl.trim() || undefined,
+        photo_url: finalPhotoUrl || undefined,
         hours: hours.trim() || undefined,
         price_tier: priceTier,
         website: website.trim() || undefined,
@@ -170,7 +362,7 @@ export default function AddLocalFavorite() {
       if (result) {
         Alert.alert(
           'Submitted! 🎉',
-          'Your hidden gem has been submitted for review. We\'ll notify you once it\'s approved!',
+          'Your local suggestion has been submitted for review. We\'ll notify you once it\'s approved!',
           [
             {
               text: 'OK',
@@ -195,12 +387,12 @@ export default function AddLocalFavorite() {
           <Pressable style={styles.titleBack} onPress={() => router.back()} accessibilityLabel="Go back">
             <FontAwesome name="chevron-left" size={20} color="#007AFF" />
           </Pressable>
-          <Text style={styles.title}>Share a Hidden Gem 💎</Text>
+          <Text style={styles.title}>Submit a Local Suggestion</Text>
         </View>
       </View>
       <View style={styles.content}>
         <Text style={styles.subtitle}>
-          Help others discover your favorite local spots that might not be well-known!
+          Share your favorite local spots with the community!
         </Text>
 
         {/* Required Fields */}
@@ -239,10 +431,10 @@ export default function AddLocalFavorite() {
             ))}
           </View>
 
-          <Text style={styles.label}>Why is this a hidden gem?</Text>
+          <Text style={styles.label}>Description*</Text>
           <TextInput
             style={[styles.input, styles.textArea]}
-            placeholder="Share what makes this place special (max 200 chars)"
+            placeholder="Tell us about this spot (max 200 chars)"
             value={description}
             onChangeText={setDescription}
             maxLength={200}
@@ -311,7 +503,36 @@ export default function AddLocalFavorite() {
             onChangeText={setCity}
           />
 
-          <Text style={styles.label}>Photo URL (optional)</Text>
+          <Text style={styles.label}>Photo (optional)</Text>
+          {photoUri ? (
+            <View style={styles.photoPreview}>
+              <Image source={{ uri: photoUri }} style={styles.photoPreviewImage} />
+              <Pressable
+                style={styles.removePhotoBtn}
+                onPress={() => {
+                  setPhotoUri(null);
+                  setPhotoUrl('');
+                }}
+              >
+                <FontAwesome name="times-circle" size={24} color="#FF3B30" />
+              </Pressable>
+            </View>
+          ) : (
+            <Pressable style={styles.photoUploadBtn} onPress={showImagePickerOptions}>
+              <FontAwesome name="camera" size={24} color="#007AFF" />
+              <Text style={styles.photoUploadText}>Add Photo</Text>
+            </Pressable>
+          )}
+          {uploadingPhoto && (
+            <View style={styles.uploadingContainer}>
+              <ActivityIndicator size="small" color="#007AFF" />
+              <Text style={styles.uploadingText}>Uploading photo...</Text>
+            </View>
+          )}
+          {/* Fallback: Manual URL input */}
+          <Text style={[styles.label, { marginTop: 12, fontSize: 12, color: '#999' }]}>
+            Or enter photo URL manually:
+          </Text>
           <TextInput
             style={styles.input}
             placeholder="https://..."
@@ -405,7 +626,7 @@ export default function AddLocalFavorite() {
 
         <Text style={styles.disclaimer}>
           * Your submission will be reviewed before appearing in the app. We'll notify you once
-          it's approved!
+          it's approved! All suggestions are user-submitted.
         </Text>
       </View>
     </ScrollView>
@@ -416,7 +637,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
   topHeader: {
     padding: 20,
-    paddingTop: 10,
+    paddingTop: 16,
     paddingBottom: 16,
     backgroundColor: '#f8f8f8',
     borderBottomWidth: 1,
@@ -436,9 +657,24 @@ const styles = StyleSheet.create({
   headerBackText: { color: '#007AFF', fontSize: 16, fontWeight: '600' },
   headerTitle: { fontSize: 16, fontWeight: '800', color: '#111' },
   content: { padding: 20, paddingBottom: 40 },
-  title: { fontSize: 28, lineHeight: 32, fontWeight: '800', marginBottom: 8 },
-  titleRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 4 },
-  titleBack: { width: 36, height: 36, alignItems: 'center', justifyContent: 'center', marginRight: 2 },
+  title: { 
+    fontSize: 26, 
+    lineHeight: 36, 
+    fontWeight: '800', 
+    color: '#111',
+    flex: 1,
+  },
+  titleRow: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    gap: 12,
+  },
+  titleBack: { 
+    width: 36, 
+    height: 36, 
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
   subtitle: { fontSize: 16, color: '#666', marginBottom: 24, lineHeight: 22 },
   section: { marginBottom: 32 },
   sectionTitle: { fontSize: 18, fontWeight: '700', marginBottom: 16 },
@@ -550,6 +786,58 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#666',
     fontFamily: 'monospace',
+  },
+  photoUploadBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    borderWidth: 2,
+    borderColor: '#007AFF',
+    borderStyle: 'dashed',
+    borderRadius: 12,
+    padding: 24,
+    backgroundColor: '#f8f9ff',
+  },
+  photoUploadText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#007AFF',
+  },
+  photoPreview: {
+    position: 'relative',
+    borderRadius: 12,
+    overflow: 'hidden',
+    marginBottom: 8,
+  },
+  photoPreviewImage: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
+  },
+  removePhotoBtn: {
+    position: 'absolute',
+    top: 8,
+    right: 8,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: 999,
+    width: 32,
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  uploadingContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginTop: 8,
+    padding: 12,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 8,
+  },
+  uploadingText: {
+    fontSize: 14,
+    color: '#666',
   },
 });
 

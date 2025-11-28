@@ -7,7 +7,18 @@ export type Category =
   | 'museum'
   | 'activities'
   | 'shopping'
-  | 'neighborhood';
+  | 'neighborhood'
+  | 'arts-culture'
+  | 'live-music'
+  | 'games-entertainment'
+  | 'relax-recharge'
+  | 'sports-recreation'
+  | 'drinks-bars'
+  | 'pet-friendly'
+  | 'road-trip-getaways'
+  | 'festivals-pop-ups'
+  | 'fitness-classes'
+  | 'hotels';
 
 export type DataSource = 'seed' | 'business' | 'google_places' | 'eventbrite';
 

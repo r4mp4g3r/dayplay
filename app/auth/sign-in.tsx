@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TextInput, Pressable, Alert, ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { router } from 'expo-router';
-import { signIn, signInWithMagicLink, resetPassword, signInWithGoogle, signInWithApple, isAppleAuthAvailable } from '@/lib/auth';
+import { signIn, signInWithMagicLink, resetPassword } from '@/lib/auth';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function SignInScreen() {
@@ -9,11 +9,6 @@ export default function SignInScreen() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState<'password' | 'magiclink' | 'reset'>('password');
-  const [appleAvailable, setAppleAvailable] = useState(false);
-
-  useEffect(() => {
-    isAppleAuthAvailable().then(setAppleAvailable);
-  }, []);
 
   const handleSignIn = async () => {
     if (!email.trim()) {
@@ -28,12 +23,10 @@ export default function SignInScreen() {
     setLoading(true);
     try {
       await signIn(email, password);
-      Alert.alert('Success', 'Signed in successfully!', [
-        { text: 'OK', onPress: () => router.replace('/(tabs)/discover') }
-      ]);
+      // Navigate directly to discover - auth state will be updated automatically
+      router.replace('/(tabs)/discover');
     } catch (error: any) {
       Alert.alert('Sign In Failed', error.message || 'Invalid email or password');
-    } finally {
       setLoading(false);
     }
   };
@@ -158,60 +151,6 @@ export default function SignInScreen() {
           </Pressable>
         )}
 
-        <View style={styles.divider}>
-          <Text style={styles.dividerText}>OR</Text>
-        </View>
-
-        {appleAvailable && (
-          <Pressable
-            style={[styles.socialBtn, { backgroundColor: '#000' }]}
-            onPress={async () => {
-              setLoading(true);
-              try {
-                await signInWithApple();
-                router.replace('/(tabs)/discover');
-              } catch (error: any) {
-                if (!error.message.includes('canceled')) {
-                  Alert.alert('Error', error.message);
-                }
-              } finally {
-                setLoading(false);
-              }
-            }}
-            disabled={loading}
-          >
-            <FontAwesome name="apple" size={20} color="#fff" style={{ marginRight: 8 }} />
-            <Text style={styles.socialBtnText}>Continue with Apple</Text>
-          </Pressable>
-        )}
-
-        <Pressable
-          style={[styles.socialBtn, { backgroundColor: '#fff', borderWidth: 1, borderColor: '#ddd' }]}
-          onPress={async () => {
-            setLoading(true);
-            try {
-              await signInWithGoogle();
-              // On web, this redirects. On native, would continue here.
-              if (Platform.OS !== 'web') {
-                router.replace('/(tabs)/discover');
-              }
-            } catch (error: any) {
-              if (Platform.OS !== 'web') {
-                Alert.alert('Error', error.message);
-              }
-            } finally {
-              if (Platform.OS !== 'web') {
-                setLoading(false);
-              }
-            }
-          }}
-          disabled={loading}
-        >
-          <FontAwesome name="google" size={20} color="#DB4437" style={{ marginRight: 8 }} />
-          <Text style={[styles.socialBtnText, { color: '#333' }]}>Continue with Google</Text>
-        </Pressable>
-
-        <View style={[styles.divider, { marginVertical: 20 }]} />
 
         <Pressable onPress={() => router.push('/auth/sign-up')}>
           <Text style={styles.switchText}>

@@ -48,7 +48,7 @@ export default function LocalsTab() {
   };
 
   const handleAddFavorite = () => {
-    router.push('/locals-favorites/add');
+    router.push('/(tabs)/submit-gem');
   };
 
   if (loading) {
@@ -63,8 +63,8 @@ export default function LocalsTab() {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Locals' Favorites 💎</Text>
-        <Text style={styles.headerSubtitle}>Hidden gems shared by the community</Text>
+        <Text style={styles.headerTitle}>Local Suggestions</Text>
+        <Text style={styles.headerSubtitle}>User-submitted spots from the community</Text>
       </View>
 
       {/* Sort Options */}
@@ -99,12 +99,12 @@ export default function LocalsTab() {
       {favorites.length === 0 ? (
         <View style={styles.emptyState}>
           <Text style={styles.emptyStateIcon}>💎</Text>
-          <Text style={styles.emptyStateTitle}>No favorites yet</Text>
+          <Text style={styles.emptyStateTitle}>No suggestions yet</Text>
           <Text style={styles.emptyStateText}>
-            Be the first to share a hidden gem with the community!
+            Be the first to share a local spot with the community!
           </Text>
           <Pressable style={styles.addFirstBtn} onPress={handleAddFavorite}>
-            <Text style={styles.addFirstBtnText}>Add a Favorite</Text>
+            <Text style={styles.addFirstBtnText}>Submit a Suggestion</Text>
           </Pressable>
         </View>
       ) : (

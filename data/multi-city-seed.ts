@@ -680,7 +680,7 @@ export const multiCitySeedData: Listing[] = [
   ...nycListings,
 ];
 
-export const AVAILABLE_CITIES = ['Austin', 'Denver', 'Nashville', 'San Francisco', 'New York'];
+export const AVAILABLE_CITIES = ['Austin', 'Denver', 'Nashville', 'San Francisco', 'San Francisco Bay Area', 'New York', 'Linköping'];
 
 export function getListingsByCity(city: string): Listing[] {
   return multiCitySeedData.filter(l => l.city === city);
