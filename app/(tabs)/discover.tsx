@@ -30,10 +30,12 @@ export default function DiscoverScreen() {
         priceTiers, 
         excludeIds, 
         page,
+        pageSize: 50,
         showNewThisWeek,
         showOpenNow,
+        city,
       }),
-    [categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow]
+    [categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow, city]
   );
 
   // Load items for map view when needed
@@ -52,12 +54,13 @@ export default function DiscoverScreen() {
         pageSize: 300,
         showNewThisWeek,
         showOpenNow,
+        city,
       });
       if (!cancelled) setMapItems(res.items ?? []);
     };
     load();
     return () => { cancelled = true; };
-  }, [viewMode, categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow]);
+  }, [viewMode, categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow, city]);
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>

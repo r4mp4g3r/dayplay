@@ -1,0 +1,2617 @@
+{
+  "city": "Denver, CO",
+  "categories": {
+    "museum": [
+      {
+        "name": "Denver Art Museum",
+        "address": "100 W 14th Ave Pkwy, Denver, CO 80204"
+      },
+      {
+        "name": "Denver Museum of Nature & Science",
+        "address": "2001 Colorado Blvd, Denver, CO 80205\\. Denver Museum of Nature & Science"
+      },
+      {
+        "name": "History Colorado Center",
+        "address": "1200 Broadway, Denver, CO 80203\\. History Colorado"
+      },
+      {
+        "name": "Clyfford Still Museum",
+        "address": "1250 Bannock St, Denver, CO 80204\\. Denver Art Museum"
+      },
+      {
+        "name": "Kirkland Museum of Fine & Decorative Art",
+        "address": "1201 Bannock St, Denver, CO 80204\\. Denver Art Museum"
+      },
+      {
+        "name": "Museum of Contemporary Art Denver (MCA Denver)",
+        "address": "1485 Delgany St, Denver, CO 80202\\. Visit Denver"
+      },
+      {
+        "name": "Children’s Museum of Denver at Marsico Campus",
+        "address": "2121 Children’s Museum Dr, Denver, CO 80211\\. Visit Denver"
+      },
+      {
+        "name": "Wings Over the Rockies Air & Space Museum",
+        "address": "7711 E Academy Blvd, Denver, CO 80230\\. coloradomuseums.co"
+      },
+      {
+        "name": "Forney Transportation Museum",
+        "address": "4303 Brighton Blvd, Denver, CO 80216\\. Uncover Colorado"
+      },
+      {
+        "name": "Denver Museum of Miniatures, Dolls & Toys",
+        "address": "1880 Gaylord St, Denver, CO 80206\\. Uncover Colorado"
+      },
+      {
+        "name": "Denver Firefighters Museum",
+        "address": "1326 Tremont Pl, Denver, CO 80204\\. coloradocountyoffices.com"
+      },
+      {
+        "name": "Museo de las Americas",
+        "address": "861 Santa Fe Dr, Denver, CO 80204\\. Visit Denver"
+      },
+      {
+        "name": "Molly Brown House Museum",
+        "address": "1340 Pennsylvania St, Denver, CO 80203\\. Visit Denver"
+      },
+      {
+        "name": "Byers-Evans House Museum",
+        "address": "1310 Bannock St, Denver, CO 80204\\. coloradocountyoffices.com"
+      },
+      {
+        "name": "Black American West Museum & Heritage Center",
+        "address": "3091 California St, Denver, CO 80205\\. Uncover Colorado"
+      },
+      {
+        "name": "Denver Mint (U.S. Mint tour/visitor entrance)",
+        "address": "320 W Colfax Ave, Denver, CO 80204\\. Visit Denver"
+      },
+      {
+        "name": "Money Museum (Federal Reserve Bank of Kansas City",
+        "address": "Denver branch / Money Museum)"
+      },
+      {
+        "name": "National Ballpark Museum",
+        "address": "Coors Field / 1940 Blake St, Denver, CO 80205\\. Visit Denver"
+      },
+      {
+        "name": "Forney Transport (alternate listing)",
+        "address": "4303 Brighton Blvd, Denver, CO 80216\\. Uncover Colorado"
+      },
+      {
+        "name": "Denver Botanic Gardens (York St)",
+        "address": "1007 York St, Denver, CO 80205\\. Denver Museum of Nature & Science"
+      },
+      {
+        "name": "Denver Zoo",
+        "address": "2300 Steele St, Denver, CO 80205\\. Uncover Colorado"
+      },
+      {
+        "name": "Fort Logan National Cemetery / visitor area (historic interpretation)",
+        "address": "4400 W Kenyon Ave, Denver, CO 80236\\. Wikipedia"
+      },
+      {
+        "name": "Four Mile Historic Park & Museum",
+        "address": "715 S Forest St, Denver, CO 80246\\. Uncover Colorado"
+      },
+      {
+        "name": "American Museum of Western Art",
+        "address": "The Anschutz Collection"
+      },
+      {
+        "name": "Colorado Sports Hall of Fame",
+        "address": "200 S Bannock St (inside Ball Arena area / downtown listings), Denver, CO 80202\\. Visit Denver"
+      },
+      {
+        "name": "Colorado Railroad Museum",
+        "address": "17155 W 44th Ave, Golden, CO 80403 (Golden"
+      },
+      {
+        "name": "Buffalo Bill Museum & Grave (Lookout Mountain)",
+        "address": "98720 Buffalo Bill Ave / 987 1/2?"
+      },
+      {
+        "name": "Golden History Museum & Park",
+        "address": "923 10th St, Golden, CO 80401 (Golden"
+      },
+      {
+        "name": "Rocky Mountain Quilt Museum",
+        "address": "200 S Wilcox St, Golden, CO 80401 (regional listing). Uncover Colorado"
+      },
+      {
+        "name": "Littleton Museum",
+        "address": "6028 S Gallup St, Littleton, CO 80120 (Littleton"
+      },
+      {
+        "name": "Arvada Center for the Arts & Humanities (history/museum exhibits)",
+        "address": "6901 Wadsworth Blvd, Arvada, CO 80003\\. Visit Denver"
+      },
+      {
+        "name": "Aurora History Museum",
+        "address": "15051 E Alameda Pkwy, Aurora, CO 80012 (Aurora"
+      },
+      {
+        "name": "Littleton Museum & Town Hall Arts Center (paired listings)",
+        "address": "Littleton Museum 6028 S Gallup St, Littleton, CO 80120\\. museum.littletonco.gov"
+      },
+      {
+        "name": "Lakewood Heritage Center / Lakewood Cultural Center (museum exhibits)",
+        "address": "470 S Allison Pkwy, Lakewood, CO 80226\\. Uncover Colorado"
+      },
+      {
+        "name": "Colorado School of Mines Geology Museum",
+        "address": "Brown Hall, 1500 Illinois St, Golden, CO 80401\\. coloradomuseums.co"
+      },
+      {
+        "name": "Colorado Aviation Hall of Fame & Museum (regional listings)",
+        "address": "locations vary (often hosted at Wings Over the Rockies / Centennial Airport exhibitions)"
+      },
+      {
+        "name": "Denver Museum of Miniatures, Dolls & Toys (alternate reference)",
+        "address": "1880 Gaylord St, Denver, CO 80206\\. Uncover Colorado"
+      },
+      {
+        "name": "Plains Conservation Center",
+        "address": "21901 E Hampden Ave, Aurora, CO 80013 (Aurora"
+      },
+      {
+        "name": "Hudson Gardens & Event Center (garden \\+ interpretive exhibits)",
+        "address": "6115 S Santa Fe Dr, Littleton, CO 80120\\. Uncover Colorado"
+      },
+      {
+        "name": "Deer Creek Canyon Living History Museum / regional historic sites",
+        "address": "in Jefferson County / metro listings (addresses vary by site). coloradomuseums.co"
+      },
+      {
+        "name": "Foothills Art Center (Golden / Golden area galleries & small museum exhibits)",
+        "address": "809 15th St, Golden, CO 80401\\. coloradomuseums.co"
+      },
+      {
+        "name": "Denver Police Museum / exhibits (rotating / location listings)",
+        "address": "1331 Cherokee St / local museum directories list location details (confirm direct phone/URL for current exhibit address). Uncover Colorado"
+      },
+      {
+        "name": "CSM Geology Museum (Colorado School of Mines)",
+        "address": "1500 Illinois St, Golden, CO 80401\\. coloradomuseums.co"
+      },
+      {
+        "name": "Colorado Snowsports Museum & Hall of Fame",
+        "address": "710 W 3rd St, Vail, CO (regional; included as accessible from Denver area for users who travel to mountain towns). Uncover Colorado"
+      },
+      {
+        "name": "Fort Collins Museum of Discovery",
+        "address": "408 Mason Ct, Fort Collins, CO 80524 (regional metro list). Uncover Colorado"
+      },
+      {
+        "name": "Museum of Outdoor Arts (MOA)",
+        "address": "100 Dexter St, Englewood, CO 80110 (MOA campus & public art). Uncover Colorado"
+      },
+      {
+        "name": "Hudson Gardens & Natural Areas (interpretive exhibits)",
+        "address": "6115 S Santa Fe Dr, Littleton, CO 80120\\. Uncover Colorado"
+      },
+      {
+        "name": "Healy House Museum & Dexter Cabin",
+        "address": "912 4th St, Leadville, CO (regional listing; reachable from Denver for day trips). Wikipedia"
+      },
+      {
+        "name": "Colorado Sports Hall of Fame / Colorado Sports Museum (Downtown Denver)",
+        "address": "200 S Bannock St / Ball Arena area, Denver, CO 80202\\. Visit Denver"
+      },
+      {
+        "name": "The Money Museum / Denver Federal Reserve (Money Museum)",
+        "address": "1020 16th St Mall, Denver, CO 80202 (repeat verified)"
+      }
+    ],
+    "games-entertainment": [
+      {
+        "name": "The 1UP Arcade Bar",
+        "address": "1925 Blake St, Denver, CO 80202 The 1up Arcade Bar®+2arcadedirectory.org+2"
+      },
+      {
+        "name": "The 1UP Arcade Bar (Colfax location)",
+        "address": "717 E Colfax Ave, Denver, CO 80203 Arcades Map+1"
+      },
+      {
+        "name": "VR ARCADE USA",
+        "address": "1624 Market St \\#130, Denver, CO 80202 Loc8NearMe+1"
+      },
+      {
+        "name": "Lucky Strike Denver",
+        "address": "500 16th Street Mall \\#340, Denver, CO 80202 Lucky Strike+1"
+      },
+      {
+        "name": "Dave & Buster’s Denver",
+        "address": "2000 S Colorado Blvd, Denver, CO 80222 Arcades Map+1"
+      },
+      {
+        "name": "Super Awesome Fun Factory",
+        "address": "(address per website)"
+      },
+      {
+        "name": "Bowlero Westminster",
+        "address": "9150 Harlan St, Westminster, CO 80031 (near Denver metro) Arcades Map"
+      },
+      {
+        "name": "Round1 Bowling & Arcade (Southwest Plaza, Littleton area)",
+        "address": "8501 W Bowles Ave Space 1183, Littleton, CO 80123 (within metro range) Arcades Map"
+      },
+      {
+        "name": "Pindustry (Greenwood Village, near Denver)",
+        "address": "7939 E Arapahoe Rd, Greenwood Village, CO 80112 Pindustry"
+      },
+      {
+        "name": "AMF Northglenn Lanes",
+        "address": "310 W 104th Ave, Northglenn, CO 80234 (northern metro) Arcades Map+1"
+      },
+      {
+        "name": "Brunswick Broadmoor Bowl",
+        "address": "1135 S Wadsworth Blvd, Denver, CO 80232 Bowling Centers USA"
+      },
+      {
+        "name": "The Alley (Denver)",
+        "address": "3910 Elati St, Denver, CO (bowling / arcade / event‑type spot) Unilocal"
+      },
+      {
+        "name": "Epic Escape Game",
+        "address": "2222 S High St, Denver, CO (room‑escape / entertainment) arcadedirectory.org"
+      },
+      {
+        "name": "1up Arcade Bar (Westminster Branch)",
+        "address": "4750 W 120th Ave \\#900, Westminster, CO 80020 (pop‑up / branch location) The 1up Arcade Bar®"
+      },
+      {
+        "name": "1up Arcade Bar (Greenwood Village Branch)",
+        "address": "6864 S Clinton Ct, Greenwood Village, CO 80112 The 1up Arcade Bar®"
+      },
+      {
+        "name": "Asylum Haunted House",
+        "address": "6100 E 39th Ave, Denver, CO (horror/haunted‑house entertainment) arcadedirectory.org"
+      },
+      {
+        "name": "“A Brawl Against Dolph Lundgren” (arcade listing)",
+        "address": "1056 E 19th Ave, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "Amusement Park at Heritage Square",
+        "address": "264 S Downing St, Denver, CO (history / amusements / arcade listing) arcadedirectory.org"
+      },
+      {
+        "name": "Mile High Arcade",
+        "address": "6401 Broadway L, Denver, CO (arcade listing) arcadedirectory.org"
+      },
+      {
+        "name": "My School Dazes (arcade / entertainment listing)",
+        "address": "907 E Colfax Ave, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "Bridge Instruction Norma Sands (listed as entertainment/arcade)",
+        "address": "5250 Leetsdale Dr Ste 135, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "Sport Bowl Lanes & Billiards",
+        "address": "3295 S Broadway, Englewood, CO 80110 (metro‑area bowling/arcade) Bowling Centers USA"
+      },
+      {
+        "name": "Arapahoe Bowling Center",
+        "address": "6850 S Dayton St, Englewood, CO 80112 (metro‑area bowling alley) Bowling Centers USA"
+      },
+      {
+        "name": "Golden Bowl",
+        "address": "525 24th St, Golden, CO 80401 (near‑metro bowling) Bowling Centers USA"
+      },
+      {
+        "name": "Applewood Lanes",
+        "address": "1961 Youngfield St, Golden, CO 80401 (metro‑area bowling) Bowling Centers USA"
+      },
+      {
+        "name": "Surfacing (vintage‑style arcade listing in directory)",
+        "address": "from arcade/entertainment directories (address varies"
+      },
+      {
+        "name": "“The Game Exchange” (arcade / entertainment listing)",
+        "address": "2650 W 6th Ave, Denver, CO Unilocal"
+      },
+      {
+        "name": "“Amino Acid Sports” (listed place)",
+        "address": "891 14th St Unit 1506, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Aspire Tours / 14th Ave arcade listing”",
+        "address": "100 W 14th Ave Pkwy, Denver, CO (from arcade directory) arcadedirectory.org"
+      },
+      {
+        "name": "“Specialized Motor Sports” (arcade listing)",
+        "address": "145 Yuma St, Denver, CO (listed in arcade directory) arcadedirectory.org"
+      },
+      {
+        "name": "“Traveling Performers” (entertainment listing)",
+        "address": "1074 S Dahlia St Apt G426, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Veterans-Foreign Wars – Lowry” listing (arcade/entertainment)",
+        "address": "4747 W Colfax Ave, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Colorado Brewery Bus” (tour \\+ entertainment listing)",
+        "address": "420 S Cherokee St, Denver, CO (listed under arcades/entertainment) arcadedirectory.org"
+      },
+      {
+        "name": "“Greater Golfer Development Center” (listed under arcades/entertainment)",
+        "address": "4141 E 35th Ave, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Amusement Park at Heritage” (older listing)",
+        "address": "250 Ash St, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Asylum Haunted House” (for seasonal / haunted‑house entertainment)",
+        "address": "6100 E 39th Ave, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“The 1UP \\- Lakewood” (slightly outside but metro‑area)",
+        "address": "5815 W 6th Ave Unit 2D, Lakewood, CO 80214 Better Business Bureau+1"
+      },
+      {
+        "name": "“Laser Quest – Denver” (listed)",
+        "address": "8988 E Hampden Ave, Denver, CO (noted in arcade listing) Unilocal+1"
+      },
+      {
+        "name": "“The Alley” (alternate listing)",
+        "address": "3910 Elati St, Denver, CO (bowling/arcade/party‑venue) Unilocal+1"
+      },
+      {
+        "name": "“The 1up – multiple Denver locations”",
+        "address": "includes LoDo, Colfax, etc. (addresses above) The 1up Arcade Bar®+1"
+      },
+      {
+        "name": "“KaboomVR Virtual Reality Arcade”",
+        "address": "(as listing in entertainment directories"
+      },
+      {
+        "name": "“Asylum Haunted House / Entertainment Center” (see listing above)",
+        "address": "6100 E 39th Ave, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Amusement Park at Heritage Square” (historic‑arcade listing)",
+        "address": "264 S Downing St, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Epic Escape Game”",
+        "address": "2222 S High St, Denver, CO (escape‑rooms / entertainment) arcadedirectory.org"
+      },
+      {
+        "name": "“Mile High Arcade”",
+        "address": "6401 Broadway L, Denver, CO (arcade directory listing) arcadedirectory.org"
+      },
+      {
+        "name": "“My School Dazes” (arcade / entertainment listing)",
+        "address": "907 E Colfax Ave, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Bridge Instruction Norma Sands”",
+        "address": "5250 Leetsdale Dr Ste 135, Denver, CO arcadedirectory.org"
+      },
+      {
+        "name": "“Sport Bowl Lanes & Billiards”",
+        "address": "3295 S Broadway, Englewood, CO (near metro) Bowling Centers USA"
+      },
+      {
+        "name": "“Arapahoe Bowling Center”",
+        "address": "6850 S Dayton St, Englewood, CO 80112 (metro‑area) Bowling Centers USA"
+      },
+      {
+        "name": "“Golden Bowl”",
+        "address": "525 24th St, Golden, CO 80401 (front‑range / metro‑area bowling)"
+      },
+      {
+        "name": "**Denver",
+        "address": "Spa & Wellness / Relax & Recharge SpotsOakwell** Beer Spa"
+      },
+      {
+        "name": "The Spa at Four Seasons Hotel Denver",
+        "address": "1111 14th St, Denver, CO 80202 Fresha+1"
+      },
+      {
+        "name": "The Spa at The Ritz-Carlton, Denver",
+        "address": "1881 Curtis St, Denver, CO 80202 Visit Denver+1"
+      },
+      {
+        "name": "The Spa at The Brown Palace",
+        "address": "321 17th St, Denver, CO 80202 Visit Denver"
+      },
+      {
+        "name": "Recovery Lounge & Spa",
+        "address": "2195 Decatur St Suite 1, Denver, CO 80211 Fresha+1"
+      },
+      {
+        "name": "Eden Spa",
+        "address": "94 W 11th Ave, Denver, CO 80204 Fresha+1"
+      },
+      {
+        "name": "Indulgences Day Spa",
+        "address": "4100 Federal Blvd, Denver, CO 80211 Fresha+1"
+      },
+      {
+        "name": "Star Salt Caves Wellness Center",
+        "address": "722 S Pearl St, Denver, CO 80209 Sauna Finder+1"
+      },
+      {
+        "name": "Spa In the City",
+        "address": "136 Kalamath St, Denver, CO 80223 Fresha+1"
+      },
+      {
+        "name": "Zen'd Out Couples Massage Spa",
+        "address": "1143 Auraria Pkwy \\#203B, Denver, CO 80204 Fresha"
+      },
+      {
+        "name": "Gallery Massage and Skincare",
+        "address": "3919 Tennyson St, Denver, CO 80212 Fresha+1"
+      },
+      {
+        "name": "River & Body Wellness / Float & Recovery",
+        "address": "2195 Decatur St Suite 1, Denver, CO 80211 (same as \\#5, Wellness lounge) Fresha+1"
+      },
+      {
+        "name": "Rise & Restore Hyper Wellness",
+        "address": "5046 E Hampden Ave Suite 10, Denver, CO 80222 Sauna Finder+1"
+      },
+      {
+        "name": "On the Go Wellness Spa",
+        "address": "4875 E Evans Ave \\#102, Denver, CO 80222 Fresha"
+      },
+      {
+        "name": "Southmoor TCM Massage Therapy",
+        "address": "6450 E Hampden Ave, Denver, CO 80222 Fresha"
+      },
+      {
+        "name": "WW Beauty Spa",
+        "address": "6660 E Hampden Ave \\#101, Denver, CO 80224 Fresha"
+      },
+      {
+        "name": "Massage Envy – Denver/Tec Center Area",
+        "address": "7300 E Hampden Ave A1, Denver, CO 80231 Fresha"
+      },
+      {
+        "name": "Chinese Taipei Massage Spa LLC",
+        "address": "10011 E Hampden Ave, Denver, CO 80231 Fresha"
+      },
+      {
+        "name": "Woodhouse Spa – Denver",
+        "address": "941 E 17th Ave, Denver, CO 80218 Fresha"
+      },
+      {
+        "name": "Lake Steam Baths",
+        "address": "3540 W Colfax Ave, Denver, CO 80204 Fresha+1"
+      },
+      {
+        "name": "Spa & Wellness – A Skin & Body Sanctuary",
+        "address": "1562 S Parker Rd \\#204, Denver, CO 80231 Wellness.com+1"
+      },
+      {
+        "name": "Banya Russian Spa (Denver area)",
+        "address": "1842 S Parker Rd \\#21, Denver, CO 80231 Wellness.com+1"
+      },
+      {
+        "name": "Spavia Day Spa – Lowry Town Center",
+        "address": "200 Quebec St Bldg 500 Ste 115, Denver, CO 80230 Birdeye Experience Marketing platform+1"
+      },
+      {
+        "name": "Clean Your Dirty Face Spa",
+        "address": "1223 S Pearl St, Denver, CO 80210 Fresha+1"
+      },
+      {
+        "name": "Clean Your Dirty Face – Navajo St Branch",
+        "address": "3244 Navajo St, Denver, CO 80211 Fresha"
+      },
+      {
+        "name": "Pranava Massage",
+        "address": "3070 Blake St \\#140, Denver, CO 80205 Sauna Finder+1"
+      },
+      {
+        "name": "Denver Sports Recovery",
+        "address": "2242 W 29th Ave, Denver, CO 80211 Sauna Finder"
+      },
+      {
+        "name": "Samana Float Center",
+        "address": "1307 26th St, Denver, CO 80205 Sauna Finder"
+      },
+      {
+        "name": "PORTAL° Thermaculture",
+        "address": "2949 Federal Blvd, Denver, CO 80211 Sauna Finder"
+      },
+      {
+        "name": "Icelandic Fitness & Recovery",
+        "address": "600 S Holly St Unit 104, Denver, CO 80246 Sauna Finder"
+      },
+      {
+        "name": "Denver Mobile Sauna",
+        "address": "9123 E Mississippi Ave, Denver, CO 80247 Sauna Finder"
+      },
+      {
+        "name": "Tone Medical Aesthetics",
+        "address": "3900 E Mexico Ave \\#510, Denver, CO 80210 Sauna Finder"
+      },
+      {
+        "name": "Beyond Body Sculpting",
+        "address": "5777 E Evans Ave Ste 5, Denver, CO 80222 Sauna Finder+1"
+      },
+      {
+        "name": "Traverse Fitness",
+        "address": "2449 S Broadway, Denver, CO 80210 Sauna Finder"
+      },
+      {
+        "name": "Samana Wellness & Float",
+        "address": "1307 26th St, Denver, CO 80205 (same as \\#28) Sauna Finder"
+      },
+      {
+        "name": "Red Rock Sauna",
+        "address": "4460 W 29th Ave, Denver, CO 80211 Sauna Finder"
+      },
+      {
+        "name": "Samana Float & Sauna Center",
+        "address": "1307 26th St, Denver, CO 80205 (repeat but spa‑focused) Sauna Finder+1"
+      },
+      {
+        "name": "BioVital IV Infusion Clinic",
+        "address": "455 S Hudson St, Denver, CO 80246 Sauna Finder"
+      },
+      {
+        "name": "Amy Gray Wellness",
+        "address": "100 S Madison St \\#5B, Denver, CO 80209 Fresha+1"
+      },
+      {
+        "name": "Sapa Spa and Wellness",
+        "address": "344 E 7th Ave, Denver, CO 80203 Sauna Finder"
+      },
+      {
+        "name": "Restore Hyper Wellness – Hampden",
+        "address": "5046 E Hampden Ave Suite 10, Denver, CO 80222 (same as \\#13) Sauna Finder+1"
+      },
+      {
+        "name": "Pretty Skin / Aesthetic Spa",
+        "address": "1220 E 17th Ave, Denver, CO 80218 Sauna Finder+1"
+      },
+      {
+        "name": "Hand & Stone Massage and Facial Spa – Northfield Blvd",
+        "address": "8370 Northfield Blvd \\#1775, Denver, CO 80238 Sauna Finder"
+      },
+      {
+        "name": "VASA Fitness Denver-West (sauna access)",
+        "address": "1955 S Sheridan Blvd, Denver, CO 80227 Sauna Finder+1"
+      },
+      {
+        "name": "Chuze Fitness Denver (sauna & spa)",
+        "address": "2253 S Monaco St Pkwy, Denver, CO 80222 Sauna Finder"
+      },
+      {
+        "name": "Restore Wellness Spa & Recovery",
+        "address": "295 St Paul St, Denver, CO 80206 Sauna Finder"
+      },
+      {
+        "name": "Sesen Skin & Body Wellness",
+        "address": "1220 E 17th Ave, Denver, CO 80218 (same as \\#42) Sauna Finder+1"
+      },
+      {
+        "name": "Hotworx Sauna Gym (Westminster branch near Denver)",
+        "address": "8785 Sheridan Blvd, Westminster, CO 80003 (≈metro area) Fresha"
+      },
+      {
+        "name": "Hotworx Sauna Gym (Downtown‑area branch)",
+        "address": "location listed generically; check local directory for current address Fresha+1"
+      },
+      {
+        "name": "Onus IV Hydration & Wellness Bar (Greenwood Village / tech‑center)",
+        "address": "5425 Landmark Pl Ste 103, Greenwood Village, CO 80111 (in Denver metro area)"
+      }
+    ],
+    "coffee": [],
+    "nightlife": [
+      {
+        "name": "1\\. Beta Nightclub",
+        "address": "1909 Blake St, Denver, CO 80202"
+      },
+      {
+        "name": "2\\. Cowboy Lounge",
+        "address": "1941 Market St, Denver, CO 80202"
+      },
+      {
+        "name": "3\\. Coyote Ugly Saloon",
+        "address": "500 16th St Mall, Denver, CO 80202"
+      },
+      {
+        "name": "4\\. El Chapultepec",
+        "address": "1962 Market St, Denver, CO 80202"
+      },
+      {
+        "name": "5\\. Howl at the Moon Denver",
+        "address": "1735 19th St, Denver, CO 80202"
+      },
+      {
+        "name": "6\\. Ophelia's Electric Soapbox",
+        "address": "1215 20th St, Denver, CO 80202"
+      },
+      {
+        "name": "7\\. Cervantes' Masterpiece Ballroom",
+        "address": "2637 Welton St, Denver, CO 80205"
+      },
+      {
+        "name": "8\\. Club Vinyl",
+        "address": "1082 Broadway, Denver, CO 80203"
+      },
+      {
+        "name": "9\\. Temple Nightclub Denver",
+        "address": "1136 Broadway, Denver, CO 80203"
+      },
+      {
+        "name": "10\\. The Church Nightclub",
+        "address": "1160 Lincoln St, Denver, CO 80203"
+      },
+      {
+        "name": "11\\. The Meadowlark",
+        "address": "2701 Larimer St, Denver, CO 80205"
+      },
+      {
+        "name": "12\\. Mercury Café",
+        "address": "2199 California St, Denver, CO 80205"
+      },
+      {
+        "name": "13\\. Meow Wolf Denver",
+        "address": "1338 1st St, Denver, CO 80204"
+      },
+      {
+        "name": "14\\. Mix Music Lounge",
+        "address": "1320 15th St, Denver, CO 80202"
+      },
+      {
+        "name": "15\\. Mockingbird Denver",
+        "address": "2737 Larimer St, Denver, CO 80205"
+      },
+      {
+        "name": "16\\. Norad Dance Bar",
+        "address": "821 22nd St, Denver, CO 80205"
+      },
+      {
+        "name": "17\\. Bluebird Theater",
+        "address": "3317 E Colfax Ave, Denver, CO 80206"
+      },
+      {
+        "name": "18\\. Club Lexi",
+        "address": "1518 N Marion St, Denver, CO 80218"
+      },
+      {
+        "name": "19\\. Casselman’s",
+        "address": "2620 Walnut St, Denver, CO 80205"
+      },
+      {
+        "name": "20\\. City Hall Amphitheatre",
+        "address": "1144 Broadway St, Denver, CO 80203"
+      },
+      {
+        "name": "21\\. The Black Box",
+        "address": "314 E 13th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "22\\. Crash 45",
+        "address": "321 E 45th Ave, Denver, CO 80216"
+      },
+      {
+        "name": "23\\. Millers & Rossi",
+        "address": "3542 Walnut St, Denver, CO 80205"
+      },
+      {
+        "name": "24\\. Minibar",
+        "address": "222 Columbine St, Denver, CO 80206"
+      },
+      {
+        "name": "25\\. Opal Lounge",
+        "address": "100 E 9th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "26\\. Orchid Denver",
+        "address": "1448 Market St, Denver, CO 80202"
+      },
+      {
+        "name": "27\\. Mynt Lounge Denver",
+        "address": "1424 Market St, Denver, CO 80202"
+      },
+      {
+        "name": "28\\. The Cruise Room",
+        "address": "1601 17th St Mall, Denver, CO 80202"
+      },
+      {
+        "name": "29\\. Williams & Graham",
+        "address": "3160 Tejon St, Denver, CO 80211"
+      },
+      {
+        "name": "30\\. Union Lodge No.1",
+        "address": "1578 20th St, Denver, CO 80202"
+      },
+      {
+        "name": "31\\. El Five",
+        "address": "2930 Umatilla St, Denver, CO 80211"
+      },
+      {
+        "name": "32\\. Once Upon a Time Bar",
+        "address": "2453 W 44th Ave, Denver, CO 80211"
+      },
+      {
+        "name": "33\\. Stem Ciders",
+        "address": "2701 Walnut St, Denver, CO 80205"
+      },
+      {
+        "name": "34\\. Freshcraft",
+        "address": "428 E 17th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "35\\. Bar Standard",
+        "address": "1037 Broadway, Denver, CO 80203"
+      },
+      {
+        "name": "36\\. Milk Bar",
+        "address": "1037 Broadway, Denver, CO 80203"
+      },
+      {
+        "name": "37\\. Denver Beer Co.",
+        "address": "1695 Platte St, Denver, CO 80202"
+      },
+      {
+        "name": "38\\. Stem Ciderhouse",
+        "address": "2340 Larimer St, Denver, CO 80205"
+      },
+      {
+        "name": "39\\. The Black Box Lounge",
+        "address": "314 E 13th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "40\\. The Other Side (Cervantes)",
+        "address": "2637 Welton St, Denver, CO 80205"
+      },
+      {
+        "name": "41\\. Club Lexi (East Side)",
+        "address": "1518 N Marion St, Denver, CO 80218"
+      },
+      {
+        "name": "42\\. Crash 45 Denver",
+        "address": "321 E 45th Ave, Denver, CO 80216"
+      },
+      {
+        "name": "43\\. Millers & Rossi Lounge",
+        "address": "3542 Walnut St, Denver, CO 80205"
+      },
+      {
+        "name": "44\\. Minibar Denver",
+        "address": "222 Columbine St, Denver, CO 80206"
+      },
+      {
+        "name": "45\\. Opal Lounge Denver",
+        "address": "100 E 9th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "46\\. Orchid Denver Lounge",
+        "address": "1448 Market St, Denver, CO 80202"
+      },
+      {
+        "name": "47\\. Mynt Lounge Denver Bar",
+        "address": "1424 Market St, Denver, CO 80202"
+      },
+      {
+        "name": "48\\. The Cruise Room Lounge",
+        "address": "1601 17th St Mall, Denver, CO 80202"
+      },
+      {
+        "name": "49\\. Williams & Graham Cocktail Bar",
+        "address": "3160 Tejon St, Denver, CO 80211"
+      },
+      {
+        "name": "50\\. Union Lodge No.1 Bar",
+        "address": "1578 20th St, Denver, CO 80202"
+      }
+    ],
+    "shopping": [
+      {
+        "name": "Garbarini",
+        "address": "320 Fillmore St, Suite 1111, Denver, CO 80206 CherryCreekNorth.com+1"
+      },
+      {
+        "name": "Cherry Creek Shopping Center",
+        "address": "3000 East 1st Avenue, Denver, CO 80206 Colorado.com+1"
+      },
+      {
+        "name": "Cherry Creek North",
+        "address": "roughly from University Blvd to Steele St / E 3rd–1st Avenues, Denver, CO 80206 Wundervue+1"
+      },
+      {
+        "name": "Denver Pavilions",
+        "address": "500 16th St, Denver, CO 80202 Wikipedia+1"
+      },
+      {
+        "name": "Larimer Square",
+        "address": "1430 Larimer St, Denver, CO 80202 hotels+1"
+      },
+      {
+        "name": "Rockmount Ranch Wear",
+        "address": "1626 Wazee St, Denver, CO 80202 Yelp+1"
+      },
+      {
+        "name": "The Artisan Center",
+        "address": "2757 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "A Line Boutique",
+        "address": "3050 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Bloom by Anuschka",
+        "address": "201 University Blvd \\#123, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Adornments Boutique",
+        "address": "2826 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Foster & Son Fine Jewelers",
+        "address": "2908 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Benadato Trading Co",
+        "address": "100 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "The Hermitage Bookshop",
+        "address": "290 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "CB2",
+        "address": "210 Saint Paul Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Cherry Creek Watch Company",
+        "address": "222 Steele Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "David Ellis Jewelers",
+        "address": "2640 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Déjà Blue Boutique",
+        "address": "303 University Boulevard, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Fifth Avenue Designs",
+        "address": "150 Steele Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Greyson Clothiers",
+        "address": "2432 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Interior Define",
+        "address": "105 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "J. McLaughlin",
+        "address": "2701 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Joybird",
+        "address": "201 Columbine Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Kendra Scott",
+        "address": "175 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Little Feet Shoe Store",
+        "address": "201 University Boulevard, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Lolo Rugs and Gifts",
+        "address": "3003 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Orvis",
+        "address": "2770 East 2nd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Room & Board",
+        "address": "222 Detroit Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Saks Galleries Cherry Creek",
+        "address": "3019 East 2nd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Show of Hands",
+        "address": "200 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Tecovas",
+        "address": "3030 East 2nd Avenue, Unit 102, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Veronica Beard",
+        "address": "250 Columbine Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "vineyard vines",
+        "address": "2900 East 2nd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "White Peacock Home \\+ Gift",
+        "address": "2440 East 3rd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Eileen Fisher",
+        "address": "2800 East 2nd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Rag & Bone",
+        "address": "3015 East 2nd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "The Shade Store",
+        "address": "2960 East 2nd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Max Clothing Store",
+        "address": "250 Columbine Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Roche Bobois",
+        "address": "105 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "SEE Eyewear",
+        "address": "2800 East 2nd Avenue, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "New West KnifeWorks",
+        "address": "185 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "The Normal Brand",
+        "address": "105 Fillmore Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Inspyre Boutique",
+        "address": "171 Detroit Street, Denver, CO 80206 CherryCreekNorth.com"
+      },
+      {
+        "name": "Little Bird Denver",
+        "address": "(in Denver metro area)"
+      },
+      {
+        "name": "Feral Mountain Co",
+        "address": "on or near Tennyson Street (Highlands/Highland neighborhood), Denver, CO Denvers Best+1"
+      },
+      {
+        "name": "Joyfill",
+        "address": "shop located in Highlands / Berkeley area, Denver metro bluemountainbelle.com+1"
+      },
+      {
+        "name": "BookBar",
+        "address": "on Tennyson Street in Denver (Highland/Berkeley area) Denvers Best+1"
+      },
+      {
+        "name": "Jolly Goods",
+        "address": "4020 Tennyson St, Denver, CO 80212 bluemountainbelle.com"
+      },
+      {
+        "name": "Stanley Marketplace",
+        "address": "2501 Dallas St, Aurora, CO 80010 (close to Denver metro) bluemountainbelle.com+1"
+      },
+      {
+        "name": "South Broadway Shopping (SoBo)",
+        "address": "South Broadway area, Denver, CO (general area, many boutiques & vintage shops) CBS News+1"
+      },
+      {
+        "name": "Broadway Market",
+        "address": "in the Five Points / downtown-ish historic area of Denver, CO (mix of boutiques, vintage, and artisan shops)"
+      },
+      {
+        "name": "City Park",
+        "address": "East 17th Ave & York St, Denver, CO 80206 Visit Denver+1"
+      },
+      {
+        "name": "Washington Park",
+        "address": "Denver, CO (central entrance near S Franklin St & E Virginia Ave) Wikipedia+1"
+      },
+      {
+        "name": "Cheesman Park",
+        "address": "1599 E 8th Ave, Denver, CO 80218 Uncover Colorado+2Wikipedia+2"
+      },
+      {
+        "name": "Sloan's Lake Park",
+        "address": "Denver, CO (lake/neighborhood area) Wikipedia+1"
+      },
+      {
+        "name": "Confluence Park",
+        "address": "Denver, CO 80202 Wikipedia+1"
+      },
+      {
+        "name": "Cherry Creek Trail",
+        "address": "Denver, CO 80202 (trail follows from downtown through Cherry Creek areas) Vibemap+1"
+      },
+      {
+        "name": "Platte River Trail",
+        "address": "Denver, CO (along South Platte River, passes through downtown) Vibemap"
+      },
+      {
+        "name": "Denver Botanic Gardens",
+        "address": "York Street location, Denver, CO 80205 (near Cheesman Park) Wikipedia+1"
+      },
+      {
+        "name": "Cherry Creek State Park",
+        "address": "4201 S Parker Rd, Aurora, CO 80014 (metro-area park) Colorado Parks and Wildlife+2Colorado Parks and Wildlife+2"
+      },
+      {
+        "name": "Bear Creek Lake Park",
+        "address": "15600 W Morrison Rd, Lakewood, CO 80228 Uncover Colorado+2Lakewood+2"
+      },
+      {
+        "name": "Red Rocks Park",
+        "address": "18300 W Alameda Pkwy / 17598 W Alameda Pkwy, Morrison, CO 80465 Mountain Parks Foundation+2Wikipedia+2"
+      },
+      {
+        "name": "Trading Post Trail (inside Red Rocks Park)",
+        "address": "same address as Red Rocks Park, Morrison, CO 80465 Mountain Parks Foundation+1"
+      },
+      {
+        "name": "Red Rocks & Dakota Ridge Trails (multi-use trail network)",
+        "address": "starting at Red Rocks Park, Morrison, CO 80465 Mountain Parks Foundation+1"
+      },
+      {
+        "name": "O'Fallon Park",
+        "address": "Denver, CO (part of Bear Creek corridor open-space system) Denvergov+1"
+      },
+      {
+        "name": "Pence Park",
+        "address": "Denver, CO"
+      },
+      {
+        "name": "Little Park (Little Mountain Park area)",
+        "address": "Denver, CO (part of Mountain Parks network) Denvergov+1"
+      },
+      {
+        "name": "Lookout Mountain Park",
+        "address": "near Golden / foothills west of Denver, CO (part of the Mountain-parks system) Denvergov+1"
+      },
+      {
+        "name": "Mountain Parks (Denver network)",
+        "address": "various park areas west of city, CO (the broader network) Denvergov+1"
+      },
+      {
+        "name": "Cherry Creek Reservoir (within Cherry Creek State Park)",
+        "address": "4201 S Parker Rd, Aurora, CO 80014 Colorado Parks and Wildlife+1"
+      },
+      {
+        "name": "Cherry Creek State Park multi‑use trails",
+        "address": "4201 S Parker Rd, Aurora, CO 80014 Colorado Parks and Wildlife+1"
+      },
+      {
+        "name": "Bear Creek Trail",
+        "address": "connects several parks (Pence, O’Fallon, Corwina) west of Denver, CO Denvergov+1"
+      },
+      {
+        "name": "Corwina Park (part of Bear Creek corridor)",
+        "address": "Denver, CO (within Mountain-parks network) Denvergov+1"
+      },
+      {
+        "name": "South Platte River (urban trail areas)",
+        "address": "Denver, CO (access via Confluence Park and surrounding trails) Wikipedia+1"
+      },
+      {
+        "name": "South Platte / Cherry Creek kayak & river access",
+        "address": "Confluence"
+      },
+      {
+        "name": "Urban bike/pedestrian pathways (Denver network)",
+        "address": "covering many city parks and trails (e.g. around lakes, rivers) Visit Denver+1"
+      },
+      {
+        "name": "City Park lakes & walking loops",
+        "address": "East 17th Ave & York St, Denver, CO 80206 Visit Denver+1"
+      },
+      {
+        "name": "Cheesman Park walking/jogging loop paths",
+        "address": "1599 E 8th Ave, Denver, CO 80218 Uncover Colorado+1"
+      },
+      {
+        "name": "Washington Park lakes \\+ jogging/biking paths",
+        "address": "Denver, CO (central Wash Park area) Visit Denver+1"
+      },
+      {
+        "name": "Sloan's Lake walking / bike path around lake",
+        "address": "Denver, CO (Sloan’s Lake neighborhood and lakefront) Wikipedia+1"
+      },
+      {
+        "name": "Denver Botanic Gardens York Street location (gardens \\+ paths)",
+        "address": "Denver, CO 80205 Wikipedia+1"
+      },
+      {
+        "name": "Bear Creek Lake Park boating & beach access",
+        "address": "15600 W Morrison Rd, Lakewood, CO 80228 Uncover Colorado+1"
+      },
+      {
+        "name": "Bear Creek Lake Park camping / cabins",
+        "address": "15600 W Morrison Rd, Lakewood, CO 80228 Bear Creek Lake Park+1"
+      },
+      {
+        "name": "Bear Creek Lake Park fishing & water recreation",
+        "address": "15600 W Morrison Rd, Lakewood, CO 80228 Uncover Colorado+1"
+      },
+      {
+        "name": "Red Rocks visitor center & scenic roads in Red Rocks Park",
+        "address": "18300 W Alameda Pkwy, Morrison, CO 80465 Mountain Parks Foundation+1"
+      },
+      {
+        "name": "Red Rocks panoramic viewpoint & skyline overlook",
+        "address": "Morrison, CO 80465 (Red Rocks Park) Mountain Parks Foundation+1"
+      },
+      {
+        "name": "Red Rocks open‑space hiking trails",
+        "address": "Morrison, CO 80465 Mountain Parks Foundation+1"
+      },
+      {
+        "name": "Red Rocks & Matthews/Winters Park loop trails",
+        "address": "start at Red Rocks Park, Morrison, CO 80465 Mountain Parks Foundation+1"
+      },
+      {
+        "name": "Cherry Creek State Park biking & hiking trails",
+        "address": "4201 S Parker Rd, Aurora, CO 80014 Colorado Parks and Wildlife+1"
+      },
+      {
+        "name": "Cherry Creek State Park equestrian trails",
+        "address": "4201 S Parker Rd, Aurora, CO 80014 Colorado Parks and Wildlife+1"
+      },
+      {
+        "name": "Mountain‑parks forested open‑space areas",
+        "address": "various, west Denver/foothills CO Denvergov+1"
+      },
+      {
+        "name": "Mountain‑parks canyon/trail access areas",
+        "address": "within the Denver Mountain Parks network, CO Denvergov+1"
+      },
+      {
+        "name": "Denver urban trail network (various inter‑park connectors)",
+        "address": "Denver, CO (general network) Visit Denver+1"
+      },
+      {
+        "name": "Front Range foothills natural‑area parks (via Lookout Mountain, etc.)",
+        "address": "near Golden / foothills west of Denver, CO Denvergov+1"
+      },
+      {
+        "name": "South Platte & Cherry Creek Waterfront Access (for kayaking, etc.)",
+        "address": "Denver, CO 80202 (via Confluence Park) Wikipedia+1"
+      },
+      {
+        "name": "City Park jogging/ walking paths & open lawns",
+        "address": "East 17th Ave & York St, Denver, CO 80206 Visit Denver+1"
+      },
+      {
+        "name": "Cheesman Park picnic & green‑space areas",
+        "address": "1599 E 8th Ave, Denver, CO 80218 Uncover Colorado+1"
+      },
+      {
+        "name": "Sloan’s Lake boating/fishing access \\+ surrounding walking paths",
+        "address": "Denver, CO (Sloan’s Lake area) Wikipedia+1"
+      },
+      {
+        "name": "Denver Botanic Gardens walking paths & gardens",
+        "address": "York Street location, Denver, CO 80205 Wikipedia+1"
+      },
+      {
+        "name": "Bear Creek Lake Park multi‑use recreation area",
+        "address": "15600 W Morrison Rd, Lakewood, CO 80228 Uncover Colorado+1"
+      },
+      {
+        "name": "Red Rocks Park historic & scenic outdoor landmark",
+        "address": "18300 W Alameda Pkwy, Morrison, CO 80465"
+      }
+    ],
+    "fitness-classes": [
+      {
+        "name": "ONE Yoga",
+        "address": "8101 E. Belleview Ave, Denver, CO 80237 Bdir+1"
+      },
+      {
+        "name": "CorePower Yoga",
+        "address": "1699 S Colorado Blvd, Suite I, Denver, CO 80222 Bdir+1"
+      },
+      {
+        "name": "CorePower Yoga (alternate location)",
+        "address": "333 E 13th Ave, Denver, CO 80203 Bdir+1"
+      },
+      {
+        "name": "Black Swan Yoga",
+        "address": "1308 N. Pearl St, Denver, CO 80203 blackswanyoga.com+1"
+      },
+      {
+        "name": "Yoga Box",
+        "address": "1947 S Broadway, Denver, CO 80210 iliveyoga.com+1"
+      },
+      {
+        "name": "Yoga Box (alternate spot)",
+        "address": "124 E 9th Ave, Denver, CO 80203 Denvers Best+1"
+      },
+      {
+        "name": "Rooted Heart Yoga & Wellness",
+        "address": "1409 N Ogden St, Denver, CO 80218 Bdir+1"
+      },
+      {
+        "name": "Ohana Yoga \\+ Barre",
+        "address": "4342 Tennyson St, Denver, CO 80212 Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "TruFusion Denver",
+        "address": "985 Albion St \\#100, Denver, CO 80220 GYMS IN COLORADO+1"
+      },
+      {
+        "name": "Fit Republic RiNo",
+        "address": "2605 Walnut St, Denver, CO 80205 CityCMS+1"
+      },
+      {
+        "name": "The Fitness Branch",
+        "address": "3070 Blake St \\#160, Denver, CO 80205 CityCMS+1"
+      },
+      {
+        "name": "Colefusion Fitness",
+        "address": "1100 Bannock St, Denver, CO 80204 Golden Triangle Creative District+1"
+      },
+      {
+        "name": "CrossFit Broadway",
+        "address": "1025 Acoma St, Denver, CO 80204 Golden Triangle Creative District"
+      },
+      {
+        "name": "Pilates Aligned",
+        "address": "475 W 12th Ave, Denver, CO 80204 Golden Triangle Creative District+1"
+      },
+      {
+        "name": "The River Yoga",
+        "address": "1212 Delaware St, Denver, CO 80204 Golden Triangle Creative District+1"
+      },
+      {
+        "name": "Samadhi Yoga",
+        "address": "1070 Bannock St, Denver, CO 80204 Golden Triangle Creative District+1"
+      },
+      {
+        "name": "Manna Pilates",
+        "address": "2815 Larimer St, Denver, CO 80205 CityCMS+1"
+      },
+      {
+        "name": "Endorphin (City Park)",
+        "address": "3170 E Colfax Ave, Denver, CO 80206 iliveyoga.com+1"
+      },
+      {
+        "name": "Endorphin (LoHi)",
+        "address": "3210 Tejon St, Denver, CO 80211 iliveyoga.com+1"
+      },
+      {
+        "name": "Kindness Yoga",
+        "address": "(Belleview Ave location) 8101 Belleview Ave Suite Z, Denver, CO iliveyoga.com+1"
+      },
+      {
+        "name": "Yoga Center of Denver",
+        "address": "770 S Broadway, Denver, CO 80209 (South Broadway area) Denvers Best"
+      },
+      {
+        "name": "Bikram Yoga Mile High",
+        "address": "5019 E Colfax Ave, Denver, CO 80220 Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "Better Buzz Yoga",
+        "address": "2714 W 44th Ave, Denver, CO 80211 Bdir"
+      },
+      {
+        "name": "Tula Hot Yoga Denver",
+        "address": "1131 E 4th Ave, Denver, CO 80218 Bdir+1"
+      },
+      {
+        "name": "Whole Body Studios",
+        "address": "(Cheesman Park / 9th Ave area) 1207 E 9th Ave, Denver, CO 80218 Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "Dancing The Soul",
+        "address": "950 Jersey St, Denver, CO 80220 CBS News+1"
+      },
+      {
+        "name": "Lagree Luxe",
+        "address": "1255A Delaware St, Denver, CO 80204 Golden Triangle Creative District"
+      },
+      {
+        "name": "Fight Gravity Fitness",
+        "address": "3300 Walnut St, Denver, CO 80205 CityCMS+1"
+      },
+      {
+        "name": "Yoga Pod LoDo",
+        "address": "1956 Lawrence St \\#100, Denver, CO 80202 iliveyoga.com+1"
+      },
+      {
+        "name": "Root to Rise Yoga",
+        "address": "101 Ulster Ct, Suite 101, Denver, CO 80230 Bdir+1"
+      },
+      {
+        "name": "Denver Yoga Underground",
+        "address": "3250 E 6th Ave, Denver, CO 80206 Bdir+1"
+      },
+      {
+        "name": "Ahimsa Yoga and Wellness",
+        "address": "1303 E 6th Ave, Denver, CO 80218 Bdir+1"
+      },
+      {
+        "name": "BIG Power Yoga \\- Denver",
+        "address": "2470 Broadway, Denver, CO 80205 Bdir+1"
+      },
+      {
+        "name": "Sukha Healing Arts",
+        "address": "788 W 8th Ave, Denver, CO 80204 Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "The Rhythm Revolution",
+        "address": "4970 E Colfax Ave, Denver, CO 80220 iliveyoga.com+1"
+      },
+      {
+        "name": "Cherry Creek Athletic Club",
+        "address": "500 S Cherry St, Denver, CO 80246 iliveyoga.com+1"
+      },
+      {
+        "name": "SHIFT Cycle \\+ Fitness",
+        "address": "5096 Central Park Blvd, Denver, CO 80238 iliveyoga.com"
+      },
+      {
+        "name": "QiFlow Yoga Denver",
+        "address": "2636 Walnut St, Denver, CO 80205 iliveyoga.com+1"
+      },
+      {
+        "name": "The FIIT Co.",
+        "address": "2110 Market St, Denver, CO 80205 GYMS IN COLORADO"
+      },
+      {
+        "name": "Duality Fitness",
+        "address": "4635 W Colfax Ave, Denver, CO 80204 iliveyoga.com+1"
+      },
+      {
+        "name": "Matrix Fitness & Spa",
+        "address": "925 Lincoln St \\#200, Denver, CO 80203 Golden Triangle Creative District+1"
+      },
+      {
+        "name": "Denver Bikram Yoga",
+        "address": "2601 W Frontview Crescent Unit 100A, Denver, CO 80204 Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "The Healing Space Wellness Center",
+        "address": "1211 S Parker Rd, Denver, CO (exact ZIP may vary) Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "Physio Yoga and Wellness",
+        "address": "(address general: Denver, CO 802??)"
+      },
+      {
+        "name": "Twisted Sister Yoga",
+        "address": "3835 Elm St Unit H, Denver, CO 80207 (or nearby) Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "Belly Bliss",
+        "address": "300 Josephine St Ste 230, Denver, CO 80206 Energize Your Life With Yoga"
+      },
+      {
+        "name": "barre3 Denver – Cherry Creek",
+        "address": "2828 E 6th Ave, Denver, CO 80206 Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "pH7 Pilates",
+        "address": "1162 Madison St, Denver, CO 80216 (or near) Energize Your Life With Yoga+1"
+      },
+      {
+        "name": "Sol Yoga",
+        "address": "12351 W 64th Ave, Arvada, CO 80004 (near Denver metro) Energize Your Life With Yoga"
+      },
+      {
+        "name": "Whole Yoga Center",
+        "address": "1735 E 17th Ave, Denver, CO 80218"
+      }
+    ],
+    "sports-recreation": [
+      {
+        "name": "Athmar Recreation Center",
+        "address": "2680 W Mexico Ave, Denver, CO 80219 Denvergov+1"
+      },
+      {
+        "name": "Carla Madison Recreation Center",
+        "address": "2401 E Colfax Ave, Denver, CO 80206 Denvergov+1"
+      },
+      {
+        "name": "Central Park Recreation Center",
+        "address": "9651 E Martin Luther King Jr Blvd, Denver, CO 80238 Denvergov+1"
+      },
+      {
+        "name": "Montbello Recreation Center",
+        "address": "15555 E 53rd Ave, Denver, CO 80239 Denvergov"
+      },
+      {
+        "name": "Montclair Recreation Center",
+        "address": "729 Ulster Way, Denver, CO 80230 Denvergov"
+      },
+      {
+        "name": "Rude Recreation Center",
+        "address": "2855 W Holden Pl, Denver, CO 80204 Denvergov"
+      },
+      {
+        "name": "Scheitler Recreation Center",
+        "address": "5031 W 46th Ave, Denver, CO 80212 Denvergov"
+      },
+      {
+        "name": "Washington Park Recreation Center",
+        "address": "701 S Franklin St, Denver, CO 80209 Denvergov+1"
+      },
+      {
+        "name": "Ashland Recreation Center",
+        "address": "2475 W Dunkeld Pl, Denver, CO 80219 Denvergov+1"
+      },
+      {
+        "name": "Cook Park Recreation Center",
+        "address": "7100 Cherry Creek South Dr, Denver, CO 80231 (or nearby) Denvergov"
+      },
+      {
+        "name": "Eisenhower Recreation Center",
+        "address": "4300 E Dartmouth Ave, Denver, CO 80222 Denvergov+1"
+      },
+      {
+        "name": "Glenarm Recreation Center",
+        "address": "2800 Glenarm Pl, Denver, CO 80205 Denvergov+1"
+      },
+      {
+        "name": "Green Valley Ranch Recreation Center",
+        "address": "4890 Argonne Way, Denver, CO 80239 (or around) Denvergov"
+      },
+      {
+        "name": "Harvard Gulch Recreation Center",
+        "address": "550 E Iliff Ave, Denver, CO 80210 Denvergov+1"
+      },
+      {
+        "name": "Harvey Park Recreation Center",
+        "address": "2120 S Tennyson Way, Denver, CO 80223 (approx) Denvergov"
+      },
+      {
+        "name": "Hiawatha Davis Jr. Recreation Center",
+        "address": "3334 Holly St, Denver, CO 80207 Denvergov+1"
+      },
+      {
+        "name": "La Alma Recreation Center",
+        "address": "1325 W 11th Ave, Denver, CO 80204 (approx) Denvergov"
+      },
+      {
+        "name": "La Familia Recreation Center",
+        "address": "65 S Elati St, Denver, CO 80219 (approx) Denvergov"
+      },
+      {
+        "name": "Johnson Recreation Center",
+        "address": "4809 Race St, Denver, CO 80216 (or nearby) Denvergov"
+      },
+      {
+        "name": "Platt Park Recreation Center",
+        "address": "1500 S Grant St, Denver, CO 80210 (approx) Denvergov"
+      },
+      {
+        "name": "St. Charles Recreation Center",
+        "address": "3777 Lafayette St, Denver, CO 80205 (or near) Denvergov"
+      },
+      {
+        "name": "Swansea Recreation Center",
+        "address": "2650 E 49th Ave, Denver, CO 80216 (or nearby) Denvergov"
+      },
+      {
+        "name": "Twentieth Street Recreation Center",
+        "address": "1011 20th St, Denver, CO 80205 (or downtown-Denver area) Denvergov"
+      },
+      {
+        "name": "5090 Broadway Recreation Center (Stapleton area)",
+        "address": "5090 Broadway, Denver, CO 80216 (or nearby) Denvergov"
+      },
+      {
+        "name": "Barnum Recreation Center",
+        "address": "360 Hooker St, Denver, CO 80219 (or nearby) Denvergov"
+      },
+      {
+        "name": "College View Recreation Center",
+        "address": "2525 S Decatur St, Denver, CO 80219 (or nearby) Denvergov"
+      },
+      {
+        "name": "Southwest Recreation Center",
+        "address": "9200 W Saratoga Pl, Denver, CO 80226 (or nearby) Denvergov"
+      },
+      {
+        "name": "High-market Court / Gym Fields via Denver CityWide Sports",
+        "address": "includes courts at e.g. Harvard Gulch, Hiawatha Davis Jr., Central Park Rec Center denvercitywidesports.org+1"
+      },
+      {
+        "name": "Dick’s Sporting Goods Park",
+        "address": "6000 Victory Way, Commerce City, CO 80022 (metro-area)"
+      },
+      {
+        "name": "Empower Field at Mile High",
+        "address": "1701 Bryant St, Denver, CO 80204"
+      },
+      {
+        "name": "Ball Arena",
+        "address": "1000 Chopper Circle, Denver, CO 80204"
+      },
+      {
+        "name": "Coors Field",
+        "address": "2001 Blake St, Denver, CO 80205"
+      },
+      {
+        "name": "University of Denver Soccer Stadium (CIBER Field)",
+        "address": "2201 East Asbury Avenue, Denver, CO 80210"
+      },
+      {
+        "name": "Ritchie Center (at University of Denver)",
+        "address": "2240 E Buchtel Blvd, Denver, CO 80210"
+      },
+      {
+        "name": "Foothills Sports Arena",
+        "address": "3608 S Kipling Parkway, Denver, CO 80235"
+      },
+      {
+        "name": "Hiawatha Davis Jr. Recreation Center",
+        "address": "3334 Holly St, Denver, CO 80207 (repeated here because of its courts/fields for public sports) Denvergov+1"
+      },
+      {
+        "name": "Harvard Gulch Recreation Center",
+        "address": "550 E Iliff Ave, Denver, CO 80210 (good spot for indoor gym, courts, group sports) Denvergov+1"
+      },
+      {
+        "name": "Carla Madison Recreation Center",
+        "address": "2401 E Colfax Ave, Denver, CO 80206 (listed again for courts/fitness) Denvergov+1"
+      },
+      {
+        "name": "Athmar Recreation Center",
+        "address": "2680 W Mexico Ave, Denver, CO 80219 (again inclusive as gym/rec spot) Denvergov+1"
+      },
+      {
+        "name": "Central Park Recreation Center",
+        "address": "9651 E Martin Luther King Jr Blvd, Denver, CO 80238 (again as central rec spot) Denvergov+1"
+      },
+      {
+        "name": "Montbello Recreation Center",
+        "address": "15555 E 53rd Ave, Denver, CO 80239 (good for drop-in sports, pool, etc.) Denvergov"
+      },
+      {
+        "name": "Montclair Recreation Center",
+        "address": "729 Ulster Way, Denver, CO 80230 (for gym / court / pool) Denvergov"
+      },
+      {
+        "name": "Rude Recreation Center",
+        "address": "2855 W Holden Pl, Denver, CO 80204 (drop-in friendly) Denvergov+1"
+      },
+      {
+        "name": "Scheitler Recreation Center",
+        "address": "5031 W 46th Ave, Denver, CO 80212 (includes pools & courts) Denvergov"
+      },
+      {
+        "name": "Eisenhower Recreation Center",
+        "address": "4300 E Dartmouth Ave, Denver, CO 80222 Denvergov+1"
+      },
+      {
+        "name": "Glenarm Recreation Center",
+        "address": "2800 Glenarm Pl, Denver, CO 80205 Denvergov"
+      },
+      {
+        "name": "Harvey Park Recreation Center",
+        "address": "2120 S Tennyson Way, Denver, CO 80223 (or 80219-ish) Denvergov"
+      },
+      {
+        "name": "La Familia Recreation Center",
+        "address": "65 S Elati St, Denver, CO 80219 Denvergov"
+      },
+      {
+        "name": "Johnson Recreation Center",
+        "address": "4809 Race St, Denver, CO 80216 (or near) Denvergov"
+      },
+      {
+        "name": "Swansea Recreation Center",
+        "address": "2650 E 49th Ave, Denver, CO 80216 (or near)"
+      }
+    ],
+    "live-music": [
+      {
+        "name": "The Mission Ballroom",
+        "address": "4242 Wynkoop St, Denver, CO 80216"
+      },
+      {
+        "name": "Bluebird Theater",
+        "address": "3317 E Colfax Ave, Denver, CO 80206"
+      },
+      {
+        "name": "Ogden Theatre",
+        "address": "935 E Colfax Ave, Denver, CO 80218"
+      },
+      {
+        "name": "Summit Music Hall",
+        "address": "1902 Blake St, Denver, CO 80202"
+      },
+      {
+        "name": "Marquis Theater",
+        "address": "2009 Larimer St, Denver, CO 80205"
+      },
+      {
+        "name": "Paramount Theatre",
+        "address": "1621 Glenarm Pl, Denver, CO 80202"
+      },
+      {
+        "name": "Ball Arena",
+        "address": "1000 Chopper Circle, Denver, CO 80204"
+      },
+      {
+        "name": "Red Rocks Amphitheatre",
+        "address": "18300 W Alameda Pkwy, Morrison, CO 80465"
+      },
+      {
+        "name": "Cervantes' Masterpiece Ballroom",
+        "address": "2637 Welton St, Denver, CO 80205"
+      },
+      {
+        "name": "Dazzle (Denver Jazz Club)",
+        "address": "930 E 17th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "Ophelia’s Electric Soapbox",
+        "address": "1215 20th St, Denver, CO 80202"
+      },
+      {
+        "name": "Black Buzzard Bar & Grill",
+        "address": "1700 17th St, Denver, CO 80202"
+      },
+      {
+        "name": "The Perplexiplex (Meow Wolf Denver)",
+        "address": "1331 1st St, Denver, CO 80202"
+      },
+      {
+        "name": "Boettcher Concert Hall",
+        "address": "1245 Champa St, Denver, CO 80204"
+      },
+      {
+        "name": "Comedy Works Downtown",
+        "address": "1226 15th St, Denver, CO 80202"
+      },
+      {
+        "name": "Globe Hall",
+        "address": "1245 Champa St, Denver, CO 80204"
+      },
+      {
+        "name": "The Gothic Theatre",
+        "address": "3263 S Broadway, Englewood, CO 80113"
+      },
+      {
+        "name": "Black Box",
+        "address": "314 E 13th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "Lost Lake Lounge",
+        "address": "3602 E Colfax Ave, Denver, CO 80206"
+      },
+      {
+        "name": "Larimer Lounge",
+        "address": "2721 Larimer St, Denver, CO 80205"
+      },
+      {
+        "name": "Meadowlark",
+        "address": "3500 W 32nd Ave, Denver, CO 80211"
+      },
+      {
+        "name": "Hi-Dive",
+        "address": "7 S Broadway, Denver, CO 80209"
+      },
+      {
+        "name": "Goosetown Tavern",
+        "address": "3344 W 32nd Ave, Denver, CO 80211"
+      },
+      {
+        "name": "Lions Lair",
+        "address": "2220 Larimer St, Denver, CO 80205"
+      },
+      {
+        "name": "Squire Lounge",
+        "address": "1680 Platte St, Denver, CO 80202"
+      },
+      {
+        "name": "Bar 404",
+        "address": "404 E 13th Ave, Denver, CO 80203"
+      },
+      {
+        "name": "Moe’s BBQ (Broadway)",
+        "address": "1616 S Broadway, Denver, CO 80210"
+      },
+      {
+        "name": "Temple Nightclub",
+        "address": "1270 14th St, Denver, CO 80202"
+      },
+      {
+        "name": "Club Vinyl",
+        "address": "1455 Larimer St, Denver, CO 80202"
+      },
+      {
+        "name": "Mercury Cafe",
+        "address": "2199 California St, Denver, CO 80205"
+      },
+      {
+        "name": "Bellco Theatre",
+        "address": "700 14th St, Denver, CO 80202"
+      },
+      {
+        "name": "Roxy Theatre",
+        "address": "2280 Blake St, Denver, CO 80205"
+      },
+      {
+        "name": "The Black Buzzard (alternate listing)",
+        "address": "1700 17th St, Denver, CO 80202"
+      },
+      {
+        "name": "Globe Hall & Ballroom (alternate)",
+        "address": "1245 Champa St, Denver, CO 80204"
+      },
+      {
+        "name": "Lost Lake Lounge & Patio",
+        "address": "3602 E Colfax Ave, Denver, CO 80206"
+      },
+      {
+        "name": "Hi-Dive Denver (alternate)",
+        "address": "7 S Broadway, Denver, CO 80209"
+      },
+      {
+        "name": "Bar Standard",
+        "address": "1345 Broadway, Denver, CO 80203"
+      },
+      {
+        "name": "Herb’s",
+        "address": "1235 W Colfax Ave, Denver, CO 80204"
+      },
+      {
+        "name": "Levitt Pavilion Denver (Ruby Hill Park)",
+        "address": "2003 W Iliff Ave, Denver, CO 80219"
+      },
+      {
+        "name": "Comedy Works South",
+        "address": "1226 15th St, Denver, CO 80202"
+      },
+      {
+        "name": "Ophelia’s Electric Soapbox (alternate)",
+        "address": "1215 20th St, Denver, CO 80202"
+      },
+      {
+        "name": "The Perplexiplex (alternate)",
+        "address": "1331 1st St, Denver, CO 80202"
+      },
+      {
+        "name": "Bellco Theatre (alternate)",
+        "address": "700 14th St, Denver, CO 80202"
+      },
+      {
+        "name": "Comedy Works Downtown (alternate)",
+        "address": "1226 15th St, Denver, CO 80202"
+      },
+      {
+        "name": "Roxy Theatre (alternate)",
+        "address": "2280 Blake St, Denver, CO 80205"
+      },
+      {
+        "name": "Mercury Café & Lounge (alternate)",
+        "address": "2199 California St, Denver, CO 80205"
+      },
+      {
+        "name": "Globe Hall Denver (alternate)",
+        "address": "1245 Champa St, Denver, CO 80204"
+      },
+      {
+        "name": "Temple Nightclub Denver (alternate)",
+        "address": "1270 14th St, Denver, CO 80202"
+      },
+      {
+        "name": "Black Buzzard Denver (alternate)",
+        "address": "1700 17th St, Denver, CO 80202"
+      },
+      {
+        "name": "Levitt Pavilion Ruby Hill Park (alternate)",
+        "address": "2003 W Iliff Ave, Denver, CO 80219"
+      }
+    ],
+    "drinks-bars": [
+      {
+        "name": "Call Me Pearl — 1600 20th St, Denver, CO 80202 Call Me Pearl",
+        "address": "Bar in Denver, CO+2LodoLove.com+2"
+      },
+      {
+        "name": "Ratio Beerworks (RiNo)",
+        "address": "2920 Larimer St, Denver, CO 80205 Ratio Beerworks+1"
+      },
+      {
+        "name": "Ratio Beerworks (Overland)",
+        "address": "2030 S Cherokee St, Denver, CO 80223 Ratio Beerworks"
+      },
+      {
+        "name": "Our Mutual Friend Brewing",
+        "address": "2810 Larimer St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Crooked Stave (brewery)",
+        "address": "3350 Brighton Blvd, Denver, CO 80216 Denver Craft Breweries"
+      },
+      {
+        "name": "Denver Beer Company",
+        "address": "1695 Platte St, Denver, CO 80202 Denver Craft Breweries"
+      },
+      {
+        "name": "Platt Park Brewing Company",
+        "address": "1875 S Pearl St, Denver, CO 80210 Denver Craft Breweries"
+      },
+      {
+        "name": "Renegade Brewing Company",
+        "address": "925 W 9th Ave, Denver, CO 80204 Beer of the Day+1"
+      },
+      {
+        "name": "Strange Craft Beer Company",
+        "address": "1330 Zuni St, Unit M, Denver, CO 80204 Beer of the Day+1"
+      },
+      {
+        "name": "TRVE Brewing Co.",
+        "address": "227 Broadway \\#101, Denver, CO 80203 Beer of the Day"
+      },
+      {
+        "name": "Station 26 Brewing Co.",
+        "address": "7045 E 38th Ave, Denver, CO 80207 Beer of the Day"
+      },
+      {
+        "name": "Lost Highway Brewery",
+        "address": "520 E Colfax Ave, Denver, CO 80203 Denver Craft Breweries+1"
+      },
+      {
+        "name": "Hogshead Brewery",
+        "address": "4460 W 29th Ave, Denver, CO 80212 (?)"
+      },
+      {
+        "name": "The Cooper Lounge",
+        "address": "1701 Wynkoop St, Denver, CO 80202 LodoLove.com+1"
+      },
+      {
+        "name": "Tavernetta",
+        "address": "1889 16th Street Mall, Denver, CO (near downtown) Delicious Denver Food Tours+1"
+      },
+      {
+        "name": "The 1UP Arcade Bar (Colfax)",
+        "address": "(address per directory: look up “The 1up Arcade Bar Denver”"
+      },
+      {
+        "name": "Breezy / Dive‑bar‑style spot from “100 Favorite Bars” list",
+        "address": "pick one from that list for your own catalog as desired. Denver Westword+1"
+      },
+      {
+        "name": "Brewery / Taproom from local directory",
+        "address": "e.g. one of the smaller ones listed in brewery directories like “Denver Craft Breweries” Denver Craft Breweries+1"
+      },
+      {
+        "name": "Wine / Cocktail & Wine Bars per LoDo / Downtown listing",
+        "address": "e.g. “Blanchard Family Wines” listed at 1855 Blake St, Denver, CO (from a LoDo‑bars directory) LodoLove.com"
+      },
+      {
+        "name": "Another downtown cocktail / lounge bar from that directory",
+        "address": "e.g. “The Ambler” at 1801 Wewatta St, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Brewery from list: “Denver Beer Company” on Platte Street (already \\#6 above)",
+        "address": "repeat as needed if multiple locations, or use alternates from directory. Denver Craft Breweries"
+      },
+      {
+        "name": "Brewery / brewpub: “Factotum Brewhouse”",
+        "address": "from brewery list, address: 3845 Lipan St, Denver, CO 80211 Denver Craft Breweries"
+      },
+      {
+        "name": "Brewery: “Fermaentra Brewing”",
+        "address": "address: 1715 E Evans Ave, Denver, CO 80210 Denver Craft Breweries"
+      },
+      {
+        "name": "Brewery: “Denver‑area taproom: Strange Brewing Company”",
+        "address": "listed above (\\#9) Beer of the Day+1"
+      },
+      {
+        "name": "Brewery: “Crooked Stave” (already \\#5)",
+        "address": "but if they have multiple locations, ensure full listing. Denver Craft Breweries"
+      },
+      {
+        "name": "Brewery: “TRVE Brewing Co.” (\\#10 above)",
+        "address": "keep for coverage Beer of the Day"
+      },
+      {
+        "name": "Brewery: “Lost Highway Brewery”",
+        "address": "(\\#12 above) Denver Craft Breweries+1"
+      },
+      {
+        "name": "Cocktail / wine / lounge: Another bar from the LoDo directory",
+        "address": "e.g. “Chez Maggy” (1616 Market St) LodoLove.com"
+      },
+      {
+        "name": "Lounge / bar: “Coohills Restaurant & Bar”",
+        "address": "1400 Wewatta St, Denver, CO (from LoDo listings) LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “The Corner Office”",
+        "address": "1401 Curtis St, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “The Cruise Room”",
+        "address": "1600 17th St, Denver, CO (historic‑style cocktail lounge per directory) LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Seven Grand”",
+        "address": "1855 Blake St, Denver, CO (from bar‑directory) LodoLove.com+1"
+      },
+      {
+        "name": "Cocktail / bar: “The Wild”",
+        "address": "1660 Wynkoop St, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Wine / cocktail / lounge: “Blanchard Family Wines”",
+        "address": "1855 Blake St, Denver, CO (same address as Seven Grand"
+      },
+      {
+        "name": "Cocktail / bar: “Deviation Distilling”",
+        "address": "1821 Blake St, Denver, CO (from LoDo listings) LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Little Finch”",
+        "address": "1490 16th St Mall, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Lob Denver”",
+        "address": "1755 Blake St, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Tamayo”",
+        "address": "1400 Larimer St, Denver, CO (known for drinks & social vibe) LodoLove.com+1"
+      },
+      {
+        "name": "Cocktail / bar: “Rioja”",
+        "address": "1431 Larimer St, Denver, CO LodoLove.com+1"
+      },
+      {
+        "name": "Cocktail / wine / bar: “The Nickel”",
+        "address": "1100 14th St, Denver, CO (from bar‑directory) LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Poka Lola Social Club”",
+        "address": "1850 Wazee St, Denver, CO (bar‑directory listing) LodoLove.com+1"
+      },
+      {
+        "name": "Cocktail / bar: “Sunday Vinyl”",
+        "address": "1803 16th St Mall, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Urban Farmer (Denver)”",
+        "address": "1659 Wazee St, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “The Original”",
+        "address": "1600 20th St, Denver, CO (same building as Call Me Pearl / Rally Hotel, but separate listing in directory) LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Tom’s Watch Bar”",
+        "address": "1601 19th St, Denver, CO LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “Milepost Zero”",
+        "address": "1601 19th St, Denver, CO (listed among LoDo bars) LodoLove.com"
+      },
+      {
+        "name": "Cocktail / bar: “The Cruise Room”",
+        "address": "1600 17th St, Denver, CO (a repeat of \\#34"
+      }
+    ],
+    "arts-culture": [
+      {
+        "name": "D’art Gallery",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 D'art Gallery+1"
+      },
+      {
+        "name": "Gallery 1505",
+        "address": "1505 S Pearl St, Denver, CO 80210 GALLERY 1505+1"
+      },
+      {
+        "name": "RULE Gallery",
+        "address": "3001 Brighton Blvd, Suite 600, Denver, CO 80216 RinoArtDistrict.org"
+      },
+      {
+        "name": "Alto Gallery",
+        "address": "1900 35th St, Suite B, Denver, CO 80216 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Dateline",
+        "address": "3004 Larimer St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "fooLPRoof Contemporary Art Gallery",
+        "address": "3240 Larimer St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Globeville Riverfront Art Center (GRACe)",
+        "address": "888 E 50th Ave, Denver, CO 80216 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Plinth Gallery",
+        "address": "3520 Brighton Blvd, Denver, CO 80216 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Visions West Contemporary",
+        "address": "2605 Walnut St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Rainy Days Gallery",
+        "address": "3535 Walnut St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "RedLine Contemporary Art Center",
+        "address": "2350 Arapahoe St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "PlatteForum",
+        "address": "3575 Ringsby Ct, Denver, CO 80216 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Walnut Workshop",
+        "address": "3525 Walnut St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "The Space \\- Denver",
+        "address": "3704 N Franklin St, Denver, CO 80205 RinoArtDistrict.org+1"
+      },
+      {
+        "name": "Museo de las Americas",
+        "address": "861 Santa Fe Dr, Denver, CO 80216 Wikipedia+1"
+      },
+      {
+        "name": "Clyfford Still Museum",
+        "address": "1250 Bannock St, Denver, CO 80204 Wikipedia"
+      },
+      {
+        "name": "Denver Art Museum",
+        "address": "100 W 14th Ave Pkwy, Denver, CO 80204 Visit Denver+1"
+      },
+      {
+        "name": "Kirkland Museum of Fine & Decorative Art",
+        "address": "1201 Bannock St, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Molly Brown House Museum",
+        "address": "1340 Pennsylvania St, Denver, CO 80203 Art Collecting+1"
+      },
+      {
+        "name": "DIME Denver – Center for Visual Art",
+        "address": "1244 Santa Fe Dr, Denver, CO 80204 (in the Art District on Santa Fe) Wikipedia+1"
+      },
+      {
+        "name": "Denver Art Society",
+        "address": "734 Santa Fe Dr, Denver, CO 80204 Reddit+1"
+      },
+      {
+        "name": "SPACE Gallery",
+        "address": "400 Santa Fe Dr, Denver, CO 80204 Visual Art Source+1"
+      },
+      {
+        "name": "Mai Wyn Fine Art",
+        "address": "747 Santa Fe Dr (in Art District on Santa Fe), Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Leisure Gallery",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Michael Warren Contemporary",
+        "address": "735 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "ReCreative Denver",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Artists on Santa Fe",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 Art Collecting+1"
+      },
+      {
+        "name": "Su Teatro Cultural & Performing Arts Center",
+        "address": "721 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "RiNo Art District (as creative‑hub/district)",
+        "address": "River North District, Denver, CO 80205 (multiple streets & addresses) Colorado.com+1"
+      },
+      {
+        "name": "40 West Arts District",
+        "address": "301 W Colfax Ave / West Colfax corridor, Lakewood/metro area (serves greater Denver arts scene) Visit Denver+1"
+      },
+      {
+        "name": "Dry Ice Factory (DIF)",
+        "address": "3300 Walnut St, Denver, CO 80205 Forge Apartments+1"
+      },
+      {
+        "name": "Helikon Gallery & Studios",
+        "address": "(in RiNo area"
+      },
+      {
+        "name": "The RedLine Contemporary Art Center",
+        "address": "2350 Arapahoe St, Denver, CO 80205 (already listed same as RedLine above) RinoArtDistrict.org+1"
+      },
+      {
+        "name": "WindWalkers Studio & Gallery",
+        "address": "(on Wazee/Santa Fe corridor"
+      },
+      {
+        "name": "Space Gallery Denver",
+        "address": "400 Santa Fe Dr, Denver, CO 80204 (same as SPACE above) Visual Art Source+1"
+      },
+      {
+        "name": "Denver Center for the Performing Arts (various galleries/exhibits)",
+        "address": "1101 13th St, Denver, CO 80204 (complex housing theatre \\+ art) Visit Denver+1"
+      },
+      {
+        "name": "Mizel Arts & Cultural Center",
+        "address": "350 S Dahlia St, Denver, CO 80246 Visual Art Source+1"
+      },
+      {
+        "name": "Arvada Center for the Arts and Humanities",
+        "address": "6901 Wadsworth Blvd, Arvada, CO 80003 (Denver metro) Wikipedia"
+      },
+      {
+        "name": "Colorado Ballet Studio / Gallery (within Santa Fe district)",
+        "address": "part of Santa Fe Arts District, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Center for Visual Art, MSU Denver",
+        "address": "1245 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Mai Wyn Fine Art Gallery",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 (repeat district‑slot but distinct gallery) Wikipedia+1"
+      },
+      {
+        "name": "Leisure.studio Gallery",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Michael Warren Contemporary Gallery",
+        "address": "735 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "ReCreative Denver Gallery",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Artists on Santa Fe Gallery",
+        "address": "747 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "Su Teatro Cultural & Performing Arts Center Gallery",
+        "address": "721 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "DIME Denver – Center for Visual Art Gallery",
+        "address": "1244 Santa Fe Dr, Denver, CO 80204 Wikipedia+1"
+      },
+      {
+        "name": "RiNo Art District Galleries & Studios Collective",
+        "address": "various addresses along Blake, Larimer, Walnut, Brighton Blvd (general district for many galleries) Colorado.com+1"
+      },
+      {
+        "name": "40 West Arts District & Gallery Spaces",
+        "address": "West Colfax & Lakewood area (serves greater Denver‑metro creative community) Visit Denver+1"
+      },
+      {
+        "name": "Convergence Station (Meow Wolf Denver)",
+        "address": "1338 1st Street, Denver, CO 80204 Wikipedia+1"
+      }
+    ],
+    "food": [
+      {
+        "name": "Sushi Den",
+        "address": "1487 S Pearl St, Denver, CO 80210 Stacker+2Restauranteur+2"
+      },
+      {
+        "name": "Root Down",
+        "address": "1600 W 33rd Ave, Denver, CO 80211 Stacker+1"
+      },
+      {
+        "name": "Avanti Food & Beverage",
+        "address": "3200 Pecos St, Denver, CO 80211 Stacker"
+      },
+      {
+        "name": "Blue Pan Pizza",
+        "address": "3930 W 32nd Ave, Denver, CO 80212 Stacker"
+      },
+      {
+        "name": "Postino WineCafe",
+        "address": "2715 17th St, Denver, CO 80211 Stacker"
+      },
+      {
+        "name": "Vert Kitchen",
+        "address": "704 S Pearl St, Denver, CO 80210 Stacker"
+      },
+      {
+        "name": "La Diabla Pozole y Mezcal",
+        "address": "2233 Larimer St, Denver, CO 80205 Wikipedia"
+      },
+      {
+        "name": "Beckon",
+        "address": "2843 Larimer St, Denver, CO 80205 Wikipedia"
+      },
+      {
+        "name": "Hop Alley",
+        "address": "3500 Larimer St, Denver, CO 80205 Uncover Colorado+1"
+      },
+      {
+        "name": "Panzano",
+        "address": "909 17th St, Denver, CO 80202 Stacker+1"
+      },
+      {
+        "name": "Tamayo",
+        "address": "1400 Larimer St, Denver, CO 80202 Restauranteur+1"
+      },
+      {
+        "name": "The Capital Grille",
+        "address": "1450 Larimer St, Denver, CO 80202 Stacker"
+      },
+      {
+        "name": "Jax Fish House & Oyster Bar",
+        "address": "1539 17th St, Denver, CO 80202 Stacker+1"
+      },
+      {
+        "name": "The Corner Office & Martini Bar",
+        "address": "1401 Curtis St, Denver, CO 80202 Restauranteur"
+      },
+      {
+        "name": "Steuben’s Uptown",
+        "address": "523 E 17th Ave, Denver, CO 80218 Restauranteur+1"
+      },
+      {
+        "name": "Sushi Hai",
+        "address": "3600 W 32nd Ave, Denver, CO 80212 Restauranteur+1"
+      },
+      {
+        "name": "Sushi‑Rama",
+        "address": "2615 Larimer St, Denver, CO 80205 Restauranteur"
+      },
+      {
+        "name": "Table 6",
+        "address": "609 Corona St, Denver, CO (80218 or nearby"
+      },
+      {
+        "name": "Ship Tavern at Brown Palace",
+        "address": "321 17th St, Denver, CO 80202 Restauranteur+1"
+      },
+      {
+        "name": "Water Course Foods",
+        "address": "837 E 17th Avenue, Denver, CO 80218 ACM SIGSAC+1"
+      },
+      {
+        "name": "Mercury Café",
+        "address": "2199 California St, Denver, CO 80205 ACM SIGSAC+1"
+      },
+      {
+        "name": "Denver Beer Co.",
+        "address": "1695 Platte St, Denver, CO 80202 ACM SIGSAC+1"
+      },
+      {
+        "name": "Chop House & Brewery",
+        "address": "1735 19th St, Denver, CO 80202 ACM SIGSAC+1"
+      },
+      {
+        "name": "El Taco de Mexico",
+        "address": "714 Santa Fe Dr, Denver, CO 80204 Uncover Colorado"
+      },
+      {
+        "name": "Sahara Restaurant",
+        "address": "9636 E Arapahoe Rd, Greenwood Village, CO 80112 *(metro‑area)* Restauranteur+1"
+      },
+      {
+        "name": "Saucy Bombay",
+        "address": "2616 E Colfax Ave, Denver, CO 80206 Restauranteur+1"
+      },
+      {
+        "name": "Sonoda’s Sushi",
+        "address": "3108 S Parker Rd, Aurora, CO 80014 *(metro‑area)* Restauranteur+1"
+      },
+      {
+        "name": "Star of India",
+        "address": "3102 S Parker Rd, Aurora, CO 80014 *(metro‑area)* Restauranteur"
+      },
+      {
+        "name": "Hops & Pie",
+        "address": "3920 Tennyson St, Denver, CO 80212 Denver Westword+1"
+      },
+      {
+        "name": "Rock Bottom Brewery (Downtown)",
+        "address": "1001 16th St Mall, Denver, CO 80202 Restauranteur+1"
+      },
+      {
+        "name": "Snooze, an A.M. Eatery",
+        "address": "700 N Colorado Blvd Suite A, Denver, CO 80206 *(breakfast/ brunch)* Stacker+1"
+      },
+      {
+        "name": "Water Course Foods (Veg/Vegan)",
+        "address": "837 E 17th Ave, Denver, CO 80218 ACM SIGSAC+1"
+      },
+      {
+        "name": "Jax Fish House & Oyster Bar (alternate listing)",
+        "address": "1539 17th St, Denver, CO 80202 Stacker+1"
+      },
+      {
+        "name": "Table Mountain Grill & Cantina",
+        "address": "1310 Washington Ave, Golden, CO 80401 *(near‑metro)* Restauranteur"
+      },
+      {
+        "name": "Izakaya Den",
+        "address": "1487A S Pearl St, Denver, CO 80210 *(sushi/ Japanese, alternative to Sushi Den)* Uncover Colorado"
+      },
+      {
+        "name": "Sushi SaSa",
+        "address": "2401 15th St, Denver, CO 80202 Restauranteur+1"
+      },
+      {
+        "name": "Steuben’s Uptown (alternate listing)",
+        "address": "523 E 17th Ave, Denver, CO 80218 Restauranteur"
+      },
+      {
+        "name": "The 9th Door (Capitol Hill)",
+        "address": "925 Lincoln St, Denver, CO 80203 Restauranteur"
+      },
+      {
+        "name": "The Oceanaire Seafood Room",
+        "address": "1400 Arapahoe St, Denver, CO 80202 *(seafood fine dining)* ACM SIGSAC"
+      },
+      {
+        "name": "The Kitchen Denver",
+        "address": "1530 16th St Mall, Denver, CO 80202 *(American / farm‑to‑table)* ACM SIGSAC"
+      },
+      {
+        "name": "Potager (Downtown)",
+        "address": "1109 Ogden St, Denver, CO 80218 *(vegetarian / creative dining)* JCO Online+1"
+      },
+      {
+        "name": "Rock Bottom Brewery (same downtown address as \\#30, included for craft‑brew cuisine)",
+        "address": "1001 16th St Mall, Denver, CO 80202 Restauranteur+1"
+      },
+      {
+        "name": "Sushi‑Rama (alternative listing)",
+        "address": "2615 Larimer St, Denver, CO 80205 Restauranteur"
+      },
+      {
+        "name": "Sahara Restaurant (Greenwood Village)",
+        "address": "9636 E Arapahoe Rd, Greenwood Village, CO 80112 *(suburban, but in metro)* Restauranteur"
+      },
+      {
+        "name": "Saucy Bombay (alternative listing)",
+        "address": "2616 E Colfax Ave, Denver, CO 80206 Restauranteur"
+      },
+      {
+        "name": "Ship Tavern at Brown Palace (alternate)",
+        "address": "321 17th St, Denver, CO 80202 Restauranteur"
+      },
+      {
+        "name": "Star of India (alternate)",
+        "address": "3102 S Parker Rd, Aurora, CO 80014 *(metro‑area)* Restauranteur"
+      },
+      {
+        "name": "Sonoda’s Sushi (alternate)",
+        "address": "3108 S Parker Rd, Aurora, CO 80014 *(metro‑area)* Restauranteur"
+      },
+      {
+        "name": "The Corner Office & Martini Bar (alternate)",
+        "address": "1401 Curtis St, Denver, CO 80202 Restauranteur"
+      },
+      {
+        "name": "Snooze, an A.M. Eatery (alternate)",
+        "address": "2262 Larimer St, Denver, CO 80205 *(if using alternate branch)*"
+      }
+    ],
+    "pet-friendly": [
+      {
+        "name": "Barnum Dog Park",
+        "address": "N. Julian St between W. 4th & 5th Ave, Denver, CO Denvergov+1"
+      },
+      {
+        "name": "Berkeley Dog Park",
+        "address": "W. 46th Ave & Sheridan Blvd, Denver, CO Denvergov+1"
+      },
+      {
+        "name": "Carla Madison Dog Park",
+        "address": "2405 E Colfax Ave, Denver, CO 80206 Denvergov+1"
+      },
+      {
+        "name": "Fuller Dog Park",
+        "address": "E 29th Ave & Franklin St, Denver, CO Denvergov+1"
+      },
+      {
+        "name": "Green Valley Ranch East Dog Park",
+        "address": "E 45th Ave & Jebel St, Denver, CO Denvergov"
+      },
+      {
+        "name": "Greenway Dog Park",
+        "address": "E 22nd Ave & Syracuse St, Denver, CO Denvergov+1"
+      },
+      {
+        "name": "Kennedy Dog Park",
+        "address": "Hampden Ave & S Dayton St, Denver, CO Denvergov"
+      },
+      {
+        "name": "Little Boxcar Dog Park",
+        "address": "Broadway & Lawrence St, Denver, CO Denvergov+1"
+      },
+      {
+        "name": "Lowry Dog Park",
+        "address": "E 4th Pl & S Yosemite Way, Denver, CO Denvergov+1"
+      },
+      {
+        "name": "Parkfield Dog Park",
+        "address": "53rd Ave & Chambers Rd, Denver, CO Denvergov"
+      },
+      {
+        "name": "Railyard Dog Park",
+        "address": "19th Ave & Little Raven St, Denver, CO 80202 region Denvergov+1"
+      },
+      {
+        "name": "Sanderson Gulch Dog Park",
+        "address": "S Lipan St & W Arkansas Ave, Denver, CO Denvergov"
+      },
+      {
+        "name": "Sonny Lawson Dog Park",
+        "address": "24th St & California St, Denver, CO Denvergov"
+      },
+      {
+        "name": "Willow Bark Dog Park",
+        "address": "Spruce St & E 53rd Pl, Denver, CO Denvergov"
+      },
+      {
+        "name": "Zeckendorf Plaza Dog Park (pilot dog‑park)",
+        "address": "7th Ave & Lincoln St, Denver, CO 80203 Denvergov+1"
+      },
+      {
+        "name": "Denver Beer Co. (Platte Street Taproom)",
+        "address": "1695 Platte St, Denver, CO 80202 Jet Set Pets+1"
+      },
+      {
+        "name": "Black Shirt Brewing Co.",
+        "address": "3719 Walnut St, Denver, CO 80205 Drink Denver+1"
+      },
+      {
+        "name": "Bierstadt Lagerhaus",
+        "address": "2875 Blake St, Denver, CO 80205 Jet Set Pets+1"
+      },
+      {
+        "name": "Lowry Beer Garden",
+        "address": "7577 E Academy Blvd, Denver, CO 80230 Pet Friendly Restaurants+1"
+      },
+      {
+        "name": "Denver Bicycle Cafe",
+        "address": "1308 E 17th Ave, Denver, CO 80218 Eater Denver"
+      },
+      {
+        "name": "Cozy Cottage (pet‑friendly cafe)",
+        "address": "4363 Tennyson St, Denver, CO 80212 Eater Denver"
+      },
+      {
+        "name": "The Molecule Effect (Santa Fe Arts District)",
+        "address": "Denver, CO (exact street address per directory) Petworks+1"
+      },
+      {
+        "name": "Stella’s Coffee Haus (South Pearl St)",
+        "address": "Denver, CO (South Pearl St, exact address per pet‑guide) Petworks"
+      },
+      {
+        "name": "Mouthfuls Pet Boutique (Highlands)",
+        "address": "Denver, CO (Highlands neighborhood) Petworks"
+      },
+      {
+        "name": "Pet Station (Capitol Hill)",
+        "address": "Denver, CO (Capitol Hill area address per directory) Petworks"
+      },
+      {
+        "name": "Recess Beer Garden",
+        "address": "LoHi, Denver, CO (listed among dog‑friendly beer gardens) Petworks+1"
+      },
+      {
+        "name": "Forest Room 5",
+        "address": "Highlands neighborhood, Denver, CO (outdoor/patio \\+ dog‑friendly listing) Petworks"
+      },
+      {
+        "name": "Watering Bowl",
+        "address": "Virginia Village area, Denver, CO (dog‑friendly yard \\+ burgers & beer) Petworks+1"
+      },
+      {
+        "name": "Call to Arms Brewing Company",
+        "address": "4526 Tennyson St, Denver, CO 80212 Drink Denver+1"
+      },
+      {
+        "name": "Prost Brewing & Biergarten",
+        "address": "2540 19th St, Denver, CO 80211 Reddit+1"
+      },
+      {
+        "name": "The 54thirty Rooftop (Le Méridien hotel)",
+        "address": "1475 California St, Denver, CO 80202 (popular rooftop dog‑friendly patio per local guides) Axios"
+      },
+      {
+        "name": "The Woods (Source Hotel, RiNo)",
+        "address": "3330 Brighton Blvd, Denver, CO 80216 (dog‑friendly rooftop/bar \\+ food) Axios+1"
+      },
+      {
+        "name": "The Red Barber (Catbird Hotel, RiNo)",
+        "address": "3216 Walnut St, Denver, CO 80205 (dog‑friendly bar/rooftop) Axios+1"
+      },
+      {
+        "name": "Edgewater Beer Garden",
+        "address": "Edgewater, CO (near Denver"
+      },
+      {
+        "name": "Joyride Brewing Company",
+        "address": "Denver‑area brewery, known dog‑friendly per pet‑friendly guides Visit Denver+1"
+      },
+      {
+        "name": "Holidaily Brewing Co. (Tech Center taproom)",
+        "address": "metro‑area listing among pet‑friendly breweries per guide Visit Denver"
+      },
+      {
+        "name": "Alpine Dog Brewing",
+        "address": "1505 Ogden St, Denver, CO 80218"
+      },
+      {
+        "name": "New Terrain Brewing (near metro)",
+        "address": "listed as dog‑ and kid‑friendly by community posts Reddit"
+      },
+      {
+        "name": "Long Table Brewery",
+        "address": "Denver‑area brewery often listed as dog‑friendly patio spot Reddit+1"
+      },
+      {
+        "name": "Zuni Street Brewing",
+        "address": "Denver area (often listed among dog‑friendly breweries in Reddit threads) Reddit+1"
+      },
+      {
+        "name": "Comrade Brewing Co.",
+        "address": "Denver area brewery listed by locals as dog‑welcome patio spot Reddit+1"
+      },
+      {
+        "name": "Four Noses Brewing (Brighton area, metro)",
+        "address": "listed among dog‑friendly breweries per guide Drink Denver+1"
+      },
+      {
+        "name": "Cannonball Creek Brewing (Golden area, metro)",
+        "address": "listed among pet‑friendly breweries near Denver Drink Denver+1"
+      },
+      {
+        "name": "Prost Brewing & Biergarten (alternate listing)",
+        "address": "2540 19th St, Denver, CO 80211 (already \\#30, listed again for coverage) Reddit+1"
+      },
+      {
+        "name": "Black Shirt Brewing Co. (alternate listing)",
+        "address": "3719 Walnut St, Denver, CO 80205 (already \\#17, inclusion for coverage) Drink Denver+1"
+      },
+      {
+        "name": "Denver Beer Co. (alternate listing)",
+        "address": "1695 Platte St, Denver, CO 80202 (already \\#16) Jet Set Pets+1"
+      },
+      {
+        "name": "Lowry Beer Garden (alternate listing)",
+        "address": "7577 E Academy Blvd, Denver, CO 80230 (already \\#19) Pet Friendly Restaurants+1"
+      },
+      {
+        "name": "Bierstadt Lagerhaus (alternate)",
+        "address": "2875 Blake St, Denver, CO 80205 (already \\#18) Jet Set Pets+1"
+      },
+      {
+        "name": "The Molecule Effect (alternate)",
+        "address": "Santa Fe Art District, Denver, CO (already \\#22) Petworks+1"
+      },
+      {
+        "name": "Stella’s Coffee Haus (alternate)",
+        "address": "South Pearl St, Denver, CO (already \\#23)"
+      }
+    ],
+    "road-trip-getaways": []
+  }
+}

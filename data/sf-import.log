@@ -1,0 +1,762 @@
+
+> swipely-app@1.0.0 import:sf-json
+> tsx scripts/import-from-json.ts data/san-francisco.json
+
+
+🚀 Importing locations for San Francisco
+📂 Categories: 15
+📍 Geocoded San Francisco: 37.7749295, -122.4194155
+
+📂 MUSEUM: 50 locations
+  ✅ California Academy of Sciences
+  ✅ de Young Museum
+  ✅ Legion of Honor
+  ✅ San Francisco Museum of Modern Art
+  ✅ Exploratorium
+  ✅ Asian Art Museum
+  ✅ The Contemporary Jewish Museum
+  ✅ Museum of the African Diaspora
+  ✅ Museum of Craft and Design
+  ✅ Tenderloin Museum
+  ✅ Randall Museum
+  ✅ American Book Binders Museum
+  ✅ Cable Car Museum
+  ✅ The Beat Museum
+  ✅ Cartoon Art Museum
+  ✅ CuriOdyssey
+  ✅ Fort Point National Historic Site
+  ✅ Wells Fargo Museum
+  ✅ Haas-Lilienthal House
+  ✅ Henry Wilson Coil Library and Museum of Freemasonry
+  ✅ Museum of Russian Culture
+  ✅ McElroy Octagon House
+  ✅ African American Art & Culture Complex
+  ✅ SFO Museum Louis A. Turpen Aviation Museum and Library
+  ✅ Chinese Historical Society of America Museum
+  ✅ The Walt Disney Family Museum
+  ✅ ICA SF
+  ✅ San Francisco Women Artists Gallery
+  ✅ GLBT Historical Society Museum
+  ✅ Museum of Craft and Folk Art
+  ✅ de Young Museum
+  ✅ Asian Art Museum
+  ✅ Children's Creativity Museum
+  ✅ CK Contemporary
+  ✅ CounterPulse
+  ✅ de Young Museum
+  ✅ USS Pampanito Museum and Memorial
+  ✅ Presidio Heritage Gallery
+  ✅ Counterculture Museum
+  ✅ The Mexican Museum
+  ✅ San Francisco Railway Museum
+  ✅ USS Hornet - Sea, Air and Space Museum
+  ✅ Musée Mécanique
+  ✅ Ripley's Believe It or Not!
+  ✅ Antique Vibrator Museum
+  ❌ Pop Art Museum - Not found on Google Places
+  ✅ Galería de la Raza
+  ✅ ICA SF
+  ✅ The Walt Disney Family Museum
+  ✅ Chinese Culture Center of San Francisco
+  📊 museum: 49 success, 1 failed
+
+📂 GAMES-ENTERTAINMENT: 15 locations
+  ✅ Lucky Strike San Francisco
+  ✅ Round1 Bowling & Arcade Stonestown Galleria
+  ✅ Emporium Arcade Bar
+  ✅ Free Gold Watch
+  ✅ Rack-N-Cue
+  ✅ Bibbiti
+  ✅ The Detour
+  ✅ Sandbox VR
+  ✅ Musée Mécanique
+  ✅ Players Sports Grill & Arcade
+  ✅ Joey the Cat's Arcade
+  ✅ Presidio Bowl
+  ✅ House of Air Trampoline Park and Café
+  ✅ Subpar Miniature Golf
+  ✅ Golden Gate Tap Room
+  📊 games-entertainment: 15 success, 0 failed
+
+📂 RELAX-RECHARGE: 50 locations
+  ✅ Kabuki Springs & Spa
+  ✅ Pearl Spa and Sauna
+  ✅ SenSpa
+  ✅ Archimedes Banya
+  ✅ Earthbody - Massage San Francisco
+  ✅ The Mindful Body
+  ✅ Project Zen Massage and Bodywork
+  ✅ Redmint - TCM Holistic Wellness
+  ✅ Sensuous Beauty
+  ✅ Remede Spa
+  ✅ Burke Williams
+  ✅ Spa J'Adore
+  ✅ Pure Organic Spa
+  ✅ Rejuvenate Massage SF
+  ✅ The G Spa San Francisco
+  ✅ Serenity Aesthetics & Wellness
+  ✅ Refresh Oasis Day Spa
+  ✅ Yelena's Spa
+  ✅ Loving Touch Healing Spa
+  ✅ The Emerald Spa
+  ✅ Just For You Bodywork & Massage San Francisco
+  ✅ Cinta Aveda Institute
+  ✅ The Spa at Equinox Sports Club San Francisco
+  ✅ Bay Club Financial District
+  ✅ Bamford Wellness Spa
+  ✅ Oasis Day Spa
+  ✅ Shiatsu Massage Inc.
+  ✅ Blue Sky Health Center
+  ✅ Zen Beauty Spa
+  ✅ Noe Valley Spa
+  ✅ Paradise Spa
+  ✅ Angel Health Center Massage & Spa
+  ✅ Spa J'Adore
+  ✅ Siam Orchid Traditional Thai Massage
+  ✅ Sauna House Massage
+  ✅ Reboot Spa
+  ✅ Royal Thai Spa
+  ❌ 1SF Sauna Rental - Not found on Google Places
+  ✅ Onsen
+  ✅ Suchada Thai Massage
+  ✅ Suchada Thai Massage
+  ✅ Spa Radiance
+  ✅ Dimitra's SkinCare & Electrolysis
+  ✅ Nirvana Bay Spa
+  ✅ Shine Day Spa
+  ✅ Oasis Day Spa
+  ✅ HL Organic Skin Care
+  ✅ Richmond Serenity Spa
+  ✅ Massage Prime
+  ✅ Zen Beauty Spa
+  📊 relax-recharge: 49 success, 1 failed
+
+📂 COFFEE: 50 locations
+  ✅ Blue Bottle Coffee
+  ✅ Blue Bottle Coffee
+  ✅ Sightglass Coffee
+  ✅ Sightglass Coffee
+  ✅ Sightglass Coffee
+  ✅ Four Barrel Coffee
+  ✅ The Mill
+  ✅ Ritual Coffee Roasters
+  ✅ Philz Coffee
+  ✅ Wrecking Ball Coffee Roasters
+  ✅ Paramo Coffee
+  ✅ Red Door Coffee
+  ✅ Mazarine Coffee
+  ✅ 20th Century Cafe
+  ✅ Andytown Coffee Roasters
+  ✅ Diamond Coffee N’ Pastry
+  ✅ Dynamo Donut & Coffee
+  ✅ Double Shot Coffee
+  ✅ Excelsior Coffee
+  ✅ Glaze Donuts
+  ✅ Cafe Guatemalteco
+  ✅ Cumaica Coffee
+  ✅ Nameless Tea & Coffee
+  ✅ CoffeeShop | Bakery + Micro-Roastery
+  ✅ Farley's Coffeehouse
+  ✅ JB's Place
+  ✅ Milkbomb Ice Cream
+  ✅ Réveille Coffee Co.
+  ✅ Little Gem on Grove
+  ✅ Mr. Holmes Bakehouse
+  ✅ Tartine Manufactory
+  ✅ Vive La Tarte
+  ✅ Cafe Du Nord
+  ✅ Lord Stanley
+  ✅ Whitechapel
+  ✅ Home Coffee Roasters
+  ✅ Cafe Phoenix
+  ✅ Double Shot Coffee
+  ✅ Excelsior Coffee
+  ✅ Excelsior Coffee
+  ✅ Cumaica Coffee
+  ✅ Cafe Guatemalteco
+  ✅ Claddagh Coffee
+  ✅ Dos Piñas
+  ✅ Farley's Coffeehouse
+  ✅ JB's Place
+  ✅ Milkbomb Ice Cream
+  ✅ Philz Coffee
+  ✅ Next Level Burger Potrero Hill
+  ✅ Peasant Pies, Inner Sunset
+  📊 coffee: 50 success, 0 failed
+
+📂 FOOD: 50 locations
+  ✅ Benu
+  ✅ Saison
+  ✅ Mourad
+  ✅ Four Kings 四大天王
+  ✅ Noodle in a Haystack
+  ✅ Kokkari Estiatorio
+  ✅ House of Prime Rib
+  ❌ *The Progress** - Not found on Google Places
+  ✅ Gary Danko
+  ✅ Zuni Café
+  ✅ Anchor Oyster Bar
+  ✅ Arizmendi Bakery
+  ✅ Jane The Bakery
+  ✅ Devil's Teeth Baking Company
+  ✅ Turner's Kitchen
+  ✅ L'Ardoise Bistro
+  ✅ International Food Court
+  ✅ Neighbor Bakehouse
+  ✅ Scoma's Restaurant
+  ✅ Lefty O'Doul's Drink Mixes
+  ✅ Honey Honey Cafe & Crepery
+  ✅ Osha Thai Montgomery
+  ❌ *Ar Roi** - Not found on Google Places
+  ✅ Phở Tân Hòa | Vietnamese & Chinese Cuisine
+  ❌ *Chutney Restaurant** - Not found on Google Places
+  ✅ Ryoko's Japanese Restaurant & Bar
+  ✅ Floating Sushi Boat
+  ✅ L'Ottavo Ristorante
+  ✅ Lori's Diner
+  ✅ Pinecrest Diner
+  ✅ Bourbon Steak Restaurant
+  ❌ *Farallon Restaurant** - Not found on Google Places
+  ✅ Chez Maman West
+  ❌ *Plouf** - Not found on Google Places
+  ✅ Piperade
+  ✅ Park Tavern on Washington Square
+  ✅ Wayfare Tavern
+  ✅ Sauce: Belden Place
+  ✅ Mandalay Restaurant
+  ✅ The Bird
+  ✅ Taqueria Cancun
+  ✅ Golden Boy Pizza
+  ✅ Blue Plate
+  ✅ Taquería El Farolito
+  ✅ Daeho Kalbijim & Beef Soup
+  ✅ Burma Love
+  ✅ Tartine Bakery
+  ✅ Acme Bread Company
+  ✅ Beit Rima
+  ✅ Old Mandarin Islamic Restaurant
+  📊 food: 45 success, 5 failed
+
+📂 NIGHTLIFE: 51 locations
+  ✅ The Valencia Room
+  ✅ DNA Lounge
+  ✅ Cat Club
+  ✅ The EndUp
+  ✅ Temple Nightclub San Francisco
+  ✅ Audio Nightclub
+  ✅ Public Works
+  ✅ Raven Bar
+  ✅ Madrone Art Bar
+  ❌ *Bimbo's 365 Club** - Not found on Google Places
+  ✅ The Great Northern
+  ✅ Monarch
+  ✅ Halcyon SF
+  ✅ El Rio
+  ✅ F8 Nightclub & Bar
+  ✅ DECANTsf Bottle Shop & Bar
+  ✅ The Detour
+  ✅ The Cinch Saloon
+  ✅ Driftwood
+  ❌ *Mezzanine SF** - Not found on Google Places
+  ✅ Rickhouse
+  ✅ 7 Social SF
+  ✅ Bar Sprezzatura
+  ✅ Barbarossa Lounge
+  ✅ The Barrel Room
+  ✅ Heartwood SF
+  ✅ Irish Times
+  ✅ Leo's Oyster Bar
+  ✅ Louie's Bar
+  ✅ Novela
+  ✅ Occidental Cigar Club
+  ✅ PABU Izakaya
+  ✅ Orafo
+  ✅ Bar Sprezzatura
+  ✅ The House Of Shields
+  ✅ Local Edition
+  ✅ Rickhouse
+  ✅ Topsy's Bar
+  ✅ The Great Northern
+  ✅ Alexander's Steakhouse
+  ✅ Bambuddha Lounge
+  ✅ The Rumpus Room
+  ✅ AsiaSF
+  ✅ Bambuddha Lounge
+  ✅ Bottom of the Hill
+  ✅ Kilowatt Bar
+  ❌ *Thee Parkside** - Not found on Google Places
+  ✅ Tempest Bar & Box Kitchen
+  ✅ The Lucky Spot
+  ✅ Pagan Idol
+  ✅ The Cigar Bar & Grill
+  📊 nightlife: 48 success, 3 failed
+
+📂 ARTS-CULTURE: 51 locations
+  ✅ Fort Mason Center for Arts & Culture
+  ✅ San Francisco Museum of Modern Art
+  ✅ Asian Art Museum
+  ✅ Museum of the African Diaspora
+  ✅ Museum of Craft and Design
+  ✅ Yerba Buena Center for the Arts
+  ✅ SFAC Main Gallery
+  ✅ California College of the Arts (CCA) Wattis Institute
+  ✅ Minnesota Street Project
+  ✅ Gallery 16
+  ✅ Arc Studios & Gallery
+  ✅ 111 Minna Gallery and Event Space
+  ✅ Catharine Clark Gallery
+  ✅ Dolby Chadwick Gallery
+  ✅ Modern Eden Gallery
+  ✅ Caldwell Snyder Gallery
+  ✅ CK Contemporary
+  ✅ Meyerovich Gallery
+  ✅ Hashimoto Contemporary
+  ✅ Jenkins Johnson Gallery
+  ✅ Rena Bransten Gallery
+  ✅ Eleanor Harwood Gallery
+  ✅ Casemore Gallery
+  ✅ Minnesota Street Project
+  ✅ Crown Point Press
+  ✅ Anglim/Trimble Gallery
+  ✅ The Fold (formerly “The Laundry”)
+  ✅ Mission Cultural Center for Latino Arts
+  ✅ Cartoon Art Museum
+  ✅ de Young Museum
+  ✅ Legion of Honor
+  ✅ The Contemporary Jewish Museum
+  ✅ Children's Creativity Museum
+  ✅ Yerba Buena Gardens Festival
+  ✅ Haines Gallery
+  ✅ Fort Mason Center for Arts & Culture
+  ✅ California Historical Society
+  ✅ City Lights Booksellers & Publishers
+  ✅ Telematic Media Arts
+  ✅ Electric Works
+  ✅ Montague Gallery
+  ✅ Meyerovich Gallery
+  ✅ CK Contemporary
+  ✅ Berggruen Gallery
+  ✅ Municipal Bonds
+  ✅ Minnesota Street Project
+  ✅ the jones institute
+  ✅ Yerba Buena Center for the Arts
+  ✅ ATAK (Analog Tattoo Arts Kolectiv)
+  ✅ Arc Studios & Gallery
+  ✅ Gallery Wendi Norris
+  📊 arts-culture: 51 success, 0 failed
+
+📂 SPORTS-RECREATION: 50 locations
+  ✅ George R. Moscone Recreation Center
+  ✅ Sunset Recreation Center
+  ✅ Balboa Park
+  ✅ Boxer Stadium
+  ✅ Golden Gate Park Polo Field
+  ✅ Kezar Pavilion
+  ✅ Golden Gate Park Handball Courts
+  ✅ Sunset Recreation Center
+  ✅ Crocker Amazon Playground Park
+  ✅ Garfield Soccer Field
+  ✅ The Panhandle
+  ✅ Beach Chalet Athletic Fields
+  ✅ Sigmund Stern Recreation Grove
+  ✅ Holly Park
+  ✅ Cayuga Playground Park
+  ✅ George R. Moscone Recreation Center
+  ✅ Sunset Recreation Center
+  ✅ Beach Chalet Athletic Fields
+  ✅ Golden Gate Park Tennis Courts
+  ✅ San Francisco Recreation & Parks
+  ✅ George R. Moscone Recreation Center
+  ✅ Sunset Recreation Center
+  ✅ San Francisco Recreation & Parks
+  ✅ Glen Park Soccer Fields
+  ✅ Golden Gate Park
+  ✅ Richmond Playground Park
+  ✅ Palega Recreation Center
+  ✅ Carl Larsen Park
+  ✅ Holly Park
+  ✅ Cayuga Playground Park
+  ✅ Panhandle Basketball Courts
+  ✅ Beach Chalet Athletic Fields
+  ✅ Balboa Park
+  ❌ *Boxer Stadium (Balboa Park Soccer Stadium / Sweeney Field, etc.)** - Not found on Google Places
+  ✅ San Francisco Recreation & Parks
+  ✅ Sunset Recreation Center
+  ✅ George R. Moscone Recreation Center
+  ✅ Richmond City Recreation Complex
+  ✅ Palega Recreation Center
+  ✅ Sunset Recreation Center
+  ✅ Larsen Playground
+  ✅ Cayuga Playground Park
+  ✅ Balboa Park Playground
+  ✅ Balboa Skatepark
+  ✅ Golden Gate Park
+  ❌ *Sunset Rec Center – Table Tennis & Indoor Gym Access** - Not found on Google Places
+  ✅ George R. Moscone Recreation Center
+  ✅ Richmond Playground Park
+  ✅ The Panhandle
+  ✅ Beach Chalet Athletic Fields
+  📊 sports-recreation: 48 success, 2 failed
+
+📂 SHOPPING: 50 locations
+  ✅ Ferry Building
+  ✅ Pier 39 San francisco
+  ✅ Ghirardelli Square
+  ✅ The Mosser Hotel
+  ✅ Crocker Galleria
+  ✅ Stonestown Galleria
+  ✅ Union Square
+  ✅ Haight Street Vintage
+  ✅ Reliquary
+  ✅ Heidi Says Collections
+  ✅ Marina Submarine
+  ✅ Valencia Street Vintage
+  ✅ Chinatown San Francisco
+  ✅ Only In San Francisco
+  ✅ Solve It! Think out of the box
+  ✅ The Stone Flower Boutique
+  ✅ PIER 39
+  ✅ PIER 39
+  ✅ Chinatown San Francisco
+  ✅ Embarcadero Center
+  ✅ Hayes Valley Inn
+  ✅ Modern Appealing Clothing
+  ✅ Mollusk Surf Shop
+  ✅ Avenues Dry Goods
+  ❌ *Marina / Cow Hollow – Chestnut/Union Street area shops** - Not found on Google Places
+  ✅ Nikoniko Gifts
+  ✅ The Finerie
+  ✅ San Francisco Centre
+  ✅ Ferry Plaza Farmers Market
+  ✅ Valencia Street Vintage
+  ✅ Japan Center Malls
+  ✅ Clement Street Farmer's Market
+  ✅ BookShop West Portal
+  ✅ Laurel Village
+  ✅ Marina Green
+  ✅ North Beach Food Mart
+  ✅ PIER 39
+  ✅ Ferry Building
+  ✅ Market Street
+  ✅ Union Square
+  ✅ Russian Hill Bookstore
+  ✅ Aquatic Park
+  ✅ Sunset Mercantile Emporium
+  ✅ Laurel Village
+  ✅ 2nd STREET Haight St
+  ❌ *Outer Mission / Ingleside shopping strip (Balboa Park vicinity)** - Not found on Google Places
+  ✅ One Richmond, a program of The Richmond Neighborhood Center
+  ✅ Fillmore Western Addition
+  ✅ Cliff's Variety
+  ✅ Bayview Hunters Point Foundation for Community Improvement
+  📊 shopping: 48 success, 2 failed
+
+📂 OUTDOORS: 50 locations
+  ✅ San Francisco Recreation & Parks
+  ✅ San Francisco Botanical Garden
+  ✅ Presidio Tunnel Tops
+  ✅ Lands End Lookout
+  ✅ Golden Gate & Bakers Beach
+  ❌ *Fort Funston** - Not found on Google Places
+  ❌ *Ocean Beach** - Not found on Google Places
+  ✅ Sigmund Stern Recreation Grove
+  ✅ Pine Lake Park
+  ✅ Lafayette Park
+  ✅ Grandview Park
+  ✅ Buena Vista Park
+  ✅ Bernal Heights Park
+  ✅ Glen Canyon Park Recreation Centre
+  ✅ John McLaren Park
+  ✅ Mt. Davidson Park
+  ✅ Crestline Dr Twin Peaks Trail
+  ✅ Mission Dolores Park
+  ✅ Alamo Square Park
+  ✅ Buena Vista Park
+  ✅ Potrero Hill Recreation Center
+  ✅ Hunter's Point Naval Shipyard
+  ✅ Civic Center Plaza
+  ✅ Mount Sutro Open Space Reserve
+  ✅ Lake Merced Park
+  ✅ Candlestick Point State Recreation Area
+  ✅ Heron's Head Park - Nature Exploration Area
+  ✅ Golden Gate National Recreation Area
+  ✅ Fort Mason Park
+  ✅ Crissy Field Marsh
+  ✅ Alta Plaza Park
+  ✅ Presidio Wall Picnic Area
+  ✅ Jackson Playground Park
+  ✅ Franklin Square
+  ✅ Koshland Park
+  ✅ Islais Creek Muni Park
+  ✅ Angelo J. Rossi Playground
+  ✅ Balboa Park
+  ✅ Crocker Amazon Playground Park
+  ✅ West Sunset Playground Park
+  ✅ Lobos Valley Overlook
+  ✅ Sutro Heights
+  ✅ The Panhandle
+  ✅ Bayfront Park
+  ✅ Treasure Island Development Authority
+  ✅ India Basin Waterfront Park
+  ✅ Crane Cove Park
+  ✅ Sunset Dunes
+  ✅ Batteries to Bluffs Trail
+  ✅ Lands End Lookout
+  📊 outdoors: 48 success, 2 failed
+
+📂 DRINKS-BARS: 50 locations
+  ✅ Smuggler's Cove
+  ✅ Rickhouse
+  ✅ Trick Dog
+  ✅ Bourbon & Branch
+  ✅ Comstock Saloon
+  ✅ Little Shamrock
+  ✅ Pacific Cocktail Haven
+  ✅ KAIYŌ Rooftop
+  ✅ Leo's Oyster Bar
+  ✅ Barbarossa Lounge
+  ❌ *The Barrel Room** - Not found on Google Places
+  ✅ Bix
+  ✅ Heartwood SF
+  ✅ High Horse
+  ✅ Le Parc Bistrobar
+  ✅ Dawn Club
+  ✅ Novela
+  ✅ The House Of Shields
+  ✅ Mr. Mahjong’s
+  ✅ Local Edition
+  ✅ The EndUp
+  ❌ *Whitechapel** - Not found on Google Places
+  ✅ Wildhawk
+  ✅ The Interval at Long Now
+  ✅ The Devil's Acre
+  ✅ The Beehive
+  ✅ Blackbird
+  ✅ The Zombie Village
+  ✅ Victory Hall & Parlor
+  ✅ DecoDance Bar
+  ✅ The Alembic
+  ✅ Elixir
+  ✅ Bow Bow Cocktail Lounge
+  ✅ The Hotel Utah Saloon
+  ✅ TONGA ROOM & HURRICANE BAR
+  ✅ Shotwell's Saloon
+  ✅ Specs' Twelve Adler Museum Cafe
+  ✅ Vesuvio Cafe
+  ✅ Li Po Cocktail Lounge
+  ✅ Google Moffett Park Parking Structure C
+  ✅ Brass Tacks
+  ✅ Barcha Restaurant
+  ✅ 7 Social SF
+  ✅ Final Final
+  ✅ MOTHERSHIP
+  ✅ Benjamin Cooper
+  ✅ Holy Water
+  ✅ Bar Iris
+  ✅ The Sea Star
+  ✅ Dogpatch Saloon
+  📊 drinks-bars: 48 success, 2 failed
+
+📂 FITNESS-CLASSES: 50 locations
+  ✅ CorePower Yoga - Nob Hill
+  ✅ Mukunda Studio
+  ✅ The Center SF
+  ✅ Mission Yoga
+  ✅ Yoga Flow SF - Ocean
+  ✅ EHS Pilates
+  ✅ Simply Balanced Pilates Studio
+  ✅ Mighty Pilates
+  ✅ The Space SF
+  ✅ Alex Fitness
+  ✅ Crossfit Alinea
+  ✅ Telegraph CrossFit
+  ✅ Jigalin Fitness
+  ✅ A Body of Work
+  ✅ Love Story Yoga - Valencia
+  ✅ Glow Yoga & Wellness
+  ✅ San Francisco Gyrotonic
+  ✅ Tribe Fitness, Yoga & Coaching
+  ✅ Alta Plaza Park
+  ✅ TC Strength & Fitness: Group Class & Personal Training Gym
+  ✅ Hot Yoga Plus Seacliff
+  ✅ Mission Yoga
+  ✅ CorePower Yoga - Fremont
+  ✅ Yoga Flow SF - Union
+  ✅ Love and Light Yoga and Wellness
+  ✅ Begin Again Pilates Studio
+  ✅ Hot 8 Yoga
+  ✅ Mission Yoga
+  ✅ Flow Studios Inc
+  ✅ Octavia
+  ✅ The Hive SF
+  ✅ StretchLab
+  ✅ Strength-Fit
+  ✅ Barry's Castro
+  ✅ SoulCycle Union Street
+  ✅ Flywheel Coffee
+  ✅ Orangetheory Fitness
+  ❌ Rumble Boxing SF - Not found on Google Places
+  ✅ 9Round Kickboxing Fitness
+  ✅ Equinox Sports Club San Francisco
+  ✅ Crunch Fitness
+  ✅ Planet Fitness
+  ✅ Richmond District YMCA
+  ✅ Mission Cliffs
+  ✅ Dogpatch Boulders
+  ✅ Project 13 Gyms
+  ✅ Koko Fitclub of Denver
+  ✅ CORE MVMT
+  ✅ Tacolicious
+  ✅ Live Fit Gym • Nob Hill
+  📊 fitness-classes: 49 success, 1 failed
+
+📂 LIVE-MUSIC: 48 locations
+  ✅ The Independent
+  ✅ Rickshaw Stop
+  ✅ Bottom of the Hill
+  ✅ The Warfield
+  ✅ Great American Music Hall
+  ✅ The Masonic
+  ✅ The Regency Ballroom
+  ✅ Brick & Mortar Music Hall
+  ✅ Cafe Du Nord
+  ✅ The Chapel
+  ✅ Bimbo's 365 Club
+  ✅ Music City Starfactory (formerly Music City San Francisco)
+  ✅ August Hall
+  ✅ Bill Graham Civic Auditorium
+  ✅ San Francisco Symphony
+  ✅ The Masonic
+  ✅ The Midway
+  ✅ 1015 Folsom
+  ✅ Orpheum Theatre
+  ✅ Herbst Theatre
+  ❌ The Fillmore - Not found on Google Places
+  ✅ Chase Center
+  ✅ Palace of Fine Arts
+  ✅ Slim's
+  ✅ Punch Line San Francisco
+  ❌ Cobb’s Comedy Club - Not found on Google Places
+  ✅ Make-Out Room
+  ✅ Kilowatt Bar
+  ✅ Make-Out Room
+  ✅ Cafe Du Nord
+  ✅ Rickshaw Stop
+  ✅ The Regency Ballroom
+  ✅ War Memorial Opera House
+  ✅ Great American Music Hall
+  ✅ Herbst Theatre
+  ✅ Brick & Mortar Music Hall
+  ✅ Bill Graham Civic Auditorium
+  ✅ August Hall
+  ✅ The Chapel
+  ✅ The Fillmore
+  ✅ Bimbo's 365 Club
+  ✅ The Independent
+  ✅ Slim's
+  ✅ Kilowatt Bar
+  ✅ Make-Out Room
+  ✅ Make-Out Room
+  ✅ Cafe Du Nord
+  ✅ Orpheum Theatre
+  📊 live-music: 46 success, 2 failed
+
+📂 PET-FRIENDLY: 50 locations
+  ✅ Fort Funston
+  ✅ Golden Gate Park Dog Training Area
+  ✅ Ocean Beach Veterinary Clinic
+  ✅ Mission Dolores Park
+  ✅ Pine Lake Park
+  ✅ Balboa Park
+  ✅ Bernal Heights Park
+  ✅ Lafayette Park
+  ✅ Francisco Park
+  ✅ SoMa West Dog Park
+  ✅ Dog Park | Moscone Park
+  ✅ Mountain Lake Park Dog Play Area
+  ✅ Walter Haas Dog Play Area
+  ✅ Channel Street Dog Park
+  ✅ Berry Street Dog Park
+  ✅ China Basin Park
+  ✅ Francisco Park
+  ✅ St. Mary's Dog Park
+  ✅ Balboa Park
+  ✅ SoMa West Dog Park
+  ✅ Golden Gate Park Dog Training Area
+  ✅ Eureka Valley Dog Play Area
+  ✅ Potrero Hill Dog Play Area
+  ✅ Balboa Park
+  ✅ Sunset Dunes
+  ✅ Mountain Lake Park Dog Play Area
+  ✅ Walter Haas Dog Play Area
+  ✅ Golden Gate National Recreation Area
+  ✅ Lands End Trail
+  ✅ Lobos Valley Overlook
+  ❌ Ocean Beach Northern Off‑Leash Section - Not found on Google Places
+  ✅ Sutro Baths
+  ✅ Bayfront Park
+  ✅ Dogpatch Hub
+  ❌ Sloat Boulevard to Lake Merced Coastal/Beach‑Dog Routes - Not found on Google Places
+  ✅ Bison Paddock
+  ✅ Francisco Park
+  ✅ China Basin Park
+  ✅ SoMa West Dog Park
+  ✅ Mountain Lake Park
+  ✅ Mission Dolores Park
+  ✅ Ocean Beach
+  ✅ Golden Gate National Recreation Area
+  ✅ Lands End Lookout
+  ✅ Bay Trail Access
+  ✅ China Basin Park
+  ✅ Francisco Park
+  ✅ Progress Park
+  ✅ San Francisco Recreation & Parks
+  ✅ Alamo Square Dog Play Area
+  📊 pet-friendly: 48 success, 2 failed
+
+📂 ROAD-TRIP-GETAWAYS: 35 locations
+  ✅ 2nd Street
+  ✅ Muir Woods National Monument
+  ✅ California Welcome Center, Half Moon Bay
+  ✅ Point Reyes National Seashore
+  ❌ Healdsburg, CA - Not found on Google Places
+  ✅ Santa Cruz Travel
+  ✅ Russian River Getaways
+  ✅ Russian River Vineyards
+  ✅ Tomales Bay State Park
+  ✅ Stinson Beach
+  ✅ Bolinas
+  ✅ 1st Street
+  ✅ Destination Napa Valley
+  ✅ Compass Real Estate
+  ✅ Muir Woods National Monument
+  ✅ Compass Real Estate
+  ✅ Napa Valley Wine Train
+  ✅ Livermore Valley Winegrowers Association
+  ✅ Tomales Bay Resort
+  ✅ Dawn Ranch
+  ✅ Inverness Ridge Trailhead
+  ✅ Stinson Beach
+  ✅ California 1
+  ✅ California Welcome Center, Half Moon Bay
+  ✅ Casablanca Inn
+  ✅ Carmel River State Beach
+  ✅ Monterey Bay Aquarium
+  ✅ Point Reyes National Seashore
+  ✅ Parum Leo Winery & Vineyard
+  ✅ Bodega Bay & Harbor
+  ✅ SCP Mendocino Inn and Farm
+  ✅ Garrapata State Park
+  ✅ Tomales Point Trailhead
+  ✅ Russian River Vineyards
+  ✅ Inverness Ridge Trailhead
+  📊 road-trip-getaways: 34 success, 1 failed
+
+============================================================
+📊 FINAL SUMMARY
+============================================================
+Total listings processed: 700
+✅ Successfully imported: 676
+❌ Failed: 24
+============================================================
+

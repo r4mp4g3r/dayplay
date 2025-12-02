@@ -1,0 +1,3325 @@
+{
+  "city": "Northern Virginia",
+  "categories": {
+    "shopping": [
+      {
+        "name": "Tysons Corner Center",
+        "address": "1961 Chain Bridge Rd, McLean, VA 22102"
+      },
+      {
+        "name": "Tysons Galleria",
+        "address": "2001 International Dr, McLean, VA 22102"
+      },
+      {
+        "name": "Fair Oaks Mall",
+        "address": "11750 Fair Oaks Mall, Fairfax, VA 22033"
+      },
+      {
+        "name": "Fashion Centre at Pentagon City",
+        "address": "1100 S Hayes St, Arlington, VA 22202"
+      },
+      {
+        "name": "Dulles Town Center",
+        "address": "21100 Dulles Town Circle, Dulles, VA 20166"
+      },
+      {
+        "name": "Reston Town Center",
+        "address": "11900 Market St, Reston, VA 20190"
+      },
+      {
+        "name": "Mosaic District",
+        "address": "2910 District Ave, Merrifield, VA 22031"
+      },
+      {
+        "name": "Ballston Quarter",
+        "address": "4238 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "Crystal City Shops",
+        "address": "1600-1750 Crystal Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Springfield Town Center",
+        "address": "6500 Springfield Mall, Springfield, VA 22150"
+      },
+      {
+        "name": "Potomac Mills",
+        "address": "2700 Potomac Mills Cir, Woodbridge, VA 22192"
+      },
+      {
+        "name": "Manassas Mall",
+        "address": "8300 Sudley Rd, Manassas, VA 20109"
+      },
+      {
+        "name": "Fairfax Corner",
+        "address": "4100 Monument Corner Dr, Fairfax, VA 22030"
+      },
+      {
+        "name": "Potomac Yard Center",
+        "address": "3671 Jefferson Davis Hwy, Alexandria, VA 22305"
+      },
+      {
+        "name": "Village at Shirlington",
+        "address": "4280 Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "Mode on Main by Mara",
+        "address": "10417 Main St, Fairfax, VA 22030"
+      },
+      {
+        "name": "Falls Church Farmers Market",
+        "address": "300 Park Ave, Falls Church, VA 22046"
+      },
+      {
+        "name": "Reston Farmers Market",
+        "address": "1609 Washington Plaza, Reston, VA 20190"
+      },
+      {
+        "name": "Westover Farmers Market",
+        "address": "1644 N McKinley Rd, Arlington, VA 22205"
+      },
+      {
+        "name": "McLean Farmers Market",
+        "address": "1659 Chain Bridge Rd, McLean, VA 22101"
+      },
+      {
+        "name": "Columbia Pike Farmers Market",
+        "address": "Columbia Pike & S Walter Reed Dr, Arlington, VA 22204"
+      },
+      {
+        "name": "Ballston FRESHFARM Market",
+        "address": "901 N Taylor St, Arlington, VA 22203"
+      },
+      {
+        "name": "Crystal City FRESHFARM Market",
+        "address": "333 Long Bridge Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Lubber Run Farmers Market",
+        "address": "4401 N Henderson Rd, Arlington, VA 22203"
+      },
+      {
+        "name": "Village Hardware",
+        "address": "Hollin Halls Shopping Center, Alexandria, VA"
+      },
+      {
+        "name": "Nest",
+        "address": "Inside Fairfax Corner shopping district, Fairfax, VA 22030"
+      },
+      {
+        "name": "Mobius Records",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Nostalgia Vintage Boutique",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "Old Town Books",
+        "address": "King Street, Old Town Alexandria, VA"
+      },
+      {
+        "name": "The Shoe Hive",
+        "address": "King Street, Old Town Alexandria, VA"
+      },
+      {
+        "name": "An American in Paris Boutique",
+        "address": "King Street, Old Town Alexandria, VA"
+      },
+      {
+        "name": "Vienna’s Maple Ave Shopping Strip",
+        "address": "Maple Ave, Vienna, VA 22180"
+      },
+      {
+        "name": "Bard’s Alley Bookstore",
+        "address": "Church St / Maple Ave area, Vienna, VA"
+      },
+      {
+        "name": "Vienna Music Exchange",
+        "address": "Maple Ave, Vienna, VA"
+      },
+      {
+        "name": "Historic Downtown Occoquan Shops",
+        "address": "Mill Street & surrounding, Occoquan, VA 22125"
+      },
+      {
+        "name": "Historic Downtown Leesburg Shops",
+        "address": "Historic District, Leesburg, VA 20176"
+      },
+      {
+        "name": "Middleburg Boutique District",
+        "address": "Washington St & nearby, Middleburg, VA 20117"
+      },
+      {
+        "name": "Historic Old Town Alexandria Shopping District",
+        "address": "King St & nearby streets, Alexandria, VA 22314"
+      },
+      {
+        "name": "Old Town Fairfax City Shopping Area",
+        "address": "Main St / Downtown Fairfax, VA 22030"
+      },
+      {
+        "name": "Historic Manassas Downtown Shops",
+        "address": "Center St / Main St area, Manassas, VA 20110"
+      },
+      {
+        "name": "Smart Markets Springfield",
+        "address": "6417 Loisdale Rd, Springfield, VA 22150"
+      },
+      {
+        "name": "Smart Markets Manassas Park",
+        "address": "99 Adams St, Manassas Park, VA 20111"
+      },
+      {
+        "name": "Fairfax‑City Farmers Market",
+        "address": "Fairfax City, VA"
+      },
+      {
+        "name": "Village at Fairfax Square",
+        "address": "8075 Leesburg Pike, Vienna, VA 22182"
+      },
+      {
+        "name": "Potomac River Running Store",
+        "address": "Inside Fairfax Corner complex, Fairfax, VA 22030"
+      },
+      {
+        "name": "Bluemercury",
+        "address": "Inside Fairfax Corner, Fairfax, VA 22030"
+      },
+      {
+        "name": "Le Village Marché",
+        "address": "2700 S Quincy St, Arlington, VA 22206"
+      },
+      {
+        "name": "One, Two Kangaroo Toys!",
+        "address": "4022 Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "Hardwood Artisans Furniture",
+        "address": "2800 S Randolph St, Arlington, VA 22206"
+      },
+      {
+        "name": "Diament Jewelry Boutique",
+        "address": "4017B Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "BUSBOYS & POETS",
+        "address": "4251 South Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "Le Shopping & Boutiques Cluster",
+        "address": "King St & surrounding, Alexandria, VA 22314"
+      },
+      {
+        "name": "Historic Downtown Leesburg Shopping District",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Leesburg Corner Premium Outlets",
+        "address": "241 Fort Evans Rd NE, Leesburg, VA 20176"
+      },
+      {
+        "name": "Virginia Gateway Shopping District",
+        "address": "Loudoun / Sterling, VA"
+      }
+    ],
+    "museum": [
+      {
+        "name": "MOCA Arlington",
+        "address": "3550 Wilson Boulevard, Arlington, VA 22201"
+      },
+      {
+        "name": "Steven F. Udvar‑Hazy Center",
+        "address": "14390 Air and Space Museum Pkwy, Chantilly, VA 20151"
+      },
+      {
+        "name": "Fairfax Museum",
+        "address": "10209 Main St, Fairfax, VA 22030"
+      },
+      {
+        "name": "Fairfax Station Railroad Museum",
+        "address": "11200 Fairfax Station Road, Fairfax Station, VA 22039"
+      },
+      {
+        "name": "Fort Ward Museum & Historic Site",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Franconia Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Reston Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Stabler‑Leadbeater Apothecary Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Stuart‑Mosby Civil War Cavalry Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Sully Historic Site",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The National Air and Space Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The National Gallery of Art",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Freer Gallery of Art",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Smithsonian American Art Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Portrait Gallery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Renwick Gallery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Building Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Anacostia Community Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Museum of African Art",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Museum of the American Indian",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Museum of American History",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Museum of Natural History",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Museum of Women in the Arts",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Phillips Collection",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Torpedo Factory Art Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Alexandria Archaeology Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Workhouse Arts Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Gunston Hall",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Gadsby's Tavern Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Lee–Fendall House Museum & Garden",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Friendship Firehouse Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Freedom House Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Lyceum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Alexandria Black History Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Carlyle House Historic Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Stabler-Leadbeater Apothecary Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Frying Pan Farm Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Colvin Run Mill Historic Site",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Oatlands Historic House & Gardens",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Aldie Mill Historic Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Museum of the Marine Corps",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Morven Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Woodlawn & Pope-Leighey House",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Stuart–Mosby Civil War Cavalry Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Dodona Manor",
+        "address": "Northern Virginia, USA"
+      }
+    ],
+    "food": [
+      {
+        "name": "Call Your Mother Deli",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "YU Noodles",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Spacebar",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Peking Gourmet Inn",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Duck Chang’s Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Open Road Grill",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "TRIO Grill",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Golden Plum Bakery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Courthaus Social",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bangkok 54",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Lost Dog Café",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bob and Edith’s Diner",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Good Luck Restaurant & Bar",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mamma’s Kitchen",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Via Veneto",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "River Bend Bistro",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "La Madeleine Cafe",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Tatte Bakery & Cafe",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Haven",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Custard Shack",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Chutzpah",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Pan‑Am Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Elephant Jumps Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mamma’s Kitchen & Outdoor Seating",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Lost Dog Cafe",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Hypergoat Cafe",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ben’YaYs",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Paris Baguette",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Busboys & Poets",
+        "address": "4251 South Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "Heidelberg Pastry Shoppe",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Commonwealth Joe Coffee Roasters",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ireland’s Four Courts",
+        "address": "Irish pub in Courthouse/ Arlington popular with a younger"
+      },
+      {
+        "name": "Astro Beer Hall",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Makeda Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mazadar Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Nam-Viet Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Sfoglina",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Rus Uz Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Taverna Cretekou",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Trattoria Villagio",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ruthie’s All Day",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Sfoglina Pasta & Wine",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Our Mom Eugenia",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Maple Ave Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Nostos Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Fava Pot",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Taco Zocalo",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Manna Bistro & Bakery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Umai Ramen & Rice Bowl",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Secret Garden Cafe",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Sora Ethiopian Market",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Big Red Halal",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Happy Thai",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "A&J Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Westville - Clarendon",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Semifreddo Italian Cuisine",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Sense of Thai St.",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Tachibana",
+        "address": "Northern Virginia, USA"
+      }
+    ],
+    "outdoors": [
+      {
+        "name": "Mason Neck State Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Huntley Meadows Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Occoquan Regional Park",
+        "address": "Lorton / Occoquan, VA — regional park with trails, river"
+      },
+      {
+        "name": "Lake Fairfax Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Prince William Forest Park",
+        "address": "VA"
+      },
+      {
+        "name": "Hemlock Overlook Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bull Run Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bull Run‑Occoquan Trail",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Fountainhead Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Pohick Bay Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Potomac Overlook Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Algonkian Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ball’s Bluff Battlefield Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Blue Ridge Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Brambleton Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Beaverdam Reservoir Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Sandy Run Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Seneca Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Temple Hall Farm Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "W&OD Railroad Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Burke Lake Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Lake Ridge Park",
+        "address": "Lake Ridge, VA — park/green space near water/trails that’s listed"
+      },
+      {
+        "name": "Locust Shade Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Rust Sanctuary",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Braddock District",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mason Neck water & forest corridor",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bull Run Marina & reservoir greenbelt",
+        "address": "part of Bull Run / Occoquan water‑access"
+      },
+      {
+        "name": "Cameron Run Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Gateway Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Meadowlark Botanical Gardens",
+        "address": "VA"
+      },
+      {
+        "name": "Piscataway Crossing Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Red Rock Wilderness",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Overlook Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Gilbert’s Corner Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Beaverdam Reservoir / Reservoir Park area",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "White’s Ford Regional Park & Upper Potomac properties",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Upton Hill Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Springdale Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Webb Sanctuary",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Beaverdam Reservoir water‑access & greenbelt",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Pohick Stream Valley Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Pimmit Run Stream Valley Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Long Branch Stream Valley Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Manchester Lakes Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Nottoway Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Nottoway Stream Valley Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Fairfax County Historic",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Potomac River waterfront parks & trails corridor",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Occoquan Water Trail",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bull Run / Occoquan watershed greenbelt & trail system",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bull Run Marina",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Scott’s Run / Great Falls",
+        "address": "while not exclusively NOVA Parks, it’s a known nature / trail /"
+      },
+      {
+        "name": "Turkey Run Park / Turkey Run Trail areas",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Four Mile Run Trail / Four Mile Run Park corridor",
+        "address": "urban‑adjacent water/green‑space +"
+      },
+      {
+        "name": "Mount Vernon Trail",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Dyke Marsh / Potomac River marsh‑wetland corridors",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Leesylvania State Park",
+        "address": "VA"
+      },
+      {
+        "name": "Neabsco Regional Park / Neabsco Creek Wetlands Preserve",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Upper Potomac properties",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "White’s Ford Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Red Rock Wilderness Overlook Regional Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Reservoir Park / Beaverdam Reservoir area",
+        "address": "recognized for water recreation + hiking"
+      }
+    ],
+    "nightlife": [
+      {
+        "name": "Clarendon Ballroom",
+        "address": "big multi‑level club/ lounge / rooftop‑style with DJ / dance"
+      },
+      {
+        "name": "The Renegade",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Don Tito",
+        "address": "bar & party spot in Clarendon / Arlington nightlife zone. Nomadic Real"
+      },
+      {
+        "name": "Spider Kelly’s",
+        "address": "bar / pub / late‑night hangout with games + bar vibes. DC"
+      },
+      {
+        "name": "Galaxy Hut",
+        "address": "bar with relaxed vibe, likely cheaper drinks, good for casual nights out."
+      },
+      {
+        "name": "Continental Pool Lounge",
+        "address": "pool‑hall / lounge / bar / nightlife‑style hangout. House of"
+      },
+      {
+        "name": "Screwtop Wine Bar",
+        "address": "more chill wine‑bar but still part of nightlife circuit. House of"
+      },
+      {
+        "name": "Verre Wine Bar",
+        "address": "wine/cocktail bar, good for a more relaxed evening or pre‑game."
+      },
+      {
+        "name": "Ballston Local",
+        "address": "neighborhood bar / nightlife‑friendly spot in Ballston/Arlington."
+      },
+      {
+        "name": "Ireland’s Four Courts",
+        "address": "Irish pub in Courthouse/ Arlington popular with a younger"
+      },
+      {
+        "name": "Salt",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Light Horse Restaurant & Bar",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Birchmere",
+        "address": "live‑music / concert‑hall / club‑bar, good for shows and nights out."
+      },
+      {
+        "name": "Basin Street Lounge",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Blackwall Hitch",
+        "address": "Alexandria waterfront bar/restaurant that sometimes hosts live music /"
+      },
+      {
+        "name": "Courthouse (Arlington) nightlife district",
+        "address": "area of multiple bars/pubs/clubs a short"
+      },
+      {
+        "name": "Rosslyn (Arlington) nightlife district",
+        "address": "another area hub for bars/clubs/nightlife near"
+      },
+      {
+        "name": "Crystal City / National Landing nightlife cluster",
+        "address": "collection of bars/pubs/clubs near"
+      },
+      {
+        "name": "The Wharf",
+        "address": "major waterfront nightlife + music + club district in DC, good for nights"
+      },
+      {
+        "name": "Union Stage",
+        "address": "club / concert / live‑music venue at The Wharf / DC nightlife circuit."
+      },
+      {
+        "name": "Echostage",
+        "address": "large nightclub / dance / concert venue for EDM / shows / club nights."
+      },
+      {
+        "name": "Black Cat",
+        "address": "DC club / live‑music / nightlife venue often popular with college‑age /"
+      },
+      {
+        "name": "DC9 Nightclub",
+        "address": "club/venue in DC often used for smaller‑scale concerts and local‑band"
+      },
+      {
+        "name": "Flash",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Shaw / U Street Corridor nightlife district",
+        "address": "DC‑center nightlife + bars/clubs + easy"
+      },
+      {
+        "name": "Dupont Circle nightlife district",
+        "address": "nightlife‑heavy area in DC with bars, clubs, clubs &"
+      },
+      {
+        "name": "Adams Morgan nightlife district",
+        "address": "classic DC district for bars, clubs, live music,"
+      },
+      {
+        "name": "Tysons / Vienna / Outer‑Ring NOVA bar‑clusters",
+        "address": "suburban clusters that"
+      },
+      {
+        "name": "Vienna / Fairfax‑area college‑bar hubs",
+        "address": "bars and pubs frequented by college"
+      },
+      {
+        "name": "Ballston / Arlington bar‑crawl zone",
+        "address": "area with a high density of bars/clubs/pubs,"
+      },
+      {
+        "name": "Shirlington nightlife cluster",
+        "address": "collection of smaller bars/pubs/clubs in Shirlington"
+      },
+      {
+        "name": "Courthouse Social / Courthouse bar‑district",
+        "address": "another Arlington‑area cluster of"
+      },
+      {
+        "name": "Bar Bao",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Freddie’s Beach Bar & Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Samuel Beckett’s Irish Gastro Pub",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "O’Sullivan’s Irish Pub",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bronson Bierhall",
+        "address": "Arlington, VA — dog‑friendly taproom / bar / pub where pups are"
+      },
+      {
+        "name": "Jammin’ Java",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The People’s Drug",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "219 Restaurant & Basin Street Lounge",
+        "address": "lounge in Old Town Alexandria offering"
+      },
+      {
+        "name": "No. 9 Lounge at Evening Star Café",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Crystal City Sports Pub",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Carpool",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "L.A. Bar & Grill",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Arlington Rooftop Bar & Grill",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bowlero",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Pentagon City / National Landing nightlife cluster",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Rosslyn nightlife area",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Courthouse nightlife area",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "NOVA‑wide breweries & brewpubs",
+        "address": "Northern Virginia, USA"
+      }
+    ],
+    "coffee": [
+      {
+        "name": "Commonwealth Joe Coffee Roasters",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Northside Social Coffee & Wine",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Detour Coffee Co.",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Cafecito",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Idido’s Coffee & Social House",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Kaldi’s Social House",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bad Ass Coffee of Hawaii",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "La Coop Coffee Company",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "29th Parallel Coffee",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "De Clieu Coffee & Sandwich",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Cameron’s Coffee & Chocolates",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Gathering Grounds Café",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Lake Anne Coffee House",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mom & Pop Cafe",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Caffe Amouri Coffee Roaster",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Weird Brothers Coffee",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "My Favorite Muffin",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Rare Bird Coffee Roasters",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Foundation Coffee Roasters",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Misha’s Coffee",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Second Nature Coffee Co.",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Shaghf Coffee",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Simply Social Coffee",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Espressamente illy",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Trade Roots Café",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "For Five Coffee Roasters",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Simona Café",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ballstonian",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Origin Coffee Lab & Kitchen",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Gute Leute",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Northside Social",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mom & Pop Café",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Compass Coffee",
+        "address": "Northern Virginia, USA"
+      }
+    ],
+    "arts-culture": [
+      {
+        "name": "Torpedo Factory Art Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Workhouse Arts Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Museum of Contemporary Art Arlington",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Gallery Underground",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Nepenthe Gallery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "mosaicARTS",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Cody Gallery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Fred Schnider Gallery of Art",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Barry Gallery (Marymount University",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Little Theatre of Alexandria",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Athenaeum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Del Ray Artisans",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Signature Theatre",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Rosslyn Spectrum Theatre",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Birchmere Music Hall",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "MetroStage",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Wolf Trap National Park for the Performing Arts",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Tephra Institute of Contemporary Art",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Woodlawn & Pope‑Leighey House Historic Sites",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Reston Community Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Center for the Arts at George Mason University",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mosaic District Arts Exhibits & Pop‑Up Galleries",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Fort Ward Museum & Historic Site",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Pope‑Leighey House Historic Site",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Woodlawn Historic Site",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Hylton Performing Arts Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Capital One Hall",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Arlington Arts Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Art League",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "McLean Project for the Arts",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Greater Reston Arts Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "NextStop Theatre Company",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Wolf Trap Foundation for the Performing Arts",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Principle Gallery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Kyo Gallery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Long View Gallery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Phillips Collection",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Hillwood Estate, Museum & Gardens",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "DAR Constitution Hall",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Lisner Auditorium",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Atlas Performing Arts Center (Washington, DC",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Rubell Museum DC",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "O Museum in The Mansion",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Clara Barton Missing Soldiers Office Museum",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Charles Sumner School Museum and Archives",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "American Poetry Museum (Washington, DC",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Anderson House",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Woodrow Wilson House",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Tudor Place Historic House & Garden (Washington, DC",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Arena Stage at the Mead Center for American Theater",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Theatre J (Washington, DC).",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Shakespeare Theatre Company",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Studio Theatre",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Folger Shakespeare Library / Theatre",
+        "address": "Northern Virginia, USA"
+      }
+    ],
+    "live-music": [
+      {
+        "name": "Galaxy Hut",
+        "address": "bar with relaxed vibe, likely cheaper drinks, good for casual nights out."
+      },
+      {
+        "name": "Jammin' Java",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The State Theatre",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "JV’s Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Samuel Beckett’s Irish Gastro Pub",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bronson Bierhall",
+        "address": "Arlington, VA — dog‑friendly taproom / bar / pub where pups are"
+      },
+      {
+        "name": "Ballston Local",
+        "address": "neighborhood bar / nightlife‑friendly spot in Ballston/Arlington."
+      },
+      {
+        "name": "O’Sullivan’s Irish Pub",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Westover Beer Garden",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "McNamara’s Pub & Restaurant",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Wolf Trap Barns & Filene Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Birchmere",
+        "address": "live‑music / concert‑hall / club‑bar, good for shows and nights out."
+      },
+      {
+        "name": "Blues Alley",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Black Fox Lounge",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Hamilton Live",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Union Stage",
+        "address": "club / concert / live‑music venue at The Wharf / DC nightlife circuit."
+      },
+      {
+        "name": "Iota Club & Café",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Runaway",
+        "address": "a smaller/underground‑scene club often cited by local music‑goers."
+      },
+      {
+        "name": "Penn Social",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Zen Bistro & Wine Bar",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Shirlington Pub & Grill",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Light Horse Restaurant & Saloon",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Spacebar",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Pocket",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Pie Shop",
+        "address": "small venue known for punk/indie/underground‑music shows and local gigs."
+      },
+      {
+        "name": "Slash Run",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Comet Ping Pong",
+        "address": "casual spot + small‑venue gigs, often with local bands or"
+      },
+      {
+        "name": "DC9 Nightclub",
+        "address": "club/venue in DC often used for smaller‑scale concerts and local‑band"
+      },
+      {
+        "name": "Atlas Brewing Company",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Makers Union",
+        "address": "Reston, VA — brewery/restaurant that permits dogs on the patio."
+      },
+      {
+        "name": "Songbyrd Music House",
+        "address": "small‑venue bar/club good for up‑and‑coming artists and local"
+      },
+      {
+        "name": "The Atlantis",
+        "address": "modest‑size venue opened 2023 on U Street, with capacity ~450 — good"
+      },
+      {
+        "name": "Blackwall Hitch",
+        "address": "Alexandria waterfront bar/restaurant that sometimes hosts live music /"
+      },
+      {
+        "name": "219 Restaurant & Basin Street Lounge",
+        "address": "lounge in Old Town Alexandria offering"
+      },
+      {
+        "name": "The Light Horse Restaurant",
+        "address": "bar/restaurant + music venue in Old Town Alexandria,"
+      },
+      {
+        "name": "Starr Hill Brewery & Beer Garden",
+        "address": "a brewery/beer‑garden in Tysons area sometimes"
+      },
+      {
+        "name": "Crooked Run / Nectar Taproom",
+        "address": "suburban‑area venue in Sterling / Loudoun that gets"
+      },
+      {
+        "name": "Salisbury Center",
+        "address": "a Manassas‑area venue cited by locals for small/medium shows and"
+      },
+      {
+        "name": "Nova Live",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mclean VFW Post",
+        "address": "sometimes used for music / community live‑music events per"
+      },
+      {
+        "name": "Falls Church VFW Post",
+        "address": "local VFW‑post venue sometimes hosting live music /"
+      },
+      {
+        "name": "Fat's in Fairfax",
+        "address": "a bar/venue near Fairfax reported by locals to sometimes host live"
+      },
+      {
+        "name": "Crooked Run Taproom & Venue",
+        "address": "another Sterling‑area taproom/venue mentioned in"
+      },
+      {
+        "name": "F6 Art Lounge",
+        "address": "small‑scale lounge in Arlington for open‑mic, jazz, spoken‑word, and"
+      },
+      {
+        "name": "The Filling Station",
+        "address": "Northern Virginia, USA"
+      }
+    ],
+    "games-entertainment": [
+      {
+        "name": "Monster Mini Golf",
+        "address": "Woodbridge, VA"
+      },
+      {
+        "name": "ShadowLand Laser Adventures",
+        "address": "Sterling, VA"
+      },
+      {
+        "name": "Fun Land of Fairfax",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Continental Modern Pool Lounge",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Uptown Alley",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bowlero",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Dave & Buster's",
+        "address": "DC"
+      },
+      {
+        "name": "Immersive Gamebox",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Punch Bowl Social",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Jackpot Pinball Arcade",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ultrazone Laser Tag & Amusement Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Launch Family Entertainment Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Sky Zone Trampoline Park",
+        "address": "Reston, VA"
+      },
+      {
+        "name": "Vertical Rock Tysons",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The St. James",
+        "address": "Springfield, VA (indoor sports & fun center)"
+      },
+      {
+        "name": "LEGO Discovery Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Doyle’s Outpost",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Reclaim Arcade",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ace Bounce",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Players Club",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Pinstripes",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Lucky Strike",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Main Event Entertainment",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Workhouse Arts Center",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Hyper Kidz",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The Cave Arcade & Bar",
+        "address": "Northern Virginia, USA"
+      }
+    ],
+    "relax-recharge": [
+      {
+        "name": "Azure Dream Day Spa",
+        "address": "901 N. Quincy St., Arlington, VA – Day Spa"
+      },
+      {
+        "name": "Origins Thai Spa Elite",
+        "address": "925 N. Garfield St. Ste. E, Arlington, VA – Day Spa / Massage"
+      },
+      {
+        "name": "Origins Thai Spa",
+        "address": "46179 Westlake Dr. Ste. 130, Sterling, VA – Day Spa / Massage"
+      },
+      {
+        "name": "Fountains Day Spa",
+        "address": "422 S. Washington St., Alexandria, VA – Day Spa / Massage &"
+      },
+      {
+        "name": "Serenity Day Spa",
+        "address": "209 Madison St., Alexandria, VA – Day Spa / Body & Wellness"
+      },
+      {
+        "name": "Sugar House Day Spa & Salon",
+        "address": "111 N. Alfred St., Alexandria, VA – Salon / Spa"
+      },
+      {
+        "name": "Calvert Rejuvenations",
+        "address": "485 Carlisle Dr., Herndon, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Champaka Thai Massage & Spa",
+        "address": "14535 John Marshall Hwy. Ste. 205, Gainesville, VA"
+      },
+      {
+        "name": "Spa Minérale",
+        "address": "Lansdowne Resort & Spa – 44050 Woodridge Pkwy., Leesburg, VA –"
+      },
+      {
+        "name": "The Red Door Salon & Spa",
+        "address": "Fairfax Corner – 4210 Fairfax Corner Ave. W., Fairfax, VA"
+      },
+      {
+        "name": "The Red Door at Pentagon Row",
+        "address": "1101 S. Joyce St., Arlington, VA – Salon / Spa"
+      },
+      {
+        "name": "The Red Door",
+        "address": "Reston – 11838 Spectrum Center, Reston, VA – Salon / Spa"
+      },
+      {
+        "name": "The Red Door at The Shops at Fairfax Square",
+        "address": "8075 Leesburg Pike, Suite 110, Vienna,"
+      },
+      {
+        "name": "The Ritz-Carlton Spa, Tysons Corner",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Serendipity Wellness Studio",
+        "address": "5252 Lyngate Ct. Ste. 202, Burke, VA – Wellness Studio /"
+      },
+      {
+        "name": "Skin + Touch Therapy Spa",
+        "address": "714 Caroline St., Fredericksburg, VA – Spa / Therapy &"
+      },
+      {
+        "name": "Amenity Day Spa and Hair Studio",
+        "address": "44365 Premier Plz. Ste. 120, Ashburn, VA – Day"
+      },
+      {
+        "name": "Alya Salon & Spa",
+        "address": "139 Park St. SE, Vienna, VA – Salon / Day Spa"
+      },
+      {
+        "name": "Spa Noa",
+        "address": "11638 Plaza America Dr., Reston, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Aria MediSpa & Wellness Center",
+        "address": "2 Pidgeon Hill Dr. Ste. 100, Sterling, VA – Med Spa /"
+      },
+      {
+        "name": "Astoria Laser Clinic & Med Spa",
+        "address": "2106 Gallows Rd. Ste. B, Vienna, VA – Med Spa / Skin"
+      },
+      {
+        "name": "AVIE! Medspa & Laser Center",
+        "address": "552 Fort Evans Rd. Ste. 110, Leesburg, VA – Med Spa /"
+      },
+      {
+        "name": "Belleza Lase Laser Spa",
+        "address": "4015 Chain Bridge Rd. Ste. L, Fairfax, VA – Med Spa / Laser"
+      },
+      {
+        "name": "Inova Medical Spa",
+        "address": "21785 Filigree Ct. Ste. 100, Ashburn, VA – Medical Spa / Wellness"
+      },
+      {
+        "name": "Laser of Arlington",
+        "address": "3111 10th St. N., Arlington, VA – Med Spa / Laser"
+      },
+      {
+        "name": "Lux Laser & Skincare",
+        "address": "21525 Ridgetop Cir. Ste. 210, Sterling, VA – Med Spa / Skin"
+      },
+      {
+        "name": "Mountcastle Medical Spa & Laser Center",
+        "address": "44095 Pipeline Plaza, Ste. 270, Ashburn, VA"
+      },
+      {
+        "name": "Impressions MediSpa",
+        "address": "10560 Main St. Ste. 307, Fairfax, VA – Med Spa / Spa &"
+      },
+      {
+        "name": "PureSkin Aesthetics",
+        "address": "8130 Boone Blvd. Ste. 360, Tysons, VA – Med Spa / Skin Care"
+      },
+      {
+        "name": "Radiance Medspa Fairfax",
+        "address": "12585 Fair Lakes Cir., Fairfax, VA – Med Spa / Wellness"
+      },
+      {
+        "name": "Radiance Medspa",
+        "address": "Old Town – 115 S. Columbus St., Alexandria, VA – Med Spa / Skin"
+      },
+      {
+        "name": "Sanctuary Cosmetic Center",
+        "address": "1650 Tysons Blvd. Ste. 100, McLean, VA – Cosmetic /"
+      },
+      {
+        "name": "The Woodhouse Day Spa",
+        "address": "1603 Village Market Blvd. SE Ste. 116, Leesburg, VA – Day"
+      },
+      {
+        "name": "Rouge Boutique & Spa",
+        "address": "17 S. King St., Leesburg, VA – Spa / Salon"
+      },
+      {
+        "name": "Tranquility Day Spa & Salon",
+        "address": "15125 Washington St. Ste. 304, Haymarket, VA – Day"
+      },
+      {
+        "name": "Aida Spa",
+        "address": "1309 King St., 2nd Floor, Alexandria, VA – Salon / Spa"
+      },
+      {
+        "name": "Casal’s Dé Spa & Salon",
+        "address": "3033 Wilson Blvd., Arlington, VA – Salon / Spa"
+      },
+      {
+        "name": "Chaan Thai Yoga Massage",
+        "address": "8300 Arlington Blvd. Suite C3, Fairfax, VA – Massage /"
+      },
+      {
+        "name": "Dansk Day Spa",
+        "address": "212 Commerce St. Suite A, Occoquan, VA – Day Spa"
+      },
+      {
+        "name": "Ladan Holistic Spa",
+        "address": "108 East Fairfax St. Suite 108, Falls Church, VA – Holistic Spa /"
+      },
+      {
+        "name": "Dolce Vita Salon & Spa",
+        "address": "6829 Elm St. Ste. 220, McLean, VA – Salon / Spa"
+      },
+      {
+        "name": "Spa World / King-style Bathhouse",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Salamander Resort & Spa",
+        "address": "500 N. Pendleton St., Middleburg, VA – Resort Spa / Luxury"
+      },
+      {
+        "name": "Hand & Stone Massage and Facial Spa",
+        "address": "2241 Crystal Dr., Arlington, VA – Massage /"
+      },
+      {
+        "name": "The Spa at Mandarin Oriental",
+        "address": "1330 Maryland Ave SW, Washington, DC – Luxury Hotel"
+      },
+      {
+        "name": "Kalypso Spa",
+        "address": "4500 Daly Ave., Alexandria, VA – Day Spa / Massage"
+      },
+      {
+        "name": "Bliss Spa",
+        "address": "1775 Tysons Blvd., McLean, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Nirvana Spa",
+        "address": "11839 Market St., Reston, VA – Day Spa / Massage"
+      },
+      {
+        "name": "Eden Spa",
+        "address": "4821 Duke St., Alexandria, VA – Massage / Wellness"
+      },
+      {
+        "name": "Solace Spa",
+        "address": "4918 Fair Lakes Cir., Fairfax, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Serenity Med Spa",
+        "address": "12401 Parklawn Dr., Rockville, MD – Med Spa / Skin Care"
+      },
+      {
+        "name": "Haven Spa",
+        "address": "1730 Crystal Dr., Arlington, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Lotus Spa & Wellness",
+        "address": "1201 S Joyce St., Arlington, VA – Day Spa / Massage"
+      },
+      {
+        "name": "Tranquil Touch Spa",
+        "address": "2222 Gallows Rd., Vienna, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Spa 7",
+        "address": "4912 Lee Hwy, Arlington, VA – Massage / Spa"
+      },
+      {
+        "name": "Crystal Springs Spa",
+        "address": "415 N Washington St., Alexandria, VA – Massage / Day Spa"
+      },
+      {
+        "name": "Nirvana Wellness Spa",
+        "address": "11821 Sunrise Valley Dr., Reston, VA – Spa / Massage"
+      },
+      {
+        "name": "Oasis Spa",
+        "address": "6821 Elm St., McLean, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Serenity Spa & Wellness",
+        "address": "12700 Fair Lakes Cir., Fairfax, VA – Spa / Massage"
+      },
+      {
+        "name": "Eden Wellness Center",
+        "address": "4820 Duke St., Alexandria, VA – Massage / Day Spa"
+      },
+      {
+        "name": "Sanctuary Spa",
+        "address": "1601 Wilson Blvd., Arlington, VA – Day Spa / Wellness"
+      },
+      {
+        "name": "Rejuvenate Spa",
+        "address": "1250 S Hayes St., Arlington, VA – Massage / Spa"
+      },
+      {
+        "name": "Holistic Health Spa",
+        "address": "1101 Wilson Blvd., Arlington, VA – Wellness / Massage"
+      },
+      {
+        "name": "Blissful Touch Spa",
+        "address": "2050 Chain Bridge Rd., McLean, VA – Day Spa / Massage"
+      },
+      {
+        "name": "Nirvana Retreat",
+        "address": "123 Park St., Vienna, VA – Spa / Holistic Wellness"
+      },
+      {
+        "name": "Zen Spa & Massage",
+        "address": "1011 N Fairfax St., Alexandria, VA – Massage / Wellness"
+      },
+      {
+        "name": "Tranquility Wellness Center",
+        "address": "4000 University Dr., Fairfax, VA – Spa / Massage"
+      },
+      {
+        "name": "Harmony Spa",
+        "address": "300 S Washington St., Alexandria, VA – Day Spa / Massage"
+      },
+      {
+        "name": "Vitality Wellness Spa",
+        "address": "2500 N Harrison St., Arlington, VA – Wellness / Day Spa"
+      },
+      {
+        "name": "Aura Spa & Massage",
+        "address": "1401 Wilson Blvd., Arlington, VA – Day Spa / Massage"
+      }
+    ],
+    "sports-recreation": [
+      {
+        "name": "Fairfax Sportsplex",
+        "address": "indoor soccer & volleyball facility. Fairfax Sportsplex"
+      },
+      {
+        "name": "Barcroft Sports & Fitness Center",
+        "address": "county‑run fitness center / gym / recreation"
+      },
+      {
+        "name": "Thomas Jefferson Community & Fitness Center",
+        "address": "community rec center with indoor"
+      },
+      {
+        "name": "Lubber Run Community Center",
+        "address": "public community center with gym / rec amenities."
+      },
+      {
+        "name": "Arlington Mill Community Center",
+        "address": "community center in Arlington with gymnasium,"
+      },
+      {
+        "name": "Madison Community Center",
+        "address": "community rec‑center in Arlington County. Arlington"
+      },
+      {
+        "name": "Fairlington Community Center",
+        "address": "county‑run community fitness center. Arlington"
+      },
+      {
+        "name": "Gunston Community Center",
+        "address": "another Arlington‑area community fitness & recreation"
+      },
+      {
+        "name": "Langston‑Brown Community Center",
+        "address": "rec/facility in Arlington offering access to"
+      },
+      {
+        "name": "Franconia Rec Center",
+        "address": "Fairfax County rec center with gym/courts as well as outdoor"
+      },
+      {
+        "name": "Spring Hill Rec Center",
+        "address": "another Fairfax County rec‑center offering indoor"
+      },
+      {
+        "name": "Audrey Moore Rec Center",
+        "address": "county rec center for fitness, courts, rec access. Fairfax"
+      },
+      {
+        "name": "Oakmont Rec Center",
+        "address": "part of the Fairfax County Rec‑Center network for indoor"
+      },
+      {
+        "name": "Cub Run Rec Center",
+        "address": "recreation center in Fairfax County providing access to gym,"
+      },
+      {
+        "name": "Providence Rec Center",
+        "address": "Fairfax County community rec‑center offering courts, fitness,"
+      },
+      {
+        "name": "South Run Rec Center",
+        "address": "in Springfield/NoVA — rec‑center managing gym, courts,"
+      },
+      {
+        "name": "Mount Vernon Rec Center",
+        "address": "Fairfax County rec‑center providing courts, gyms, and"
+      },
+      {
+        "name": "George Washington Rec Center",
+        "address": "listed among Fairfax County rec‑center facilities."
+      },
+      {
+        "name": "Long Bridge Aquatics & Fitness Center",
+        "address": "aquatic + gym/fitness center in Arlington,"
+      },
+      {
+        "name": "MedStar Capitals Iceplex",
+        "address": "ice‑rink / indoor ice‑sports / recreation facility in Arlington."
+      },
+      {
+        "name": "Fairfax County Park Authority",
+        "address": "while not a single facility, this organization manages"
+      },
+      {
+        "name": "Arlington County Department of Parks and Recreation",
+        "address": "manages multiple"
+      },
+      {
+        "name": "Shirlington Community Center",
+        "address": "(if including community centers beyond main ones)"
+      },
+      {
+        "name": "Aurora Hills Community Center",
+        "address": "Arlington community center offering recreation, plus"
+      },
+      {
+        "name": "Carver Community Center",
+        "address": "Arlington County rec‑center with indoor gym, game room,"
+      },
+      {
+        "name": "Charles Drew Community Center",
+        "address": "Arlington rec‑center with a gymnasium and fitness"
+      },
+      {
+        "name": "Walter Reed Community Center",
+        "address": "Arlington County community‑center facility."
+      },
+      {
+        "name": "Fairfax County Recreation Centers Network",
+        "address": "covers public rec‑centers offering"
+      },
+      {
+        "name": "Prince William County Parks & Recreation",
+        "address": "county‑level park and recreation system"
+      },
+      {
+        "name": "Ashburn Recreation & Community Center",
+        "address": "Loudoun County community center with"
+      },
+      {
+        "name": "The St. James",
+        "address": "Springfield, VA (indoor sports & fun center)"
+      },
+      {
+        "name": "Charles Drew Community Center",
+        "address": "Arlington rec‑center with a gymnasium and fitness"
+      },
+      {
+        "name": "Fairlington Community Center & Park",
+        "address": "community center + park area in Arlington,"
+      },
+      {
+        "name": "Madison Community Center and Park",
+        "address": "rec‑center + surrounding park in Arlington,"
+      },
+      {
+        "name": "Walter Reed Community Center and Park",
+        "address": "Arlington community center with indoor"
+      }
+    ],
+    "drinks-bars": [
+      {
+        "name": "Port City Brewing Company",
+        "address": "Alexandria, VA — brewery & taproom that allows dogs"
+      },
+      {
+        "name": "Aslin Beer Company",
+        "address": "Alexandria, VA Northern Virginia Magazine+1"
+      },
+      {
+        "name": "Heritage Brewing Company Market Common Brewpub & Roastery",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "New District Brewing Company",
+        "address": "Arlington, VA Northern Virginia Magazine+1"
+      },
+      {
+        "name": "Caboose Brewing Company",
+        "address": "Vienna / Fairfax‑area, VA Northern Virginia"
+      },
+      {
+        "name": "Audacious Aleworks Brewery & Taproom",
+        "address": "Falls Church / Fairfax‑area, VA Northern"
+      },
+      {
+        "name": "Brew Republic Bierwerks",
+        "address": "Woodbridge / Potomac‑Town Place area, VA Northern"
+      },
+      {
+        "name": "2 Silos Brewing Co.",
+        "address": "Manassas, VA Northern Virginia Magazine"
+      },
+      {
+        "name": "BadWolf Brewing Company",
+        "address": "Manassas, VA Northern Virginia Magazine"
+      },
+      {
+        "name": "Eavesdrop Brewery",
+        "address": "Manassas, VA Northern Virginia Magazine"
+      },
+      {
+        "name": "Heritage Brewing Co.",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ornery Beer Company Taproom",
+        "address": "Manassas, VA Northern Virginia Magazine"
+      },
+      {
+        "name": "Sinistral Brewing Company",
+        "address": "Manassas, VA Northern Virginia Magazine"
+      },
+      {
+        "name": "Tin Cannon Brewing Company",
+        "address": "Gainesville, VA Northern Virginia Magazine+1"
+      },
+      {
+        "name": "Water’s End Brewery",
+        "address": "Lake Ridge, VA Northern Virginia Magazine+1"
+      },
+      {
+        "name": "Bike Lane Brewing & Café",
+        "address": "Reston, VA FxVA+1"
+      },
+      {
+        "name": "Lost Rhino Brewing Company",
+        "address": "Ashburn / Northern‑VA region, VA Northern Virginia"
+      },
+      {
+        "name": "Barnhouse Brewery",
+        "address": "Leesburg area, VA Virginia Craft Beer"
+      },
+      {
+        "name": "Beltway Brewing Company",
+        "address": "Sterling, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Black Hoof Brewing Company",
+        "address": "Leesburg, VA Virginia Craft Beer"
+      },
+      {
+        "name": "Black Walnut Brewing Company",
+        "address": "Leesburg, VA Virginia Craft Beer"
+      },
+      {
+        "name": "Crooked Run Brewing Company",
+        "address": "Sterling, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Bear Chase Brewing Company",
+        "address": "Northern‑VA / Blue Ridge‑area brewery, VA Truly"
+      },
+      {
+        "name": "Starr Hill Brewery",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Settle Down Easy Brewing Co.",
+        "address": "Falls Church, VA Eater DC+1"
+      },
+      {
+        "name": "Fair Winds Brewing Company",
+        "address": "Lorton, VA FxVA+1"
+      },
+      {
+        "name": "The Board Room Brewing Company",
+        "address": "Arlington, VA Arlington Convention & Visitors"
+      },
+      {
+        "name": "Nighthawk Brewery & Pizza",
+        "address": "Arlington / Pentagon City, VA ARLnow | Arlington, Va."
+      },
+      {
+        "name": "Rustico",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Dogfish Head Alehouse",
+        "address": "Seven Corners (Falls Church / VA‑area) — bar / pub with"
+      },
+      {
+        "name": "Fire Works American Pizzeria & Bar",
+        "address": "Arlington, VA — pizza + craft‑beer / bar vibe"
+      },
+      {
+        "name": "Courthouse Social",
+        "address": "Arlington, VA — beer‑garden / bar / local hangout Arlington"
+      },
+      {
+        "name": "Bronson Bierhall",
+        "address": "Arlington, VA — dog‑friendly taproom / bar / pub where pups are"
+      },
+      {
+        "name": "Capitol City Brewing Company",
+        "address": "Arlington, VA — brewpub / bar / beer‑centric"
+      },
+      {
+        "name": "Lost Boy Cider",
+        "address": "Alexandria, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Solace Brewing",
+        "address": "Falls Church / VA‑area ARLnow | Arlington, Va. local news+1"
+      },
+      {
+        "name": "Lake Anne Brew House",
+        "address": "Reston, VA FxVA+1"
+      },
+      {
+        "name": "Ocelot Brewing Company",
+        "address": "Sterling, VA BeerAdvocate"
+      },
+      {
+        "name": "Route 7 Brewing Company",
+        "address": "Ashburn, VA BeerAdvocate"
+      },
+      {
+        "name": "Dynasty Brewing Company",
+        "address": "Ashburn, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Mustang Sally Brewing Company",
+        "address": "Chantilly, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Chubby Squirrel Brewing Company",
+        "address": "Purcellville, VA DC Moms+1"
+      },
+      {
+        "name": "Bunnyman Brewing Company",
+        "address": "Fairfax, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Hops Grillhouse & Brewery",
+        "address": "Alexandria, VA The Microbrewed Beer of the Month"
+      },
+      {
+        "name": "Sweetwater Tavern & Brewery",
+        "address": "Falls Church / Merrifield, VA The Microbrewed Beer"
+      },
+      {
+        "name": "Atlas Brew Works",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Honoring small & local bars near NoVA suburbs",
+        "address": "e.g. bottle‑shop + bar‑hybrids,"
+      }
+    ],
+    "pet-friendly": [
+      {
+        "name": "Shirlington Dog Park",
+        "address": "Arlington, VA 6AM - NOVAtoday+1"
+      },
+      {
+        "name": "Glencarlyn Dog Park",
+        "address": "Arlington, VA DullesMoms.com+1"
+      },
+      {
+        "name": "Fairfax City Dog Park",
+        "address": "Fairfax, VA 6AM - NOVAtoday"
+      },
+      {
+        "name": "Westgrove Dog Park",
+        "address": "Alexandria, VA 6AM - NOVAtoday+1"
+      },
+      {
+        "name": "Baron Cameron Dog Park",
+        "address": "Reston, VA Northern Virginia Magazine+1"
+      },
+      {
+        "name": "Grist Mill Dog Park",
+        "address": "Alexandria, VA (Grist Mill Park location) FxVA+1"
+      },
+      {
+        "name": "Benjamin Banneker Dog Park",
+        "address": "Arlington, VA DullesMoms.com+1"
+      },
+      {
+        "name": "Fort Ethan Allen Dog Park",
+        "address": "Arlington, VA DullesMoms.com"
+      },
+      {
+        "name": "Towers Dog Park",
+        "address": "Arlington, VA DullesMoms.com"
+      },
+      {
+        "name": "James Hunter Dog Park",
+        "address": "Arlington, VA DullesMoms.com"
+      },
+      {
+        "name": "Caboose Commons",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Bronson Bierhall",
+        "address": "Arlington, VA — dog‑friendly taproom / bar / pub where pups are"
+      },
+      {
+        "name": "Port City Brewing Company",
+        "address": "Alexandria, VA — brewery & taproom that allows dogs"
+      },
+      {
+        "name": "Makers Union",
+        "address": "Reston, VA — brewery/restaurant that permits dogs on the patio."
+      },
+      {
+        "name": "Copperwood Tavern",
+        "address": "Chantilly / NoVA — restaurant/tavern with dog‑friendly patio per"
+      },
+      {
+        "name": "Clare & Don’s Beach Shack",
+        "address": "Leesburg, VA — pet‑friendly patio restaurant that"
+      },
+      {
+        "name": "Lost Dog Café",
+        "address": "multiple NoVA / DC‑area locations — dog‑friendly café with"
+      },
+      {
+        "name": "Snouts & Stouts Dog Bar & Park",
+        "address": "Arlington / NoVA area — bar + indoor/outdoor"
+      },
+      {
+        "name": "Vola’s Dockside Grill & Hi‑Tide Lounge",
+        "address": "Alexandria, VA — seafood/grill spot with"
+      },
+      {
+        "name": "Madigan’s Waterfront",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Prince William Forest Park",
+        "address": "VA"
+      },
+      {
+        "name": "Leesylvania State Park",
+        "address": "VA"
+      },
+      {
+        "name": "Occoquan Regional Park",
+        "address": "Lorton / Occoquan, VA — regional park with trails, river"
+      },
+      {
+        "name": "Lake Ridge Park",
+        "address": "Lake Ridge, VA — park/green space near water/trails that’s listed"
+      },
+      {
+        "name": "Veterans Memorial Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Windmill Hill Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Shirlington neighborhood (Arlington) walking areas & dog‑friendly shops/patios",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Old Town Alexandria",
+        "address": "VA"
+      },
+      {
+        "name": "Ballston neighborhood (Arlington) pet‑friendly community area",
+        "address": "Arlington, VA —"
+      },
+      {
+        "name": "Moorefield Dog Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Monticello Dog Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Windmill Hill Dog‑Friendly Areas & Parks",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Carlyle / Diamond District (Alexandria) Dog‑Friendly Spots & Parks",
+        "address": "Alexandria,"
+      },
+      {
+        "name": "Four Mile Run Park & Trail",
+        "address": "outdoor walking / pet‑friendly path (Arlington +"
+      },
+      {
+        "name": "Gateway Interim Dog Park",
+        "address": "Arlington, VA — dog‑park option in Arlington’s list of"
+      },
+      {
+        "name": "Utah Dog Park",
+        "address": "Arlington, VA — publicly listed dog park in Arlington for off‑leash dog"
+      },
+      {
+        "name": "Virginia Highlands Interim Dog Park",
+        "address": "Arlington, VA — another dog‑park listed"
+      },
+      {
+        "name": "Hooﬀ’s Run Park & Greenway",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Duke Street Dog Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Ben Brenman Park Dog Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Caboose Brewing Company / Caboose Commons",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Lost Boy Cider",
+        "address": "Alexandria, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Vanish Farmwoods Brewery",
+        "address": "(Northern Virginia region) — farm‑brewery spot listed"
+      },
+      {
+        "name": "Starr Hill Brewery & Wine Garden",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Barkhaus Dog Bar & Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Beltway Brewing Company",
+        "address": "Sterling, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Crooked Run Brewing Company",
+        "address": "Sterling, VA BeerAdvocate+1"
+      },
+      {
+        "name": "Bear Chase Brewing Company (",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Tin Cannon Brewing Company",
+        "address": "Gainesville, VA Northern Virginia Magazine+1"
+      },
+      {
+        "name": "Fair Winds Brewing Company",
+        "address": "Lorton, VA FxVA+1"
+      }
+    ],
+    "road-trip-getaways": [
+      {
+        "name": "Great Falls Park",
+        "address": "VA"
+      },
+      {
+        "name": "Shenandoah National Park",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Leesburg Historic Downtown",
+        "address": "VA"
+      },
+      {
+        "name": "Middleburg, VA",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Mount Vernon Estate & Gardens",
+        "address": "VA"
+      },
+      {
+        "name": "Old Town Alexandria",
+        "address": "VA"
+      },
+      {
+        "name": "Historic Annapolis Waterfront",
+        "address": "MD"
+      },
+      {
+        "name": "Harpers Ferry National Historical Park",
+        "address": "WV"
+      },
+      {
+        "name": "Frederick, MD Historic Downtown",
+        "address": "MD"
+      },
+      {
+        "name": "Catoctin Mountain Park",
+        "address": "MD"
+      },
+      {
+        "name": "Sky Meadows State Park",
+        "address": "VA"
+      },
+      {
+        "name": "Loudoun County Wineries & Vineyards",
+        "address": "VA"
+      },
+      {
+        "name": "Solomon’s Island",
+        "address": "MD"
+      },
+      {
+        "name": "Assateague Island National Seashore",
+        "address": "MD (bit longer but reachable)"
+      },
+      {
+        "name": "Gunston Hall Historic Estate",
+        "address": "VA"
+      },
+      {
+        "name": "Manassas National Battlefield Park",
+        "address": "VA"
+      },
+      {
+        "name": "Vienna & Wolf Trap National Park for the Performing Arts",
+        "address": "VA"
+      },
+      {
+        "name": "National Harbor / Gaylord Resort area",
+        "address": "MD"
+      },
+      {
+        "name": "Patowmack Canal & Great Falls Trail",
+        "address": "VA"
+      },
+      {
+        "name": "Historic Occoquan Town",
+        "address": "VA"
+      },
+      {
+        "name": "Cunningham Falls State Park",
+        "address": "MD"
+      },
+      {
+        "name": "Skyline Caverns",
+        "address": "VA"
+      },
+      {
+        "name": "Harper’s Ferry Whitewater Rafting & Hiking",
+        "address": "WV"
+      },
+      {
+        "name": "Mount Airy / Small Town Charm",
+        "address": "MD"
+      },
+      {
+        "name": "Leesylvania State Park",
+        "address": "VA"
+      },
+      {
+        "name": "Prince William Forest Park",
+        "address": "VA"
+      },
+      {
+        "name": "Waterford, VA Historic Village",
+        "address": "VA"
+      },
+      {
+        "name": "Skyline Drive Overlook Stops",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Morven Park Estate & Gardens",
+        "address": "VA"
+      },
+      {
+        "name": "National Colonial Farm at Piscataway Park",
+        "address": "MD"
+      },
+      {
+        "name": "Historic Dumfries Town",
+        "address": "VA"
+      },
+      {
+        "name": "Point of Rocks Scenic Area",
+        "address": "MD"
+      },
+      {
+        "name": "Great Falls Overlook",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Catoctin Furnace Historic Site",
+        "address": "MD"
+      },
+      {
+        "name": "Harpers Ferry Hiking & Adventure Trails",
+        "address": "WV"
+      },
+      {
+        "name": "Leesburg Premium Outlets",
+        "address": "VA"
+      },
+      {
+        "name": "Mount Vernon Trail for biking / hiking",
+        "address": "VA"
+      },
+      {
+        "name": "Riverbend Park",
+        "address": "VA"
+      },
+      {
+        "name": "Occoquan Bay National Wildlife Refuge",
+        "address": "VA"
+      },
+      {
+        "name": "Meadowlark Botanical Gardens",
+        "address": "VA"
+      },
+      {
+        "name": "Blenheim Vineyards",
+        "address": "VA"
+      },
+      {
+        "name": "Dumbarton Oaks Gardens",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "National Arboretum",
+        "address": "DC"
+      },
+      {
+        "name": "Potomac Heritage Trail segments",
+        "address": "VA / MD"
+      },
+      {
+        "name": "Antietam National Battlefield",
+        "address": "MD"
+      },
+      {
+        "name": "Chesapeake Bay Maritime Museum",
+        "address": "MD"
+      },
+      {
+        "name": "Wolf Trap Meadow & Trails",
+        "address": "VA"
+      },
+      {
+        "name": "Historic Shepherdstown",
+        "address": "WV"
+      },
+      {
+        "name": "Huntington Library & Gardens",
+        "address": "VA"
+      },
+      {
+        "name": "Old Town Fredericksburg & Riverfront",
+        "address": "VA"
+      },
+      {
+        "name": "Skyline Drive",
+        "address": "Dickey Ridge Visitor Center Stop — VA"
+      },
+      {
+        "name": "Leesburg Lavender Farm",
+        "address": "VA"
+      },
+      {
+        "name": "Lucketts Community Center & Artisan Market",
+        "address": "VA"
+      },
+      {
+        "name": "Manassas Winery Trail",
+        "address": "VA"
+      },
+      {
+        "name": "Cedar Creek & Belle Grove Historic Park",
+        "address": "VA"
+      },
+      {
+        "name": "Great Falls Overlook Trail",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Fort Ward Museum & Park",
+        "address": "VA"
+      },
+      {
+        "name": "Heritage Farm Museum & Village",
+        "address": "VA"
+      },
+      {
+        "name": "Town of Clifton, VA",
+        "address": "VA"
+      },
+      {
+        "name": "Riley’s Lock and C&O Canal Towpath",
+        "address": "MD"
+      },
+      {
+        "name": "Green Spring Gardens Park",
+        "address": "VA"
+      },
+      {
+        "name": "Mount Vernon Wine & Food Festival",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Leesburg Balloon Festival",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "Skyline Drive Hiking Short Trails",
+        "address": "VA"
+      },
+      {
+        "name": "Occoquan Arts & Crafts Fair / Town Walk",
+        "address": "VA"
+      },
+      {
+        "name": "Harpers Ferry National Park Zipline / Adventure Tours",
+        "address": "WV"
+      },
+      {
+        "name": "Great Falls Kayaking / Adventure Rentals",
+        "address": "VA"
+      },
+      {
+        "name": "Reston Town Center Walks / Lake Anne",
+        "address": "VA"
+      },
+      {
+        "name": "Meadowlark Botanical Gardens Seasonal Events",
+        "address": "VA"
+      },
+      {
+        "name": "Historic Alexandria Ghost & Walking Tours",
+        "address": "VA"
+      }
+    ],
+    "fitness-classes": [
+      {
+        "name": "CorePower Yoga",
+        "address": "Vienna, VA"
+      },
+      {
+        "name": "Flow Yoga Center",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "One Life Fitness Studio",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Pilates on the Park",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Yoga District",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "True Pilates",
+        "address": "McLean, VA"
+      },
+      {
+        "name": "West End Yoga",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Barre3",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "Yoga Heights",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Club Pilates",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "The Barre Code",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "National Pilates Studio",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Hot Yoga DC",
+        "address": "DC"
+      },
+      {
+        "name": "Power Yoga DC",
+        "address": "DC"
+      },
+      {
+        "name": "Pilates ProWorks",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Zen Yoga",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Urban Athletic Club",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Orangetheory Fitness",
+        "address": "Reston, VA"
+      },
+      {
+        "name": "SoulCycle",
+        "address": "DC"
+      },
+      {
+        "name": "Flex Pilates & Fitness",
+        "address": "Vienna, VA"
+      },
+      {
+        "name": "Hot Yoga Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "The Movement Studio",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "Zen Yoga & Wellness",
+        "address": "McLean, VA"
+      },
+      {
+        "name": "Barre Boutique",
+        "address": "Reston, VA"
+      },
+      {
+        "name": "YogaWorks",
+        "address": "DC"
+      },
+      {
+        "name": "Elevation Pilates",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Mind Your Body Pilates",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Kula Yoga",
+        "address": "DC"
+      },
+      {
+        "name": "Studio Barre",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Revolution Yoga",
+        "address": "DC"
+      },
+      {
+        "name": "Hot Yoga Reston",
+        "address": "Reston, VA"
+      },
+      {
+        "name": "Hot Yoga Falls Church",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "Pilates by Design",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Body Barre",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "ZenFit Yoga",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Bikram Yoga Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Pure Barre",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Yoga Lab",
+        "address": "DC"
+      },
+      {
+        "name": "Studio Barre Arlington",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Barre3 Reston",
+        "address": "Reston, VA"
+      },
+      {
+        "name": "CorePower Yoga Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Studio Pilates",
+        "address": "McLean, VA"
+      },
+      {
+        "name": "Pilates Platinum",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Body & Soul Yoga",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Elevation Yoga",
+        "address": "Vienna, VA"
+      },
+      {
+        "name": "CorePower Yoga Falls Church",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "Zen Barre Studio",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Yoga Heights Falls Church",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "Power Pilates Studio",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "The Barre Room",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Bikram Yoga DC",
+        "address": "DC"
+      },
+      {
+        "name": "Yoga Heights Arlington",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Pilates Studio Arlington",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Hot Yoga Vienna",
+        "address": "Vienna, VA"
+      },
+      {
+        "name": "Studio Barre McLean",
+        "address": "McLean, VA"
+      },
+      {
+        "name": "Yoga District Falls Church",
+        "address": "Falls Church, VA"
+      },
+      {
+        "name": "Zen Yoga McLean",
+        "address": "McLean, VA"
+      },
+      {
+        "name": "Orangetheory Fitness DC",
+        "address": "DC"
+      },
+      {
+        "name": "Barre3 Vienna",
+        "address": "Vienna, VA"
+      }
+    ],
+    "activities": [
+      {
+        "name": "Escape Room Live DC",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Pinstripes Bowling & Bocce",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "iFLY Indoor Skydiving",
+        "address": "Sterling, VA"
+      },
+      {
+        "name": "TopGolf Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Crayola Experience",
+        "address": "Easton, MD (slightly longer, but popular for families)"
+      },
+      {
+        "name": "Muse Paintbar",
+        "address": "DC"
+      },
+      {
+        "name": "Escape Room Arlington",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "The St. James",
+        "address": "Springfield, VA (indoor sports & fun center)"
+      },
+      {
+        "name": "The Escape Game DC",
+        "address": "DC"
+      },
+      {
+        "name": "ShadowLand Laser Adventures",
+        "address": "Sterling, VA"
+      },
+      {
+        "name": "Bowl America",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Airfield Adventures",
+        "address": "Chantilly, VA (zip-lining and aerial obstacle courses)"
+      },
+      {
+        "name": "Rockin’ Jump Trampoline Park",
+        "address": "Sterling, VA"
+      },
+      {
+        "name": "Monster Mini Golf",
+        "address": "Woodbridge, VA"
+      },
+      {
+        "name": "TopGolf National Harbor",
+        "address": "Oxon Hill, MD"
+      },
+      {
+        "name": "The Little Gym",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "CineBowl & Grille",
+        "address": "Laurel, MD"
+      },
+      {
+        "name": "Sky Zone Trampoline Park",
+        "address": "Reston, VA"
+      },
+      {
+        "name": "Bowlero",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Adventure Park at Sandy Spring",
+        "address": "MD"
+      },
+      {
+        "name": "Flight Trampoline Park",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Dave & Buster’s",
+        "address": "DC"
+      },
+      {
+        "name": "Tysons Corner Ice Skating & Events",
+        "address": "Tysons, VA"
+      },
+      {
+        "name": "VR Territory DC",
+        "address": "DC"
+      },
+      {
+        "name": "Arcade Legacy DC",
+        "address": "DC"
+      },
+      {
+        "name": "National Harbor Carousel & Rides",
+        "address": "Oxon Hill, MD"
+      },
+      {
+        "name": "K1 Speed Indoor Go-Karting",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "The St. James Waterpark & Adventure",
+        "address": "Springfield, VA"
+      },
+      {
+        "name": "Adventure Links Mini Golf & Fun Center",
+        "address": "Springfield, VA"
+      },
+      {
+        "name": "Bowl America Fairfax",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Pump It Up",
+        "address": "Inflatable Play Center — Sterling, VA"
+      },
+      {
+        "name": "VR Territory",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "iFly Indoor Skydiving",
+        "address": "Sterling, VA"
+      },
+      {
+        "name": "FunLand of Manassas",
+        "address": "Manassas, VA"
+      },
+      {
+        "name": "Escape Room Live Arlington",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Escape the Room DC",
+        "address": "DC"
+      },
+      {
+        "name": "National Harbor Ferris Wheel",
+        "address": "Oxon Hill, MD"
+      },
+      {
+        "name": "Dave & Buster’s National Harbor",
+        "address": "Oxon Hill, MD"
+      },
+      {
+        "name": "Pinstripes Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "The St. James Gym & Adventure",
+        "address": "Springfield, VA"
+      },
+      {
+        "name": "Bowlero Tysons",
+        "address": "Tysons, VA"
+      },
+      {
+        "name": "Flight Trampoline Park Fairfax",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "iFLY Indoor Skydiving Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "VR Territory National Harbor",
+        "address": "Oxon Hill, MD"
+      },
+      {
+        "name": "Monster Mini Golf Springfield",
+        "address": "Springfield, VA"
+      },
+      {
+        "name": "CineBowl & Grille Fairfax",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "TopGolf Reston",
+        "address": "Reston, VA"
+      },
+      {
+        "name": "Escape Room Fairfax",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "ShadowLand Laser Adventures Fairfax",
+        "address": "Fairfax, VA"
+      },
+      {
+        "name": "Adventure Links Springfield",
+        "address": "Springfield, VA"
+      },
+      {
+        "name": "Rockin’ Jump Sterling",
+        "address": "Sterling, VA"
+      },
+      {
+        "name": "Pump It Up Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Flight Trampoline Park Sterling",
+        "address": "Sterling, VA"
+      },
+      {
+        "name": "TopGolf DC",
+        "address": "Northern Virginia, USA"
+      },
+      {
+        "name": "VR Territory Arlington",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "Sky Zone Arlington",
+        "address": "Arlington, VA"
+      },
+      {
+        "name": "iFLY DC",
+        "address": "DC"
+      },
+      {
+        "name": "Escape Room National Harbor",
+        "address": "Oxon Hill, MD"
+      },
+      {
+        "name": "Bowl America Springfield",
+        "address": "Springfield, VA"
+      },
+      {
+        "name": "Adventure Park Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Monster Mini Golf Alexandria",
+        "address": "Alexandria, VA"
+      },
+      {
+        "name": "Dave & Buster’s Tysons Corner",
+        "address": "Tysons, VA"
+      },
+      {
+        "name": "Pinstripes Tysons",
+        "address": "Tysons, VA"
+      }
+    ]
+  }
+}

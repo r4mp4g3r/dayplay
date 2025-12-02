@@ -47,6 +47,8 @@ export interface Listing {
   is_published?: boolean;
   is_featured?: boolean;
   created_at?: string; // ISO date
+  upvoteCount?: number;
+  hasUserUpvoted?: boolean;
 }
 
 // Locals' Favorites (User-Generated Content)

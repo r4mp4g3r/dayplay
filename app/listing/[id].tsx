@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable, Share, Linking, Modal, Alert, Platform } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
-import { getListing } from '@/lib/api';
+import { getListing, upvoteListing, removeUpvote, getUpvoteCount, hasUserUpvoted } from '@/lib/api';
 import type { Listing } from '@/types/domain';
 import { ListingCarousel } from '@/components/ListingCarousel';
 import { ListingMap } from '@/components/ListingMap';
 import { useSavedStore } from '@/state/savedStore';
+import { useUpvoteStore } from '@/state/upvoteStore';
+import { useAuthStore } from '@/state/authStore';
 import { capture } from '@/lib/analytics';
 import { trackBusinessAnalytics } from '@/lib/businessAuth';
 import { formatEventDateRange, isEventInProgress, getTimeUntilEvent } from '@/lib/dateUtils';
@@ -25,6 +27,11 @@ export default function ListingDetails() {
   const [item, setItem] = useState<Listing | undefined>();
   const { isSaved, save, unsave } = useSavedStore();
   const [showListPicker, setShowListPicker] = useState(false);
+  const { user } = useAuthStore();
+  const upvoteStore = useUpvoteStore();
+  const [upvoteCount, setUpvoteCount] = useState(0);
+  const [hasUpvoted, setHasUpvoted] = useState(false);
+  
   // Date/time picker state
   const [showIOSDateTime, setShowIOSDateTime] = useState(false);
   const [iosDate, setIOSDate] = useState<Date>(new Date());
@@ -39,6 +46,71 @@ export default function ListingDetails() {
   useEffect(() => {
     if (id) capture('open_details', { id });
   }, [id]);
+
+  // Load upvote data
+  useEffect(() => {
+    if (!id) return;
+    
+    (async () => {
+      const count = await getUpvoteCount(id);
+      setUpvoteCount(count);
+      
+      // Ask Supabase directly if the current auth user has upvoted this listing
+      const upvoted = await hasUserUpvoted(id);
+      setHasUpvoted(upvoted);
+    })();
+  }, [id, user]);
+
+  const handleUpvote = async () => {
+    if (!id) return;
+    
+    // Require authentication
+    if (!user) {
+      Alert.alert(
+        'Sign In Required',
+        'Please sign in to upvote listings',
+        [
+          { text: 'Cancel', style: 'cancel' },
+          { text: 'Sign In', onPress: () => router.push('/auth/sign-in') },
+        ]
+      );
+      return;
+    }
+
+    try {
+      if (hasUpvoted) {
+        // Remove upvote
+        const success = await removeUpvote(id);
+        if (success) {
+          setHasUpvoted(false);
+          setUpvoteCount((c) => Math.max(0, c - 1));
+          upvoteStore.removeUpvote(id);
+          upvoteStore.decrementUpvoteCount(id);
+          Alert.alert('Upvote removed');
+        }
+      } else {
+        // Add upvote (idempotent)
+        const result = await upvoteListing(id);
+        if (result === 'inserted') {
+          setHasUpvoted(true);
+          setUpvoteCount((c) => c + 1);
+          upvoteStore.addUpvote(id);
+          upvoteStore.incrementUpvoteCount(id);
+          Alert.alert('Upvoted!', 'Thanks for supporting this spot!');
+        } else if (result === 'already') {
+          // Server says the user already has an upvote; just sync local state
+          setHasUpvoted(true);
+          upvoteStore.addUpvote(id);
+          // Don't change count here; it's already reflected from the server
+        } else {
+          Alert.alert('Error', 'Failed to upvote. Please try again.');
+        }
+      }
+    } catch (error) {
+      console.error('Upvote error:', error);
+      Alert.alert('Error', 'Failed to update upvote. Please try again.');
+    }
+  };
 
   if (!item) return <View style={styles.center}><Text>Loading…</Text></View>;
 
@@ -285,6 +357,15 @@ export default function ListingDetails() {
         <Text style={styles.sectionTitle}>Get There</Text>
         <View style={styles.actionsRow}>
           <Pressable
+            style={[styles.actionBtn, hasUpvoted ? { backgroundColor: '#ff4458' } : { backgroundColor: '#f3f3f3' }]}
+            onPress={handleUpvote}
+          >
+            <FontAwesome name="arrow-up" size={16} color={hasUpvoted ? '#fff' : '#111'} />
+            <Text style={[styles.actionText, { color: hasUpvoted ? '#fff' : '#111', marginLeft: 6 }]}>
+              {upvoteCount} {upvoteCount === 1 ? 'Upvote' : 'Upvotes'}
+            </Text>
+          </Pressable>
+          <Pressable
             style={[styles.actionBtn, { backgroundColor: '#111', flex: 1 }]}
             onPress={() => {
               trackBusinessAnalytics(item.id, 'directions');
@@ -426,7 +507,15 @@ const styles = StyleSheet.create({
   detailValue: { fontSize: 14, color: '#111', flex: 1 },
   link: { color: '#007AFF', textDecorationLine: 'underline' },
   actionsRow: { flexDirection: 'row', gap: 12, marginTop: 12, marginBottom: 24 },
-  actionBtn: { flex: 1, paddingVertical: 12, paddingHorizontal: 16, borderRadius: 12, alignItems: 'center' },
+  actionBtn: { 
+    flex: 1, 
+    paddingVertical: 12, 
+    paddingHorizontal: 16, 
+    borderRadius: 12, 
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
   actionText: { fontWeight: '700' },
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center', padding: 20 },
   modalContent: { backgroundColor: '#fff', borderRadius: 16, padding: 20, width: '100%', maxWidth: 320 },

@@ -29,13 +29,10 @@ if (!SUPABASE_URL || !SERVICE_ROLE_KEY) {
 
 const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
-// City configurations
+// City configurations (removed Austin & Denver)
 const CITIES = [
-  { name: 'Austin', lat: 30.2672, lng: -97.7431, state: 'TX' },
-  { name: 'Denver', lat: 39.7392, lng: -104.9903, state: 'CO' },
-  { name: 'Nashville', lat: 36.1627, lng: -86.7816, state: 'TN' },
   { name: 'San Francisco', lat: 37.7749, lng: -122.4194, state: 'CA' },
-  { name: 'New York', lat: 40.7128, lng: -74.0060, state: 'NY' },
+  { name: 'Northern Virginia', lat: 38.8462, lng: -77.3064, state: 'VA' },
   { name: 'Linköping', lat: 58.4108, lng: 15.6214, state: 'Sweden' },
 ];
 

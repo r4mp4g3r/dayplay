@@ -3,6 +3,50 @@ import { getFeed as getMockFeed, getListing as getMockListing } from './mockApi'
 import type { Listing } from '@/types/domain';
 import { haversineKm } from './location';
 
+// Canonicalize categories and expand DB filters to include common synonyms
+const CATEGORY_SYNONYMS: Record<string, string[]> = {
+  'arts-culture': ['arts-culture', 'arts and culture', 'Arts & Culture'],
+  'live-music': ['live-music', 'live music', 'Live Music'],
+  'games-entertainment': ['games-entertainment', 'games and entertainment', 'Games & Entertainment'],
+  'relax-recharge': ['relax-recharge', 'relax and recharge', 'Relax & Recharge', 'Relax and recharge'],
+  'sports-recreation': ['sports-recreation', 'sports and recreation', 'Sports & Recreation'],
+  'drinks-bars': ['drinks-bars', 'drinks and bars', 'Drinks & Bars'],
+  'pet-friendly': ['pet-friendly', 'pet friendly', 'Pet-Friendly'],
+  'road-trip-getaways': ['road-trip-getaways', 'road trip getaways', 'Road Trip Getaways'],
+  'festivals-pop-ups': ['festivals-pop-ups', 'festivals & pop-ups', 'Festivals & Pop-Ups', 'festivals and pop ups'],
+  'fitness-classes': ['fitness-classes', 'fitness classes', 'Fitness & Classes'],
+  'museum': ['museum', 'museums'],
+  'coffee': ['coffee', 'cafe', 'coffee shops'],
+  'food': ['food', 'restaurants'],
+  'outdoors': ['outdoors', 'parks'],
+  'nightlife': ['nightlife', 'bars'],
+  'shopping': ['shopping', 'shops'],
+};
+
+function normalizeCategory(cat?: string): string | undefined {
+  if (!cat) return undefined;
+  const lower = cat.toLowerCase();
+  // Exact canonical
+  if (CATEGORY_SYNONYMS[lower]) return lower;
+  // Find canonical by membership in synonyms
+  for (const [canonical, list] of Object.entries(CATEGORY_SYNONYMS)) {
+    if (list.map((s) => s.toLowerCase()).includes(lower)) return canonical;
+  }
+  return cat;
+}
+
+function expandCategoriesForDb(cats: string[]): string[] {
+  const out = new Set<string>();
+  cats.forEach((c) => {
+    const canon = normalizeCategory(c) || c;
+    const list = CATEGORY_SYNONYMS[canon] || [canon];
+    list.forEach((v) => out.add(v));
+    // Also include the canonical itself for safety
+    out.add(canon);
+  });
+  return Array.from(out);
+}
+
 type FeedParams = {
   lat?: number;
   lng?: number;
@@ -15,6 +59,7 @@ type FeedParams = {
   pageSize?: number;
   showNewThisWeek?: boolean;
   showOpenNow?: boolean;
+  city?: string;
 };
 
 /**
@@ -40,9 +85,12 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
       .eq('is_published', true)
       .neq('source', 'seed');
 
-    // Filter by categories
+    // NOTE: No strict city filter; we rely on radiusKm to include nearby towns
+
+    // Filter by categories (expand synonyms for DB-side filtering)
     if (params.categories && params.categories.length > 0) {
-      query = query.in('category', params.categories);
+      const expanded = expandCategoriesForDb(params.categories);
+      query = query.in('category', expanded);
     }
 
     // Filter by price tiers
@@ -58,6 +106,7 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
     // Transform and add images
     let items: (Listing & { recommendationScore?: number })[] = (data || []).map((item: any) => ({
       ...item,
+      category: normalizeCategory(item.category) || item.category,
       images:
         item.listing_photos?.sort((a: any, b: any) => a.sort_order - b.sort_order).map((p: any) => p.url) || [],
     }));
@@ -70,14 +119,15 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
       priceTiers = [1, 2, 3, 4],
       excludeIds = [],
       page = 0,
-      pageSize = 20,
+      pageSize = 50, // default to 50
       showNewThisWeek = false,
       showOpenNow = false,
     } = params;
 
-    // Optional client-side filters to mimic mock logic
+    // Optional client-side filters to mimic mock logic (uses normalized categories)
     if (categories.length > 0) {
-      items = items.filter((l) => categories.includes(l.category));
+      const normalizedSelected = categories.map((c) => normalizeCategory(c) || c);
+      items = items.filter((l) => normalizedSelected.includes(normalizeCategory(l.category) || l.category));
     }
     if (priceTiers.length) {
       items = items.filter((l) => !l.price_tier || priceTiers.includes(l.price_tier));
@@ -152,6 +202,7 @@ export async function getListing(id: string): Promise<Listing | undefined> {
     // Transform to match our Listing type
     const listing: Listing = {
       ...data,
+      category: normalizeCategory(data.category) || data.category,
       images: data.listing_photos
         ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
         .map((p: any) => p.url) || [],
@@ -176,7 +227,7 @@ export async function searchListings(query: string, params: Partial<FeedParams> 
       (item) =>
         item.title.toLowerCase().includes(lowerQuery) ||
         item.description?.toLowerCase().includes(lowerQuery) ||
-        item.category.toLowerCase().includes(lowerQuery)
+        (normalizeCategory(item.category)?.toLowerCase() || item.category.toLowerCase()).includes(lowerQuery)
     );
   }
 
@@ -189,9 +240,182 @@ export async function searchListings(query: string, params: Partial<FeedParams> 
       .limit(20);
 
     if (error) throw error;
-    return data as Listing[];
+    return (data as Listing[]).map((l) => ({ ...l, category: normalizeCategory(l.category) || l.category }));
   } catch (error) {
     console.error('Search error:', error);
+    return [];
+  }
+}
+
+/**
+ * Upvote a listing (authenticated users only)
+ * Returns:
+ *  - 'inserted' when a new upvote row was created
+ *  - 'already' when the user had already upvoted (unique constraint hit)
+ *  - 'error' on any other failure
+ */
+export async function upvoteListing(listingId: string): Promise<'inserted' | 'already' | 'error'> {
+  if (!isSupabaseConfigured()) {
+    console.warn('Supabase not configured, upvote not saved');
+    return 'error';
+  }
+
+  try {
+    const { data: userData, error: userError } = await supabase!.auth.getUser();
+    if (userError || !userData?.user?.id) {
+      console.warn('No authenticated user for upvote');
+      return 'error';
+    }
+
+    const { error } = await supabase!
+      .from('listing_upvotes')
+      .insert({ listing_id: listingId, user_id: userData.user.id });
+
+    if (error) {
+      // Unique constraint violation means already upvoted
+      if (error.code === '23505') {
+        console.log('Already upvoted');
+        return 'already';
+      }
+      throw error;
+    }
+    return 'inserted';
+  } catch (error) {
+    console.error('Upvote error:', error);
+    return 'error';
+  }
+}
+
+/**
+ * Remove upvote from a listing
+ */
+export async function removeUpvote(listingId: string): Promise<boolean> {
+  if (!isSupabaseConfigured()) {
+    return false;
+  }
+
+  try {
+    const userId = (await supabase!.auth.getUser()).data.user?.id;
+    if (!userId) return false;
+
+    const { error } = await supabase!
+      .from('listing_upvotes')
+      .delete()
+      .eq('listing_id', listingId)
+      .eq('user_id', userId);
+
+    if (error) throw error;
+    return true;
+  } catch (error) {
+    console.error('Remove upvote error:', error);
+    return false;
+  }
+}
+
+/**
+ * Get upvote count for a listing
+ */
+export async function getUpvoteCount(listingId: string): Promise<number> {
+  if (!isSupabaseConfigured()) {
+    return 0;
+  }
+
+  try {
+    const { count, error } = await supabase!
+      .from('listing_upvotes')
+      .select('*', { count: 'exact', head: true })
+      .eq('listing_id', listingId);
+
+    if (error) throw error;
+    return count || 0;
+  } catch (error) {
+    console.error('Get upvote count error:', error);
+    return 0;
+  }
+}
+
+/**
+ * Check if the currently authenticated user has upvoted a listing
+ */
+export async function hasUserUpvoted(listingId: string): Promise<boolean> {
+  if (!isSupabaseConfigured()) {
+    return false;
+  }
+
+  try {
+    const { data: userData, error: userError } = await supabase!.auth.getUser();
+    if (userError || !userData?.user?.id) {
+      return false;
+    }
+
+    const { data, error } = await supabase!
+      .from('listing_upvotes')
+      .select('id')
+      .eq('listing_id', listingId)
+      .eq('user_id', userData.user.id)
+      .maybeSingle();
+
+    if (error) throw error;
+    return !!data;
+  } catch (error) {
+    console.error('Check upvote error:', error);
+    return false;
+  }
+}
+
+/**
+ * Get trending listings for a city using weighted scoring
+ */
+export async function getTrendingListings(city: string): Promise<Listing[]> {
+  if (!isSupabaseConfigured()) {
+    return [];
+  }
+
+  try {
+    // Call the stored function to get trending listing IDs
+    const { data: trendingData, error: trendingError } = await supabase!
+      .rpc('get_trending_listings', { location_city: city, days_window: 30 });
+
+    if (trendingError) throw trendingError;
+    if (!trendingData || trendingData.length === 0) return [];
+
+    // Get full listing details for trending listings
+    const listingIds = trendingData.map((t: any) => t.listing_id);
+    const { data: listings, error: listingsError } = await supabase!
+      .from('listings')
+      .select(`
+        id,title,subtitle,description,category,price_tier,latitude,longitude,city,is_published,is_featured,created_at,phone,website,source,source_metadata,
+        listing_photos(url,sort_order)
+      `)
+      .in('id', listingIds)
+      .eq('is_published', true);
+
+    if (listingsError) throw listingsError;
+
+    // Transform and add upvote counts
+    const listingsWithUpvotes: Listing[] = (listings || []).map((item: any) => {
+      const trendingInfo = trendingData.find((t: any) => t.listing_id === item.id);
+      return {
+        ...item,
+        category: normalizeCategory(item.category) || item.category,
+        images: item.listing_photos
+          ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
+          .map((p: any) => p.url) || [],
+        upvoteCount: trendingInfo?.total_upvotes || 0,
+      };
+    });
+
+    // Sort by weighted score (same order as trending function)
+    const scoreMap = new Map<string, number>(
+      trendingData.map((t: any) => [t.listing_id as string, Number(t.weighted_score) || 0])
+    );
+    listingsWithUpvotes.sort(
+      (a, b) => (scoreMap.get(b.id) ?? 0) - (scoreMap.get(a.id) ?? 0)
+    );
+
+    return listingsWithUpvotes;
+  } catch (error) {
+    console.error('Get trending listings error:', error);
     return [];
   }
 }

@@ -13,19 +13,15 @@ type LocationState = {
 };
 
 const CITY_COORDS: Record<string, { lat: number; lng: number }> = {
-  'Austin': { lat: 30.2672, lng: -97.7431 },
-  'Denver': { lat: 39.7392, lng: -104.9903 },
-  'Nashville': { lat: 36.1627, lng: -86.7816 },
   'San Francisco': { lat: 37.7749, lng: -122.4194 },
-  'San Francisco Bay Area': { lat: 37.7749, lng: -122.4194 },
-  'New York': { lat: 40.7128, lng: -74.0060 },
+  'Northern Virginia': { lat: 38.8462, lng: -77.3064 }, // Approx. Fairfax, VA as central point
   'Linköping': { lat: 58.4108, lng: 15.6214 },
 };
 
 const DEFAULT_STATE: LocationState = {
-  latitude: 30.2672, // Austin fallback
-  longitude: -97.7431,
-  city: 'Austin',
+  latitude: 37.7749, // San Francisco fallback
+  longitude: -122.4194,
+  city: 'San Francisco',
   granted: false,
   loading: false,
   manuallySelected: false,

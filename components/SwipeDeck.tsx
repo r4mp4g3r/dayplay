@@ -1,18 +1,21 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { View, StyleSheet, Dimensions, Pressable, Text } from 'react-native';
+import React, { useEffect, useMemo, useState, useRef } from 'react';
+import { View, StyleSheet, Dimensions, Pressable, Text, Image } from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, withSpring, withTiming, runOnJS, interpolate } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { SwipeCard } from './SwipeCard';
 import { LoadingSkeleton } from './LoadingSkeleton';
+import { PhotoGalleryModal } from './PhotoGalleryModal';
 import type { Listing } from '@/types/domain';
 import { useSavedStore } from '@/state/savedStore';
 import { router } from 'expo-router';
 import { capture } from '@/lib/analytics';
 import * as Haptics from 'expo-haptics';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useSwipeHistoryStore, recordSwipe as recordSwipeEvent } from '@/state/swipeHistoryStore';
 
 const { width } = Dimensions.get('window');
 const SWIPE_THRESHOLD = width * 0.25;
+const SWIPE_UP_THRESHOLD = -100;
 
 type Props = {
   fetchFn: (args: { page: number; excludeIds: string[] }) => Promise<{ items: Listing[]; total: number }>;
@@ -23,10 +26,26 @@ export function SwipeDeck({ fetchFn }: Props) {
   const [items, setItems] = useState<Listing[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [total, setTotal] = useState<number | null>(null);
   const [page, setPage] = useState(0);
   const [excludeIds, setExcludeIds] = useState<string[]>([]);
   const [lastPassedItem, setLastPassedItem] = useState<Listing | null>(null);
+  const [viewedCount, setViewedCount] = useState(0);
+  const [showGallery, setShowGallery] = useState(false);
+  const [galleryItem, setGalleryItem] = useState<Listing | null>(null);
   const save = useSavedStore((s) => s.save);
+  const swipeHistory = useSwipeHistoryStore();
+
+  // Build initial exclude set from all previous swipes (left or right), once per mount.
+  // We intentionally DO NOT react to subsequent history changes here to avoid
+  // re-fetching the first page on every swipe.
+  const initialExcludeRef = useRef<string[] | null>(null);
+  if (!initialExcludeRef.current) {
+    const set = new Set<string>();
+    (swipeHistory.history || []).forEach((r) => set.add(r.listingId));
+    initialExcludeRef.current = Array.from(set);
+  }
+  const initialExclude = initialExcludeRef.current || [];
 
   useEffect(() => {
     let mounted = true;
@@ -35,13 +54,15 @@ export function SwipeDeck({ fetchFn }: Props) {
       setLoading(true);
       setError(null);
       try {
-        const result = await fetchFn({ page: 0, excludeIds: [] });
+        const result = await fetchFn({ page: 0, excludeIds: initialExclude });
         console.log('SwipeDeck: Fetch result:', result);
         if (mounted) {
           setItems(result.items || []);
+          setTotal(typeof result.total === 'number' ? result.total : null);
           setIndex(0);
+          setViewedCount(0);
           setPage(0);
-          setExcludeIds([]);
+          setExcludeIds(initialExclude);
         }
       } catch (e) {
         console.error('SwipeDeck: Fetch error:', e);
@@ -64,6 +85,23 @@ export function SwipeDeck({ fetchFn }: Props) {
   const translateY = useSharedValue(0);
   const rotateZ = useSharedValue(0);
 
+  // Prefetch images for the next few items to avoid perceived loading
+  useEffect(() => {
+    const urls = [1, 2, 3]
+      .map((offset) => items[index + offset]?.images?.[0])
+      .filter((u): u is string => !!u);
+    urls.forEach((u) => {
+      try { Image.prefetch(u); } catch {}
+    });
+  }, [index, items]);
+
+  const openGallery = () => {
+    if (topItem) {
+      setGalleryItem(topItem);
+      setShowGallery(true);
+    }
+  };
+
   const gesture = Gesture.Pan()
     .onChange((e) => {
       translateX.value = e.translationX;
@@ -71,9 +109,17 @@ export function SwipeDeck({ fetchFn }: Props) {
       rotateZ.value = (e.translationX / width) * 0.15;
     })
     .onEnd((e) => {
+      const swipeUp = translateY.value < SWIPE_UP_THRESHOLD && Math.abs(translateX.value) < SWIPE_THRESHOLD;
       const shouldAccept = translateX.value > SWIPE_THRESHOLD;
       const shouldReject = translateX.value < -SWIPE_THRESHOLD;
-      if (shouldAccept || shouldReject) {
+      
+      if (swipeUp) {
+        // Swipe up detected - open gallery
+        translateX.value = withSpring(0);
+        translateY.value = withSpring(0);
+        rotateZ.value = withSpring(0);
+        runOnJS(openGallery)();
+      } else if (shouldAccept || shouldReject) {
         const toX = shouldAccept ? width * 1.1 : -width * 1.1;
         translateX.value = withTiming(toX, { duration: 160 }, () => {
           runOnJS(onSwiped)(shouldAccept);
@@ -98,22 +144,38 @@ export function SwipeDeck({ fetchFn }: Props) {
       Haptics.selectionAsync();
       setLastPassedItem(current);
     }
+    // Record swipe (both liked and passed) to persist exclusion
+    try { recordSwipeEvent(current.id, liked ? 'right' : 'left', current.category, (current as any).tags || []); } catch {}
+
     capture(liked ? 'swipe_like' : 'swipe_pass', { id: current.id, title: current.title });
-    if (!liked) setExcludeIds((prev) => [...prev, current.id]);
+    setExcludeIds((prev) => Array.from(new Set([...prev, current.id])));
+
+    setViewedCount((c) => c + 1);
+
     const nextIndex = index + 1;
     setIndex(nextIndex);
-    // Prefetch next page when reaching near the end
-    if (nextIndex >= items.length - 2) {
-      try {
-        const nextPage = page + 1;
-        const res = await fetchFn({ page: nextPage, excludeIds: [...excludeIds, !liked ? current.id : ''] .filter(Boolean) });
-        const deduped = res.items.filter((it) => !new Set(items.map((i) => i.id)).has(it.id));
-        if (deduped.length) {
-          setItems((prev) => [...prev, ...deduped]);
-          setPage(nextPage);
-        }
-      } catch {}
+    // Prefetch next page when reaching near the end (keep a buffer of 5)
+    if (nextIndex >= items.length - 5) {
+      // Fire-and-forget to avoid blocking the swipe transition
+      loadMoreInternal();
     }
+  }
+
+  async function loadMoreInternal() {
+    try {
+      const nextPage = page + 1;
+      const exclude = Array.from(new Set([...excludeIds, ...items.map((i) => i.id)]));
+      const res = await fetchFn({ page: nextPage, excludeIds: exclude });
+      if (typeof res.total === 'number') {
+        setTotal(res.total);
+      }
+      const seen = new Set(items.map((i) => i.id));
+      const deduped = (res.items || []).filter((it) => !seen.has(it.id));
+      if (deduped.length) {
+        setItems((prev) => [...prev, ...deduped]);
+        setPage(nextPage);
+      }
+    } catch {}
   }
 
   function undoLastPass() {
@@ -162,14 +224,25 @@ export function SwipeDeck({ fetchFn }: Props) {
       <Text style={{ fontSize: 12, color: '#999', marginTop: 4 }}>{error}</Text>
     </View>
   );
-  if (!topItem) return (
-    <View style={styles.center}>
-      <Text style={{ fontSize: 48, marginBottom: 16 }}>🎉</Text>
-      <Text style={styles.emptyTitle}>You've seen everything!</Text>
-      <Text style={styles.emptySubtitle}>You viewed {items.length} items</Text>
-      <Text style={styles.emptySubtitle}>Try adjusting your filters for more</Text>
-    </View>
-  );
+  if (!topItem) {
+    // If we've truly exhausted all items (items length >= total), show the completion message.
+    // Otherwise, we're likely between pages – show a lightweight loading state instead of a hard stop.
+    if (total != null && items.length >= total) {
+      return (
+        <View style={styles.center}>
+          <Text style={{ fontSize: 48, marginBottom: 16 }}>🎉</Text>
+          <Text style={styles.emptyTitle}>You've seen everything!</Text>
+          <Text style={styles.emptySubtitle}>You viewed {viewedCount} items</Text>
+          <Text style={styles.emptySubtitle}>Try adjusting your filters for more</Text>
+        </View>
+      );
+    }
+    return (
+      <View style={styles.container}>
+        <LoadingSkeleton />
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -213,6 +286,13 @@ export function SwipeDeck({ fetchFn }: Props) {
           <FontAwesome name="heart" size={24} color="#fff" />
         </Pressable>
       </View>
+
+      {/* Photo Gallery Modal */}
+      <PhotoGalleryModal
+        visible={showGallery}
+        listing={galleryItem}
+        onClose={() => setShowGallery(false)}
+      />
     </View>
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Dimensions, Pressable, Text } from 'react-native';
 import { SwipeCard } from './SwipeCard';
 import { LoadingSkeleton } from './LoadingSkeleton';
+import { PhotoGalleryModal } from './PhotoGalleryModal';
 import type { Listing } from '@/types/domain';
 import { useSavedStore } from '@/state/savedStore';
 import { recordSwipe } from '@/state/swipeHistoryStore';
@@ -24,6 +25,9 @@ export function SwipeDeck({ fetchFn }: Props) {
   const [page, setPage] = useState(0);
   const [excludeIds, setExcludeIds] = useState<string[]>([]);
   const [lastPassedItem, setLastPassedItem] = useState<Listing | null>(null);
+  const [viewedCount, setViewedCount] = useState(0);
+  const [showGallery, setShowGallery] = useState(false);
+  const [galleryItem, setGalleryItem] = useState<Listing | null>(null);
   const save = useSavedStore((s) => s.save);
 
   useEffect(() => {
@@ -38,6 +42,7 @@ export function SwipeDeck({ fetchFn }: Props) {
         if (mounted) {
           setItems(result.items || []);
           setIndex(0);
+          setViewedCount(0);
           setPage(0);
           setExcludeIds([]);
         }
@@ -77,6 +82,9 @@ export function SwipeDeck({ fetchFn }: Props) {
     }
     capture(liked ? 'swipe_like' : 'swipe_pass', { id: current.id, title: current.title });
     if (!liked) setExcludeIds((prev) => [...prev, current.id]);
+
+    setViewedCount((c) => c + 1);
+
     const nextIndex = index + 1;
     setIndex(nextIndex);
     // Prefetch next page when reaching near the end
@@ -125,10 +133,17 @@ export function SwipeDeck({ fetchFn }: Props) {
     <View style={styles.center}>
       <Text style={{ fontSize: 48, marginBottom: 16 }}>🎉</Text>
       <Text style={styles.emptyTitle}>You've seen everything!</Text>
-      <Text style={styles.emptySubtitle}>You viewed {items.length} items</Text>
+      <Text style={styles.emptySubtitle}>You viewed {viewedCount} items</Text>
       <Text style={styles.emptySubtitle}>Try adjusting your filters for more</Text>
     </View>
   );
+
+  const openGallery = () => {
+    if (topItem) {
+      setGalleryItem(topItem);
+      setShowGallery(true);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -138,8 +153,17 @@ export function SwipeDeck({ fetchFn }: Props) {
         </View>
       )}
       <View style={styles.card}>
-        <Pressable onPress={() => router.push(`/listing/${topItem.id}`)}>
+        <Pressable onPress={openGallery}>
           <SwipeCard item={topItem} />
+          {/* Visual indicator for photo gallery */}
+          {topItem.images && topItem.images.length > 1 && (
+            <View style={styles.galleryIndicator}>
+              <FontAwesome name="images" size={16} color="#fff" />
+              <Text style={styles.galleryIndicatorText}>
+                Tap for {topItem.images.length} photos
+              </Text>
+            </View>
+          )}
         </Pressable>
       </View>
 
@@ -156,6 +180,13 @@ export function SwipeDeck({ fetchFn }: Props) {
           <FontAwesome name="heart" size={24} color="#fff" />
         </Pressable>
       </View>
+
+      {/* Photo Gallery Modal */}
+      <PhotoGalleryModal
+        visible={showGallery}
+        listing={galleryItem}
+        onClose={() => setShowGallery(false)}
+      />
     </View>
   );
 }
@@ -168,5 +199,25 @@ const styles = StyleSheet.create({
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   emptyTitle: { fontSize: 18, fontWeight: '700', color: '#333' },
   emptySubtitle: { fontSize: 14, color: '#999', marginTop: 6 },
+  galleryIndicator: {
+    position: 'absolute',
+    bottom: 200,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 20,
+    alignSelf: 'center',
+  },
+  galleryIndicatorText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#fff',
+  },
 });
 
