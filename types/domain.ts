@@ -72,6 +72,7 @@ export interface LocalFavorite {
   
   // Media
   photo_url?: string;
+  photos?: string[];
   
   // Optional Details
   hours?: string;

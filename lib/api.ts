@@ -82,94 +82,68 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
         listing_photos(url,sort_order)
         `
       )
-      .eq('is_published', true)
-      .neq('source', 'seed');
+      .eq('is_published', true);
+      // Removed .neq('source', 'seed') to fetch ALL listings
 
-    // NOTE: No strict city filter; we rely on radiusKm to include nearby towns
+    // Filter by city if provided - this ensures we only show listings for the selected region
+    // Some "cities" in our app are actually metro areas that span multiple municipalities
+    if (params.city) {
+      // Metro area mappings: maps display name -> array of actual city names in database
+      const METRO_AREA_CITIES: Record<string, string[]> = {
+        'Northern Virginia': [
+          'Northern Virginia', 'Fairfax', 'Arlington', 'Alexandria', 'Reston', 'Vienna',
+          'Falls Church', 'McLean', 'Tysons', 'Annandale', 'Springfield', 'Centreville',
+          'Herndon', 'Chantilly', 'Great Falls', 'Clifton', 'Fairfax Station',
+          'Occoquan Historic District', 'Manassas', 'Ashburn', 'Leesburg', 'Sterling',
+          'Burke', 'Lorton', 'Mount Vernon', 'Oakton', 'Dunn Loring', 'Merrifield',
+          'Woodbridge', 'Dale City', 'Lake Ridge', 'Gainesville', 'Haymarket',
+          // DC area (included in NV dataset)
+          'Washington', 'Washington, DC', 'District of Columbia',
+          // Maryland areas near NV (included in imports)
+          'Frederick, MD', 'Solomons', 'Silver Spring', 'National Harbor', 'Bethesda',
+          // Other VA cities from the import
+          'Middleburg', 'Waterford', 'Fredericksburg', 'Stafford', 'Prince William'
+        ],
+        // Add more metro areas here as needed:
+        // 'Bay Area': ['San Francisco', 'Oakland', 'Berkeley', 'San Jose', ...],
+        // 'Greater Austin': ['Austin', 'Round Rock', 'Cedar Park', 'Georgetown', ...],
+      };
 
-    // Filter by categories (expand synonyms for DB-side filtering)
-    if (params.categories && params.categories.length > 0) {
-      const expanded = expandCategoriesForDb(params.categories);
-      query = query.in('category', expanded);
+      // Check if this is a metro area with multiple cities
+      const metroAreaCities = METRO_AREA_CITIES[params.city];
+      if (metroAreaCities) {
+        query = query.in('city', metroAreaCities);
+        console.log(`[getFeed] Filtering by metro area "${params.city}" (${metroAreaCities.length} cities)`);
+      } else {
+        // Single city - do exact match
+        query = query.eq('city', params.city);
+        console.log(`[getFeed] Filtering by single city: "${params.city}"`);
+      }
+    } else {
+      console.log('[getFeed] No city filter applied - showing all cities');
     }
 
-    // Filter by price tiers
-    if (params.priceTiers && params.priceTiers.length > 0) {
-      query = query.in('price_tier', params.priceTiers);
-    }
+    // NO DATABASE-LEVEL FILTERING - fetch everything and filter on frontend
+    // This ensures the frontend has access to all data for instant filtering
 
-    // Lower limit to reduce timeout risk
-    const { data, error } = await query.limit(250);
+    // Increased limit to handle cities with many listings
+    const { data, error } = await query.limit(2000);
 
     if (error) throw error;
 
-    // Transform and add images
-    let items: (Listing & { recommendationScore?: number })[] = (data || []).map((item: any) => ({
+    // Transform and add images - NO FILTERING AT ALL
+    // All filtering happens on the frontend in useFrontendFilteredListings
+    const items: Listing[] = (data || []).map((item: any) => ({
       ...item,
       category: normalizeCategory(item.category) || item.category,
       images:
         item.listing_photos?.sort((a: any, b: any) => a.sort_order - b.sort_order).map((p: any) => p.url) || [],
     }));
 
-    const {
-      lat = 30.2672,
-      lng = -97.7431,
-      radiusKm = 15,
-      categories = [],
-      priceTiers = [1, 2, 3, 4],
-      excludeIds = [],
-      page = 0,
-      pageSize = 50, // default to 50
-      showNewThisWeek = false,
-      showOpenNow = false,
-    } = params;
+    console.log(`[getFeed] Fetched ${items.length} total listings from database for ${params.city || 'all cities'} (NO FILTERING APPLIED)`);
 
-    // Optional client-side filters to mimic mock logic (uses normalized categories)
-    if (categories.length > 0) {
-      const normalizedSelected = categories.map((c) => normalizeCategory(c) || c);
-      items = items.filter((l) => normalizedSelected.includes(normalizeCategory(l.category) || l.category));
-    }
-    if (priceTiers.length) {
-      items = items.filter((l) => !l.price_tier || priceTiers.includes(l.price_tier));
-    }
-    if (excludeIds.length) {
-      const set = new Set(excludeIds);
-      items = items.filter((l) => !set.has(l.id));
-    }
-    if (showNewThisWeek) {
-      const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
-      items = items.filter((l) => l.created_at && new Date(l.created_at).getTime() > oneWeekAgo);
-    }
-    if (showOpenNow) {
-      items = items.filter((l) => l.hours);
-    }
-
-    const withDistance = items.map((l) => ({
-      ...l,
-      distanceKm:
-        l.latitude && l.longitude ? haversineKm(lat, lng, Number(l.latitude), Number(l.longitude)) : null,
-      // Keep placeholder for recommendation score if we hook up real engine
-      recommendationScore: 0,
-    }));
-
-    let filtered = withDistance.filter((l) => l.distanceKm == null || (radiusKm != null && (l.distanceKm as number) <= radiusKm));
-
-    // Sort featured first, then by distance
-    filtered.sort((a, b) => {
-      const aPromoted = a.is_featured || false;
-      const bPromoted = b.is_featured || false;
-      if (aPromoted && !bPromoted) return -1;
-      if (!aPromoted && bPromoted) return 1;
-      if (a.distanceKm != null && b.distanceKm != null) return (a.distanceKm as number) - (b.distanceKm as number);
-      return a.title.localeCompare(b.title);
-    });
-
-    const total = filtered.length;
-    const start = page * pageSize;
-    const end = start + pageSize;
-    const pageItems = filtered.slice(start, end);
-
-    return { items: pageItems, total };
+    // Return ALL items - frontend will handle all filtering
+    return { items, total: items.length };
     
   } catch (error) {
     console.error('Supabase feed error, falling back to mock:', error);
@@ -364,7 +338,8 @@ export async function hasUserUpvoted(listingId: string): Promise<boolean> {
 }
 
 /**
- * Get trending listings for a city using weighted scoring
+ * Get trending listings for a city based on upvotes
+ * Shows top 5 most upvoted listings from the selected city/metro area
  */
 export async function getTrendingListings(city: string): Promise<Listing[]> {
   if (!isSupabaseConfigured()) {
@@ -372,48 +347,88 @@ export async function getTrendingListings(city: string): Promise<Listing[]> {
   }
 
   try {
-    // Call the stored function to get trending listing IDs
-    const { data: trendingData, error: trendingError } = await supabase!
-      .rpc('get_trending_listings', { location_city: city, days_window: 30 });
+    console.log('[getTrendingListings] Fetching for city:', city);
 
-    if (trendingError) throw trendingError;
-    if (!trendingData || trendingData.length === 0) return [];
+    // Use the same metro area mapping as getFeed
+    const METRO_AREA_CITIES: Record<string, string[]> = {
+      'Northern Virginia': [
+        'Northern Virginia', 'Fairfax', 'Arlington', 'Alexandria', 'Reston', 'Vienna',
+        'Falls Church', 'McLean', 'Tysons', 'Annandale', 'Springfield', 'Centreville',
+        'Herndon', 'Chantilly', 'Great Falls', 'Clifton', 'Fairfax Station',
+        'Occoquan Historic District', 'Manassas', 'Ashburn', 'Leesburg', 'Sterling',
+        'Burke', 'Lorton', 'Mount Vernon', 'Oakton', 'Dunn Loring', 'Merrifield',
+        'Woodbridge', 'Dale City', 'Lake Ridge', 'Gainesville', 'Haymarket'
+      ],
+    };
 
-    // Get full listing details for trending listings
-    const listingIds = trendingData.map((t: any) => t.listing_id);
-    const { data: listings, error: listingsError } = await supabase!
+    // Build query with city filter
+    let query = supabase!
       .from('listings')
       .select(`
         id,title,subtitle,description,category,price_tier,latitude,longitude,city,is_published,is_featured,created_at,phone,website,source,source_metadata,
         listing_photos(url,sort_order)
       `)
-      .in('id', listingIds)
       .eq('is_published', true);
 
-    if (listingsError) throw listingsError;
+    // Apply city filter (metro area or single city)
+    const metroAreaCities = METRO_AREA_CITIES[city];
+    if (metroAreaCities) {
+      query = query.in('city', metroAreaCities);
+      console.log('[getTrendingListings] Filtering by metro area:', metroAreaCities.length, 'cities');
+    } else {
+      query = query.eq('city', city);
+      console.log('[getTrendingListings] Filtering by single city:', city);
+    }
 
-    // Transform and add upvote counts
-    const listingsWithUpvotes: Listing[] = (listings || []).map((item: any) => {
-      const trendingInfo = trendingData.find((t: any) => t.listing_id === item.id);
-      return {
-        ...item,
-        category: normalizeCategory(item.category) || item.category,
-        images: item.listing_photos
-          ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
-          .map((p: any) => p.url) || [],
-        upvoteCount: trendingInfo?.total_upvotes || 0,
-      };
+    const { data: listings, error: listingsError } = await query.limit(500); // Fetch more to get upvotes
+
+    if (listingsError) throw listingsError;
+    if (!listings || listings.length === 0) {
+      console.log('[getTrendingListings] No listings found');
+      return [];
+    }
+
+    console.log('[getTrendingListings] Found', listings.length, 'listings, fetching upvotes...');
+
+    // Get upvote counts for all listings
+    const listingIds = listings.map(l => l.id);
+    const { data: upvotesData, error: upvotesError } = await supabase!
+      .from('listing_upvotes')
+      .select('listing_id')
+      .in('listing_id', listingIds);
+
+    if (upvotesError) {
+      console.error('[getTrendingListings] Error fetching upvotes:', upvotesError);
+    }
+
+    // Count upvotes per listing
+    const upvoteCounts = new Map<string, number>();
+    (upvotesData || []).forEach((upvote: any) => {
+      const count = upvoteCounts.get(upvote.listing_id) || 0;
+      upvoteCounts.set(upvote.listing_id, count + 1);
     });
 
-    // Sort by weighted score (same order as trending function)
-    const scoreMap = new Map<string, number>(
-      trendingData.map((t: any) => [t.listing_id as string, Number(t.weighted_score) || 0])
-    );
-    listingsWithUpvotes.sort(
-      (a, b) => (scoreMap.get(b.id) ?? 0) - (scoreMap.get(a.id) ?? 0)
-    );
+    // Transform listings and add upvote counts
+    const listingsWithUpvotes: Listing[] = listings.map((item: any) => ({
+      ...item,
+      category: normalizeCategory(item.category) || item.category,
+      images: item.listing_photos
+        ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
+        .map((p: any) => p.url) || [],
+      upvoteCount: upvoteCounts.get(item.id) || 0,
+    }));
 
-    return listingsWithUpvotes;
+    // Sort by upvote count (descending) and take top 5
+    const sorted = listingsWithUpvotes
+      .sort((a, b) => (b.upvoteCount || 0) - (a.upvoteCount || 0))
+      .slice(0, 5); // Top 5
+
+    console.log('[getTrendingListings] Returning top', sorted.length, 'listings');
+    if (sorted.length > 0) {
+      console.log('[getTrendingListings] Top listing:', sorted[0].title, 'upvotes:', sorted[0].upvoteCount);
+    }
+
+    return sorted;
   } catch (error) {
     console.error('Get trending listings error:', error);
     return [];

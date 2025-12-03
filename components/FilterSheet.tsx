@@ -58,7 +58,7 @@ export function FilterSheet({ open, onClose }: { open: boolean; onClose: () => v
               <Text style={styles.label}>Distance: {distanceKm} km</Text>
               <Slider
                 minimumValue={1}
-                maximumValue={100}
+                maximumValue={150}
                 step={1}
                 value={distanceKm}
                 onValueChange={(v) => setDistanceKm(Array.isArray(v) ? v[0] : v)}

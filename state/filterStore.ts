@@ -13,7 +13,7 @@ type FilterState = {
 const DEFAULT_STATE: FilterState = {
   categories: [],
   priceTiers: [1, 2, 3, 4],
-  distanceKm: 25,
+  distanceKm: 50,
   vibes: [],
   showNewThisWeek: false,
   showOpenNow: false,

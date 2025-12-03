@@ -13,6 +13,60 @@ type Props = {
 export function ExploreMap({ items, latitude, longitude }: Props) {
   const [selected, setSelected] = useState<any | null>(null);
 
+  // Filter items with valid coordinates
+  const validItems = useMemo(() => {
+    const valid = items.filter(item => 
+      item.latitude && 
+      item.longitude && 
+      typeof item.latitude === 'number' && 
+      typeof item.longitude === 'number' &&
+      !isNaN(item.latitude) &&
+      !isNaN(item.longitude)
+    );
+    console.log(`[ExploreMap] Total items: ${items.length}, Valid coordinates: ${valid.length}`);
+    if (valid.length > 0) {
+      console.log(`[ExploreMap] Sample location: ${valid[0].title} at (${valid[0].latitude}, ${valid[0].longitude})`);
+    }
+    return valid;
+  }, [items]);
+
+  // Calculate region to fit all markers
+  const region = useMemo(() => {
+    if (validItems.length === 0) {
+      return {
+        latitude,
+        longitude,
+        latitudeDelta: 0.5,
+        longitudeDelta: 0.5,
+      };
+    }
+
+    // Find bounds
+    let minLat = validItems[0].latitude;
+    let maxLat = validItems[0].latitude;
+    let minLng = validItems[0].longitude;
+    let maxLng = validItems[0].longitude;
+
+    validItems.forEach(item => {
+      minLat = Math.min(minLat, item.latitude);
+      maxLat = Math.max(maxLat, item.latitude);
+      minLng = Math.min(minLng, item.longitude);
+      maxLng = Math.max(maxLng, item.longitude);
+    });
+
+    const centerLat = (minLat + maxLat) / 2;
+    const centerLng = (minLng + maxLng) / 2;
+    const latDelta = (maxLat - minLat) * 1.3; // Add 30% padding
+    const lngDelta = (maxLng - minLng) * 1.3;
+
+    return {
+      latitude: centerLat,
+      longitude: centerLng,
+      latitudeDelta: Math.max(latDelta, 0.1), // Minimum delta of 0.1
+      longitudeDelta: Math.max(lngDelta, 0.1),
+    };
+  }, [validItems, latitude, longitude]);
+
   const handleMapPress = (_e: MapPressEvent) => {
     if (selected) setSelected(null);
   };
@@ -43,21 +97,16 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
       <MapView
         style={styles.map}
         provider={PROVIDER_GOOGLE}
-        initialRegion={{ 
-          latitude, 
-          longitude, 
-          latitudeDelta: 0.2, 
-          longitudeDelta: 0.2 
-        }}
+        initialRegion={region}
         showsUserLocation={true}
         showsMyLocationButton={true}
         loadingEnabled={true}
         onPress={handleMapPress}
       >
-        {items.map((it) => (
+        {validItems.map((it) => (
           <Marker 
             key={it.id}
-            coordinate={{ latitude: it.latitude, longitude: it.longitude }}
+            coordinate={{ latitude: Number(it.latitude), longitude: Number(it.longitude) }}
             title={''}
             description={undefined}
             onPress={() => setSelected(it)}
@@ -65,6 +114,22 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
           />
         ))}
       </MapView>
+      
+      {validItems.length === 0 && (
+        <View style={styles.emptyState}>
+          <Text style={styles.emptyText}>No listings with valid locations found</Text>
+          <Text style={styles.emptySubtext}>Try adjusting your filters</Text>
+        </View>
+      )}
+      
+      {validItems.length > 0 && items.length > validItems.length && (
+        <View style={styles.warningBanner}>
+          <FontAwesome name="info-circle" size={14} color="#FF9500" />
+          <Text style={styles.warningText}>
+            {items.length - validItems.length} listing(s) have invalid locations
+          </Text>
+        </View>
+      )}
 
       {selected && (
         <View style={styles.cardWrap} pointerEvents="box-none">
@@ -124,6 +189,49 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   map: { flex: 1 },
+  emptyState: {
+    position: 'absolute',
+    top: '40%',
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    paddingHorizontal: 32,
+  },
+  emptyText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#333',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  emptySubtext: {
+    fontSize: 14,
+    color: '#666',
+    textAlign: 'center',
+  },
+  warningBanner: {
+    position: 'absolute',
+    top: 12,
+    left: 12,
+    right: 12,
+    backgroundColor: '#FFF3E0',
+    borderRadius: 8,
+    padding: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
+  },
+  warningText: {
+    flex: 1,
+    fontSize: 12,
+    color: '#E65100',
+    fontWeight: '600',
+  },
   cardWrap: {
     position: 'absolute',
     left: 0,

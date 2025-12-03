@@ -76,76 +76,121 @@ export async function createLocalFavorite(params: CreateFavoriteParams): Promise
  * Get locals' favorites feed
  */
 export async function getLocalsFavorites(params: GetFavoritesParams = {}): Promise<LocalFavorite[]> {
+  // Use real listings as mock data for Local Suggestions
+  const {
+    city,
+    sortBy = 'newest',
+    limit = 50,
+  } = params;
+
+  console.log('[getLocalsFavorites] Fetching real listings as mock data for city:', city);
+
   if (!isSupabaseConfigured()) {
+    console.log('[getLocalsFavorites] Supabase not configured, returning empty');
     return [];
   }
 
-  const {
-    status = 'approved',
-    category,
-    city,
-    lat,
-    lng,
-    radiusKm = 25,
-    sortBy = 'newest',
-    limit = 50,
-    offset = 0,
-  } = params;
-
   try {
+    // Metro area mappings - must match lib/api.ts
+    const METRO_AREA_CITIES: Record<string, string[]> = {
+      'Northern Virginia': [
+        'Northern Virginia', 'Fairfax', 'Arlington', 'Alexandria', 'Reston', 'Vienna',
+        'Falls Church', 'McLean', 'Tysons', 'Annandale', 'Springfield', 'Centreville',
+        'Herndon', 'Chantilly', 'Great Falls', 'Clifton', 'Fairfax Station',
+        'Occoquan Historic District', 'Manassas', 'Ashburn', 'Leesburg', 'Sterling',
+        'Burke', 'Lorton', 'Mount Vernon', 'Oakton', 'Dunn Loring', 'Merrifield',
+        'Woodbridge', 'Dale City', 'Lake Ridge', 'Gainesville', 'Haymarket',
+        // DC area (included in NV dataset)
+        'Washington', 'Washington, DC', 'District of Columbia',
+        // Maryland areas near NV (included in imports)
+        'Frederick, MD', 'Solomons', 'Silver Spring', 'National Harbor', 'Bethesda',
+        // Other VA cities from the import
+        'Middleburg', 'Waterford', 'Fredericksburg', 'Stafford', 'Prince William',
+        // Additional cities found in database
+        'Fairfax County', 'Franconia', 'Lincolnia', 'Dulles', 'Dumfries', 'Fort Belvoir',
+        'Gaithersburg', 'Kensington', 'Darnestown', 'Accokeek', 'Aldie', 'Annapolis',
+        'Ashton-Sandy Spring', 'Bluemont', 'Delaplane', 'Dickerson', 'Easton', 'Frederick',
+        'Georgetown', 'Harpers Ferry', 'Laurel'
+      ],
+      'San Francisco': [
+        'San Francisco', 'Berkeley', 'Oakland', 'Alameda', 'Emeryville', 'Brisbane',
+        'Daly City', 'Colma', 'Burlingame', 'Half Moon Bay', 'Bolinas', 'Guerneville',
+        'Healdsburg', 'Bodega Bay', 'Castro Valley', 'El Cerrito', 'Fremont', 'Concord',
+        'Albany', 'Brentwood', 'Dublin', 'Inverness', 'Belmont Park'
+      ],
+    };
+
+    // Build query with city filter
     let query = supabase!
-      .from('locals_favorites')
-      .select('*')
-      .eq('status', status);
+      .from('listings')
+      .select(`
+        id,title,description,category,latitude,longitude,city,created_at,
+        listing_photos(url,sort_order)
+      `)
+      .eq('is_published', true);
 
-    // Filter by category
-    if (category) {
-      query = query.eq('category', category);
-    }
-
-    // Filter by city
+    // Apply city filter
     if (city) {
-      query = query.eq('city', city);
-    }
-
-    // Sorting
-    if (sortBy === 'newest') {
-      query = query.order('created_at', { ascending: false });
-    } else if (sortBy === 'trending') {
-      query = query.order('likes_count', { ascending: false });
-    }
-
-    // Pagination
-    query = query.range(offset, offset + limit - 1);
-
-    const { data, error } = await query;
-
-    if (error) {
-      console.error('Error fetching locals favorites:', error);
-      return [];
-    }
-
-    // Calculate distance if user location provided
-    let favorites = (data || []) as LocalFavorite[];
-
-    if (lat && lng) {
-      favorites = favorites.map((fav: LocalFavorite) => ({
-        ...fav,
-        distanceKm: calculateDistance(lat, lng, fav.latitude, fav.longitude),
-      }));
-
-      // Filter by radius
-      favorites = favorites.filter((fav) => !fav.distanceKm || fav.distanceKm <= radiusKm);
-
-      // Sort by distance if sortBy is 'nearby'
-      if (sortBy === 'nearby') {
-        favorites.sort((a, b) => (a.distanceKm || 999) - (b.distanceKm || 999));
+      const metroAreaCities = METRO_AREA_CITIES[city];
+      if (metroAreaCities) {
+        query = query.in('city', metroAreaCities);
+      } else {
+        query = query.eq('city', city);
       }
     }
 
-    return favorites as LocalFavorite[];
+    // Get random listings (limit to 10 for mock data)
+    const { data: listings, error } = await query.limit(100);
+
+    if (error) {
+      console.error('[getLocalsFavorites] Error fetching listings:', error);
+      return [];
+    }
+
+    if (!listings || listings.length === 0) {
+      console.log('[getLocalsFavorites] No listings found');
+      return [];
+    }
+
+    // Transform listings to LocalFavorite format
+    const mockFavorites: LocalFavorite[] = listings
+      .filter(l => l.listing_photos && l.listing_photos.length > 0) // Only listings with photos
+      .map((listing: any, index) => ({
+        id: `mock-${listing.id}`, // Prefix with mock- to indicate it's not a real favorite
+        user_id: 'mock-user',
+        name: listing.title,
+        description: listing.description || 'A great local spot recommended by the community',
+        category: listing.category,
+        address: listing.city,
+        city: listing.city,
+        latitude: listing.latitude,
+        longitude: listing.longitude,
+        photos: listing.listing_photos
+          ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
+          .map((p: any) => p.url) || [],
+        status: 'approved' as const,
+        created_at: listing.created_at,
+        updated_at: listing.created_at,
+        likes_count: Math.floor(Math.random() * 50) + 5, // Random likes between 5-55
+        saves_count: Math.floor(Math.random() * 30) + 2, // Random saves between 2-32
+        views_count: Math.floor(Math.random() * 200) + 10, // Random views between 10-210
+      }));
+
+    // Sort based on sortBy parameter
+    let sorted = mockFavorites;
+    if (sortBy === 'trending') {
+      sorted = [...mockFavorites].sort((a, b) => (b.likes_count || 0) - (a.likes_count || 0));
+    } else if (sortBy === 'newest') {
+      sorted = [...mockFavorites].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+    }
+
+    // Limit results
+    const limited = sorted.slice(0, Math.min(limit, 10)); // Show max 10 mock favorites
+
+    console.log('[getLocalsFavorites] Returning', limited.length, 'mock favorites from real listings');
+    return limited;
   } catch (error) {
-    console.error('Error fetching locals favorites:', error);
+    console.error('[getLocalsFavorites] Error:', error);
     return [];
   }
 }
@@ -154,6 +199,60 @@ export async function getLocalsFavorites(params: GetFavoritesParams = {}): Promi
  * Get a single local favorite by ID
  */
 export async function getLocalFavorite(id: string): Promise<LocalFavorite | null> {
+  // Handle mock IDs (format: mock-gp_xxx or mock-listing_id)
+  if (id.startsWith('mock-')) {
+    console.log('[getLocalFavorite] Mock ID detected, fetching real listing:', id);
+    
+    if (!isSupabaseConfigured()) {
+      return null;
+    }
+
+    try {
+      // Extract the real listing ID (remove 'mock-' prefix)
+      const realListingId = id.replace('mock-', '');
+      
+      const { data: listing, error } = await supabase!
+        .from('listings')
+        .select(`
+          id,title,description,category,latitude,longitude,city,created_at,
+          listing_photos(url,sort_order)
+        `)
+        .eq('id', realListingId)
+        .eq('is_published', true)
+        .single();
+
+      if (error || !listing) {
+        console.error('[getLocalFavorite] Error fetching listing:', error);
+        return null;
+      }
+
+      // Transform to LocalFavorite format
+      return {
+        id: `mock-${listing.id}`,
+        user_id: 'mock-user',
+        name: listing.title,
+        description: listing.description || 'A great local spot recommended by the community',
+        category: listing.category,
+        address: listing.city,
+        city: listing.city,
+        latitude: listing.latitude,
+        longitude: listing.longitude,
+        photos: listing.listing_photos
+          ?.sort((a: any, b: any) => a.sort_order - b.sort_order)
+          .map((p: any) => p.url) || [],
+        status: 'approved',
+        created_at: listing.created_at,
+        updated_at: listing.created_at,
+        likes_count: Math.floor(Math.random() * 50) + 5,
+        saves_count: Math.floor(Math.random() * 30) + 2,
+        views_count: Math.floor(Math.random() * 200) + 10,
+      };
+    } catch (error) {
+      console.error('[getLocalFavorite] Error:', error);
+      return null;
+    }
+  }
+
   if (!isSupabaseConfigured()) {
     return null;
   }
@@ -242,6 +341,12 @@ export async function deleteLocalFavorite(id: string): Promise<boolean> {
  * Like a local favorite
  */
 export async function likeLocalFavorite(favoriteId: string): Promise<boolean> {
+  // Handle mock IDs - just return success
+  if (favoriteId.startsWith('mock-')) {
+    console.log('[likeLocalFavorite] Mock ID detected, simulating success');
+    return true;
+  }
+
   if (!isSupabaseConfigured()) {
     return false;
   }
@@ -273,6 +378,12 @@ export async function likeLocalFavorite(favoriteId: string): Promise<boolean> {
  * Unlike a local favorite
  */
 export async function unlikeLocalFavorite(favoriteId: string): Promise<boolean> {
+  // Handle mock IDs - just return success
+  if (favoriteId.startsWith('mock-')) {
+    console.log('[unlikeLocalFavorite] Mock ID detected, simulating success');
+    return true;
+  }
+
   if (!isSupabaseConfigured()) {
     return false;
   }
@@ -303,6 +414,12 @@ export async function unlikeLocalFavorite(favoriteId: string): Promise<boolean> 
  * Save a local favorite to user's collection
  */
 export async function saveLocalFavorite(favoriteId: string): Promise<boolean> {
+  // Handle mock IDs - just return success
+  if (favoriteId.startsWith('mock-')) {
+    console.log('[saveLocalFavorite] Mock ID detected, simulating success');
+    return true;
+  }
+
   if (!isSupabaseConfigured()) {
     return false;
   }
@@ -334,6 +451,12 @@ export async function saveLocalFavorite(favoriteId: string): Promise<boolean> {
  * Unsave a local favorite
  */
 export async function unsaveLocalFavorite(favoriteId: string): Promise<boolean> {
+  // Handle mock IDs - just return success
+  if (favoriteId.startsWith('mock-')) {
+    console.log('[unsaveLocalFavorite] Mock ID detected, simulating success');
+    return true;
+  }
+
   if (!isSupabaseConfigured()) {
     return false;
   }
@@ -364,6 +487,11 @@ export async function unsaveLocalFavorite(favoriteId: string): Promise<boolean> 
  * Check if user has liked a favorite
  */
 export async function isLocalFavoriteLiked(favoriteId: string): Promise<boolean> {
+  // Handle mock IDs - return false (not liked)
+  if (favoriteId.startsWith('mock-')) {
+    return false;
+  }
+
   if (!isSupabaseConfigured()) {
     return false;
   }
@@ -389,6 +517,11 @@ export async function isLocalFavoriteLiked(favoriteId: string): Promise<boolean>
  * Check if user has saved a favorite
  */
 export async function isLocalFavoriteSaved(favoriteId: string): Promise<boolean> {
+  // Handle mock IDs - return false (not saved)
+  if (favoriteId.startsWith('mock-')) {
+    return false;
+  }
+
   if (!isSupabaseConfigured()) {
     return false;
   }

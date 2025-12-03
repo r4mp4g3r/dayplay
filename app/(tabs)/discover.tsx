@@ -1,5 +1,5 @@
-import React, { useMemo, useRef, useState, useCallback, useEffect } from 'react';
-import { View, StyleSheet, Pressable, Text } from 'react-native';
+import React, { useMemo, useRef, useState } from 'react';
+import { View, StyleSheet, Pressable, Text, ActivityIndicator } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { router } from 'expo-router';
@@ -7,7 +7,7 @@ import { SwipeDeck } from '@/components/SwipeDeck';
 import { FilterSheet } from '@/components/FilterSheet';
 import { useFilterStore } from '@/state/filterStore';
 import { useLocationStore } from '@/state/locationStore';
-import { getFeed } from '@/lib/api';
+import { useFrontendFilteredListings } from '@/hooks/useFrontendFilteredListings';
 import { ExploreMap } from '@/components/ExploreMap';
 
 export default function DiscoverScreen() {
@@ -18,49 +18,53 @@ export default function DiscoverScreen() {
   const [refreshKey, setRefreshKey] = useState(0);
   const toggleRef = useRef(() => setFilterOpen((v) => !v));
   const [viewMode, setViewMode] = useState<'deck' | 'map'>('deck');
-  const [mapItems, setMapItems] = useState<any[]>([]);
 
+  // Use frontend filtering for INSTANT results
+  const { listings, loading, error, total } = useFrontendFilteredListings({
+    city,
+    lat: latitude ?? 30.2672,
+    lng: longitude ?? -97.7431,
+    categories,
+    distanceKm,
+    priceTiers,
+    showNewThisWeek,
+    showOpenNow,
+  });
+
+  // Create a simple fetch function that returns paginated results from filtered listings
   const fetchFn = useMemo(
-    () => ({ page, excludeIds }: { page: number; excludeIds: string[] }) => 
-      getFeed({ 
-        lat: latitude ?? 30.2672, 
-        lng: longitude ?? -97.7431, 
-        radiusKm: distanceKm, 
-        categories: categories.length > 0 ? categories : [], 
-        priceTiers, 
-        excludeIds, 
-        page,
-        pageSize: 50,
-        showNewThisWeek,
-        showOpenNow,
-        city,
-      }),
-    [categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow, city]
+    () => ({ page, excludeIds }: { page: number; excludeIds: string[] }) => {
+      const excludeSet = new Set(excludeIds);
+      const filtered = listings.filter(l => !excludeSet.has(l.id));
+      const pageSize = 50;
+      const start = page * pageSize;
+      const items = filtered.slice(start, start + pageSize);
+      
+      return Promise.resolve({ items, total: filtered.length });
+    },
+    [listings]
   );
 
-  // Load items for map view when needed
-  useEffect(() => {
-    let cancelled = false;
-    const load = async () => {
-      if (viewMode !== 'map') return;
-      const res = await getFeed({
-        lat: latitude ?? 30.2672,
-        lng: longitude ?? -97.7431,
-        radiusKm: distanceKm,
-        categories: categories.length > 0 ? categories : [],
-        priceTiers,
-        excludeIds: [],
-        page: 0,
-        pageSize: 300,
-        showNewThisWeek,
-        showOpenNow,
-        city,
-      });
-      if (!cancelled) setMapItems(res.items ?? []);
-    };
-    load();
-    return () => { cancelled = true; };
-  }, [viewMode, categories, distanceKm, priceTiers, latitude, longitude, showNewThisWeek, showOpenNow, city]);
+  // Map items - show all filtered listings
+  const mapItems = useMemo(() => listings, [listings]);
+
+  if (loading) {
+    return (
+      <View style={[styles.container, { paddingTop: insets.top, justifyContent: 'center', alignItems: 'center' }]}>
+        <ActivityIndicator size="large" color="#007AFF" />
+        <Text style={{ marginTop: 16, fontSize: 16, color: '#666' }}>Loading {city} listings...</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={[styles.container, { paddingTop: insets.top, justifyContent: 'center', alignItems: 'center', padding: 20 }]}>
+        <Text style={{ fontSize: 18, fontWeight: '600', marginBottom: 8 }}>Error</Text>
+        <Text style={{ fontSize: 14, color: '#666', textAlign: 'center' }}>{error}</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -68,7 +72,7 @@ export default function DiscoverScreen() {
       <View style={styles.header}>
         <View style={{ flex: 1 }}>
           <Text style={styles.headerTitle}>Discover</Text>
-          <Text style={styles.headerSubtitle}>📍 {city}</Text>
+          <Text style={styles.headerSubtitle}>📍 {city} • {total} spots</Text>
         </View>
         <View style={{ flexDirection: 'row', gap: 8 }}>
           <Pressable

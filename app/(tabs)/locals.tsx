@@ -30,11 +30,12 @@ export default function LocalsTab() {
   const locationStore = useLocationStore();
   const userCity = locationStore.city;
 
-  const loadFavorites = async () => {
+  const loadFavorites = React.useCallback(async () => {
     try {
       const data = await getLocalsFavorites({
         sortBy,
         limit: 50,
+        city: userCity, // Filter by current city
       });
       setFavorites(data);
     } catch (error) {
@@ -43,9 +44,9 @@ export default function LocalsTab() {
       setLoading(false);
       setRefreshing(false);
     }
-  };
+  }, [sortBy, userCity]);
 
-  const loadTrendingListings = async () => {
+  const loadTrendingListings = React.useCallback(async () => {
     if (!userCity) {
       console.log('No user city set, skipping trending');
       return;
@@ -58,27 +59,23 @@ export default function LocalsTab() {
     } catch (error) {
       console.error('Error loading trending listings:', error);
     }
-  };
-
-  const loadTrendingListingsCallback = React.useCallback(() => {
-    loadTrendingListings();
   }, [userCity]);
 
   useEffect(() => {
     loadFavorites();
-  }, [sortBy]);
+  }, [loadFavorites]);
 
   useEffect(() => {
     loadTrendingListings();
-  }, [userCity]);
+  }, [loadTrendingListings]);
 
   // Refresh trending on screen focus
   useFocusEffect(
     React.useCallback(() => {
-      loadTrendingListingsCallback();
-      const interval = setInterval(loadTrendingListingsCallback, 60000); // Refresh every 60s
+      loadTrendingListings();
+      const interval = setInterval(() => loadTrendingListings(), 60000); // Refresh every 60s
       return () => clearInterval(interval);
-    }, [loadTrendingListingsCallback])
+    }, [loadTrendingListings])
   );
 
   const handleRefresh = () => {

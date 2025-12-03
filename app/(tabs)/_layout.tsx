@@ -46,7 +46,7 @@ export default function TabLayout() {
         name="locals"
         options={{
           title: 'Locals',
-          tabBarIcon: () => <Text>💎</Text>,
+          tabBarIcon: ({ color }) => <TabBarIcon name="diamond" color={color} />,
           headerShown: false,
         }}
       />

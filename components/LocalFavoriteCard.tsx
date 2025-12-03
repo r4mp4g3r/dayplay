@@ -18,6 +18,15 @@ export function LocalFavoriteCard({ favorite }: LocalFavoriteCardProps) {
   const [isSaved, setIsSaved] = useState(favorite.is_saved || false);
   const [likesCount, setLikesCount] = useState(favorite.likes_count);
 
+  // Debug logging
+  if (favorite.id.startsWith('mock-')) {
+    console.log(`[LocalFavoriteCard] Mock favorite ${favorite.name}:`, {
+      photos: favorite.photos,
+      photo_url: favorite.photo_url,
+      photosLength: favorite.photos?.length || 0,
+    });
+  }
+
   const handleLike = async () => {
     if (isLiked) {
       const success = await unlikeLocalFavorite(favorite.id);
@@ -48,11 +57,13 @@ export function LocalFavoriteCard({ favorite }: LocalFavoriteCardProps) {
     router.push(`/locals-favorites/${favorite.id}`);
   };
 
+  const firstPhoto = favorite.photos?.[0] || favorite.photo_url;
+
   return (
     <Pressable style={styles.card} onPress={handlePress}>
       {/* Image */}
-      {favorite.photo_url ? (
-        <Image source={{ uri: favorite.photo_url }} style={styles.image} />
+      {firstPhoto ? (
+        <Image source={{ uri: firstPhoto }} style={styles.image} resizeMode="cover" />
       ) : (
         <View style={[styles.image, styles.imagePlaceholder]}>
           <Text style={styles.imagePlaceholderIcon}>📍</Text>
