@@ -122,10 +122,12 @@ export default function LocalsTab() {
               contentContainerStyle={styles.trendingScrollContent}
             >
               {trendingListings.map((listing) => (
-                <Pressable 
-                  key={listing.id} 
+                <Pressable
+                  key={listing.id}
                   style={styles.trendingCard}
-                  onPress={() => router.push(`/listing/${listing.id}`)}
+                  onPress={() =>
+                    router.push({ pathname: '/listing/[id]', params: { id: listing.id } })
+                  }
                 >
                   {listing.images?.[0] ? (
                     <Image 

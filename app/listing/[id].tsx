@@ -409,7 +409,7 @@ export default function ListingDetails() {
         onRequestClose={() => setShowIOSDateTime(false)}
       >
         <Pressable style={styles.modalBackdrop} onPress={() => setShowIOSDateTime(false)}>
-          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+          <Pressable style={styles.modalContentWide} onPress={(e) => e.stopPropagation()}>
             <Text style={styles.modalTitle}>Pick date & time</Text>
             <DateTimePicker
               value={iosDate}
@@ -418,9 +418,13 @@ export default function ListingDetails() {
               onChange={(_, date) => {
                 if (date) setIOSDate(date);
               }}
+              style={{ alignSelf: 'stretch' }}
             />
-            <View style={{ flexDirection: 'row', gap: 12, marginTop: 12 }}>
-              <Pressable style={[styles.actionBtn, { backgroundColor: '#f2f2f2', flex: 1 }]} onPress={() => setShowIOSDateTime(false)}>
+            <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
+              <Pressable
+                style={[styles.actionBtn, { backgroundColor: '#f2f2f2', flex: 1 }]}
+                onPress={() => setShowIOSDateTime(false)}
+              >
                 <Text style={styles.actionText}>Cancel</Text>
               </Pressable>
               <Pressable
@@ -519,6 +523,7 @@ const styles = StyleSheet.create({
   actionText: { fontWeight: '700' },
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center', padding: 20 },
   modalContent: { backgroundColor: '#fff', borderRadius: 16, padding: 20, width: '100%', maxWidth: 320 },
+  modalContentWide: { backgroundColor: '#fff', borderRadius: 16, padding: 20, width: '100%', maxWidth: 420 },
   modalTitle: { fontSize: 18, fontWeight: '800', marginBottom: 16, textAlign: 'center' },
   modalOption: { paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#eee' },
   modalOptionText: { fontSize: 16, fontWeight: '600', textAlign: 'center' },

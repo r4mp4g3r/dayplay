@@ -1,0 +1,1187 @@
+{
+  "city": "Northern Virginia, VA",
+  "categories": {
+    "activities": [
+      {
+        "name": "# SHOPPING",
+        "address": "25 Spots (name"
+      },
+      {
+        "name": "Union Market",
+        "address": "1309 5th St NE, Washington, DC 20002"
+      },
+      {
+        "name": "Eastern Market (indoor stalls)",
+        "address": "225 7th St SE, Washington, DC 20003"
+      },
+      {
+        "name": "Mosaic Marketplace (Kingstowne Shopping)",
+        "address": "5955 Kingstowne Towne Ctr, Alexandria, VA"
+      },
+      {
+        "name": "Liberty Tavern Shopping Row",
+        "address": "3195 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Shirlington Village Shops (indie cluster)",
+        "address": "2700 S. Quincy St, Arlington, VA 22206"
+      },
+      {
+        "name": "Del Ray Vintage Market",
+        "address": "220 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Clarendon Market Square",
+        "address": "3100 Clarendon Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Falls Church Village (Penn Closet / boutiques)",
+        "address": "700 W Broad St, Falls Church, VA 22046"
+      },
+      {
+        "name": "Old Town Farmers’ Market (vendors row)",
+        "address": "301 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Adams Morgan Bazaar",
+        "address": "1800 Columbia Rd NW, Washington, DC 20009"
+      },
+      {
+        "name": "Georgetown Flea & Shops",
+        "address": "3000 M St NW, Washington, DC 20007"
+      },
+      {
+        "name": "The Shops at 14th (small boutiques)",
+        "address": "1400 14th St NW, Washington, DC 20005"
+      },
+      {
+        "name": "Clarendon Row Boutiques",
+        "address": "3100 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Kingstowne Towne Center (local retailers)",
+        "address": "5875 Kingstowne Towne Ctr, Alexandria, VA"
+      },
+      {
+        "name": "Shirlington Bookshop Row",
+        "address": "4251 Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "Old Town Alexandria Antique Row",
+        "address": "105 S Union St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Little River Market (neighborhood shops)",
+        "address": "2100 Little River Tpke, Annandale, VA 22003"
+      },
+      {
+        "name": "Ballston Independent Shops",
+        "address": "4200 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "Barracks Row Boutique Cluster",
+        "address": "700 8th St SE, Washington, DC 20003"
+      },
+      {
+        "name": "Columbia Pike Boutique Strip",
+        "address": "2900 Columbia Pike, Arlington, VA 22204"
+      },
+      {
+        "name": "Vienna Main Street Shopping",
+        "address": "150 Maple Ave E, Vienna, VA 22180"
+      },
+      {
+        "name": "Reston Station Shops",
+        "address": "1900 Reston Metro Plaza, Reston, VA 20190"
+      },
+      {
+        "name": "Clarendon Antique & Gift Row",
+        "address": "3100 Clarendon Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Mount Vernon Marketplace",
+        "address": "8514 Richmond Hwy, Alexandria, VA 22309"
+      },
+      {
+        "name": "Brookville Road Small Business Strip",
+        "address": "4000 Brookville Rd, Chevy Chase, MD 20815"
+      },
+      {
+        "name": "# MUSEUMS",
+        "address": "25 Spots (name"
+      },
+      {
+        "name": "National Postal Museum",
+        "address": "2 Massachusetts Ave NE, Washington, DC 20002"
+      },
+      {
+        "name": "The Textile Museum (GWU)",
+        "address": "701 21st St NW, Washington, DC 20052"
+      },
+      {
+        "name": "Kreeger Museum",
+        "address": "2401 Foxhall Rd NW, Washington, DC 20007"
+      },
+      {
+        "name": "National Arboretum Visitor Center (museum exhibits)",
+        "address": "3501 New York Ave NE, Washington,"
+      },
+      {
+        "name": "American Art Museum Annex",
+        "address": "8th & G St NW, Washington, DC 20001"
+      },
+      {
+        "name": "Alexandria Black History Museum",
+        "address": "902 Wythe St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Fairfax Museum & Visitor Center (alternate galleries)",
+        "address": "10209 Main St, Fairfax, VA 22030"
+      },
+      {
+        "name": "National Museum of Women in the Arts (satellite exhibitions)",
+        "address": "1250 New York Ave NW,"
+      },
+      {
+        "name": "National Bonsai & Penjing Museum",
+        "address": "3501 New York Ave NE, Washington, DC 20002"
+      },
+      {
+        "name": "The Heurich House Museum",
+        "address": "1307 New Hampshire Ave NW, Washington, DC 20036"
+      },
+      {
+        "name": "Gadsby’s Tavern Museum (Old Town)",
+        "address": "134 N Royal St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Mount Vernon Museum (educational center)",
+        "address": "3200 Mount Vernon Hwy, Alexandria, VA"
+      },
+      {
+        "name": "Lyceum: Alexandria’s History Museum",
+        "address": "201 S Washington St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Textile Museum (Smithsonian-affiliated exhibits)",
+        "address": "3300 27th St NW, Washington, DC"
+      },
+      {
+        "name": "The National Postal Museum (alternative entrance)",
+        "address": "2 Massachusetts Ave NE,"
+      },
+      {
+        "name": "Alexandria Archaeology Museum",
+        "address": "221 Prince St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Fairfax County History Museum (alternate branch)",
+        "address": "10209 Main St, Fairfax, VA 22030"
+      },
+      {
+        "name": "Claude Moore Colonial Farm (interpretive center)",
+        "address": "6310 Georgetown Pike, McLean, VA"
+      },
+      {
+        "name": "Gunston Hall Museum (historic plantation)",
+        "address": "10709 Gunston Rd, Lorton, VA 22079"
+      },
+      {
+        "name": "Carlyle House Historic Park",
+        "address": "121 N Fairfax St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Tudor Place Historic House & Garden (DC)",
+        "address": "1644 31st St NW, Washington, DC 20007"
+      },
+      {
+        "name": "The Phillips Collection (satellite program at local library)",
+        "address": "1600 21st St NW, Washington,"
+      },
+      {
+        "name": "Potomac Riverboat Museum (maritime exhibits)",
+        "address": "1 Cameron St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Fairfax Station Railroad Museum (additional garden wing)",
+        "address": "11200 Fairfax Station Rd,"
+      },
+      {
+        "name": "Lee-Fendall House Museum",
+        "address": "614 Oronoco St, Alexandria, VA 22314"
+      },
+      {
+        "name": "ENTERTAINMENT",
+        "address": "25 Spots"
+      },
+      {
+        "name": "(name",
+        "address": "address)"
+      },
+      {
+        "name": "Escape Room Live (DC area)",
+        "address": "1412 K St NW, Washington, DC 20005"
+      },
+      {
+        "name": "iFLY Indoor Skydiving (National Harbor)",
+        "address": "165 Waterfront St, National Harbor, MD 20745"
+      },
+      {
+        "name": "Topgolf Alexandria",
+        "address": "2033 Richmond Hwy, Alexandria, VA 22302"
+      },
+      {
+        "name": "Painted Bride Escape (boutique)",
+        "address": "1201 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Alley Katz Bowling (local alley)",
+        "address": "1200 Crystal Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Monster Mini Golf",
+        "address": "7200 Commerce St, Springfield, VA 22150"
+      },
+      {
+        "name": "VR Zone (indie VR arcade)",
+        "address": "1101 S Hayes St, Arlington, VA 22202"
+      },
+      {
+        "name": "Pinstripes Bowling & Bocce (smaller outpost)",
+        "address": "1650 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "K1 Speed Indoor Karting (Chantilly)",
+        "address": "4320 Chantilly Shopping Ctr, Chantilly, VA 20151"
+      },
+      {
+        "name": "iFLY (Fairfax)",
+        "address": "12000 Fair Lakes Pkwy, Fairfax, VA 22033"
+      },
+      {
+        "name": "CineBowl & Grille (family entertainment)",
+        "address": "10000 Main St, Fairfax, VA 22030"
+      },
+      {
+        "name": "Rockin’ Jump Trampoline Park (Sterling)",
+        "address": "21145 Whitfield Pl, Sterling, VA 20164"
+      },
+      {
+        "name": "ShadowLand Laser Adventures (Alexandria)",
+        "address": "6149 Navigation Way, Alexandria, VA 22310"
+      },
+      {
+        "name": "Launch Trampoline Park (Herndon)",
+        "address": "2465 Centreville Rd, Herndon, VA 20171"
+      },
+      {
+        "name": "Adventure Links Mini Golf & Fun Center",
+        "address": "1701 Park Center Dr, Reston, VA 20190"
+      },
+      {
+        "name": "The Little Gym (family classes/activities)",
+        "address": "4526 Duke St, Alexandria, VA 22304"
+      },
+      {
+        "name": "Arlington Rooftop Mini Golf",
+        "address": "2011 Crystal Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Potomac Paddle Sports (kayak rentals)",
+        "address": "1A Prince St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Escape Game DC (Dupont)",
+        "address": "1005 7th St NW, Washington, DC 20001"
+      },
+      {
+        "name": "Dave & Buster’s (Springfield)",
+        "address": "6500 Springfield Mall, Springfield, VA 22150"
+      },
+      {
+        "name": "Uptown Alley (Manassas)",
+        "address": "8680 Sudley Rd, Manassas, VA 20110"
+      },
+      {
+        "name": "Rockville Ice Rink (seasonal events)",
+        "address": "20 Monroe St, Rockville, MD 20850"
+      },
+      {
+        "name": "Mount Vernon Estate Activities",
+        "address": "3200 Mount Vernon Hwy, Alexandria, VA 22309"
+      },
+      {
+        "name": "National Harbor Carousel & Rides",
+        "address": "165 Waterfront St, National Harbor, MD 20745"
+      },
+      {
+        "name": "The St. James (waterpark & adventure)",
+        "address": "6805 Industrial Rd, Springfield, VA 22151"
+      },
+      {
+        "name": "Spots (name",
+        "address": "address)"
+      },
+      {
+        "name": "Long Bridge Aquatics & Fitness Center",
+        "address": "475 Long Bridge Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Arlington Mill Community Center",
+        "address": "909 S Dinwiddie St, Arlington, VA 22204"
+      },
+      {
+        "name": "Wakefield Recreation Center",
+        "address": "8100 Braddock Rd, Annandale, VA 22003"
+      },
+      {
+        "name": "Colvin Run Mill Park Athletic Fields",
+        "address": "10017 Colvin Run Rd, Great Falls, VA 22066"
+      },
+      {
+        "name": "Lee District Recreation Center",
+        "address": "6601 Telegraph Rd, Alexandria, VA 22310"
+      },
+      {
+        "name": "Mount Vernon Recreation Center",
+        "address": "2017 N Quaker Ln, Alexandria, VA 22302"
+      },
+      {
+        "name": "Madison Community Center Gym",
+        "address": "3829 N Stafford St, Arlington, VA 22207"
+      },
+      {
+        "name": "Langston-Brown Community Center",
+        "address": "2121 N Culpeper St, Arlington, VA 22207"
+      },
+      {
+        "name": "Gunston Community Center Gym",
+        "address": "2700 S Lang St, Arlington, VA 22206"
+      },
+      {
+        "name": "Potomac Yard Sports Complex",
+        "address": "3950 Potomac Ave, Alexandria, VA 22301"
+      },
+      {
+        "name": "Ballston Community Playfields",
+        "address": "4238 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "Mason District Park Sports Fields",
+        "address": "6621 Columbia Pike, Annandale, VA 22003"
+      },
+      {
+        "name": "Manassas Park Recreation Center",
+        "address": "99 Monument Ave, Manassas Park, VA 20111"
+      },
+      {
+        "name": "Fairfax County Sportsplex",
+        "address": "7001 Braddock Rd, Fairfax, VA 22030"
+      },
+      {
+        "name": "Thomas Jefferson Community Center Gym",
+        "address": "3501 2nd St S, Arlington, VA 22204"
+      },
+      {
+        "name": "Spring Hill Recreation Center",
+        "address": "1301 Spring Hill Rd, McLean, VA 22101"
+      },
+      {
+        "name": "Wakefield Skatepark",
+        "address": "8100 Braddock Rd, Annandale, VA 22003"
+      },
+      {
+        "name": "Langley High School Fields (public access)",
+        "address": "6520 Georgetown Pike, McLean, VA 22101"
+      },
+      {
+        "name": "Potomac Yard Skatepark",
+        "address": "3801 Potomac Ave, Alexandria, VA 22305"
+      },
+      {
+        "name": "Mason District Skate Park",
+        "address": "6621 Columbia Pike, Annandale, VA 22003"
+      },
+      {
+        "name": "Westover Skate Spot",
+        "address": "5875 Washington Blvd, Arlington, VA 22205"
+      },
+      {
+        "name": "Mount Vernon Bike Trails (trailhead)",
+        "address": "8514 Richmond Hwy, Alexandria, VA 22309"
+      },
+      {
+        "name": "Burke Lake Boathouse & Courts",
+        "address": "7315 Ox Rd, Fairfax Station, VA 22039"
+      },
+      {
+        "name": "Pohick Bay Marina Sports Fields",
+        "address": "6501 Pohick Bay Dr, Lorton, VA 22079"
+      },
+      {
+        "name": "Manassas Skate & BMX Park",
+        "address": "9501 Dean Dr, Manassas, VA 20110"
+      }
+    ],
+    "arts-culture": [
+      {
+        "name": "# ARTS & CULTURE",
+        "address": "25 Spots"
+      },
+      {
+        "name": "(name",
+        "address": "address)"
+      },
+      {
+        "name": "Torpedo Factory Art Center (additional studios)",
+        "address": "105 N Union St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Atlas Performing Arts Center Satellite",
+        "address": "1333 H St NE, Washington, DC 20002"
+      },
+      {
+        "name": "Signature Theatre (black box annex)",
+        "address": "4200 Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "Arlington Art Center",
+        "address": "3550 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Del Ray Artisans Gallery",
+        "address": "2704 Mt Vernon Ave, Alexandria, VA 22301"
+      },
+      {
+        "name": "Workhouse Arts Center Studio Halls",
+        "address": "9518 Workhouse Way, Lorton, VA 22079"
+      },
+      {
+        "name": "Synetic Theater",
+        "address": "1800 S Bell St, Arlington, VA 22202"
+      },
+      {
+        "name": "Arlington Drafthouse / Community Theater",
+        "address": "2110 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Gunston Arts Center",
+        "address": "2700 S Lang St, Arlington, VA 22206"
+      },
+      {
+        "name": "Hylton Center (GMU) performance annex",
+        "address": "10960 George Mason Cir, Manassas, VA"
+      },
+      {
+        "name": "Reston Community Center – Lake Anne Plaza",
+        "address": "2310 Colts Neck Rd, Reston, VA 20191"
+      },
+      {
+        "name": "BlackRock Center for the Arts (MD border)",
+        "address": "12901 Town Commons Dr, Germantown, MD"
+      },
+      {
+        "name": "Creative Cauldron (theater + classes)",
+        "address": "410 S Maple Ave, Falls Church, VA 22046"
+      },
+      {
+        "name": "The Athenaeum (board & salons)",
+        "address": "201 Prince St, Alexandria, VA 22314"
+      },
+      {
+        "name": "MetroStage (intimate theater)",
+        "address": "1201 N Royal St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Cultural Arts Center at Glen Echo",
+        "address": "7300 MacArthur Blvd, Glen Echo, MD 20812"
+      },
+      {
+        "name": "Eddy Theater (community arts)",
+        "address": "400 Eddy St NW, Washington, DC 20001"
+      },
+      {
+        "name": "GALA Hispanic Theatre (satellite events)",
+        "address": "3333 14th St NW, Washington, DC 20010"
+      },
+      {
+        "name": "Mount Vernon Cultural Arts (gallery)",
+        "address": "9809 Richmond Hwy, Alexandria, VA 22309"
+      },
+      {
+        "name": "The Barns at Wolf Trap (local programming)",
+        "address": "1551 Trap Rd, Vienna, VA 22182"
+      },
+      {
+        "name": "The Torpedo Factory Project Space",
+        "address": "115 S Fairfax St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Alexandria Black Box Theater",
+        "address": "2704 Mount Vernon Ave, Alexandria, VA 22301"
+      },
+      {
+        "name": "Arlington Cultural Affairs Gallery",
+        "address": "3700 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Little Theatre of Alexandria (studio)",
+        "address": "600 Wolfe St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Reston Art Gallery & Studios",
+        "address": "11400 Washington Plaza W, Reston, VA 20190"
+      },
+      {
+        "name": "# FOOD (Restaurants)",
+        "address": "25"
+      },
+      {
+        "name": "Spots (name",
+        "address": "address)"
+      },
+      {
+        "name": "Ambar (Balkan small plates)",
+        "address": "523 8th St SE, Washington, DC 20003"
+      },
+      {
+        "name": "The Little Beet Table (market-driven)",
+        "address": "4500 Daly Dr, Arlington, VA 22207"
+      },
+      {
+        "name": "Vermilion (neighborhood bistrot)",
+        "address": "2250 Colvin St, Arlington, VA 22201"
+      },
+      {
+        "name": "Columbia Firehouse (Old Town)",
+        "address": "109 S St Asaph St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Red Hen",
+        "address": "1822 1st St NW, Washington, DC 20001"
+      },
+      {
+        "name": "Hank’s Oyster Bar (Capitol Hill)",
+        "address": "3625 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Bastille Cafe & Bar",
+        "address": "119 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Majestic (neighborhood spot)",
+        "address": "911 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Founding Farmers (local favorite)",
+        "address": "1924 Pennsylvania Ave NW, Washington, DC 20006"
+      },
+      {
+        "name": "Jaleo (Spanish small plates, DC)",
+        "address": "480 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Raku (modern Japanese)",
+        "address": "1500 U St NW, Washington, DC 20009"
+      },
+      {
+        "name": "BlackSalt Fish Market & Restaurant",
+        "address": "4883 MacArthur Blvd NW, Washington, DC 20007"
+      },
+      {
+        "name": "District Taco (local favorite spot)",
+        "address": "2451 Crystal Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Vermillion (creative American)",
+        "address": "700 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "B Too (Belgian-influenced)",
+        "address": "1503 14th St NW, Washington, DC 20005"
+      },
+      {
+        "name": "Carlyle & Co.",
+        "address": "301 John Carlyle St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Italian Place",
+        "address": "1403 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Badalona (Mediterranean small plates)",
+        "address": "1089 N Highland St, Arlington, VA 22201"
+      },
+      {
+        "name": "Mason Social",
+        "address": "1022 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Paladar (Latin small plates)",
+        "address": "3501 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Blue Ridge Grill",
+        "address": "1618 U St NW, Washington, DC 20009"
+      },
+      {
+        "name": "Le Pain Quotidien (flagship local bakery/restaurant)",
+        "address": "1234 25th St NW, Washington, DC"
+      },
+      {
+        "name": "The Majestic Cafe",
+        "address": "931 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Scooter’s Grill (local diner)",
+        "address": "4008 Columbia Pike, Arlington, VA 22204"
+      },
+      {
+        "name": "The Wheelhouse (harbor spot)",
+        "address": "1 Cameron St, Alexandria, VA 22314"
+      },
+      {
+        "name": "# COFFEE SHOPS",
+        "address": "25 Spots"
+      },
+      {
+        "name": "(name",
+        "address": "address)"
+      },
+      {
+        "name": "La Colombe Coffee Roasters",
+        "address": "1250 9th St NW, Washington, DC 20001"
+      },
+      {
+        "name": "Peregrine Espresso (The Wharf)",
+        "address": "90 7th St SW, Washington, DC 20024"
+      },
+      {
+        "name": "St. Elmo Coffee",
+        "address": "1522 Connecticut Ave NW, Washington, DC 20036"
+      },
+      {
+        "name": "Northside Social (Arlington)",
+        "address": "1101 N Highland St, Arlington, VA 22201"
+      },
+      {
+        "name": "De Clieu Coffee & Sandwich",
+        "address": "7039 Little River Turnpike, Annandale, VA 22003"
+      },
+      {
+        "name": "Misha’s Coffee (Old Town)",
+        "address": "110 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Blue Bottle Coffee (local location)",
+        "address": "1990 K St NW, Washington, DC 20006"
+      },
+      {
+        "name": "The Coffee Bar (Ballston)",
+        "address": "4025 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "Red Rooster Coffee",
+        "address": "825 S Washington St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Compass Coffee (Arlington)",
+        "address": "2500 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Peregrine Espresso (Dupont)",
+        "address": "1355 Connecticut Ave NW, Washington, DC 20036"
+      },
+      {
+        "name": "The Roasterie",
+        "address": "1800 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Little Red Fox Espresso",
+        "address": "1401 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Espresso Guys (neighborhood)",
+        "address": "3210 Mount Vernon Ave, Alexandria, VA 22305"
+      },
+      {
+        "name": "Lake Anne Coffee House",
+        "address": "11424 Washington Plaza W, Reston, VA 20190"
+      },
+      {
+        "name": "Ritual Coffee (DC outpost)",
+        "address": "1539 7th St NW, Washington, DC 20001"
+      },
+      {
+        "name": "For Five Coffee Roasters",
+        "address": "3000 Clarendon Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Peregrine (Georgetown kiosk)",
+        "address": "3301 M St NW, Washington, DC 20007"
+      },
+      {
+        "name": "Current Coffee",
+        "address": "1800 Diagonal Rd, Alexandria, VA 22314"
+      },
+      {
+        "name": "Sunrise Coffeehouse",
+        "address": "1416 U St NW, Washington, DC 20009"
+      },
+      {
+        "name": "Minor & Kingdom Coffee",
+        "address": "2400 Clarendon Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Market Street Coffee",
+        "address": "2200 Mount Vernon Ave, Alexandria, VA 22301"
+      },
+      {
+        "name": "Somewhere Coffee",
+        "address": "4101 Fairfax Dr, Arlington, VA 22203"
+      },
+      {
+        "name": "Common Ground Café",
+        "address": "1001 N Fairfax St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Coffee Spot",
+        "address": "1401 Wilson Blvd, Arlington, VA 22209"
+      }
+    ],
+    "drinks-bars": [
+      {
+        "name": "# DRINKS & BARS",
+        "address": "25 Spots"
+      },
+      {
+        "name": "(name",
+        "address": "address)"
+      },
+      {
+        "name": "The Royal",
+        "address": "5011 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "The Partisan",
+        "address": "1201 S Joyce St, Arlington, VA 22202"
+      },
+      {
+        "name": "ChurchKey (beer bar)",
+        "address": "1337 14th St NW, Washington, DC 20005"
+      },
+      {
+        "name": "The Auld Shebeen (Irish pub)",
+        "address": "3971 Chain Bridge Rd, Fairfax, VA 22030"
+      },
+      {
+        "name": "Bar Deco",
+        "address": "1114 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Atlas Brew Works Taproom",
+        "address": "5212 Port Royal Rd, Springfield, VA 22151"
+      },
+      {
+        "name": "The Camelot (local tavern)",
+        "address": "1234 N Fairfax St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Royal Oak (neighborhood pub)",
+        "address": "1215 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Green Pig (craft cocktails)",
+        "address": "1900 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "The Boardwalk Tavern",
+        "address": "1800 Columbia Pike, Arlington, VA 22204"
+      },
+      {
+        "name": "The Liberty Tavern Bar",
+        "address": "3195 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Hops & Shine Taproom",
+        "address": "1101 S Hayes St, Arlington, VA 22202"
+      },
+      {
+        "name": "Off The Rails Pub",
+        "address": "1201 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "In the Heights Wine Bar",
+        "address": "1025 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Wharf Pub",
+        "address": "20 District Ave, Reston, VA 20190"
+      },
+      {
+        "name": "The Dive Bar (local)",
+        "address": "1200 N Washington St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Taphouse",
+        "address": "3500 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Tin Roof (music + drinks)",
+        "address": "3185 Wilson Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "Church Street Saloon",
+        "address": "1007 N Alfred St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Front Page (cocktail bar)",
+        "address": "1015 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Old Dominion Tavern",
+        "address": "1201 N Royal St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Pour House",
+        "address": "1421 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Local Pint",
+        "address": "1401 N Van Dorn St, Alexandria, VA 22304"
+      },
+      {
+        "name": "South Block Social",
+        "address": "1801 Eads St, Arlington, VA 22202"
+      },
+      {
+        "name": "The Rarities Cocktail Room",
+        "address": "1300 F St NW, Washington, DC 20004"
+      }
+    ],
+    "pet-friendly": [
+      {
+        "name": "# PET-FRIENDLY",
+        "address": "25 Spots"
+      },
+      {
+        "name": "(name",
+        "address": "address)"
+      },
+      {
+        "name": "Shirlington Dog Park",
+        "address": "4170 Campbell Ave S, Arlington, VA 22206"
+      },
+      {
+        "name": "Burke Lake Dog Park",
+        "address": "7315 Ox Rd, Fairfax Station, VA 22039"
+      },
+      {
+        "name": "Wythe Dog Run (Old Town)",
+        "address": "100 S Union St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Gravelly Point Park (off-leash area near runway)",
+        "address": "4901 S Aviation Rd, Arlington, VA 22202"
+      },
+      {
+        "name": "Potomac Overlook Dog Area",
+        "address": "2845 Marcey Rd, Arlington, VA 22207"
+      },
+      {
+        "name": "Lake Accotink Dog Park",
+        "address": "7500 Accotink Park Rd, Springfield, VA 22150"
+      },
+      {
+        "name": "Ben Brenman Park Dog Area",
+        "address": "4800 Brenman Park Dr, Alexandria, VA 22304"
+      },
+      {
+        "name": "Glen Carlyn Dog Park",
+        "address": "5711 4th St S, Arlington, VA 22204"
+      },
+      {
+        "name": "Meadowlark Botanical Gardens Dog Area",
+        "address": "9750 Meadowlark Gardens Ct, Vienna, VA"
+      },
+      {
+        "name": "Old Town Waterfront Dog Path",
+        "address": "1 Prince St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Shirlington Dog Run",
+        "address": "4200 Campbell Ave, Arlington, VA 22206"
+      },
+      {
+        "name": "Cameron Run Regional Park Dog-Friendly Spaces",
+        "address": "4001 Eisenhower Ave, Alexandria, VA"
+      },
+      {
+        "name": "South Run Trail Dog Sections",
+        "address": "7550 Reservations Dr, Springfield, VA 22152"
+      },
+      {
+        "name": "Lee District Park Dog Area",
+        "address": "6601 Telegraph Rd, Alexandria, VA 22310"
+      },
+      {
+        "name": "Mason District Dog Field",
+        "address": "6507 Columbia Pike, Annandale, VA 22003"
+      },
+      {
+        "name": "Rosslyn Dog Park",
+        "address": "1811 N Lynn St, Arlington, VA 22209"
+      },
+      {
+        "name": "Crystal City Water Park Dog Path",
+        "address": "1750 Crystal Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Riverfront Park Dog Area (Occoquan)",
+        "address": "1650 Mill St, Occoquan, VA 22125"
+      },
+      {
+        "name": "Lake Thoreau Dog Trail",
+        "address": "6001 Sycamore Tree Ct, Reston, VA 20191"
+      },
+      {
+        "name": "Fountainhead Regional Park Dog Areas",
+        "address": "10875 Hampton Rd, Fairfax, VA 22030"
+      },
+      {
+        "name": "Ben Lomond Dog Field",
+        "address": "1800 Belle View Blvd, Alexandria, VA 22307"
+      },
+      {
+        "name": "Shirlington Bark & Brew Patio (dog-friendly bar patio)",
+        "address": "4251 Campbell Ave, Arlington, VA"
+      },
+      {
+        "name": "Alexandria King Street Dog Walks",
+        "address": "100 N Union St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Reston Town Center Dog Park",
+        "address": "11900 Market St, Reston, VA 20190"
+      },
+      {
+        "name": "Pony Pasture Dog Trail",
+        "address": "1300 Poindexter St, Richmond, VA 23220"
+      },
+      {
+        "name": "Spots (name",
+        "address": "address)"
+      },
+      {
+        "name": "Theodore Roosevelt Island",
+        "address": "1 Island Ln NW, Washington, DC 20016"
+      },
+      {
+        "name": "Gravelly Point Park",
+        "address": "4901 S Aviation Rd, Arlington, VA 22202"
+      },
+      {
+        "name": "Mount Vernon Trail (entry at Key Bridge)",
+        "address": "1 Gateway Dr, Arlington, VA 22209"
+      },
+      {
+        "name": "Strathmore Mansion Grounds (event lawn)",
+        "address": "5301 Tuckerman Ln, North Bethesda, MD"
+      },
+      {
+        "name": "Great Falls Park (VA side)",
+        "address": "9200 Old Dominion Dr, McLean, VA 22102"
+      },
+      {
+        "name": "Huntley Meadows Park",
+        "address": "3701 Lockheed Blvd, Alexandria, VA 22306"
+      },
+      {
+        "name": "Fort Hunt Park",
+        "address": "8999 Fort Hunt Rd, Alexandria, VA 22308"
+      },
+      {
+        "name": "Belle Haven Park & Marina",
+        "address": "1 Marina Dr, Alexandria, VA 22314"
+      },
+      {
+        "name": "Mason Neck State Park",
+        "address": "7301 High Point Rd, Lorton, VA 22079"
+      },
+      {
+        "name": "Scott’s Run Nature Preserve",
+        "address": "7400 Georgetown Pike, McLean, VA 22101"
+      },
+      {
+        "name": "Pohick Bay Regional Park",
+        "address": "6501 Pohick Bay Dr, Lorton, VA 22079"
+      },
+      {
+        "name": "Occoquan Bay National Wildlife Refuge",
+        "address": "13950 Dawson Beach Rd, Woodbridge, VA"
+      },
+      {
+        "name": "Huntley Meadows Boardwalk",
+        "address": "3701 Lockheed Blvd, Alexandria, VA 22306"
+      },
+      {
+        "name": "Potomac Overlook Regional Park",
+        "address": "2845 Marcey Rd, Arlington, VA 22207"
+      },
+      {
+        "name": "Dyke Marsh Wildlife Preserve",
+        "address": "6501 George Washington Memorial Pkwy, Alexandria, VA"
+      },
+      {
+        "name": "Fort Ward Park",
+        "address": "4301 W Braddock Rd, Alexandria, VA 22304"
+      },
+      {
+        "name": "Old Town Alexandria Waterfront Park",
+        "address": "1 Prince St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Riverbend Park",
+        "address": "8700 Potomac Hills St, Great Falls, VA 22066"
+      },
+      {
+        "name": "Burke Lake Park",
+        "address": "7315 Ox Rd, Fairfax Station, VA 22039"
+      },
+      {
+        "name": "Lake Accotink Park",
+        "address": "7500 Accotink Park Rd, Springfield, VA 22150"
+      },
+      {
+        "name": "Pohick Bay Marina Trails",
+        "address": "6501 Pohick Bay Dr, Lorton, VA 22079"
+      },
+      {
+        "name": "Manassas National Battlefield Park",
+        "address": "6511 Sudley Rd, Manassas, VA 20109"
+      },
+      {
+        "name": "Colvin Run Mill Park",
+        "address": "10017 Colvin Run Rd, Great Falls, VA 22066"
+      },
+      {
+        "name": "Clemyjontri Park",
+        "address": "6317 Georgetown Pike, McLean, VA 22101"
+      },
+      {
+        "name": "Potomac Heritage Trail (access point)",
+        "address": "3700 Mount Vernon Ave, Alexandria, VA 22305"
+      }
+    ],
+    "fitness-classes": [
+      {
+        "name": "# FITNESS & CLASSES",
+        "address": "25"
+      },
+      {
+        "name": "Spots (name",
+        "address": "address)"
+      },
+      {
+        "name": "VIDA Fitness (Arlington)",
+        "address": "4000 Fairfax Dr, Arlington, VA 22203"
+      },
+      {
+        "name": "Orangetheory Fitness (Ballston)",
+        "address": "4200 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "CorePower Yoga (DC outpost)",
+        "address": "1100 15th St NW, Washington, DC 20005"
+      },
+      {
+        "name": "Flow Yoga Studio",
+        "address": "3000 Clarendon Blvd, Arlington, VA 22201"
+      },
+      {
+        "name": "CrossFit Alexandria",
+        "address": "5008 Backlick Rd, Springfield, VA 22151"
+      },
+      {
+        "name": "Westover Yoga Collective",
+        "address": "5875 Washington Blvd, Arlington, VA 22205"
+      },
+      {
+        "name": "The St. James Fitness Complex",
+        "address": "6805 Industrial Rd, Springfield, VA 22151"
+      },
+      {
+        "name": "Vida Boxing Club",
+        "address": "1200 N Garfield St, Arlington, VA 22201"
+      },
+      {
+        "name": "Peak Form Fitness (boutique)",
+        "address": "1201 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Tysons Pilates Studio",
+        "address": "8100 Boone Blvd, Vienna, VA 22182"
+      },
+      {
+        "name": "CycleBar (Arlington)",
+        "address": "1001 N Vermont St, Arlington, VA 22201"
+      },
+      {
+        "name": "Rumble Boxing (DC)",
+        "address": "801 15th St NW, Washington, DC 20005"
+      },
+      {
+        "name": "Elevation Pilates (Alexandria)",
+        "address": "112 S Fairfax St, Alexandria, VA 22314"
+      },
+      {
+        "name": "The Barre Room",
+        "address": "4401 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "Bouldering at Earth Treks (Crystal City)",
+        "address": "2011 Crystal Dr, Arlington, VA 22202"
+      },
+      {
+        "name": "Columbia Pike Warrior Gym",
+        "address": "3500 Columbia Pike, Arlington, VA 22204"
+      },
+      {
+        "name": "Fairfax Krav Maga",
+        "address": "9609 Fairfax Blvd, Fairfax, VA 22030"
+      },
+      {
+        "name": "Kickboxing Club (Old Town)",
+        "address": "1301 King St, Alexandria, VA 22314"
+      },
+      {
+        "name": "Pilates by Design (Vienna)",
+        "address": "145 Maple Ave E, Vienna, VA 22180"
+      },
+      {
+        "name": "Hot Yoga Falls Church",
+        "address": "1101 W Broad St, Falls Church, VA 22046"
+      },
+      {
+        "name": "Reston Pilates & Wellness",
+        "address": "12001 Sunrise Valley Dr, Reston, VA 20191"
+      },
+      {
+        "name": "Potomac River Rowing Club (fitness & classes)",
+        "address": "1 Marina Dr, Alexandria, VA 22314"
+      },
+      {
+        "name": "Arlington Boxing Gym",
+        "address": "3400 N Fairfax Dr, Arlington, VA 22201"
+      },
+      {
+        "name": "HIIT Lab (neighborhood studio)",
+        "address": "4201 Wilson Blvd, Arlington, VA 22203"
+      },
+      {
+        "name": "Dogpatch Fitness (outdoor bootcamps)",
+        "address": "2501 N Pershing Dr, Arlington, VA 22201"
+      }
+    ]
+  }
+}

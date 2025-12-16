@@ -109,8 +109,13 @@ export function useFrontendFilteredListings(params: UseFilteredListingsParams) {
         setLoading(true);
         setError(null);
 
+        if (!supabase) {
+          console.error('[useFrontendFilteredListings] Supabase client is null even though isSupabaseConfigured() returned true');
+          throw new Error('Supabase client not initialized');
+        }
+
         // Build query - fetch ALL listings with no filtering except city
-        let query = supabase!
+        let query = supabase
           .from('listings')
           .select(`
             id,title,subtitle,description,category,price_tier,latitude,longitude,city,is_published,is_featured,created_at,phone,website,source,source_metadata,
@@ -127,10 +132,17 @@ export function useFrontendFilteredListings(params: UseFilteredListingsParams) {
           query = query.eq('city', city);
         }
 
-        // Fetch ALL listings (no limit)
+        // Order by newest first so recently imported data (like Funcheap events)
+        // is guaranteed to appear in the first page that Supabase returns.
+        query = query.order('created_at', { ascending: false, nullsLast: true });
+
+        // Fetch listings (Supabase hard-caps at 1000 rows per request)
         const { data, error: fetchError } = await query.limit(3000);
 
-        if (fetchError) throw fetchError;
+        if (fetchError) {
+          console.error('[useFrontendFilteredListings] Supabase fetch error:', fetchError);
+          throw fetchError;
+        }
 
         if (!cancelled) {
           // Transform
@@ -147,8 +159,19 @@ export function useFrontendFilteredListings(params: UseFilteredListingsParams) {
         }
       } catch (err) {
         console.error('[useFrontendFilteredListings] Error:', err);
+        try {
+          console.error('[useFrontendFilteredListings] Error (stringified):', JSON.stringify(err, null, 2));
+        } catch {
+          // ignore stringify errors
+        }
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Failed to fetch listings');
+          if (err instanceof Error && err.message) {
+            setError(err.message);
+          } else if (typeof err === 'string') {
+            setError(err);
+          } else {
+            setError('Failed to fetch listings');
+          }
         }
       } finally {
         if (!cancelled) {

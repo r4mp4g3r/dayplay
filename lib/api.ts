@@ -23,6 +23,12 @@ const CATEGORY_SYNONYMS: Record<string, string[]> = {
   'shopping': ['shopping', 'shops'],
 };
 
+// Feature flag to enable/disable OpenStreetMap-sourced listings.
+// Defaults to enabled unless explicitly set to "false".
+const ENABLE_OSM_LISTINGS =
+  !process.env.EXPO_PUBLIC_ENABLE_OSM_LISTINGS ||
+  process.env.EXPO_PUBLIC_ENABLE_OSM_LISTINGS === 'true';
+
 function normalizeCategory(cat?: string): string | undefined {
   if (!cat) return undefined;
   const lower = cat.toLowerCase();
@@ -84,6 +90,10 @@ export async function getFeed(params: FeedParams): Promise<{ items: Listing[]; t
       )
       .eq('is_published', true);
       // Removed .neq('source', 'seed') to fetch ALL listings
+
+    if (!ENABLE_OSM_LISTINGS) {
+      query = query.neq('source', 'openstreetmap');
+    }
 
     // Filter by city if provided - this ensures we only show listings for the selected region
     // Some "cities" in our app are actually metro areas that span multiple municipalities

@@ -31,14 +31,17 @@ export default function DiscoverScreen() {
     showOpenNow,
   });
 
-  // Create a simple fetch function that returns paginated results from filtered listings
+  // Create a fetch function that returns chunks from the already-filtered listings.
+  // NOTE: We ignore the "page" offset and instead always return the first N unseen items.
+  // SwipeDeck passes an ever-growing excludeIds list (including previously fetched items),
+  // so we just filter by that and slice from the start. This avoids pagination bugs where
+  // the offset is larger than the remaining (post-exclusion) list.
   const fetchFn = useMemo(
     () => ({ page, excludeIds }: { page: number; excludeIds: string[] }) => {
       const excludeSet = new Set(excludeIds);
-      const filtered = listings.filter(l => !excludeSet.has(l.id));
+      const filtered = listings.filter((l) => !excludeSet.has(l.id));
       const pageSize = 50;
-      const start = page * pageSize;
-      const items = filtered.slice(start, start + pageSize);
+      const items = filtered.slice(0, pageSize);
       
       return Promise.resolve({ items, total: filtered.length });
     },

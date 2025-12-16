@@ -158,7 +158,9 @@ export default function SavedScreen() {
         renderItem={({ item }) => (
           <View style={{ padding: 12, position: 'relative' }}>
             <Pressable
-              onPress={() => router.push(`/listing/${item.id}`)}
+              onPress={() =>
+                router.push({ pathname: '/listing/[id]', params: { id: item.id } })
+              }
               style={{ flex: 1 }}
             >
               <SwipeCard item={item} compact />
@@ -242,49 +244,50 @@ export default function SavedScreen() {
         }}
       >
         <Pressable
-          style={styles.modalBackdrop}
-          onPress={() => {
-            setShowIOSDateTime(false);
-            setCalendarItemId(null);
-          }}
-        >
-          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
-            <Text style={styles.modalTitle}>Pick date & time</Text>
-            <DateTimePicker
-              value={iosDate}
-              mode="datetime"
-              display="inline"
-              onChange={(_, date) => {
-                if (date) setIOSDate(date);
-              }}
-            />
-            <View style={{ flexDirection: 'row', gap: 12, marginTop: 12 }}>
-              <Pressable
-                style={[styles.sortBtn, { backgroundColor: '#f2f2f2', flex: 1 }]}
-                onPress={() => {
-                  setShowIOSDateTime(false);
-                  setCalendarItemId(null);
+            style={styles.modalBackdrop}
+            onPress={() => {
+              setShowIOSDateTime(false);
+              setCalendarItemId(null);
+            }}
+          >
+            <Pressable style={styles.modalContentWide} onPress={(e) => e.stopPropagation()}>
+              <Text style={styles.modalTitle}>Pick date & time</Text>
+              <DateTimePicker
+                value={iosDate}
+                mode="datetime"
+                display="inline"
+                onChange={(_, date) => {
+                  if (date) setIOSDate(date);
                 }}
-              >
-                <Text style={[styles.sortBtnText, { textAlign: 'center' }]}>Cancel</Text>
-              </Pressable>
-              <Pressable
-                style={[styles.sortBtn, { backgroundColor: '#111', flex: 1 }]}
-                onPress={() => {
-                  const start = iosDate;
-                  const end = new Date(start.getTime() + 60 * 60 * 1000);
-                  const l = calendarItemId ? getItemById(calendarItemId) : null;
-                  setShowIOSDateTime(false);
-                  setCalendarItemId(null);
-                  if (l) openCalendarForItem(l, start, end);
-                }}
-              >
-                <Text style={[styles.sortBtnText, { color: '#fff', textAlign: 'center' }]}>Add</Text>
-              </Pressable>
-            </View>
+                style={{ alignSelf: 'stretch' }}
+              />
+              <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
+                <Pressable
+                  style={[styles.sortBtn, { backgroundColor: '#f2f2f2', flex: 1 }]}
+                  onPress={() => {
+                    setShowIOSDateTime(false);
+                    setCalendarItemId(null);
+                  }}
+                >
+                  <Text style={[styles.sortBtnText, { textAlign: 'center' }]}>Cancel</Text>
+                </Pressable>
+                <Pressable
+                  style={[styles.sortBtn, { backgroundColor: '#111', flex: 1 }]}
+                  onPress={() => {
+                    const start = iosDate;
+                    const end = new Date(start.getTime() + 60 * 60 * 1000);
+                    const l = calendarItemId ? getItemById(calendarItemId) : null;
+                    setShowIOSDateTime(false);
+                    setCalendarItemId(null);
+                    if (l) openCalendarForItem(l, start, end);
+                  }}
+                >
+                  <Text style={[styles.sortBtnText, { color: '#fff', textAlign: 'center' }]}>Add</Text>
+                </Pressable>
+              </View>
+            </Pressable>
           </Pressable>
-        </Pressable>
-      </Modal>
+        </Modal>
       {/* Android pickers */}
       {showAndroidDate && (
         <DateTimePicker
@@ -384,6 +387,7 @@ const styles = StyleSheet.create({
   },
   modalBackdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center', padding: 20 },
   modalContent: { backgroundColor: '#fff', borderRadius: 16, padding: 20, width: '100%', maxWidth: 320 },
+  modalContentWide: { backgroundColor: '#fff', borderRadius: 16, padding: 20, width: '100%', maxWidth: 420 },
   modalTitle: { fontSize: 18, fontWeight: '800', marginBottom: 16, textAlign: 'center' },
   modalOption: { paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#eee' },
   modalOptionText: { fontSize: 16, fontWeight: '600', textAlign: 'center' },

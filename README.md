@@ -107,6 +107,75 @@ To keep web working without native module errors:
 - Detail view shows **placeholder map** on web, real map on native
 - If you need full maps on iOS/Android, we can add platform-specific versions
 
+## 🌍 OpenStreetMap Auto‑Import (Listings Data)
+
+In addition to seed data and Google-based imports, the app can automatically pull real-world places from **OpenStreetMap (OSM)** using the Overpass API. These are stored in the same `listings` table and appear in the normal feed.
+
+### What it does
+
+- **Fetches places for your 3 main cities**: San Francisco, Northern Virginia (metro area), and Linköping
+- **Maps OSM tags → Swipely categories** (food, coffee, outdoors, nightlife, arts-culture, etc.)
+- **Creates/updates listings** with:
+  - `id` like `osm_node_123456789`
+  - `source = 'openstreetmap'`
+  - `external_id = "<type>/<id>"` (e.g. `node/123456789`)
+  - `source_metadata` containing the raw OSM tags
+- Runs safely multiple times (idempotent upserts).
+
+### One‑time setup
+
+1. **Env vars** (in `.env` based on `env.example`):
+
+   ```bash
+   # Required for scripts
+   SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+
+   # Optional but recommended for OSM
+   OSM_OVERPASS_URL=https://overpass-api.de/api/interpreter
+   OSM_USER_AGENT=SwipelyApp/1.0 (your-site-or-email-here)
+
+   # Feature flag (defaults to true)
+   EXPO_PUBLIC_ENABLE_OSM_LISTINGS=true
+   ```
+
+2. **Confirm schema**  
+   The `listings` table already supports:
+   - `source text`
+   - `external_id text`
+   - `source_metadata jsonb`
+   - Unique index on `(external_id, source)` when `external_id` is not null  
+   No schema changes are required for OSM.
+
+### Running the OSM sync script
+
+From the project root:
+
+```bash
+cd /Users/ram/Mercury\ 2.0/dev/swipely-app
+
+# Sync all default cities (SF, Northern Virginia, Linköping)
+npm run sync:listings:osm
+
+# Or specify cities by name (must match the built‑in defaults)
+npx tsx scripts/sync-listings-from-osm.ts --cities "San Francisco;Northern Virginia;Linköping"
+
+# Or use explicit coordinates (label is stored as `city` if not overridden)
+npx tsx scripts/sync-listings-from-osm.ts --coords "37.7749,-122.4194;38.9,-77.25"
+```
+
+The script:
+
+- Queries Overpass in small batches per category, with builtin throttling
+- Normalizes OSM elements → internal `Listing` shape via `lib/openStreetMap.ts`
+- Upserts into `listings` by `id` (`osm_<type>_<id>`)
+
+### Controlling OSM visibility in the app
+
+- The feed API in `lib/api.ts` reads `EXPO_PUBLIC_ENABLE_OSM_LISTINGS`:
+  - When **true or unset** → all sources (including OSM) are returned
+  - When **set to "false"** → `source = 'openstreetmap'` is excluded from the feed
+- This gives you a kill‑switch if OSM data ever looks too noisy, without touching the DB.
+
 ## 🎨 Design Decisions
 
 ### Why List-Only Explore?

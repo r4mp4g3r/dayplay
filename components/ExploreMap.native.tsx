@@ -15,15 +15,25 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
 
   // Filter items with valid coordinates
   const validItems = useMemo(() => {
-    const valid = items.filter(item => 
-      item.latitude && 
-      item.longitude && 
-      typeof item.latitude === 'number' && 
-      typeof item.longitude === 'number' &&
-      !isNaN(item.latitude) &&
-      !isNaN(item.longitude)
+    const valid = items.filter((item) => {
+      const lat = item.latitude;
+      const lng = item.longitude;
+
+      // Require numeric, finite coordinates
+      if (typeof lat !== 'number' || typeof lng !== 'number') return false;
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return false;
+      if (Number.isNaN(lat) || Number.isNaN(lng)) return false;
+
+      // Basic world bounds guard (defensive; should never be hit if data is clean)
+      if (lat < -90 || lat > 90) return false;
+      if (lng < -180 || lng > 180) return false;
+
+      return true;
+    });
+
+    console.log(
+      `[ExploreMap] Render – total items: ${items.length}, valid coords: ${valid.length}`,
     );
-    console.log(`[ExploreMap] Total items: ${items.length}, Valid coordinates: ${valid.length}`);
     if (valid.length > 0) {
       console.log(`[ExploreMap] Sample location: ${valid[0].title} at (${valid[0].latitude}, ${valid[0].longitude})`);
     }
@@ -104,13 +114,15 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
         onPress={handleMapPress}
       >
         {validItems.map((it) => (
-          <Marker 
+          <Marker
             key={it.id}
             coordinate={{ latitude: Number(it.latitude), longitude: Number(it.longitude) }}
             title={''}
             description={undefined}
             onPress={() => setSelected(it)}
-            onCalloutPress={() => router.push(`/listing/${it.id}`)}
+            onCalloutPress={() =>
+              router.push({ pathname: '/listing/[id]', params: { id: it.id } })
+            }
           />
         ))}
       </MapView>
@@ -133,7 +145,12 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
 
       {selected && (
         <View style={styles.cardWrap} pointerEvents="box-none">
-          <Pressable style={styles.card} onPress={() => router.push(`/listing/${selected.id}`)}>
+          <Pressable
+            style={styles.card}
+            onPress={() =>
+              router.push({ pathname: '/listing/[id]', params: { id: selected.id } })
+            }
+          >
             {selectedImage ? (
               <Image source={{ uri: selectedImage }} style={styles.cardImage} resizeMode="cover" />
             ) : (

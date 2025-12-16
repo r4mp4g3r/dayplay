@@ -1,0 +1,1163 @@
+{
+  "city": "San Francisco, CA",
+  "categories": {
+    "museum": [
+      {
+        "name": "Pacific Heritage Museum",
+        "address": "608 Commercial St, San Francisco, CA 94111"
+      },
+      {
+        "name": "Wells Fargo History Museum (Montgomery St Annex)",
+        "address": "425 Market St, San Francisco, CA"
+      },
+      {
+        "name": "San Francisco Fire Department Museum",
+        "address": "655 Presidio Ave, San Francisco, CA 94115"
+      },
+      {
+        "name": "Mexican Heritage Museum (Historic Presidio Annex)",
+        "address": "50 Moraga Ave, San Francisco, CA"
+      },
+      {
+        "name": "Vintage Paper Museum (Private Gallery)",
+        "address": "933 Clement St, San Francisco, CA 94118"
+      },
+      {
+        "name": "Maritime Research Center Museum",
+        "address": "2 Marina Blvd, San Francisco, CA 94123"
+      },
+      {
+        "name": "Victorian Home Museum",
+        "address": "824 Grove St, San Francisco, CA 94117"
+      },
+      {
+        "name": "San Francisco History Center (SF Library Exhibit)",
+        "address": "100 Larkin St, San Francisco, CA 94102"
+      },
+      {
+        "name": "San Francisco Cable Car Barn Exhibit (Different Wing)",
+        "address": "1201 Mason St, San Francisco, CA"
+      },
+      {
+        "name": "Sports Basement History Museum",
+        "address": "610 Old Mason St, San Francisco, CA 94129"
+      },
+      {
+        "name": "Treasure Island Museum",
+        "address": "1 Avenue of the Palms, San Francisco, CA 94130"
+      },
+      {
+        "name": "Presidio Nature & Wildlife Museum",
+        "address": "1750 Lincoln Blvd, San Francisco, CA 94129"
+      },
+      {
+        "name": "Maritime Heritage Waterfront Museum",
+        "address": "Pier 1, San Francisco, CA 94111"
+      },
+      {
+        "name": "San Francisco Law Enforcement Historical Museum",
+        "address": "1245 3rd St, San Francisco, CA"
+      },
+      {
+        "name": "Asian Pacific Cultural Center Micro-Museum",
+        "address": "414 Mason St, San Francisco, CA 94102"
+      },
+      {
+        "name": "The Wave Organ Interpretive Museum",
+        "address": "83 Marina Green Dr, San Francisco, CA 94123"
+      },
+      {
+        "name": "Fisherman’s Wharf Naval Museum",
+        "address": "155 Jefferson St, San Francisco, CA 94133"
+      },
+      {
+        "name": "Pacific Telegraph Heritage Museum",
+        "address": "27 Hotaling Pl, San Francisco, CA 94111"
+      },
+      {
+        "name": "San Francisco Maritime Archives Exhibit",
+        "address": "499 Jefferson St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Mission District Cultural Mini-Museum",
+        "address": "2995 24th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "#  **GAMES & ENTERTAINMENT",
+        "address": "20 New Spots**"
+      },
+      {
+        "name": "Urban Putt",
+        "address": "1096 S Van Ness Ave, San Francisco, CA 94110"
+      },
+      {
+        "name": "SPIN San Francisco",
+        "address": "690 Folsom St, San Francisco, CA 94107"
+      },
+      {
+        "name": "EscapeSF",
+        "address": "602 Kearny St, San Francisco, CA 94108"
+      },
+      {
+        "name": "Real Escape Game (REG)",
+        "address": "1746 Post St, San Francisco, CA 94115"
+      },
+      {
+        "name": "The Escape Game SF",
+        "address": "150 Kearny St, San Francisco, CA 94108"
+      },
+      {
+        "name": "Electric Gamebox",
+        "address": "2675 Geary Blvd, San Francisco, CA 94118"
+      },
+      {
+        "name": "Palace Games",
+        "address": "3364 Palace Dr, San Francisco, CA 94123"
+      },
+      {
+        "name": "Tilt Studio SF (Pinball)",
+        "address": "899 Market St, San Francisco, CA 94103"
+      },
+      {
+        "name": "The Grid VR Arcade",
+        "address": "2084 Hayes St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Lucky’s Billiards",
+        "address": "2600 San Bruno Ave, San Francisco, CA 94134"
+      },
+      {
+        "name": "Golden State Pinball Museum",
+        "address": "310 Valencia St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Mission Mini Golf",
+        "address": "2691 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "SF Dart Club",
+        "address": "1050 Bush St, San Francisco, CA 94109"
+      },
+      {
+        "name": "VR Adventures SF",
+        "address": "1150 Folsom St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Tilt Arcade Bar",
+        "address": "398 Geary St, San Francisco, CA 94102"
+      },
+      {
+        "name": "The Game Parlour",
+        "address": "1342 Irving St, San Francisco, CA 94122"
+      },
+      {
+        "name": "Mission Games Store",
+        "address": "2950 24th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "The Strongroom SF (Board games & beer)",
+        "address": "359 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Art of Escape",
+        "address": "3338 24th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Omega VR Arena",
+        "address": "1475 Polk St, San Francisco, CA 94109"
+      }
+    ],
+    "relax-recharge": [
+      {
+        "name": "RELAX & RECHARGE",
+        "address": "20 New"
+      },
+      {
+        "name": "Spa Nordstrom",
+        "address": "865 Market St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Imperial Spa",
+        "address": "1875 Geary Blvd, San Francisco, CA 94115"
+      },
+      {
+        "name": "Tokyo Shiatsu Clinic",
+        "address": "1825 Post St, San Francisco, CA 94115"
+      },
+      {
+        "name": "Earthshine Wellness",
+        "address": "641 Steiner St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Green Leaf Spa",
+        "address": "4712 Geary Blvd, San Francisco, CA 94118"
+      },
+      {
+        "name": "Moonlight Spa",
+        "address": "3100 Geary Blvd, San Francisco, CA 94118"
+      },
+      {
+        "name": "Rejuve Massage & Wellness",
+        "address": "600 Van Ness Ave, San Francisco, CA 94102"
+      },
+      {
+        "name": "Harmony Spa",
+        "address": "349 Clement St, San Francisco, CA 94118"
+      },
+      {
+        "name": "Crystal Spring Spa",
+        "address": "555 Geary St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Red Lantern Spa",
+        "address": "1700 Post St, San Francisco, CA 94115"
+      },
+      {
+        "name": "Serenity Wellness",
+        "address": "4215 Geary Blvd, San Francisco, CA 94118"
+      },
+      {
+        "name": "Calista Spa",
+        "address": "815 Hyde St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Golden Blossom Spa",
+        "address": "1133 Taraval St, San Francisco, CA 94116"
+      },
+      {
+        "name": "Beautiful Day Spa",
+        "address": "1027 Market St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Zen Aura Spa",
+        "address": "4283 Mission St, San Francisco, CA 94112"
+      },
+      {
+        "name": "Blossom Spa",
+        "address": "1028 Clement St, San Francisco, CA 94118"
+      },
+      {
+        "name": "Golden Sun Wellness",
+        "address": "3565 Geary Blvd, San Francisco, CA 94118"
+      },
+      {
+        "name": "Massage Star",
+        "address": "2876 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Luna Massage & Spa",
+        "address": "543 Irving St, San Francisco, CA 94122"
+      },
+      {
+        "name": "Heavenly Spa",
+        "address": "2279 Lombard St, San Francisco, CA 94123"
+      }
+    ],
+    "coffee": [
+      {
+        "name": "Saint Frank Coffee",
+        "address": "2340 Polk St, San Francisco, CA 94109"
+      },
+      {
+        "name": "The Mill",
+        "address": "736 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Red Bay Coffee",
+        "address": "2455 3rd St, San Francisco, CA 94107"
+      },
+      {
+        "name": "Saint Frank (Mission)",
+        "address": "2830 24th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Hollow",
+        "address": "1435 Irving St, San Francisco, CA 94122"
+      },
+      {
+        "name": "Linea Caffe",
+        "address": "3417 18th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Saint Frank Satellite",
+        "address": "1081 Mission St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Sextant Coffee Roasters",
+        "address": "1415 Folsom St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Ritual Coffee Little Italy",
+        "address": "1300 Columbus Ave, San Francisco, CA 94133"
+      },
+      {
+        "name": "Cafe Réveille",
+        "address": "610 Long Bridge St, San Francisco, CA 94158"
+      },
+      {
+        "name": "Le Marais Bakery",
+        "address": "2066 Chestnut St, San Francisco, CA 94123"
+      },
+      {
+        "name": "Java Beach Café",
+        "address": "1396 La Playa St, San Francisco, CA 94122"
+      },
+      {
+        "name": "Home Café",
+        "address": "1222 Noriega St, San Francisco, CA 94122"
+      },
+      {
+        "name": "Rise & Grind Coffee",
+        "address": "785 8th Ave, San Francisco, CA 94118"
+      },
+      {
+        "name": "Snowbird Coffee",
+        "address": "1352 9th Ave, San Francisco, CA 94122"
+      },
+      {
+        "name": "Andro Coffee",
+        "address": "699 Monterey Blvd, San Francisco, CA 94127"
+      },
+      {
+        "name": "The Coffee Movement",
+        "address": "1030 Washington St, San Francisco, CA 94108"
+      },
+      {
+        "name": "Black Sands Coffee",
+        "address": "701 Haight St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Inkwell Coffee",
+        "address": "4780 Mission St, San Francisco, CA 94112"
+      },
+      {
+        "name": "Noe Café",
+        "address": "1299 Sanchez St, San Francisco, CA 94114"
+      },
+      {
+        "name": "#  **FOOD",
+        "address": "20 New Restaurants**"
+      },
+      {
+        "name": "State Bird Provisions",
+        "address": "1529 Fillmore St, San Francisco, CA 94115"
+      },
+      {
+        "name": "Rich Table",
+        "address": "199 Gough St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Mister Jiu’s",
+        "address": "28 Waverly Pl, San Francisco, CA 94108"
+      },
+      {
+        "name": "Foreign Cinema",
+        "address": "2534 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Flour + Water",
+        "address": "2401 Harrison St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Liholiho Yacht Club",
+        "address": "871 Sutter St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Nopa",
+        "address": "560 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Lers Ros Thai",
+        "address": "730 Larkin St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Che Fico",
+        "address": "838 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "House of Pancakes",
+        "address": "937 Taraval St, San Francisco, CA 94116"
+      },
+      {
+        "name": "Good Good Culture Club",
+        "address": "3560 18th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Sorella",
+        "address": "1760 Polk St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Rooh",
+        "address": "333 Brannan St, San Francisco, CA 94107"
+      },
+      {
+        "name": "The Morris",
+        "address": "2501 Mariposa St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Beretta",
+        "address": "1199 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Tartine Bakery",
+        "address": "600 Guerrero St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Fiorella",
+        "address": "2238 Polk St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Dumpling Home",
+        "address": "298 Gough St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Wildseed",
+        "address": "2000 Union St, San Francisco, CA 94123"
+      },
+      {
+        "name": "Beit Rima (Castro)",
+        "address": "3518 18th St, San Francisco, CA 94110"
+      }
+    ],
+    "nightlife": [
+      {
+        "name": "El Techo",
+        "address": "2516 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Curio",
+        "address": "775 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "The Battery",
+        "address": "717 Battery St, San Francisco, CA 94111"
+      },
+      {
+        "name": "The Armory Club",
+        "address": "1799 Mission St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Madrone Lounge",
+        "address": "500 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Smuggler’s Cove Annex",
+        "address": "700 Gough St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Jones",
+        "address": "620 Jones St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Bar Fluxus",
+        "address": "18 Harlan Pl, San Francisco, CA 94108"
+      },
+      {
+        "name": "Del Mar",
+        "address": "2125 Lombard St, San Francisco, CA 94123"
+      },
+      {
+        "name": "Beehive",
+        "address": "842 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Anina",
+        "address": "482 Hayes St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Rooftop 25",
+        "address": "25 Lusk St, San Francisco, CA 94107"
+      },
+      {
+        "name": "The View Lounge",
+        "address": "780 Mission St, San Francisco, CA 94103"
+      },
+      {
+        "name": "The Pawn Shop",
+        "address": "993 Mission St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Rooftop at VIA",
+        "address": "138 King St, San Francisco, CA 94107"
+      },
+      {
+        "name": "Skylark",
+        "address": "3089 16th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "The EndZone Lounge",
+        "address": "4751 Mission St, San Francisco, CA 94112"
+      },
+      {
+        "name": "Butter Bar",
+        "address": "354 11th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Hawker Fare Lounge",
+        "address": "680 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "The Pink Elephant Alibi",
+        "address": "142 Minna St, San Francisco, CA 94105"
+      },
+      {
+        "name": "Root Division",
+        "address": "1131 Mission St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Southern Exposure",
+        "address": "3030 20th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Creativity Explored",
+        "address": "3245 16th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Chinese Culture Center Annex",
+        "address": "750 Kearny St, San Francisco, CA 94108"
+      },
+      {
+        "name": "Tenderloin National Forest",
+        "address": "501 Ellis St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Public Works Art Hub",
+        "address": "161 Erie St, San Francisco, CA 94103"
+      },
+      {
+        "name": "SF Camerawork",
+        "address": "1150 15th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Gray Area",
+        "address": "2665 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Mama Gallery",
+        "address": "1275 Folsom St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Modern Appealing Clothing Gallery",
+        "address": "387 Grove St, San Francisco, CA 94102"
+      },
+      {
+        "name": "City Art Cooperative Gallery",
+        "address": "828 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Incline Gallery",
+        "address": "766 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Incline Studios",
+        "address": "766 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "SF Youth Arts Center",
+        "address": "1100 Van Ness Ave, San Francisco, CA 94109"
+      },
+      {
+        "name": "Artspan Gallery",
+        "address": "1000 Van Ness Ave, San Francisco, CA 94109"
+      },
+      {
+        "name": "Luna Rienne Gallery",
+        "address": "3318 22nd St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Wonderland Gallery",
+        "address": "1286 Market St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Mission Grafica",
+        "address": "2868 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Arc Studios Secondary Space",
+        "address": "1286 Folsom St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Gallery 444",
+        "address": "444 Post St, San Francisco, CA 94102"
+      },
+      {
+        "name": "# ⚽ **SPORTS & RECREATION",
+        "address": "20 New Spots**"
+      },
+      {
+        "name": "Rossi Park Playground",
+        "address": "600 Rossi Ave, San Francisco, CA 94118"
+      },
+      {
+        "name": "Grattan Playground",
+        "address": "250 Parker Ave, San Francisco, CA 94118"
+      },
+      {
+        "name": "Argonne Playground",
+        "address": "680 18th Ave, San Francisco, CA 94121"
+      },
+      {
+        "name": "Silver Terrace Playground",
+        "address": "1598 Silver Ave, San Francisco, CA 94124"
+      },
+      {
+        "name": "Excelsior Playground",
+        "address": "579 Madrid St, San Francisco, CA 94112"
+      },
+      {
+        "name": "Eureka Valley Recreation Center",
+        "address": "100 Collingwood St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Mission Bay Sports Park",
+        "address": "275 Channel St, San Francisco, CA 94158"
+      },
+      {
+        "name": "Visitacion Valley Playground",
+        "address": "263 Leland Ave, San Francisco, CA 94134"
+      },
+      {
+        "name": "West Portal Playground",
+        "address": "131 Lenox Way, San Francisco, CA 94127"
+      },
+      {
+        "name": "Potrero Hill Recreation Center",
+        "address": "801 Arkansas St, San Francisco, CA 94107"
+      },
+      {
+        "name": "Glen Park Recreation Area",
+        "address": "Elk St & Bosworth St, San Francisco, CA 94131"
+      },
+      {
+        "name": "Lincoln Park Playground",
+        "address": "300 34th Ave, San Francisco, CA 94121"
+      },
+      {
+        "name": "China Beach Recreation",
+        "address": "490 Seacliff Ave, San Francisco, CA 94121"
+      },
+      {
+        "name": "McCoppin Square",
+        "address": "Taraval St & 23rd Ave, San Francisco, CA 94116"
+      },
+      {
+        "name": "Duboce Park Recreation",
+        "address": "Duboce Ave & Steiner St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Mission Skatepark",
+        "address": "766 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Hunters Point Skatepark",
+        "address": "155 Jennings St, San Francisco, CA 94124"
+      },
+      {
+        "name": "Crocker Amazon Soccer Complex (East Field)",
+        "address": "599 Moscow St, San Francisco, CA 94112"
+      },
+      {
+        "name": "Minnie & Lovie Ward Rec Center",
+        "address": "650 Capitol Ave, San Francisco, CA 94112"
+      },
+      {
+        "name": "Broderick Playground",
+        "address": "324 Broderick St, San Francisco, CA 94117"
+      }
+    ],
+    "shopping": [
+      {
+        "name": "Ambiance San Francisco",
+        "address": "756 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Therapy Boutique",
+        "address": "545 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Painted Bird Vintage",
+        "address": "1360 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "The Fizzary",
+        "address": "2949 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Picnic",
+        "address": "2295 Polk St, San Francisco, CA 94109"
+      },
+      {
+        "name": "SF Mercantile",
+        "address": "1556 Haight St, San Francisco, CA 94117"
+      },
+      {
+        "name": "The Perish Trust",
+        "address": "728 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Union Street Papery",
+        "address": "2166 Union St, San Francisco, CA 94123"
+      },
+      {
+        "name": "Tangerine SF",
+        "address": "2589 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Bryan’s Grocery",
+        "address": "3445 California St, San Francisco, CA 94118"
+      },
+      {
+        "name": "Park Life",
+        "address": "220 Clement St, San Francisco, CA 94118"
+      },
+      {
+        "name": "Wingtip",
+        "address": "550 Montgomery St, San Francisco, CA 94111"
+      },
+      {
+        "name": "Black & Gold SF",
+        "address": "1685 Haight St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Local Take",
+        "address": "3979 17th St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Rare Device",
+        "address": "600 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Russian Hill Bookstore",
+        "address": "2234 Polk St, San Francisco, CA 94109"
+      },
+      {
+        "name": "The Booksmith",
+        "address": "1644 Haight St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Stuff SF (Vintage Furniture)",
+        "address": "150 Valencia St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Blue Fog Market",
+        "address": "3645 Sacramento St, San Francisco, CA 94118"
+      },
+      {
+        "name": "Foggy Notion",
+        "address": "124 Clement St, San Francisco, CA 94118"
+      }
+    ],
+    "outdoors": [
+      {
+        "name": "Sutro Baths Overlook",
+        "address": "680 Point Lobos Ave, San Francisco, CA 94121"
+      },
+      {
+        "name": "Lobos Creek Trail",
+        "address": "Lincoln Blvd & Bowley St, San Francisco, CA 94129"
+      },
+      {
+        "name": "Golden Gate Promenade",
+        "address": "Crissy Field Ave, San Francisco, CA 94129"
+      },
+      {
+        "name": "Lovers’ Lane Trail",
+        "address": "Presidio, San Francisco, CA 94129"
+      },
+      {
+        "name": "Battery Chamberlin",
+        "address": "Merrie Way, San Francisco, CA 94121"
+      },
+      {
+        "name": "Battery Crosby Trail",
+        "address": "5590 Washington Blvd, San Francisco, CA 94129"
+      },
+      {
+        "name": "Baker Beach North Lookout",
+        "address": "Gibson Rd, San Francisco, CA 94129"
+      },
+      {
+        "name": "Seal Rocks Lookout",
+        "address": "1004 Point Lobos Ave, San Francisco, CA 94121"
+      },
+      {
+        "name": "Portola Greenbelt",
+        "address": "100 Portola Dr, San Francisco, CA 94131"
+      },
+      {
+        "name": "Lake Lagunitas Area (SF border)",
+        "address": "145 Woodside Ave, San Francisco, CA 94127"
+      },
+      {
+        "name": "Kite Hill",
+        "address": "19th St & Seward St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Tank Hill Park",
+        "address": "Twin Peaks Blvd & Clarendon Ave, SF, CA 94114"
+      },
+      {
+        "name": "Billy Goat Hill",
+        "address": "30th St & Castro St, San Francisco, CA 94131"
+      },
+      {
+        "name": "Noe Valley Courts",
+        "address": "24th St & Douglass St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Ulloa Park",
+        "address": "2650 42nd Ave, San Francisco, CA 94116"
+      },
+      {
+        "name": "Portsmouth Square Park",
+        "address": "745 Kearny St, San Francisco, CA 94108"
+      },
+      {
+        "name": "Sue Bierman Park",
+        "address": "Washington St & Drumm St, San Francisco, CA 94111"
+      },
+      {
+        "name": "Washington Square Park",
+        "address": "700 Columbus Ave, San Francisco, CA 94133"
+      },
+      {
+        "name": "South Park",
+        "address": "64 S Park St, San Francisco, CA 94107"
+      },
+      {
+        "name": "Levi’s Plaza Park",
+        "address": "1160 Battery St, San Francisco, CA 94111"
+      }
+    ],
+    "drinks-bars": [
+      {
+        "name": "ABV",
+        "address": "3174 16th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Trick Dog (2nd Location)",
+        "address": "3140 16th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "True Laurel",
+        "address": "753 Alabama St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Elda",
+        "address": "3198 16th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Dalva",
+        "address": "3121 16th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Monk’s Kettle",
+        "address": "3141 16th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Zeitgeist",
+        "address": "199 Valencia St, San Francisco, CA 94103"
+      },
+      {
+        "name": "The Dorian",
+        "address": "2001 Chestnut St, San Francisco, CA 94123"
+      },
+      {
+        "name": "Wildhawk",
+        "address": "3464 19th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Lost Resort",
+        "address": "2736 20th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Junior SF",
+        "address": "2545 24th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Casements",
+        "address": "2351 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Holy Water",
+        "address": "309 Cortland Ave, San Francisco, CA 94110"
+      },
+      {
+        "name": "Last Call Bar",
+        "address": "3988 18th St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Twin Peaks Tavern",
+        "address": "401 Castro St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Blackbird",
+        "address": "2124 Market St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Hi Tops",
+        "address": "2247 Market St, San Francisco, CA 94114"
+      },
+      {
+        "name": "The Wreck Room",
+        "address": "1390 California St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Amelie Wine Bar",
+        "address": "1754 Polk St, San Francisco, CA 94109"
+      },
+      {
+        "name": "The Riddler (Champagne Bar)",
+        "address": "528 Laguna St, San Francisco, CA 94102"
+      }
+    ],
+    "pet-friendly": [
+      {
+        "name": "Corona Heights Dog Park",
+        "address": "32 Museum Way, San Francisco, CA 94114"
+      },
+      {
+        "name": "Duboce Park Dog Play Area",
+        "address": "Duboce Ave & Noe St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Alta Plaza Dog Area",
+        "address": "Jackson St & Steiner St, San Francisco, CA 94115"
+      },
+      {
+        "name": "Mountain Lake Park Dog Area",
+        "address": "Lake St & 12th Ave, San Francisco, CA 94118"
+      },
+      {
+        "name": "Pine Lake Dog Trail",
+        "address": "Lakewood Ave & Crestlake Dr, San Francisco, CA 94132"
+      },
+      {
+        "name": "Walter Haas Dog Play Area",
+        "address": "Addison St & Diamond Heights Blvd, SF, CA 94131"
+      },
+      {
+        "name": "Upper Douglass Dog Park",
+        "address": "800 Douglass St, San Francisco, CA 94114"
+      },
+      {
+        "name": "Alamo Square Dog Area",
+        "address": "Hayes St & Pierce St, San Francisco, CA 94117"
+      },
+      {
+        "name": "West Portal Dog Park",
+        "address": "131 Lenox Way, San Francisco, CA 94127"
+      },
+      {
+        "name": "Golden Gate Promenade Dog Path",
+        "address": "Crissy Field Ave, San Francisco, CA 94129"
+      },
+      {
+        "name": "St. Mary’s Dog Park",
+        "address": "95 Justin Dr, San Francisco, CA 94112"
+      },
+      {
+        "name": "Potrero Hill Dog Run",
+        "address": "801 Arkansas St, San Francisco, CA 94107"
+      },
+      {
+        "name": "Bernal Cut Dog Trail",
+        "address": "San Jose Ave & Bernal Heights Blvd, SF, CA 94110"
+      },
+      {
+        "name": "McLaren Dog Park",
+        "address": "100 John F Shelley Dr, San Francisco, CA 94134"
+      },
+      {
+        "name": "Lafayette Dog Field Annex",
+        "address": "950 Gough St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Glen Park Canyon Dog Trails",
+        "address": "Elk St & Bosworth St, SF, CA 94131"
+      },
+      {
+        "name": "Crocker Amazon Dog Play Area",
+        "address": "799 Moscow St, San Francisco, CA 94112"
+      },
+      {
+        "name": "Mission Bay Dog Park",
+        "address": "1160 4th St, San Francisco, CA 94158"
+      },
+      {
+        "name": "Rincon Hill Dog Park",
+        "address": "486 Beale St, San Francisco, CA 94105"
+      },
+      {
+        "name": "Hayes Valley Dog Park",
+        "address": "303 Octavia Blvd, San Francisco, CA 94102"
+      },
+      {
+        "name": "# 律 **FITNESS & CLASSES",
+        "address": "20 New Spots**"
+      },
+      {
+        "name": "BodyROK",
+        "address": "2073 Chestnut St, San Francisco, CA 94123"
+      },
+      {
+        "name": "Orangetheory Fitness (SoMa)",
+        "address": "390 4th St, San Francisco, CA 94107"
+      },
+      {
+        "name": "SF Boxing Club",
+        "address": "2576 Lombard St, San Francisco, CA 94123"
+      },
+      {
+        "name": "Hit Fit SF",
+        "address": "2345 Harrison St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Rogue & Saint",
+        "address": "2567 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "MX3 Fitness",
+        "address": "67 Gough St, San Francisco, CA 94102"
+      },
+      {
+        "name": "LuxFit SF",
+        "address": "2600 Harrison St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Equinox (Pine Street)",
+        "address": "301 Pine St, San Francisco, CA 94104"
+      },
+      {
+        "name": "Yoga Garden SF",
+        "address": "286 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Fitness SF (Mid-Market)",
+        "address": "1 10th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Hit Fit Training",
+        "address": "2348 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "San Franpole (Pole fitness)",
+        "address": "301 Turk St, San Francisco, CA 94102"
+      },
+      {
+        "name": "MNT Studio",
+        "address": "766 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Wheel House",
+        "address": "1 Embarcadero Center, SF, CA 94111"
+      },
+      {
+        "name": "Tribe Fitness Collective",
+        "address": "276 Shotwell St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Union Street Athletics",
+        "address": "1757 Union St, San Francisco, CA 94123"
+      },
+      {
+        "name": "DiaKadi Fitness",
+        "address": "290 Division St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Renaissance Yoga",
+        "address": "1844 Market St, San Francisco, CA 94102"
+      },
+      {
+        "name": "The Assembly",
+        "address": "449 14th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "Dogpatch Boulders",
+        "address": "2295 3rd St, San Francisco, CA 94107"
+      }
+    ],
+    "live-music": [
+      {
+        "name": "The Saloon",
+        "address": "1232 Grant Ave, San Francisco, CA 94133"
+      },
+      {
+        "name": "The Make Out Room (Different Stage Area)",
+        "address": "3225 22nd St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Tupelo",
+        "address": "1337 Grant Ave, San Francisco, CA 94133"
+      },
+      {
+        "name": "Amado’s",
+        "address": "998 Valencia St, San Francisco, CA 94110"
+      },
+      {
+        "name": "El Rio (Live Band Patio)",
+        "address": "3158 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Club Deluxe",
+        "address": "1511 Haight St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Boom Boom Room",
+        "address": "1601 Fillmore St, San Francisco, CA 94115"
+      },
+      {
+        "name": "The Lost Church (Mission)",
+        "address": "988 Columbus Ave, San Francisco, CA 94133"
+      },
+      {
+        "name": "Madrone Art Bar",
+        "address": "500 Divisadero St, San Francisco, CA 94117"
+      },
+      {
+        "name": "Fiddler's Green",
+        "address": "1333 9th Ave, San Francisco, CA 94122"
+      },
+      {
+        "name": "Black Cat Jazz Club",
+        "address": "400 Eddy St, San Francisco, CA 94102"
+      },
+      {
+        "name": "Royale",
+        "address": "800 Post St, San Francisco, CA 94109"
+      },
+      {
+        "name": "Revolution Cafe",
+        "address": "3248 22nd St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Pinhole Coffee Live Music Nights",
+        "address": "231 Cortland Ave, SF, CA 94110"
+      },
+      {
+        "name": "Manny’s Event Hall",
+        "address": "3092 16th St, San Francisco, CA 94103"
+      },
+      {
+        "name": "The Royal Cuckoo",
+        "address": "3202 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "The Lucky Horseshoe",
+        "address": "453 Cortland Ave, San Francisco, CA 94110"
+      },
+      {
+        "name": "Shotwell’s (Live sets)",
+        "address": "3349 20th St, San Francisco, CA 94110"
+      },
+      {
+        "name": "The Dark Room",
+        "address": "2263 Mission St, San Francisco, CA 94110"
+      },
+      {
+        "name": "Milk Bar (Live DJs & Bands)",
+        "address": "1840 Haight St, San Francisco, CA 94117"
+      }
+    ]
+  }
+}

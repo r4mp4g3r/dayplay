@@ -9,6 +9,7 @@
     "web": "expo start --web",
     "seed:locals:places": "tsx scripts/seed-locals-from-places.ts",
     "sync:listings:places": "tsx scripts/sync-listings-from-places.ts",
+    "sync:listings:osm": "tsx scripts/sync-listings-from-osm.ts",
     "sync:all:categories": "tsx scripts/sync-all-categories.ts",
     "import:denver-pdf": "tsx scripts/import-denver-from-pdf.ts 'Denver Locations.pdf' --city 'Denver, CO'",
     "import:sf-pdf": "tsx scripts/import-sf-from-pdf.ts",
@@ -22,7 +23,8 @@
     "count-listings": "tsx scripts/count-listings-by-city.ts",
     "build:ios-test": "eas build -p ios --profile production --auto-submit",
     "build:android-test": "eas build -p android --profile internal",
-    "build:all": "eas build --platform all --profile production --auto-submit"
+    "build:all": "eas build --platform all --profile production --auto-submit",
+    "sync:funcheap": "tsx scripts/import-funcheap-events.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -50,6 +52,7 @@
     "expo-web-browser": "~15.0.9",
     "node-fetch": "^2.7.0",
     "pdf-parse": "^1.1.4",
+    "fast-xml-parser": "^4.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
@@ -66,7 +69,7 @@
     "@types/react": "~19.1.0",
     "dotenv": "^17.2.3",
     "react-test-renderer": "19.1.0",
-    "tsx": "^4.20.6",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.2"
   },
   "private": true

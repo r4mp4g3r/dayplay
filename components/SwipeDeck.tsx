@@ -253,7 +253,11 @@ export function SwipeDeck({ fetchFn }: Props) {
       )}
       <GestureDetector gesture={gesture}>
         <Animated.View style={[styles.card, cardStyle]}>
-          <Pressable onPress={() => router.push(`/listing/${topItem.id}`)}>
+          <Pressable
+            onPress={() =>
+              router.push({ pathname: '/listing/[id]', params: { id: topItem.id } })
+            }
+          >
             <SwipeCard item={topItem} />
           </Pressable>
           
