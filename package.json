@@ -24,7 +24,9 @@
     "build:ios-test": "eas build -p ios --profile production --auto-submit",
     "build:android-test": "eas build -p android --profile internal",
     "build:all": "eas build --platform all --profile production --auto-submit",
-    "sync:funcheap": "tsx scripts/import-funcheap-events.ts"
+    "sync:funcheap": "tsx scripts/import-funcheap-events.ts",
+    "sync:sfstation": "tsx scripts/import-sfstation-events.ts",
+    "sync:google-events": "tsx scripts/import-google-events.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -53,6 +55,7 @@
     "node-fetch": "^2.7.0",
     "pdf-parse": "^1.1.4",
     "fast-xml-parser": "^4.5.0",
+    "cheerio": "^1.0.0-rc.12",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",

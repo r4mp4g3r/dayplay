@@ -143,19 +143,33 @@ export function SwipeDeck({ fetchFn }: Props) {
     } else {
       Haptics.selectionAsync();
       setLastPassedItem(current);
+      // Move the current card to the back of the stack instead of discarding it.
+      setItems((prev) => {
+        if (!prev.length) return prev;
+        const arr = [...prev];
+        const idx = arr.findIndex((i) => i.id === current.id);
+        if (idx === -1) return prev;
+        const [removed] = arr.splice(idx, 1);
+        if (removed) arr.push(removed);
+        return arr;
+      });
     }
     // Record swipe (both liked and passed) to persist exclusion
     try { recordSwipeEvent(current.id, liked ? 'right' : 'left', current.category, (current as any).tags || []); } catch {}
 
     capture(liked ? 'swipe_like' : 'swipe_pass', { id: current.id, title: current.title });
-    setExcludeIds((prev) => Array.from(new Set([...prev, current.id])));
+    // Only permanently exclude items that were liked/saved.
+    if (liked) {
+      setExcludeIds((prev) => Array.from(new Set([...prev, current.id])));
+    }
 
     setViewedCount((c) => c + 1);
 
-    const nextIndex = index + 1;
+    // For liked items, advance the index; for passes, keep index pointing to the next card.
+    const nextIndex = liked ? index + 1 : index;
     setIndex(nextIndex);
     // Prefetch next page when reaching near the end (keep a buffer of 5)
-    if (nextIndex >= items.length - 5) {
+    if (liked && nextIndex >= items.length - 5) {
       // Fire-and-forget to avoid blocking the swipe transition
       loadMoreInternal();
     }
@@ -181,8 +195,15 @@ export function SwipeDeck({ fetchFn }: Props) {
   function undoLastPass() {
     if (!lastPassedItem) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setExcludeIds((prev) => prev.filter((id) => id !== lastPassedItem.id));
-    setIndex((i) => Math.max(0, i - 1));
+    // Bring the last passed card back to the front of the stack.
+    setItems((prev) => {
+      const arr = [...prev];
+      const idx = arr.findIndex((i) => i.id === lastPassedItem.id);
+      if (idx === -1) return prev;
+      const [card] = arr.splice(idx, 1);
+      arr.splice(index, 0, card);
+      return arr;
+    });
     setLastPassedItem(null);
   }
 
