@@ -157,7 +157,8 @@ export default function SignUpScreen() {
           </Text>
         </Pressable>
 
-        <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
+        {/* From sign up, continuing as guest should go straight into onboarding */}
+        <Pressable onPress={() => router.replace('/onboarding')} style={{ marginTop: 20 }}>
           <Text style={[styles.link, { color: '#999' }]}>Continue as guest</Text>
         </Pressable>
       </ScrollView>

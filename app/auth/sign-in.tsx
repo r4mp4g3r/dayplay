@@ -158,7 +158,8 @@ export default function SignInScreen() {
           </Text>
         </Pressable>
 
-        <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
+        {/* If user decides to browse as guest from here, send them into onboarding */}
+        <Pressable onPress={() => router.replace('/onboarding')} style={{ marginTop: 20 }}>
           <Text style={[styles.link, { color: '#999' }]}>Continue as guest</Text>
         </Pressable>
       </ScrollView>

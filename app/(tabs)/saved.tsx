@@ -204,13 +204,29 @@ export default function SavedScreen() {
       />
 
       {savedItems.length > 0 && (
-        <Pressable
-          style={styles.fab}
-          onPress={() => Share.share({ message: savedItems.map((s: any) => `• ${s.title}`).join('\n') })}
-          accessibilityLabel="Share saved list"
-        >
-          <FontAwesome name="share" size={20} color="#fff" />
-        </Pressable>
+        <>
+          {/* Share FAB */}
+          <Pressable
+            style={styles.fab}
+            onPress={() =>
+              Share.share({
+                message: savedItems.map((s: any) => `• ${s.title}`).join('\n'),
+              })
+            }
+            accessibilityLabel="Share saved list"
+          >
+            <FontAwesome name="share" size={20} color="#fff" />
+          </Pressable>
+
+          {/* Spin the Wheel / Decision Helper FAB */}
+          <Pressable
+            style={[styles.fab, { right: 96, backgroundColor: '#111' }]}
+            onPress={() => router.push('/spin-wheel')}
+            accessibilityLabel="Spin the wheel to pick a place"
+          >
+            <FontAwesome name="random" size={20} color="#fff" />
+          </Pressable>
+        </>
       )}
 
       {/* List picker modal */}

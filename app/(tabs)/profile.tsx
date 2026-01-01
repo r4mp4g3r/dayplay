@@ -350,7 +350,9 @@ export default function ProfileScreen() {
                     setPriceTiers([1, 2, 3, 4]);
                     setDistanceKm(25);
                     setCompleted(false);
-                    router.replace('/onboarding');
+                    // Send user back through the main welcome screen so they can
+                    // choose Sign Up / Sign In / Continue as Guest again.
+                    router.replace('/welcome');
                   }
                 }
               ]

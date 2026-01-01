@@ -129,7 +129,7 @@ function extractCity(addressComponents: any[]): string | null {
 
 function photoUrl(photoRef?: string): string | null {
   if (!photoRef) return null;
-  return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=${photoRef}&key=${GOOGLE_KEY}`;
+  return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${photoRef}&key=${GOOGLE_KEY}`;
 }
 
 // Google Places API functions

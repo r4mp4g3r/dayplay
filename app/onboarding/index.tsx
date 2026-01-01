@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Pressable, ScrollView, ActivityIndicator, TextInput, Alert, Platform } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ScrollView, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 import { useFilterStore } from '@/state/filterStore';
 import { requestLocation, useLocationStore } from '@/state/locationStore';
 import { useOnboardingStore } from '@/state/onboardingStore';
-import { signUp } from '@/lib/auth';
-import { isSupabaseConfigured } from '@/lib/supabase';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 const CATEGORY_CHIPS = [
@@ -15,11 +13,8 @@ const CATEGORY_CHIPS = [
 ];
 
 export default function OnboardingScreen() {
-  const [step, setStep] = useState<'welcome' | 'interests' | 'location' | 'account'>('welcome');
+  const [step, setStep] = useState<'welcome' | 'interests' | 'location'>('welcome');
   const [selected, setSelected] = useState<string[]>([]);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [creatingAccount, setCreatingAccount] = useState(false);
   const { setInitialFromOnboarding } = useFilterStore();
   const { loading: locationLoading, granted, city } = useLocationStore();
   const { setCompleted } = useOnboardingStore();
@@ -36,14 +31,6 @@ export default function OnboardingScreen() {
     } else if (step === 'interests') {
       setStep('location');
     } else if (step === 'location') {
-      // Check if Supabase is configured - if not, skip account creation
-      if (isSupabaseConfigured()) {
-        setStep('account');
-      } else {
-        finishOnboarding();
-      }
-    } else {
-      // Should not reach here - account step has its own handlers
       finishOnboarding();
     }
   };
@@ -53,28 +40,6 @@ export default function OnboardingScreen() {
     setCompleted(true);
     // If user is signed in, go to discover. Otherwise they'll see welcome screen
     router.replace('/(tabs)/discover');
-  };
-
-  const handleCreateAccount = async () => {
-    if (!email.trim() || !email.includes('@')) {
-      Alert.alert('Error', 'Please enter a valid email');
-      return;
-    }
-    if (password.length < 6) {
-      Alert.alert('Error', 'Password must be at least 6 characters');
-      return;
-    }
-
-    setCreatingAccount(true);
-    try {
-      await signUp(email, password);
-      // Account created - finish onboarding and go to discover
-      // User is now signed in, so they'll stay signed in
-      finishOnboarding();
-    } catch (error: any) {
-      Alert.alert('Error', error.message || 'Could not create account');
-      setCreatingAccount(false);
-    }
   };
 
   if (step === 'welcome') {
@@ -96,68 +61,6 @@ export default function OnboardingScreen() {
     );
   }
 
-  if (step === 'account') {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Create Account</Text>
-        <Text style={styles.subtitle}>Save your discoveries across devices</Text>
-
-        <Text style={styles.label}>Email</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="you@example.com"
-          value={email}
-          onChangeText={setEmail}
-          autoCapitalize="none"
-          keyboardType="email-address"
-          editable={!creatingAccount}
-        />
-
-        <Text style={styles.label}>Password</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="At least 6 characters"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-          editable={!creatingAccount}
-        />
-
-        <Pressable
-          style={[styles.cta, creatingAccount && { opacity: 0.6 }]}
-          onPress={handleCreateAccount}
-          disabled={creatingAccount}
-        >
-          {creatingAccount ? (
-            <ActivityIndicator color="#fff" />
-          ) : (
-            <Text style={styles.ctaText}>Create Account</Text>
-          )}
-        </Pressable>
-
-        <Pressable 
-          onPress={() => {
-            Alert.alert('Continue as Guest?', 'You can create an account later from your profile', [
-              { text: 'Cancel', style: 'cancel' },
-              { text: 'Continue as Guest', onPress: finishOnboarding }
-            ]);
-          }}
-          style={{ marginTop: 16 }}
-        >
-          <Text style={{ textAlign: 'center', color: '#666', fontSize: 14 }}>
-            Skip for now
-          </Text>
-        </Pressable>
-
-
-        <Pressable onPress={() => router.push('/auth/sign-in')} style={{ marginTop: 'auto' }}>
-          <Text style={{ textAlign: 'center', color: '#007AFF', fontSize: 14 }}>
-            Already have an account? Sign In
-          </Text>
-        </Pressable>
-      </View>
-    );
-  }
 
   if (step === 'location') {
     return (

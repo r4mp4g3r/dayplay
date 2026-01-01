@@ -177,7 +177,7 @@ async function placeDetails(placeId: string): Promise<any | null> {
 
 function photoUrl(ref?: string): string | null {
   if (!ref) return null;
-  return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=${ref}&key=${GOOGLE_KEY}`;
+  return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${ref}&key=${GOOGLE_KEY}`;
 }
 
 function extractCityFromComponents(components?: any[]): string | undefined {
