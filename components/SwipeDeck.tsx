@@ -292,7 +292,6 @@ export function SwipeDeck({ fetchFn }: Props) {
     } catch { }
 
     capture(liked ? 'swipe_like' : 'swipe_pass', { id: current.id, title: current.title });
-<<<<<<< HEAD
     // Only permanently exclude items that were liked/saved.
     if (liked) {
       setExcludeIds((prev) => Array.from(new Set([...prev, current.id])));

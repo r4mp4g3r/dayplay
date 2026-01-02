@@ -7,7 +7,7 @@ module.exports = {
   expo: {
     name: 'Swipely',
     slug: 'swipely-app',
-    version: '1.0.9',
+    version: '1.1.0',
     orientation: 'portrait',
     icon: './assets/images/icon.png',
     scheme: 'swipely',
