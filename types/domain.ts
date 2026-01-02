@@ -20,7 +20,15 @@ export type Category =
   | 'fitness-classes'
   | 'hotels';
 
-export type DataSource = 'seed' | 'business' | 'google_places' | 'eventbrite' | 'openstreetmap' | 'funcheap';
+export type DataSource =
+  | 'seed'
+  | 'business'
+  | 'google_places'
+  | 'eventbrite'
+  | 'openstreetmap'
+  | 'funcheap'
+  | 'sfstation'
+  | 'google_events';
 
 export interface Listing {
   id: string;

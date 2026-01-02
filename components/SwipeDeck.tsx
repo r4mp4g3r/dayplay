@@ -274,6 +274,16 @@ export function SwipeDeck({ fetchFn }: Props) {
     } else {
       Haptics.selectionAsync();
       setLastPassedItem(current);
+      // Move the current card to the back of the stack instead of discarding it.
+      setItems((prev) => {
+        if (!prev.length) return prev;
+        const arr = [...prev];
+        const idx = arr.findIndex((i) => i.id === current.id);
+        if (idx === -1) return prev;
+        const [removed] = arr.splice(idx, 1);
+        if (removed) arr.push(removed);
+        return arr;
+      });
     }
 
     // Record swipe
@@ -282,18 +292,23 @@ export function SwipeDeck({ fetchFn }: Props) {
     } catch { }
 
     capture(liked ? 'swipe_like' : 'swipe_pass', { id: current.id, title: current.title });
-    setExcludeIds((prev) => Array.from(new Set([...prev, current.id])));
+<<<<<<< HEAD
+    // Only permanently exclude items that were liked/saved.
+    if (liked) {
+      setExcludeIds((prev) => Array.from(new Set([...prev, current.id])));
+    }
+
     setViewedCount((c) => c + 1);
 
     // CRITICAL: Prepare for next card by switching buffers
     const oldBuffer = activeBuffer;
     const newBuffer = activeBuffer === 0 ? 1 : 0;
 
-    // 1. Advance Index (new card becomes top)
-    const nextIndex = index + 1;
+    // 1. Calculate next index (Remote logic: if pass, we recycle so index stays; if like, advance)
+    const nextIndex = liked ? index + 1 : index;
     setIndex(nextIndex);
 
-    // 2. Switch active buffer to the clean one (which is at 0)
+    // 2. Switch active buffer to the clean one
     setActiveBuffer(newBuffer);
 
     // 3. Reset the OLD buffer (which currently holds the off-screen swipe value)
@@ -305,8 +320,9 @@ export function SwipeDeck({ fetchFn }: Props) {
       translateY_B.value = 0;
     }
 
-    // Prefetch next page when reaching near the end
-    if (nextIndex >= items.length - 5) {
+    // Prefetch next page when reaching near the end (keep a buffer of 5)
+    if (liked && nextIndex >= items.length - 5) {
+      // Fire-and-forget to avoid blocking the swipe transition
       loadMoreInternal();
     }
   }
@@ -331,8 +347,15 @@ export function SwipeDeck({ fetchFn }: Props) {
   function undoLastPass() {
     if (!lastPassedItem) return;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    setExcludeIds((prev) => prev.filter((id) => id !== lastPassedItem.id));
-    setIndex((i) => Math.max(0, i - 1));
+    // Bring the last passed card back to the front of the stack.
+    setItems((prev) => {
+      const arr = [...prev];
+      const idx = arr.findIndex((i) => i.id === lastPassedItem.id);
+      if (idx === -1) return prev;
+      const [card] = arr.splice(idx, 1);
+      arr.splice(index, 0, card);
+      return arr;
+    });
     setLastPassedItem(null);
   }
 
