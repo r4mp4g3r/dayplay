@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
-import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { isSupabaseConfigured, supabase } from '@/lib/supabase';
 import type { Listing } from '@/types/domain';
+import { useEffect, useMemo, useState } from 'react';
 
 // Category normalization (from lib/api.ts)
 const CATEGORY_SYNONYMS: Record<string, string[]> = {
@@ -122,7 +122,7 @@ export function useFrontendFilteredListings(params: UseFilteredListingsParams) {
             listing_photos(url,sort_order)
           `)
           .eq('is_published', true);
-          // Removed .neq('source', 'seed') to fetch ALL listings including seed data
+        // Removed .neq('source', 'seed') to fetch ALL listings including seed data
 
         // Apply city filter
         const metroAreaCities = METRO_AREA_CITIES[city];
@@ -204,9 +204,9 @@ export function useFrontendFilteredListings(params: UseFilteredListingsParams) {
       .filter(l => l.distanceKm != null)
       .map(l => ({ title: l.title, distance: l.distanceKm }))
       .sort((a, b) => (a.distance || 0) - (b.distance || 0));
-    
+
     results = results.filter(l => l.distanceKm == null || l.distanceKm <= params.distanceKm);
-    
+
     console.log(`[useFrontendFilteredListings] Distance filter (${params.distanceKm}km): ${beforeDistanceFilter} -> ${results.length}`);
     if (beforeDistanceFilter > results.length && distanceStats.length > 0) {
       console.log('[useFrontendFilteredListings] Sample distances:', distanceStats.slice(0, 5));
@@ -224,9 +224,9 @@ export function useFrontendFilteredListings(params: UseFilteredListingsParams) {
           normalized: normalizeCategory(l.category),
         })),
       });
-      
+
       const beforeFilter = results.length;
-      
+
       // For debugging: show all listings with selected categories
       const matchingListings = allListings.filter(l => {
         const listingCategoryNormalized = normalizeCategory(l.category) || l.category;
@@ -236,7 +236,7 @@ export function useFrontendFilteredListings(params: UseFilteredListingsParams) {
       if (matchingListings.length > 0 && matchingListings.length <= 5) {
         console.log('[useFrontendFilteredListings] Matching listings:', matchingListings.map(l => l.title));
       }
-      
+
       results = results.filter(l => {
         const listingCategoryNormalized = normalizeCategory(l.category) || l.category;
         return normalized.includes(listingCategoryNormalized);

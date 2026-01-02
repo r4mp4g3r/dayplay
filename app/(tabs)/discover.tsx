@@ -18,6 +18,7 @@ export default function DiscoverScreen() {
   const [refreshKey, setRefreshKey] = useState(0);
   const toggleRef = useRef(() => setFilterOpen((v) => !v));
   const [viewMode, setViewMode] = useState<'deck' | 'map'>('deck');
+  const [showOnlySaved, setShowOnlySaved] = useState(false);
 
   // Use frontend filtering for INSTANT results
   const { listings, loading, error, total } = useFrontendFilteredListings({
@@ -106,6 +107,8 @@ export default function DiscoverScreen() {
           items={mapItems}
           latitude={latitude ?? 30.2672}
           longitude={longitude ?? -97.7431}
+          showOnlySaved={showOnlySaved}
+          onToggleSaved={() => setShowOnlySaved((v) => !v)}
         />
       ) : (
         <SwipeDeck key={refreshKey} fetchFn={fetchFn} />
