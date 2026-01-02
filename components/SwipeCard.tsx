@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
-import type { Listing } from '@/types/domain';
+import { formatEventDate, isEventInProgress, isEventSoon } from '@/lib/dateUtils';
 import { getTrendingListings } from '@/state/swipeHistoryStore';
-import { formatEventDate, isEventSoon, isEventInProgress } from '@/lib/dateUtils';
+import type { Listing } from '@/types/domain';
+import React from 'react';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 const CARD_WIDTH = width - 32;
@@ -10,11 +10,11 @@ const CARD_WIDTH = width - 32;
 const RESERVED_VERTICAL_SPACE = 320; // header + actions + safe areas
 const CARD_HEIGHT = Math.max(520, Math.min(720, height - RESERVED_VERTICAL_SPACE));
 
-export function SwipeCard({ item, compact = false }: { item: Listing; compact?: boolean }) {
+const SwipeCardComponent = ({ item, compact = false }: { item: Listing; compact?: boolean }) => {
   const img = item.images?.[0];
   const trending = getTrendingListings();
   const isTrending = trending.has(item.id);
-  
+
   const getWebsiteDomain = (url?: string) => {
     if (!url) return undefined;
     try {
@@ -26,19 +26,19 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
     }
   };
   const websiteDomain = getWebsiteDomain(item.website);
-  
+
   // Check if new this week (within last 7 days)
-  const isNew = item.created_at 
+  const isNew = item.created_at
     ? (Date.now() - new Date(item.created_at).getTime()) < 7 * 24 * 60 * 60 * 1000
     : false;
-  
+
   // Check if this is an event
   const isEvent = !!item.event_start_date;
   const eventHappeningSoon = isEvent && item.event_start_date ? isEventSoon(item.event_start_date) : false;
-  const eventInProgress = isEvent && item.event_start_date && item.event_end_date 
-    ? isEventInProgress(item.event_start_date, item.event_end_date) 
+  const eventInProgress = isEvent && item.event_start_date && item.event_end_date
+    ? isEventInProgress(item.event_start_date, item.event_end_date)
     : false;
-  
+
   // Priority for badges: Featured > Happening Now > Soon > Trending > New
   let badge = null;
   if (item.is_featured) {
@@ -52,7 +52,7 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
   } else if (isNew) {
     badge = { text: '✨ New', color: '#4CAF50', textColor: '#fff' };
   }
-  
+
   // For compact mode (saved cards), use a cleaner layout with image on top
   if (compact) {
     return (
@@ -70,18 +70,18 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
             </View>
           )}
         </View>
-        
+
         {/* Content Section */}
         <View style={styles.compactContent}>
           <Text style={styles.compactTitle} numberOfLines={2}>{item.title}</Text>
-          
+
           {/* Event Date */}
           {isEvent && item.event_start_date && (
             <Text style={styles.compactEventDate}>
               📅 {formatEventDate(item.event_start_date)}
             </Text>
           )}
-          
+
           {/* Category, Price, Distance Row */}
           <View style={styles.compactInfoRow}>
             <Text style={styles.compactCategory}>{item.category}</Text>
@@ -98,21 +98,21 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
               </>
             )}
           </View>
-          
+
           {/* Location */}
           {(item.subtitle || (item as any).address || item.city) && (
             <Text style={styles.compactLocation} numberOfLines={1}>
               📍 {item.subtitle || (item as any).address || item.city}
             </Text>
           )}
-          
+
           {/* Website */}
           {websiteDomain && (
             <Text style={styles.compactWebsite} numberOfLines={1}>
               🔗 {websiteDomain}
             </Text>
           )}
-          
+
           {/* Tags */}
           {item.tags && item.tags.length > 0 && (
             <View style={styles.compactTagsRow}>
@@ -123,7 +123,7 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
               ))}
             </View>
           )}
-          
+
           {/* Description */}
           <Text style={styles.compactDescription} numberOfLines={2}>
             {item.description || 'No description available.'}
@@ -132,7 +132,7 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
       </View>
     );
   }
-  
+
   // Full card layout (for Discover page)
   return (
     <View style={styles.card}>
@@ -148,14 +148,14 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
       )}
       <View style={styles.meta}>
         <Text style={styles.title} numberOfLines={1}>{item.title}</Text>
-        
+
         {/* Event Date (if event) */}
         {isEvent && item.event_start_date && (
           <Text style={styles.eventDate}>
             📅 {formatEventDate(item.event_start_date)}
           </Text>
         )}
-        
+
         {/* Info Row: Category, Price, Distance */}
         <View style={styles.infoRow}>
           <Text style={styles.category}>{item.category}</Text>
@@ -172,19 +172,19 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
             </>
           )}
         </View>
-        
+
         {/* Location - Show address or city */}
         {(item.subtitle || (item as any).address || item.city) && (
           <Text style={styles.location} numberOfLines={1}>
             📍 {item.subtitle || (item as any).address || item.city}
           </Text>
         )}
-        
+
         {/* Website domain if available */}
         {websiteDomain && (
           <Text style={styles.website} numberOfLines={1}>🔗 {websiteDomain}</Text>
         )}
-        
+
         {/* Tags/Vibes (if available) */}
         {item.tags && item.tags.length > 0 && (
           <View style={styles.tagsRow}>
@@ -195,7 +195,7 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
             ))}
           </View>
         )}
-        
+
         {/* About/Description - Always show */}
         <View style={styles.aboutSection}>
           <Text style={styles.aboutLabel}>About</Text>
@@ -206,7 +206,11 @@ export function SwipeCard({ item, compact = false }: { item: Listing; compact?: 
       </View>
     </View>
   );
-}
+};
+
+export const SwipeCard = React.memo(SwipeCardComponent, (prev, next) => {
+  return prev.item.id === next.item.id && prev.compact === next.compact;
+});
 
 const styles = StyleSheet.create({
   card: {
@@ -222,13 +226,13 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   image: { width: '100%', height: CARD_HEIGHT },
-  featuredBadge: { 
-    position: 'absolute', 
-    top: 16, 
-    right: 16, 
-    backgroundColor: '#ffc107', 
-    paddingVertical: 6, 
-    paddingHorizontal: 12, 
+  featuredBadge: {
+    position: 'absolute',
+    top: 16,
+    right: 16,
+    backgroundColor: '#ffc107',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
     borderRadius: 20,
     shadowColor: '#000',
     shadowOpacity: 0.2,
@@ -237,51 +241,51 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   featuredText: { fontSize: 12, fontWeight: '800', color: '#000' },
-  meta: { 
-    position: 'absolute', 
-    bottom: 0, 
-    left: 0, 
-    right: 0, 
-    padding: 16, 
+  meta: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: 16,
     paddingTop: 20,
     backgroundColor: 'rgba(0,0,0,0.75)',
     backdropFilter: 'blur(10px)',
     minHeight: 180, // Ensure enough space for all content
   },
   title: { color: '#fff', fontSize: 22, fontWeight: '800', marginBottom: 8 },
-  eventDate: { 
-    color: '#FFD700', 
-    fontSize: 14, 
-    fontWeight: '700', 
+  eventDate: {
+    color: '#FFD700',
+    fontSize: 14,
+    fontWeight: '700',
     marginBottom: 8,
     letterSpacing: 0.3,
   },
-  infoRow: { 
-    flexDirection: 'row', 
-    alignItems: 'center', 
+  infoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
     flexWrap: 'wrap',
     marginBottom: 8,
   },
-  category: { 
-    color: '#fff', 
-    fontSize: 14, 
+  category: {
+    color: '#fff',
+    fontSize: 14,
     fontWeight: '700',
     textTransform: 'capitalize',
   },
-  separator: { 
-    color: 'rgba(255,255,255,0.5)', 
+  separator: {
+    color: 'rgba(255,255,255,0.5)',
     marginHorizontal: 8,
     fontSize: 14,
   },
-  price: { 
-    color: '#4CAF50', 
-    fontSize: 15, 
+  price: {
+    color: '#4CAF50',
+    fontSize: 15,
     fontWeight: '800',
     letterSpacing: 1,
   },
-  distance: { 
-    color: '#fff', 
-    fontSize: 13, 
+  distance: {
+    color: '#fff',
+    fontSize: 13,
     fontWeight: '600',
   },
   location: {
@@ -297,23 +301,23 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginBottom: 6,
   },
-  tagsRow: { 
-    flexDirection: 'row', 
-    flexWrap: 'wrap', 
-    gap: 6, 
+  tagsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
     marginTop: 4,
   },
-  tagChip: { 
-    paddingVertical: 4, 
-    paddingHorizontal: 10, 
-    borderRadius: 999, 
+  tagChip: {
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    borderRadius: 999,
     backgroundColor: 'rgba(255,255,255,0.25)',
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.3)',
   },
-  tagText: { 
-    color: '#fff', 
-    fontSize: 11, 
+  tagText: {
+    color: '#fff',
+    fontSize: 11,
     fontWeight: '700',
     textTransform: 'lowercase',
   },

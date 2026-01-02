@@ -1,21 +1,42 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import MapView, { Marker, PROVIDER_GOOGLE, MapPressEvent } from 'react-native-maps';
-import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
+import { StyleSheet, View, Text, Image, Pressable, Animated } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { router } from 'expo-router';
+import { useSavedStore } from '@/state/savedStore';
 
 type Props = {
   items: any[];
   latitude: number;
   longitude: number;
+  showOnlySaved?: boolean;
+  onToggleSaved?: () => void;
 };
 
-export function ExploreMap({ items, latitude, longitude }: Props) {
+export function ExploreMap({ items, latitude, longitude, showOnlySaved = false, onToggleSaved }: Props) {
   const [selected, setSelected] = useState<any | null>(null);
+  const { isSaved } = useSavedStore();
+  
+  // Animated values for smooth toggle
+  const toggleAnim = useRef(new Animated.Value(showOnlySaved ? 1 : 0)).current;
+
+  useEffect(() => {
+    Animated.timing(toggleAnim, {
+      toValue: showOnlySaved ? 1 : 0,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+  }, [showOnlySaved, toggleAnim]);
+
+  // Filter items by saved status if toggle is on
+  const filteredItems = useMemo(() => {
+    if (!showOnlySaved) return items;
+    return items.filter((item) => isSaved(item.id));
+  }, [items, showOnlySaved, isSaved]);
 
   // Filter items with valid coordinates
   const validItems = useMemo(() => {
-    const valid = items.filter((item) => {
+    const valid = filteredItems.filter((item: any) => {
       const lat = item.latitude;
       const lng = item.longitude;
 
@@ -32,13 +53,13 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
     });
 
     console.log(
-      `[ExploreMap] Render – total items: ${items.length}, valid coords: ${valid.length}`,
+      `[ExploreMap] Render – total items: ${filteredItems.length}, valid coords: ${valid.length}`,
     );
     if (valid.length > 0) {
       console.log(`[ExploreMap] Sample location: ${valid[0].title} at (${valid[0].latitude}, ${valid[0].longitude})`);
     }
     return valid;
-  }, [items]);
+  }, [filteredItems]);
 
   // Calculate region to fit all markers
   const region = useMemo(() => {
@@ -57,7 +78,7 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
     let minLng = validItems[0].longitude;
     let maxLng = validItems[0].longitude;
 
-    validItems.forEach(item => {
+    validItems.forEach((item: any) => {
       minLat = Math.min(minLat, item.latitude);
       maxLat = Math.max(maxLat, item.latitude);
       minLng = Math.min(minLng, item.longitude);
@@ -113,7 +134,7 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
         loadingEnabled={true}
         onPress={handleMapPress}
       >
-        {validItems.map((it) => (
+        {validItems.map((it: any) => (
           <Marker
             key={it.id}
             coordinate={{ latitude: Number(it.latitude), longitude: Number(it.longitude) }}
@@ -126,19 +147,62 @@ export function ExploreMap({ items, latitude, longitude }: Props) {
           />
         ))}
       </MapView>
+
+      {/* Saved Places Toggle Switch */}
+      {onToggleSaved && (
+        <View style={styles.toggleContainer}>
+          <Pressable
+            onPress={onToggleSaved}
+            accessibilityLabel={showOnlySaved ? 'Show all places' : 'Show saved places only'}
+            accessibilityRole="switch"
+            accessibilityState={{ checked: showOnlySaved }}
+          >
+            <Animated.View
+              style={[
+                styles.toggleSwitch,
+                {
+                  backgroundColor: toggleAnim.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: ['#ccc', '#FF2D55'],
+                  }),
+                },
+              ]}
+            >
+              <Animated.View
+                style={[
+                  styles.toggleThumb,
+                  {
+                    transform: [
+                      {
+                        translateX: toggleAnim.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [2, 22],
+                        }),
+                      },
+                    ],
+                  },
+                ]}
+              />
+            </Animated.View>
+          </Pressable>
+          <Text style={styles.toggleLabel}>
+             Saved
+          </Text>
+        </View>
+      )}
       
       {validItems.length === 0 && (
         <View style={styles.emptyState}>
           <Text style={styles.emptyText}>No listings with valid locations found</Text>
-          <Text style={styles.emptySubtext}>Try adjusting your filters</Text>
+          <Text style={styles.emptySubtext}>{showOnlySaved ? 'Try saving some places first' : 'Try adjusting your filters'}</Text>
         </View>
       )}
       
-      {validItems.length > 0 && items.length > validItems.length && (
+      {validItems.length > 0 && filteredItems.length > validItems.length && (
         <View style={styles.warningBanner}>
           <FontAwesome name="info-circle" size={14} color="#FF9500" />
           <Text style={styles.warningText}>
-            {items.length - validItems.length} listing(s) have invalid locations
+            {filteredItems.length - validItems.length} listing(s) have invalid locations
           </Text>
         </View>
       )}
@@ -248,6 +312,46 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#E65100',
     fontWeight: '600',
+  },
+  toggleContainer: {
+    position: 'absolute',
+    top: 12,
+    right: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    backgroundColor: '#fff',
+    borderRadius: 999,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 3,
+  },
+  toggleSwitch: {
+    width: 48,
+    height: 28,
+    borderRadius: 14,
+    justifyContent: 'center',
+    paddingHorizontal: 2,
+  },
+  toggleThumb: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 1 },
+    elevation: 2,
+  },
+  toggleLabel: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#333',
   },
   cardWrap: {
     position: 'absolute',

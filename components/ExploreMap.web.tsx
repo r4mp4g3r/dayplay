@@ -5,9 +5,11 @@ type Props = {
   items: any[];
   latitude: number;
   longitude: number;
+  showOnlySaved?: boolean;
+  onToggleSaved?: () => void;
 };
 
-export function ExploreMap({ items, latitude, longitude }: Props) {
+export function ExploreMap({ items, latitude, longitude, showOnlySaved, onToggleSaved }: Props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 40 }}>
       <Text style={{ fontSize: 48, marginBottom: 16 }}>🗺️</Text>
