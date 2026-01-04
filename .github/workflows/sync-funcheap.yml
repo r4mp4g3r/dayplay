@@ -40,4 +40,4 @@ jobs:
 
       # Phase 3: Scrapers (DoTheBay)
       - name: Sync Tier 3 (Scrapers)
-        run: npx tsx scripts/import-scraped-venues.ts
+        run: npx tsx scripts/import-json-ld-events.ts
